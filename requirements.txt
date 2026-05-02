@@ -1,0 +1,4 @@
+instaloader>=4.15
+anthropic>=0.97
+python-dotenv>=1.0
+openai-whisper>=20240930

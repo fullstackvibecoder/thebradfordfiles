@@ -4,6 +4,7 @@
 *.session
 cookies.txt
 ig-session.json
+data/.ig-session.json
 
 # Source media — re-derive with instaloader if needed
 media/
@@ -35,3 +36,4 @@ node_modules/
 .vscode/
 *.swp
 *~
+.vercel
