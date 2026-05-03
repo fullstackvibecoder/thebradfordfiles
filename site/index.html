@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Bradford Files · Independent record of Brad Bradford's public political content</title>
+<meta name="description" content="An independent civic transparency record of Brad Bradford's public Instagram political content. Every record sourced. Not affiliated with the candidate or campaign.">
+<meta name="theme-color" content="#112e51">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thebradfordfiles.bottlenecklabs.ai/">
+<meta property="og:site_name" content="The Bradford Files">
+<meta property="og:title" content="The Bradford Files · Independent civic-transparency record">
+<meta property="og:description" content="A searchable record of Brad Bradford's public political content. Every record sourced to a specific Instagram post.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --c-bg: #ffffff;
+    --c-bg-alt: #f7f8fa;
+    --c-bg-cool: #eef2f7;
+    --c-primary: #1a4480;
+    --c-primary-dark: #112e51;
+    --c-primary-vivid: #0050d8;
+    --c-primary-light: #aacdec;
+    --c-base: #1b1b1b;
+    --c-base-light: #5a6573;
+    --c-base-lighter: #71767a;
+    --c-border: #dfe1e2;
+    --c-border-strong: #c9c9c9;
+    --c-accent: #b58a32;
+    --c-red: #b50909;
+    --c-green: #00a91c;
+    --c-orange: #e66f0e;
+    --c-cyan: #009ec1;
+    --c-purple: #54278f;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font: 16px/1.5 "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    color: var(--c-base);
+    background: var(--c-bg-alt);
+    min-height: 100vh;
+  }
+  a { color: var(--c-primary-vivid); text-underline-offset: 2px; }
+  a:hover { color: var(--c-primary-dark); }
+  code { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 0.92em; background: var(--c-bg-alt); padding: 1px 5px; border-radius: 2px; }
+
+  /* Top strip — independent project disclosure (not USA-banner; this isn't satire) */
+  .topstrip {
+    background: #2c2c2c;
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+    padding: 8px 0;
+    text-align: center;
+  }
+  .topstrip strong { color: white; }
+
+  /* Site header */
+  .site-header {
+    background: var(--c-primary-dark);
+    color: white;
+    border-bottom: 4px solid var(--c-accent);
+  }
+  .site-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .brand-block { flex: 1; min-width: 260px; }
+  .brand-overline {
+    font: 600 11px/1 "Public Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--c-accent);
+    margin-bottom: 6px;
+  }
+  .brand-title {
+    font: 700 38px/1 "Source Serif Pro", Georgia, serif;
+    color: white;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  .brand-tagline {
+    font: 400 14px/1.45 "Public Sans", sans-serif;
+    color: rgba(255,255,255,0.85);
+    max-width: 540px;
+  }
+  .header-stats {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 14px 28px;
+    text-align: right;
+  }
+  .stat-num {
+    font: 700 22px/1 "Source Serif Pro", Georgia, serif;
+    color: white;
+  }
+  .stat-lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.7);
+    margin-top: 4px;
+  }
+
+  /* Sub-nav (tabs) */
+  nav.tabs {
+    background: var(--c-primary);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .tabs-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .tabs button {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.78);
+    padding: 14px 16px;
+    cursor: pointer;
+    font: 600 13px/1 inherit;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: all 0.12s;
+  }
+  .tabs button:hover { color: white; background: rgba(255,255,255,0.07); }
+  .tabs button.active {
+    color: white;
+    border-bottom-color: var(--c-accent);
+    background: rgba(0,0,0,0.18);
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+  }
+  section.view { display: none; }
+  section.view.active { display: block; }
+
+  .view-header {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--c-border);
+    margin-bottom: 24px;
+  }
+  .view-header h2 {
+    font: 700 28px/1.2 "Source Serif Pro", Georgia, serif;
+    color: var(--c-primary-dark);
+    margin-bottom: 6px;
+  }
+  .view-header .lede {
+    font-size: 14.5px;
+    color: var(--c-base-light);
+    max-width: 780px;
+    line-height: 1.55;
+  }
+  .meta-row { color: var(--c-base-light); font-size: 13px; margin-bottom: 14px; }
+
+  /* Filter bar */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .filters input, .filters select {
+    background: white;
+    border: 1px solid var(--c-border-strong);
+    color: var(--c-base);
+    padding: 8px 12px;
+    font: inherit;
+    font-size: 13px;
+  }
+  .filters input { min-width: 220px; flex: 1; max-width: 360px; }
+  .filters input:focus, .filters select:focus {
+    outline: 3px solid var(--c-primary);
+    outline-offset: 0;
+    border-color: var(--c-primary);
+  }
+  .pill-btn {
+    background: white;
+    border: 1px solid var(--c-border-strong);
+    color: var(--c-base);
+    padding: 7px 13px;
+    font: 600 11px/1 inherit;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pill-btn:hover { background: var(--c-primary); color: white; border-color: var(--c-primary); }
+
+  /* Record cards (universal) */
+  .records-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 14px;
+  }
+  .record-card {
+    background: white;
+    border: 1px solid var(--c-border-strong);
+    border-left: 4px solid var(--c-primary);
+    padding: 16px 18px;
+  }
+  .record-card.kind-position { border-left-color: var(--c-primary); }
+  .record-card.kind-pledge { border-left-color: var(--c-accent); }
+  .record-card.kind-action { border-left-color: var(--c-green); }
+  .record-card.kind-endorsement { border-left-color: var(--c-purple); }
+  .record-card.kind-appearance { border-left-color: var(--c-cyan); }
+  .record-card.kind-quote { border-left-color: var(--c-orange); }
+  .record-card.kind-background_note { border-left-color: var(--c-base-lighter); }
+
+  .record-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--c-base-light);
+  }
+  .kind-tag {
+    display: inline-block;
+    background: var(--c-bg-cool);
+    color: var(--c-primary-dark);
+    padding: 3px 8px;
+    border: 1px solid var(--c-primary-light);
+    font-weight: 700;
+  }
+  .topic-tag {
+    display: inline-block;
+    background: var(--c-bg-alt);
+    color: var(--c-base);
+    padding: 3px 8px;
+    border: 1px solid var(--c-border);
+  }
+  .stance-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    font-weight: 700;
+    border: 1px solid;
+  }
+  .stance-supports { color: var(--c-green); border-color: var(--c-green); background: rgba(0,169,28,0.06); }
+  .stance-opposes { color: var(--c-red); border-color: var(--c-red); background: rgba(181,9,9,0.06); }
+  .stance-announces { color: var(--c-primary); border-color: var(--c-primary); background: rgba(26,68,128,0.06); }
+  .stance-conditional { color: var(--c-orange); border-color: var(--c-orange); background: rgba(230,111,14,0.06); }
+  .stance-neutral_observation { color: var(--c-base-light); border-color: var(--c-base-light); }
+
+  .record-summary {
+    font: 500 15px/1.4 "Public Sans", sans-serif;
+    color: var(--c-base);
+    margin-bottom: 8px;
+  }
+  .record-source-quote {
+    font-style: italic;
+    color: var(--c-base-light);
+    border-left: 2px solid var(--c-border-strong);
+    padding-left: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .record-source-quote::before { content: "“"; color: var(--c-primary); margin-right: 1px; }
+  .record-source-quote::after { content: "”"; color: var(--c-primary); margin-left: 1px; }
+
+  .record-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--c-border);
+    padding-top: 8px;
+    font-size: 11.5px;
+    color: var(--c-base-light);
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .source-link {
+    color: var(--c-primary-vivid);
+    font-weight: 600;
+    text-decoration: none;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+  .source-link:hover { color: var(--c-primary-dark); text-decoration: underline; }
+
+  /* Said vs Done view */
+  .sd-topic-block {
+    background: white;
+    border: 1px solid var(--c-border);
+    margin-bottom: 24px;
+    padding: 22px 24px;
+  }
+  .sd-topic-block h3 {
+    font: 700 20px/1.2 "Source Serif Pro", Georgia, serif;
+    color: var(--c-primary-dark);
+    margin-bottom: 4px;
+    text-transform: capitalize;
+  }
+  .sd-topic-block .sd-topic-meta {
+    font-size: 12.5px;
+    color: var(--c-base-light);
+    margin-bottom: 16px;
+  }
+  .sd-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .sd-col-header {
+    font: 700 11px/1 inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-base-light);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .sd-col-header.said { color: var(--c-accent); }
+  .sd-col-header.done { color: var(--c-green); }
+  .sd-empty {
+    color: var(--c-base-light);
+    font-style: italic;
+    font-size: 13px;
+    padding: 8px 0;
+  }
+  @media (max-width: 760px) {
+    .sd-columns { grid-template-columns: 1fr; }
+  }
+
+  /* Methodology view (renders inline-formatted content) */
+  .methodology-content {
+    background: white;
+    border: 1px solid var(--c-border);
+    padding: 32px;
+    max-width: 820px;
+  }
+  .methodology-content h3 {
+    font: 700 22px/1.2 "Source Serif Pro", Georgia, serif;
+    color: var(--c-primary-dark);
+    margin: 24px 0 10px;
+  }
+  .methodology-content h3:first-child { margin-top: 0; }
+  .methodology-content p { margin-bottom: 14px; line-height: 1.65; font-size: 14.5px; }
+
+  /* Posts Not Surfaced */
+  .skip-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border: 1px solid var(--c-border);
+    font-size: 13px;
+  }
+  .skip-table th {
+    background: var(--c-primary-dark);
+    color: white;
+    text-align: left;
+    padding: 10px 12px;
+    font: 700 11px/1 inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .skip-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--c-border);
+    vertical-align: top;
+  }
+  .skip-table tr:nth-child(even) td { background: var(--c-bg-alt); }
+
+  /* Loading state */
+  .loading {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--c-base-light);
+    font-size: 14px;
+  }
+  .loading-pulse {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--c-accent);
+    margin-right: 8px;
+    animation: pulse 1.4s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* Footer */
+  footer.site-footer {
+    background: var(--c-primary-dark);
+    color: white;
+    padding: 36px 0 24px;
+    margin-top: 60px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .footer-inner h3 {
+    font: 700 17px/1.2 "Source Serif Pro", Georgia, serif;
+    color: white;
+    margin-bottom: 8px;
+  }
+  .footer-inner p { color: rgba(255,255,255,0.85); margin-bottom: 8px; max-width: 720px; }
+  .footer-inner a { color: var(--c-accent); }
+  .footer-inner a:hover { color: white; }
+  .footer-credits {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  @media (max-width: 768px) {
+    .site-header-inner { flex-direction: column; align-items: flex-start; }
+    .header-stats { text-align: left; grid-template-columns: 1fr 1fr; }
+    .brand-title { font-size: 30px; }
+    .records-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  An <strong>independent civic-transparency project</strong>. Not affiliated with the candidate, his campaign, or any political party. Every record sourced. <a href="#" data-tab="methodology" style="color: white; text-decoration: underline;">Methodology</a>.
+</div>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand-block">
+      <div class="brand-overline">Public Record</div>
+      <div class="brand-title">The Bradford Files</div>
+      <div class="brand-tagline" id="brand-tagline">
+        A searchable, sourced record of Brad Bradford's public political content on Instagram, organized into structured records: positions, pledges, council actions, endorsements, and appearances.
+      </div>
+    </div>
+    <div class="header-stats" id="header-stats">
+      <div><div class="stat-num" id="stat-posts">…</div><div class="stat-lbl">Posts indexed</div></div>
+      <div><div class="stat-num" id="stat-records">…</div><div class="stat-lbl">Structured records</div></div>
+      <div><div class="stat-num" id="stat-substantive">…</div><div class="stat-lbl">Substantive posts</div></div>
+      <div><div class="stat-num" id="stat-range">…</div><div class="stat-lbl">Date range</div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" role="navigation" aria-label="Section navigation">
+  <div class="tabs-inner">
+    <button data-tab="said-done" class="active">Said vs. Done</button>
+    <button data-tab="positions">Positions</button>
+    <button data-tab="pledges">Pledges</button>
+    <button data-tab="actions">Actions</button>
+    <button data-tab="endorsements">Endorsements</button>
+    <button data-tab="appearances">Appearances</button>
+    <button data-tab="quotes">Quotes</button>
+    <button data-tab="by-topic">By Topic</button>
+    <button data-tab="not-surfaced">Posts Not Surfaced</button>
+    <button data-tab="methodology">Methodology</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<section class="view active" id="view-said-done">
+  <div class="view-header">
+    <h2>Said vs. Done</h2>
+    <div class="lede">Pledges (forward-looking commitments) paired with Actions (council motions, votes, completed projects) on the same topic. Sorted by topic frequency. Every record links to its source post — readers verify and conclude.</div>
+  </div>
+  <div id="said-done-content" class="loading"><span class="loading-pulse"></span>Loading records…</div>
+</section>
+
+<section class="view" id="view-positions">
+  <div class="view-header">
+    <h2>Positions</h2>
+    <div class="lede">Stated stances on civic and policy topics. A position is anything the author has explicitly said they think, support, oppose, or observe about a governance issue. Verbatim source quote attached to every record.</div>
+  </div>
+  <div class="filters" id="filters-positions"></div>
+  <div class="meta-row" id="count-positions"></div>
+  <div class="records-grid" id="grid-positions"></div>
+</section>
+
+<section class="view" id="view-pledges">
+  <div class="view-header">
+    <h2>Pledges</h2>
+    <div class="lede">Future-tense commitments. "I will…", "If elected I will…", "We will keep pushing for…". Conditional pledges (contingent on election outcome) are marked.</div>
+  </div>
+  <div class="filters" id="filters-pledges"></div>
+  <div class="meta-row" id="count-pledges"></div>
+  <div class="records-grid" id="grid-pledges"></div>
+</section>
+
+<section class="view" id="view-actions">
+  <div class="view-header">
+    <h2>Actions</h2>
+    <div class="lede">Past-tense actions: motions brought to council, votes cast, projects supported, interventions made. The "Done" half of Said vs. Done — to be cross-referenced against the City of Toronto Council voting record in a later phase.</div>
+  </div>
+  <div class="filters" id="filters-actions"></div>
+  <div class="meta-row" id="count-actions"></div>
+  <div class="records-grid" id="grid-actions"></div>
+</section>
+
+<section class="view" id="view-endorsements">
+  <div class="view-header">
+    <h2>Endorsements</h2>
+    <div class="lede">Named public endorsements — both received and given.</div>
+  </div>
+  <div class="meta-row" id="count-endorsements"></div>
+  <div class="records-grid" id="grid-endorsements"></div>
+</section>
+
+<section class="view" id="view-appearances">
+  <div class="view-header">
+    <h2>Appearances</h2>
+    <div class="lede">Public appearances at named events: town halls, community gatherings, ribbon cuttings. Geographic and demographic coverage of campaign activity.</div>
+  </div>
+  <div class="filters" id="filters-appearances"></div>
+  <div class="meta-row" id="count-appearances"></div>
+  <div class="records-grid" id="grid-appearances"></div>
+</section>
+
+<section class="view" id="view-quotes">
+  <div class="view-header">
+    <h2>Quotes</h2>
+    <div class="lede">Standalone notable quotes worth surfacing on their own.</div>
+  </div>
+  <div class="meta-row" id="count-quotes"></div>
+  <div class="records-grid" id="grid-quotes"></div>
+</section>
+
+<section class="view" id="view-by-topic">
+  <div class="view-header">
+    <h2>By Topic</h2>
+    <div class="lede">Filter all records by topic. The taxonomy is fixed across the dataset to enable consistent grouping.</div>
+  </div>
+  <div class="filters" id="filters-bytopic"></div>
+  <div class="meta-row" id="count-bytopic"></div>
+  <div class="records-grid" id="grid-bytopic"></div>
+</section>
+
+<section class="view" id="view-not-surfaced">
+  <div class="view-header">
+    <h2>Posts Not Surfaced</h2>
+    <div class="lede">Every post the triage classifier filtered as purely personal — birthdays, vacations, generic life moments — with the stated reason. The filter is open to scrutiny: if you believe a post here should have been surfaced, it can be re-classified.</div>
+  </div>
+  <div class="meta-row" id="count-not-surfaced"></div>
+  <div id="not-surfaced-content"></div>
+</section>
+
+<section class="view" id="view-methodology">
+  <div class="view-header">
+    <h2>Methodology</h2>
+    <div class="lede">How records are extracted and classified.</div>
+  </div>
+  <div class="methodology-content" id="methodology-content"></div>
+</section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <h3>The Bradford Files</h3>
+    <p>An independent civic-transparency project. Not affiliated with the candidate, his campaign, or any political party. No financial relationship with the candidate.</p>
+    <p>Every record on this site is sourced to a specific public Instagram post; click the source link on any record to verify against the original. If you believe a record is inaccurate or misclassified, <a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues" target="_blank" rel="noopener">open an issue on the public repository</a>.</p>
+    <div class="footer-credits">
+      Built by <a href="https://bottlenecklabs.ai" target="_blank" rel="noopener">BottleneckLabs</a> · Open source at <a href="https://github.com/fullstackvibecoder/thebradfordfiles" target="_blank" rel="noopener">github.com/fullstackvibecoder/thebradfordfiles</a> · MIT licensed
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+// ---------- DOM helper (no innerHTML, security-hook safe) ----------
+function el(tag, attrs, ...children) {
+  const node = document.createElement(tag);
+  if (attrs) {
+    for (const k of Object.keys(attrs)) {
+      const v = attrs[k];
+      if (v == null) continue;
+      if (k === "class") node.className = v;
+      else if (k === "style") node.style.cssText = v;
+      else if (k.indexOf("on") === 0) node.addEventListener(k.slice(2).toLowerCase(), v);
+      else node.setAttribute(k, v);
+    }
+  }
+  const append = c => {
+    if (c == null || c === false) return;
+    if (Array.isArray(c)) c.forEach(append);
+    else if (typeof c === "string" || typeof c === "number") node.appendChild(document.createTextNode(String(c)));
+    else node.appendChild(c);
+  };
+  children.forEach(append);
+  return node;
+}
+function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+function fmtDate(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (isNaN(d)) return iso.slice(0, 10);
+  return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+}
+function topicLabel(topic) {
+  if (!topic) return "—";
+  return topic.replace(/_/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+}
+
+// ---------- TOPIC TAXONOMY (kept in sync with extract.py) ----------
+const TOPICS = [
+  "housing", "transit", "safety_crime", "taxes_fiscal",
+  "parks_environment", "infrastructure", "civic_engagement",
+  "governance_ethics", "small_business_economy", "social_services",
+  "campaign_logistics", "endorsements", "personal_context", "other",
+];
+
+// ---------- DATA ----------
+let DATA = null;
+
+async function loadData() {
+  try {
+    const r = await fetch("./data.json", { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    DATA = await r.json();
+  } catch (e) {
+    document.getElementById("said-done-content").textContent = "Could not load data. " + e.message;
+    return false;
+  }
+  return true;
+}
+
+// ---------- HEADER STATS ----------
+function renderHeader() {
+  const m = DATA.meta;
+  let totalPosts = 0, substantive = 0;
+  for (const acc of Object.keys(m.per_account || {})) {
+    totalPosts += m.per_account[acc].total_posts || 0;
+    substantive += (m.per_account[acc].buckets?.substantive) || 0;
+  }
+  document.getElementById("stat-posts").textContent = totalPosts.toLocaleString();
+  document.getElementById("stat-records").textContent = (m.record_count || 0).toLocaleString();
+  document.getElementById("stat-substantive").textContent = substantive.toLocaleString();
+
+  let earliest = null, latest = null;
+  for (const acc of Object.keys(m.per_account || {})) {
+    const e = m.per_account[acc].earliest;
+    const l = m.per_account[acc].latest;
+    if (e && (!earliest || e < earliest)) earliest = e;
+    if (l && (!latest || l > latest)) latest = l;
+  }
+  if (earliest && latest) {
+    document.getElementById("stat-range").textContent =
+      earliest.slice(0, 4) + " – " + latest.slice(0, 4);
+  }
+}
+
+// ---------- RECORD CARD (universal renderer) ----------
+function renderCard(record) {
+  const card = el("div", { class: "record-card kind-" + record.kind });
+
+  // Top meta row: kind tag + topic tag + stance/conditional tag + date
+  const meta = el("div", { class: "record-meta" });
+  meta.appendChild(el("span", { class: "kind-tag" }, record.kind));
+
+  if (record.topic) meta.appendChild(el("span", { class: "topic-tag" }, topicLabel(record.topic)));
+  if (record.kind === "position" && record.stance) {
+    meta.appendChild(el("span", { class: "stance-tag stance-" + record.stance }, record.stance.replace(/_/g, " ")));
+  }
+  if (record.kind === "pledge" && record.conditional_on_election) {
+    meta.appendChild(el("span", { class: "stance-tag stance-conditional" }, "if elected"));
+  }
+  if (record.kind === "action" && record.action_type) {
+    meta.appendChild(el("span", { class: "topic-tag" }, record.action_type.replace(/_/g, " ")));
+  }
+  if (record.kind === "action" && record.outcome) {
+    meta.appendChild(el("span", { class: "stance-tag stance-" + (record.outcome === "passed" || record.outcome === "passed_unanimously" || record.outcome === "completed" ? "supports" : record.outcome === "failed" ? "opposes" : "announces") }, record.outcome.replace(/_/g, " ")));
+  }
+  if (record.kind === "endorsement" && record.direction) {
+    meta.appendChild(el("span", { class: "topic-tag" }, record.direction));
+  }
+  card.appendChild(meta);
+
+  // Headline / summary
+  let headline = "";
+  if (record.kind === "position") headline = record.summary || "";
+  else if (record.kind === "pledge") headline = record.pledge_text || "";
+  else if (record.kind === "action") headline = record.summary || "";
+  else if (record.kind === "endorsement") headline = (record.party_name || "") + (record.party_role ? ` — ${record.party_role}` : "");
+  else if (record.kind === "appearance") headline = record.event_label || "";
+  else if (record.kind === "quote") headline = "“" + (record.quote_text || "") + "”";
+  else if (record.kind === "background_note") headline = record.summary || "";
+  if (headline) card.appendChild(el("div", { class: "record-summary" }, headline));
+
+  // Specifics for pledge / action / appearance
+  if (record.kind === "pledge" && record.specifics) {
+    card.appendChild(el("div", { class: "record-source-quote", style: "font-style:normal;border-left-color:var(--c-accent);" }, record.specifics));
+  }
+  if (record.kind === "action" && record.approximate_date) {
+    card.appendChild(el("div", { style: "font-size:12px;color:var(--c-base-light);margin-bottom:8px;" }, "Action date: " + record.approximate_date));
+  }
+  if (record.kind === "appearance") {
+    const bits = [];
+    if (record.location) bits.push(record.location);
+    if (record.with_persons && record.with_persons.length) bits.push("with " + record.with_persons.join(", "));
+    if (record.topic_focus) bits.push("Focus: " + record.topic_focus);
+    if (bits.length) card.appendChild(el("div", { style: "font-size:13px;color:var(--c-base-light);margin-bottom:8px;line-height:1.5;" }, bits.join(" · ")));
+  }
+  if (record.kind === "endorsement" && record.context) {
+    card.appendChild(el("div", { style: "font-size:13px;color:var(--c-base-light);margin-bottom:8px;" }, record.context));
+  }
+
+  // Source quote (verbatim)
+  if (record.source_quote && record.kind !== "quote") {
+    card.appendChild(el("div", { class: "record-source-quote" }, record.source_quote));
+  }
+
+  // Footer: post date + source link
+  const footer = el("div", { class: "record-footer" });
+  footer.appendChild(el("span", null, fmtDate(record.post_date)));
+  if (record.post_url) {
+    footer.appendChild(el("a", { class: "source-link", href: record.post_url, target: "_blank", rel: "noopener" }, "view source ↗"));
+  }
+  card.appendChild(footer);
+
+  return card;
+}
+
+// ---------- LIST RENDERERS ----------
+function renderRecordList(kind, gridId, filtersId, countId) {
+  const records = DATA.records.filter(r => r.kind === kind);
+
+  // Filter UI
+  const filtersEl = document.getElementById(filtersId);
+  if (filtersEl) {
+    clear(filtersEl);
+    const search = el("input", { type: "text", placeholder: "Search " + kind + "s…" });
+    const topicSel = el("select");
+    topicSel.appendChild(el("option", { value: "" }, "All topics"));
+    const seenTopics = new Set();
+    records.forEach(r => { if (r.topic) seenTopics.add(r.topic); });
+    [...seenTopics].sort().forEach(t => {
+      topicSel.appendChild(el("option", { value: t }, topicLabel(t)));
+    });
+    const reset = el("button", { class: "pill-btn" }, "Reset");
+    filtersEl.appendChild(search);
+    filtersEl.appendChild(topicSel);
+    filtersEl.appendChild(reset);
+
+    function refresh() {
+      const q = (search.value || "").toLowerCase();
+      const t = topicSel.value;
+      const filtered = records.filter(r => {
+        if (t && r.topic !== t) return false;
+        if (q) {
+          const hay = JSON.stringify(r).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      const grid = document.getElementById(gridId);
+      clear(grid);
+      filtered.forEach(r => grid.appendChild(renderCard(r)));
+      const cnt = document.getElementById(countId);
+      if (cnt) cnt.textContent = `${filtered.length} of ${records.length} ${kind}${records.length === 1 ? "" : "s"}`;
+    }
+    search.addEventListener("input", refresh);
+    topicSel.addEventListener("change", refresh);
+    reset.addEventListener("click", () => { search.value = ""; topicSel.value = ""; refresh(); });
+    refresh();
+  } else {
+    // No filter UI — just render all
+    const grid = document.getElementById(gridId);
+    clear(grid);
+    records.forEach(r => grid.appendChild(renderCard(r)));
+    const cnt = document.getElementById(countId);
+    if (cnt) cnt.textContent = `${records.length} ${kind}${records.length === 1 ? "" : "s"}`;
+  }
+}
+
+// ---------- SAID vs DONE ----------
+function renderSaidDone() {
+  const wrap = document.getElementById("said-done-content");
+  clear(wrap);
+
+  const pledges = DATA.records.filter(r => r.kind === "pledge");
+  const actions = DATA.records.filter(r => r.kind === "action");
+
+  // Group by topic
+  const byTopic = {};
+  for (const r of pledges) {
+    if (!r.topic) continue;
+    byTopic[r.topic] = byTopic[r.topic] || { pledges: [], actions: [] };
+    byTopic[r.topic].pledges.push(r);
+  }
+  for (const r of actions) {
+    if (!r.topic) continue;
+    byTopic[r.topic] = byTopic[r.topic] || { pledges: [], actions: [] };
+    byTopic[r.topic].actions.push(r);
+  }
+
+  // Sort topics by total record count (desc)
+  const topics = Object.keys(byTopic)
+    .map(t => ({ t, n: byTopic[t].pledges.length + byTopic[t].actions.length }))
+    .sort((a, b) => b.n - a.n)
+    .map(x => x.t);
+
+  if (topics.length === 0) {
+    wrap.appendChild(el("div", { class: "sd-empty" }, "No pledges or actions extracted yet. Records will appear here as the extraction pipeline completes."));
+    return;
+  }
+
+  topics.forEach(t => {
+    const block = el("div", { class: "sd-topic-block" });
+    block.appendChild(el("h3", null, topicLabel(t)));
+    block.appendChild(el("div", { class: "sd-topic-meta" },
+      `${byTopic[t].pledges.length} pledge${byTopic[t].pledges.length === 1 ? "" : "s"} · ${byTopic[t].actions.length} action${byTopic[t].actions.length === 1 ? "" : "s"}`));
+
+    const cols = el("div", { class: "sd-columns" });
+    const said = el("div");
+    said.appendChild(el("div", { class: "sd-col-header said" }, "Said (Pledges)"));
+    if (byTopic[t].pledges.length === 0) {
+      said.appendChild(el("div", { class: "sd-empty" }, "No pledges on this topic."));
+    } else {
+      const sortedPledges = byTopic[t].pledges.slice().sort((a, b) => (b.post_date || "").localeCompare(a.post_date || ""));
+      sortedPledges.forEach(p => said.appendChild(renderCard(p)));
+    }
+
+    const done = el("div");
+    done.appendChild(el("div", { class: "sd-col-header done" }, "Done (Actions)"));
+    if (byTopic[t].actions.length === 0) {
+      done.appendChild(el("div", { class: "sd-empty" }, "No actions on this topic."));
+    } else {
+      const sortedActions = byTopic[t].actions.slice().sort((a, b) => (b.post_date || "").localeCompare(a.post_date || ""));
+      sortedActions.forEach(a => done.appendChild(renderCard(a)));
+    }
+
+    cols.appendChild(said);
+    cols.appendChild(done);
+    block.appendChild(cols);
+    wrap.appendChild(block);
+  });
+}
+
+// ---------- BY TOPIC ----------
+function renderByTopic() {
+  const grid = document.getElementById("grid-bytopic");
+  const filters = document.getElementById("filters-bytopic");
+  clear(filters);
+
+  const topicSel = el("select");
+  topicSel.appendChild(el("option", { value: "" }, "Choose a topic…"));
+  const counts = {};
+  DATA.records.forEach(r => { if (r.topic) counts[r.topic] = (counts[r.topic] || 0) + 1; });
+  Object.entries(counts).sort((a, b) => b[1] - a[1]).forEach(([t, n]) => {
+    topicSel.appendChild(el("option", { value: t }, `${topicLabel(t)} (${n})`));
+  });
+  filters.appendChild(topicSel);
+
+  const cnt = document.getElementById("count-bytopic");
+  function refresh() {
+    clear(grid);
+    const t = topicSel.value;
+    if (!t) {
+      cnt.textContent = "Choose a topic to see records.";
+      return;
+    }
+    const filtered = DATA.records.filter(r => r.topic === t);
+    cnt.textContent = `${filtered.length} record${filtered.length === 1 ? "" : "s"} on ${topicLabel(t)}`;
+    filtered.forEach(r => grid.appendChild(renderCard(r)));
+  }
+  topicSel.addEventListener("change", refresh);
+  refresh();
+}
+
+// ---------- POSTS NOT SURFACED ----------
+function renderNotSurfaced() {
+  const wrap = document.getElementById("not-surfaced-content");
+  clear(wrap);
+  const cnt = document.getElementById("count-not-surfaced");
+  const skips = DATA.skip_log || [];
+  cnt.textContent = `${skips.length.toLocaleString()} posts filtered as purely personal. Each shows the stated reason.`;
+
+  const table = el("table", { class: "skip-table" });
+  const thead = el("thead");
+  thead.appendChild(el("tr", null,
+    el("th", null, "Date"),
+    el("th", null, "Type"),
+    el("th", null, "Caption excerpt"),
+    el("th", null, "Reason filtered"),
+    el("th", null, "Source")
+  ));
+  table.appendChild(thead);
+  const tbody = el("tbody");
+  skips.slice(0, 500).forEach(s => {  // cap render at 500 to keep DOM responsive
+    tbody.appendChild(el("tr", null,
+      el("td", null, fmtDate(s.date)),
+      el("td", null, s.type || "—"),
+      el("td", null, (s.caption_excerpt || "").slice(0, 140)),
+      el("td", null, s.reason || ""),
+      el("td", null, el("a", { class: "source-link", href: s.url, target: "_blank", rel: "noopener" }, "↗"))
+    ));
+  });
+  table.appendChild(tbody);
+  wrap.appendChild(table);
+
+  if (skips.length > 500) {
+    wrap.appendChild(el("div", { style: "margin-top:12px;color:var(--c-base-light);font-size:13px;" },
+      `Showing first 500 of ${skips.length.toLocaleString()}. Full list available in the public repo.`));
+  }
+}
+
+// ---------- METHODOLOGY ----------
+function renderMethodology() {
+  const wrap = document.getElementById("methodology-content");
+  if (wrap.firstChild) return; // already rendered
+  // Static content for v0; will pull from METHODOLOGY.md in a later build step
+  const sections = [
+    ["Notes on Methodology and Classification",
+      "All records on this site are extracted from public Instagram posts on @bradfordgrams (and, in Phase 2, @beybradford). The pipeline is deliberately conservative — every classification decision is logged with a stated reason and is auditable in the public repository."],
+    ["Triage", "Each post is first reviewed by a cheap classifier (Claude Haiku 4.5) using the post's caption, mentions, hashtags, and location tag. The classifier returns one of three buckets: substantive (gets full extraction), contextual (gets a light character-context note), or skip (purely personal, no civic content). Skip decisions are surfaced in the 'Posts Not Surfaced' tab so the filter is open to scrutiny."],
+    ["Extraction", "Substantive posts that contain video are transcribed locally with whisper or via Deepgram Nova 3, depending on configuration. Caption + transcript are then sent to Claude Opus with a structured tool definition that returns zero or more records of these kinds: position, pledge, action, endorsement, appearance, quote. Every record is required to include a verbatim source_quote field — no paraphrasing, ever."],
+    ["Sourcing", "Every record on this site links back to its original Instagram post (\"view source\"). If a post is later edited or deleted, the snapshot of the caption and quote at extraction time remain on the record. Records carry the model used and the extraction timestamp."],
+    ["Topic taxonomy", "Records are tagged with one or more topics drawn from a fixed vocabulary: housing, transit, safety_crime, taxes_fiscal, parks_environment, infrastructure, civic_engagement, governance_ethics, small_business_economy, social_services, campaign_logistics, endorsements, personal_context, other."],
+    ["Said vs. Done", "Pledges and Actions on the same topic are paired in the Said vs. Done view. No editorial scoring is applied; readers verify each record's source quote and conclude. In Phase 2, the City of Toronto Council voting record will be ingested as an independent verification layer for the Done side of the pairing."],
+    ["Limitations", "Triage misclassifications are possible — that's why every Skip is logged. Whisper and Deepgram are imperfect; transcripts may have minor errors, and the source video is one click away for verification. Captions can be edited by the author after extraction; the source URL shows the current version, while our snapshot preserves the version at extraction time."],
+    ["Open source", "The full pipeline — every prompt, every script, every threshold — lives at github.com/fullstackvibecoder/thebradfordfiles. MIT licensed. Fork it for another candidate or another account."],
+  ];
+  sections.forEach(([h, p]) => {
+    wrap.appendChild(el("h3", null, h));
+    wrap.appendChild(el("p", null, p));
+  });
+}
+
+// ---------- TABS ----------
+function setTab(key) {
+  document.querySelectorAll("nav.tabs button").forEach(b => b.classList.toggle("active", b.dataset.tab === key));
+  document.querySelectorAll("section.view").forEach(s => s.classList.toggle("active", s.id === "view-" + key));
+  if (window.location.hash !== "#" + key) {
+    history.replaceState(null, "", "#" + key);
+  }
+  // Lazy renders (only when first visited)
+  if (key === "methodology") renderMethodology();
+  if (key === "by-topic") renderByTopic();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+document.querySelectorAll("nav.tabs button, [data-tab]").forEach(btn => {
+  btn.addEventListener("click", e => {
+    if (btn.tagName === "A") e.preventDefault();
+    setTab(btn.dataset.tab);
+  });
+});
+
+// ---------- INIT ----------
+(async () => {
+  const ok = await loadData();
+  if (!ok) return;
+  renderHeader();
+  renderSaidDone();
+  renderRecordList("position", "grid-positions", "filters-positions", "count-positions");
+  renderRecordList("pledge", "grid-pledges", "filters-pledges", "count-pledges");
+  renderRecordList("action", "grid-actions", "filters-actions", "count-actions");
+  renderRecordList("endorsement", "grid-endorsements", null, "count-endorsements");
+  renderRecordList("appearance", "grid-appearances", "filters-appearances", "count-appearances");
+  renderRecordList("quote", "grid-quotes", null, "count-quotes");
+  renderNotSurfaced();
+  // Hash-based tab on first load
+  const initial = (window.location.hash || "").replace(/^#/, "");
+  if (initial) setTab(initial);
+})();
+
+window.addEventListener("hashchange", () => {
+  const h = (window.location.hash || "").replace(/^#/, "");
+  if (h) setTab(h);
+});
+</script>
+
+</body>
+</html>
