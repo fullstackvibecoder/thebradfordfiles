@@ -220,6 +220,40 @@
     border-bottom: 1px solid var(--c-border);
     margin-bottom: 24px;
   }
+  /* Candidate context — neutral grey accent, no editorial color */
+  .candidate-context {
+    background: white;
+    border: 1px solid var(--c-border-strong);
+    border-left: 3px solid var(--c-base-light);
+    padding: 18px 22px;
+    margin-bottom: 26px;
+    max-width: 920px;
+  }
+  .candidate-context-eyebrow {
+    font: 700 11px/1 "Public Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-base-light);
+    margin-bottom: 10px;
+  }
+  .candidate-context-body {
+    font: 400 14px/1.6 "Public Sans", sans-serif;
+    color: var(--c-base);
+    margin-bottom: 12px;
+  }
+  .candidate-context-body strong { color: var(--c-primary-dark); font-weight: 600; }
+  .candidate-context-frame {
+    font: italic 400 13px/1.55 "Public Sans", sans-serif;
+    color: var(--c-base-light);
+    border-top: 1px solid var(--c-border);
+    padding-top: 12px;
+    margin-bottom: 8px;
+  }
+  .candidate-context-source {
+    font-size: 11.5px;
+    color: var(--c-base-lighter);
+  }
+  .candidate-context-source a { color: var(--c-base-light); }
   .view-header h2 {
     font: 700 28px/1.2 "Source Serif Pro", Georgia, serif;
     color: var(--c-primary-dark);
@@ -538,7 +572,7 @@
       <div class="brand-overline">Public Record · The 416</div>
       <div class="brand-title">The Bradford Files</div>
       <div class="brand-tagline" id="brand-tagline">
-        A sourced record of Brad Bradford's public political content on Instagram — positions, pledges, council actions, endorsements, and appearances. From the Bluffs to the Junction, from Agincourt to Etobicoke.
+        Brad Bradford — Toronto City Councillor for Beaches–East York and 2026 mayoral candidate. A sourced record of his public political content on Instagram: positions, pledges, council actions, endorsements, and appearances.
       </div>
     </div>
     <div class="header-stats" id="header-stats">
@@ -590,6 +624,18 @@
 </section>
 
 <section class="view active" id="view-said-done">
+  <aside class="candidate-context" aria-label="About this candidate">
+    <div class="candidate-context-eyebrow">About this candidate</div>
+    <p class="candidate-context-body">
+      Brad Bradford is the city councillor for <strong>Beaches–East York</strong> (elected 2018) and a former city planner. In the <strong>2023 mayoral byelection he placed 8th</strong>, with approximately 1.5% of the vote (~9,000 ballots). He officially declared his <strong>2026 mayoral candidacy on May 1, 2026</strong>, among the first wave of candidates to file. His campaign platform centres on what he calls <strong>"the three C's": crime, congestion, and cost of living</strong>.
+    </p>
+    <p class="candidate-context-frame">
+      This site documents his public political content. It does not assess his electoral viability and does not rank him among other candidates.
+    </p>
+    <div class="candidate-context-source">
+      Sources: <a href="https://www.cbc.ca/news/canada/toronto" target="_blank" rel="noopener">CBC News (May 1, 2026)</a> · 2023 City of Toronto mayoral byelection results
+    </div>
+  </aside>
   <div class="view-header">
     <h2>Said vs. Done</h2>
     <div class="lede">Pledges (forward-looking commitments) paired with Actions (council motions, votes, completed projects) on the same topic. Sorted by topic frequency. Every record links to its source post — readers verify and conclude.</div>
