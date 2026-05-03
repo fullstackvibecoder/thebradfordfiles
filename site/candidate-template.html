@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Bradford Files · Independent record of Brad Bradford's public political content</title>
+<title>__FILES_LABEL__ &middot; The T.O. Mayoral Files</title>
 <meta name="description" content="An independent civic transparency record of Brad Bradford's public Instagram political content. Every record sourced. Not affiliated with the candidate or campaign.">
 <meta name="theme-color" content="#112e51">
 
@@ -570,10 +570,8 @@
   <div class="site-header-inner">
     <div class="brand-block">
       <div class="brand-overline">Public Record · The 416</div>
-      <div class="brand-title">The Bradford Files</div>
-      <div class="brand-tagline" id="brand-tagline">
-        Brad Bradford — Toronto City Councillor for Beaches–East York and 2026 mayoral candidate. A sourced record of his public political content on Instagram: positions, pledges, council actions, endorsements, and appearances.
-      </div>
+      <div class="brand-title">__FILES_LABEL__</div>
+      <div class="brand-tagline" id="brand-tagline">__BRAND_TAGLINE__</div>
     </div>
     <div class="header-stats" id="header-stats">
       <div><div class="stat-num" id="stat-posts">…</div><div class="stat-lbl">Posts indexed</div></div>
@@ -826,7 +824,7 @@ let DATA = null;
 
 async function loadData() {
   try {
-    const r = await fetch("./data.json", { cache: "no-store" });
+    const r = await fetch("__CANDIDATE_DOSSIER__", { cache: "no-store" });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     DATA = await r.json();
   } catch (e) {
