@@ -19,11 +19,12 @@
 
 <style>
   :root {
+    /* Toronto palette: navy from city flag, TTC red as accent, subway line colors as dividers */
     --c-bg: #ffffff;
     --c-bg-alt: #f7f8fa;
     --c-bg-cool: #eef2f7;
     --c-primary: #1a4480;
-    --c-primary-dark: #112e51;
+    --c-primary-dark: #0d2f5c;     /* deeper navy, more "City of Toronto" */
     --c-primary-vivid: #0050d8;
     --c-primary-light: #aacdec;
     --c-base: #1b1b1b;
@@ -31,12 +32,18 @@
     --c-base-lighter: #71767a;
     --c-border: #dfe1e2;
     --c-border-strong: #c9c9c9;
-    --c-accent: #b58a32;
+    --c-accent: #da291c;            /* TTC red — replaces federal gold */
+    --c-accent-dark: #a8221b;
     --c-red: #b50909;
     --c-green: #00a91c;
     --c-orange: #e66f0e;
     --c-cyan: #009ec1;
     --c-purple: #54278f;
+    /* TTC subway line colors for accent stripe */
+    --ttc-line1: #ffce00;          /* Yonge–University (yellow) */
+    --ttc-line2: #00923f;          /* Bloor–Danforth (green) */
+    --ttc-line3: #00a4e4;          /* Scarborough RT (light blue) — RIP, but represented */
+    --ttc-line4: #a21a68;          /* Sheppard (purple) */
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -64,8 +71,30 @@
   .site-header {
     background: var(--c-primary-dark);
     color: white;
-    border-bottom: 4px solid var(--c-accent);
+    position: relative;
+    overflow: hidden;
   }
+  /* CN Tower silhouette decorating the right side of the header */
+  .cn-tower {
+    position: absolute;
+    right: max(24px, 4vw);
+    bottom: 0;
+    height: 105%;
+    width: auto;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+  /* Subway-line accent stripe — the four TTC line colors + TTC red below the header */
+  .subway-stripe {
+    height: 6px;
+    display: flex;
+  }
+  .subway-stripe span { flex: 1; }
+  .subway-stripe .l1 { background: var(--ttc-line1); }
+  .subway-stripe .l2 { background: var(--ttc-line2); }
+  .subway-stripe .l3 { background: var(--ttc-line3); }
+  .subway-stripe .l4 { background: var(--ttc-line4); }
+  .subway-stripe .ttc { background: var(--c-accent); flex: 1.5; }
   .site-header-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -143,6 +172,63 @@
     color: white;
     border-bottom-color: var(--c-accent);
     background: rgba(0,0,0,0.18);
+  }
+  /* Scarborough Watch tab — give it a quiet TTC-line-3 accent (the
+     "Scarborough RT" line color). Light-blue dot before the label. */
+  .tabs button.tab-scarborough::before {
+    content: "";
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--ttc-line3);
+    margin-right: 7px;
+    vertical-align: 1px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
+  }
+  .tabs button.tab-scarborough.active { background: rgba(0,164,228,0.20); }
+  /* Scarborough Watch view styling */
+  .scarb-summary {
+    background: white;
+    border: 1px solid var(--c-border);
+    border-left: 4px solid var(--ttc-line3);
+    padding: 18px 22px;
+    margin-bottom: 22px;
+  }
+  .scarb-summary h3 {
+    font: 700 16px/1.2 "Source Serif Pro", Georgia, serif;
+    color: var(--c-primary-dark);
+    margin-bottom: 10px;
+  }
+  .scarb-summary .scarb-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .scarb-stat .num {
+    font: 700 22px/1 "Source Serif Pro", Georgia, serif;
+    color: var(--ttc-line3);
+  }
+  .scarb-stat .lbl {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--c-base-light);
+    margin-top: 4px;
+  }
+  .scarb-neighborhoods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .scarb-hood-chip {
+    background: rgba(0,164,228,0.08);
+    border: 1px solid var(--ttc-line3);
+    color: var(--c-primary-dark);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
   }
 
   .container {
@@ -448,26 +534,58 @@
 </div>
 
 <header class="site-header">
+  <!-- CN Tower silhouette, decorative -->
+  <svg class="cn-tower" viewBox="0 0 100 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- antenna -->
+    <rect x="49" y="0" width="2" height="60" fill="white"/>
+    <!-- mast above SkyPod -->
+    <rect x="48" y="60" width="4" height="30" fill="white"/>
+    <!-- SkyPod (small disc near top) -->
+    <ellipse cx="50" cy="92" rx="9" ry="3.5" fill="white"/>
+    <!-- column -->
+    <rect x="46" y="92" width="8" height="50" fill="white"/>
+    <!-- Main observation pod (the iconic doughnut) -->
+    <ellipse cx="50" cy="148" rx="18" ry="6" fill="white"/>
+    <ellipse cx="50" cy="153" rx="18" ry="6" fill="white"/>
+    <!-- shaft below pod -->
+    <polygon points="48,158 52,158 56,250 44,250" fill="white"/>
+    <!-- base widening -->
+    <polygon points="44,250 56,250 64,278 36,278" fill="white"/>
+    <!-- Adjacent skyline silhouettes (suggestion of bank towers / financial district) -->
+    <rect x="10" y="200" width="14" height="78" fill="white" opacity="0.7"/>
+    <rect x="26" y="220" width="10" height="58" fill="white" opacity="0.6"/>
+    <rect x="68" y="190" width="12" height="88" fill="white" opacity="0.7"/>
+    <rect x="82" y="215" width="14" height="63" fill="white" opacity="0.6"/>
+  </svg>
   <div class="site-header-inner">
     <div class="brand-block">
-      <div class="brand-overline">Public Record</div>
+      <div class="brand-overline">Public Record · The 416</div>
       <div class="brand-title">The Bradford Files</div>
       <div class="brand-tagline" id="brand-tagline">
-        A searchable, sourced record of Brad Bradford's public political content on Instagram, organized into structured records: positions, pledges, council actions, endorsements, and appearances.
+        A sourced record of Brad Bradford's public political content on Instagram — positions, pledges, council actions, endorsements, and appearances. From the Bluffs to the Junction, from Agincourt to Etobicoke.
       </div>
     </div>
     <div class="header-stats" id="header-stats">
       <div><div class="stat-num" id="stat-posts">…</div><div class="stat-lbl">Posts indexed</div></div>
       <div><div class="stat-num" id="stat-records">…</div><div class="stat-lbl">Structured records</div></div>
       <div><div class="stat-num" id="stat-substantive">…</div><div class="stat-lbl">Substantive posts</div></div>
-      <div><div class="stat-num" id="stat-range">…</div><div class="stat-lbl">Date range</div></div>
+      <div><div class="stat-num" id="stat-scarborough">…</div><div class="stat-lbl">Scarborough mentions</div></div>
     </div>
   </div>
 </header>
+<!-- TTC subway-line accent stripe -->
+<div class="subway-stripe" aria-hidden="true">
+  <span class="l1"></span>
+  <span class="l2"></span>
+  <span class="l3"></span>
+  <span class="l4"></span>
+  <span class="ttc"></span>
+</div>
 
 <nav class="tabs" role="navigation" aria-label="Section navigation">
   <div class="tabs-inner">
     <button data-tab="said-done" class="active">Said vs. Done</button>
+    <button data-tab="scarborough" class="tab-scarborough">Scarborough Watch</button>
     <button data-tab="positions">Positions</button>
     <button data-tab="pledges">Pledges</button>
     <button data-tab="actions">Actions</button>
@@ -481,6 +599,18 @@
 </nav>
 
 <div class="container">
+
+<section class="view" id="view-scarborough">
+  <div class="view-header">
+    <h2>Scarborough Watch</h2>
+    <div class="lede">
+      Scarborough is the eastern third of Toronto, home to roughly 630,000 residents — but it's chronically underrepresented at City Hall and in mayoral coverage. This view filters every record that mentions Scarborough or its neighbourhoods, so the candidate's attention to the borough is measurable, not assumed.
+    </div>
+  </div>
+  <div id="scarb-summary"></div>
+  <div class="meta-row" id="count-scarborough"></div>
+  <div class="records-grid" id="grid-scarborough"></div>
+</section>
 
 <section class="view active" id="view-said-done">
   <div class="view-header">
@@ -583,7 +713,7 @@
     <p>An independent civic-transparency project. Not affiliated with the candidate, his campaign, or any political party. No financial relationship with the candidate.</p>
     <p>Every record on this site is sourced to a specific public Instagram post; click the source link on any record to verify against the original. If you believe a record is inaccurate or misclassified, <a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues" target="_blank" rel="noopener">open an issue on the public repository</a>.</p>
     <div class="footer-credits">
-      Built by <a href="https://bottlenecklabs.ai" target="_blank" rel="noopener">BottleneckLabs</a> · Open source at <a href="https://github.com/fullstackvibecoder/thebradfordfiles" target="_blank" rel="noopener">github.com/fullstackvibecoder/thebradfordfiles</a> · MIT licensed
+      Built in the 6 by <a href="https://bottlenecklabs.ai" target="_blank" rel="noopener">BottleneckLabs</a> · Open source at <a href="https://github.com/fullstackvibecoder/thebradfordfiles" target="_blank" rel="noopener">github.com/fullstackvibecoder/thebradfordfiles</a> · MIT licensed · From Scarborough to Etobicoke and back
     </div>
   </div>
 </footer>
@@ -634,6 +764,40 @@ const TOPICS = [
   "campaign_logistics", "endorsements", "personal_context", "other",
 ];
 
+// Scarborough neighbourhoods + reference to detect borough-relevant records
+const SCARBOROUGH_HOODS = [
+  "Scarborough", "Agincourt", "Malvern", "Cliffside", "Cliffcrest",
+  "Guildwood", "Rouge", "West Hill", "Birch Cliff", "Birchcliff",
+  "Wexford", "Bendale", "Highland Creek", "Morningside", "Port Union",
+  "Woburn", "Eglinton East", "Centennial", "Dorset Park", "Tam O'Shanter",
+  "Steeles", "L'Amoreaux", "Lamoreaux", "Ionview", "Kennedy Park",
+  "Oakridge", "Clairlea", "Golden Mile", "Pleasant View", "Henry Farm",
+  "Scarborough Village", "Scarborough Junction", "Scarborough City Centre",
+];
+const SCARB_RE = new RegExp("\\b(" + SCARBOROUGH_HOODS.map(h => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|") + ")\\b", "i");
+
+function isScarborough(record) {
+  const blob = [
+    record.location, record.neighborhood, record.summary, record.pledge_text,
+    record.specifics, record.source_quote, record.event_label, record.topic_focus,
+    record.context, record.party_role,
+  ].filter(Boolean).join(" ");
+  return SCARB_RE.test(blob);
+}
+
+function detectedScarbHoods(record) {
+  const blob = [
+    record.location, record.neighborhood, record.summary, record.pledge_text,
+    record.specifics, record.source_quote, record.event_label, record.topic_focus,
+  ].filter(Boolean).join(" ");
+  const found = new Set();
+  for (const h of SCARBOROUGH_HOODS) {
+    const re = new RegExp("\\b" + h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+    if (re.test(blob)) found.add(h);
+  }
+  return [...found];
+}
+
 // ---------- DATA ----------
 let DATA = null;
 
@@ -661,17 +825,10 @@ function renderHeader() {
   document.getElementById("stat-records").textContent = (m.record_count || 0).toLocaleString();
   document.getElementById("stat-substantive").textContent = substantive.toLocaleString();
 
-  let earliest = null, latest = null;
-  for (const acc of Object.keys(m.per_account || {})) {
-    const e = m.per_account[acc].earliest;
-    const l = m.per_account[acc].latest;
-    if (e && (!earliest || e < earliest)) earliest = e;
-    if (l && (!latest || l > latest)) latest = l;
-  }
-  if (earliest && latest) {
-    document.getElementById("stat-range").textContent =
-      earliest.slice(0, 4) + " – " + latest.slice(0, 4);
-  }
+  // Scarborough mention count goes in the fourth header stat
+  const scarbCount = (DATA.records || []).filter(isScarborough).length;
+  const scarbEl = document.getElementById("stat-scarborough");
+  if (scarbEl) scarbEl.textContent = scarbCount.toLocaleString();
 }
 
 // ---------- RECORD CARD (universal renderer) ----------
@@ -892,6 +1049,73 @@ function renderByTopic() {
   refresh();
 }
 
+// ---------- SCARBOROUGH WATCH ----------
+function renderScarborough() {
+  const summary = document.getElementById("scarb-summary");
+  const grid = document.getElementById("grid-scarborough");
+  const cnt = document.getElementById("count-scarborough");
+  clear(summary); clear(grid);
+
+  const scarb = (DATA.records || []).filter(isScarborough);
+  const allHoods = new Map();  // hood → count
+  for (const r of scarb) {
+    for (const h of detectedScarbHoods(r)) {
+      allHoods.set(h, (allHoods.get(h) || 0) + 1);
+    }
+  }
+
+  // Compute share of scarb records vs total
+  const total = (DATA.records || []).length;
+  const pct = total ? Math.round(100 * scarb.length / total) : 0;
+
+  // Compute kind breakdown
+  const kindCounts = {};
+  for (const r of scarb) kindCounts[r.kind] = (kindCounts[r.kind] || 0) + 1;
+
+  // Render the summary block
+  const block = el("div", { class: "scarb-summary" });
+  block.appendChild(el("h3", null, "Scarborough on the record"));
+  block.appendChild(el("div", { style: "font-size:13.5px;color:var(--c-base-light);line-height:1.55;" },
+    `${scarb.length} of ${total} records (${pct}%) reference Scarborough or one of its neighbourhoods. ` +
+    `Includes pledges on Scarborough transit, council actions affecting eastern wards, appearances in the borough, ` +
+    `and stated positions on issues that disproportionately affect Scarborough residents.`));
+
+  // Stat row
+  const stats = el("div", { class: "scarb-stats" });
+  const stat = (n, l) => {
+    const w = el("div", { class: "scarb-stat" });
+    w.appendChild(el("div", { class: "num" }, String(n)));
+    w.appendChild(el("div", { class: "lbl" }, l));
+    return w;
+  };
+  stats.appendChild(stat(kindCounts.position || 0, "Positions"));
+  stats.appendChild(stat(kindCounts.pledge || 0, "Pledges"));
+  stats.appendChild(stat(kindCounts.action || 0, "Actions"));
+  stats.appendChild(stat(kindCounts.appearance || 0, "Appearances"));
+  stats.appendChild(stat(allHoods.size, "Neighbourhoods cited"));
+  block.appendChild(stats);
+
+  // Hood chips
+  if (allHoods.size) {
+    block.appendChild(el("div", { style: "margin-top:14px;font-size:11px;color:var(--c-base-light);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;" }, "Neighbourhoods referenced"));
+    const chips = el("div", { class: "scarb-neighborhoods" });
+    [...allHoods.entries()].sort((a, b) => b[1] - a[1]).forEach(([h, n]) => {
+      chips.appendChild(el("span", { class: "scarb-hood-chip" }, `${h} · ${n}`));
+    });
+    block.appendChild(chips);
+  }
+  summary.appendChild(block);
+
+  // Records grid (sorted newest-first)
+  if (scarb.length === 0) {
+    cnt.textContent = "No Scarborough-tagged records yet — extraction is still in progress.";
+    return;
+  }
+  cnt.textContent = `${scarb.length} record${scarb.length === 1 ? "" : "s"} reference Scarborough.`;
+  scarb.slice().sort((a, b) => (b.post_date || "").localeCompare(a.post_date || ""))
+    .forEach(r => grid.appendChild(renderCard(r)));
+}
+
 // ---------- POSTS NOT SURFACED ----------
 function renderNotSurfaced() {
   const wrap = document.getElementById("not-surfaced-content");
@@ -961,6 +1185,7 @@ function setTab(key) {
   // Lazy renders (only when first visited)
   if (key === "methodology") renderMethodology();
   if (key === "by-topic") renderByTopic();
+  if (key === "scarborough") renderScarborough();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
