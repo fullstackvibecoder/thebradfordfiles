@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Methodology &middot; The T.O. Mayoral Files</title><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="font-family:system-ui,sans-serif;max-width:760px;margin:60px auto;padding:0 24px;color:#1b1b1b;line-height:1.65">
+<a href="/" style="color:#0050d8">&larr; Back to Candidates</a>
+<h1 style="font-family:Georgia,serif;color:#0d2f5c;margin-top:24px">Methodology</h1>
+<p>This page summarises the extraction methodology. Full version in <a href="https://github.com/fullstackvibecoder/thebradfordfiles/blob/main/METHODOLOGY.md">METHODOLOGY.md</a>.</p>
+<h2>Pipeline</h2>
+<ol>
+<li><strong>Triage</strong>&mdash;Claude Haiku 4.5 reads each post's caption and assigns a bucket (substantive / contextual / skip) with a stated reason.</li>
+<li><strong>Extraction</strong>&mdash;Claude Opus 4.7 reads substantive posts (with audio transcripts via Deepgram) and emits structured records (positions, pledges, actions, endorsements, appearances, quotes).</li>
+<li><strong>Verification</strong>&mdash;Action records are cross-referenced against the City of Toronto's public council voting record.</li>
+</ol>
+<h2>Equal-billing rules</h2>
+<ul><li>Candidates listed alphabetically by surname.</li><li>Identical fields shown for every candidate.</li><li>No ranking, no editorial weighting.</li><li>"Awaiting declaration" is a tracked state.</li></ul>
+<h2>Corrections</h2>
+<p><a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues">Open an issue on GitHub</a> if you spot an error.</p>
+</body></html>
