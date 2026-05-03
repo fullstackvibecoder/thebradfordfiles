@@ -46,11 +46,16 @@ load_dotenv(ROOT / ".env")
 
 DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
-TRIAGE_FILE = DATA_DIR / "triage.jsonl"
-POSTS_FILE = DATA_DIR / "posts.jsonl"
 
-ACCOUNT = "bradfordgrams"
+DEFAULT_ACCOUNT = "bradfordgrams"
 HAIKU_MODEL = "claude-haiku-4-5"
+
+
+def account_paths(account: str) -> tuple[Path, Path, Path]:
+    """Return (triage_file, posts_file, account_dir) — namespaced per account."""
+    acc_dir = DATA_DIR / account
+    acc_dir.mkdir(exist_ok=True)
+    return acc_dir / "triage.jsonl", acc_dir / "posts.jsonl", acc_dir
 
 # Topic vocabulary — keep stable across runs so extraction can group by topic
 TOPICS = [
@@ -345,6 +350,9 @@ def parse_args() -> argparse.Namespace:
                    help="only process posts on or after this ISO date (YYYY-MM-DD)")
     p.add_argument("--dry-run", action="store_true",
                    help="enumerate + write posts.jsonl, but skip the Claude triage call")
+    p.add_argument("--account", type=str, default=DEFAULT_ACCOUNT,
+                   help=f"Instagram handle to triage (default: {DEFAULT_ACCOUNT}). "
+                        f"Data is written to data/<account>/")
     return p.parse_args()
 
 
@@ -355,19 +363,23 @@ def main() -> int:
         log("FATAL: ANTHROPIC_API_KEY not set in environment / .env")
         return 1
 
+    account = args.account
+    triage_file, posts_file, _acc_dir = account_paths(account)
+    log(f"account: @{account}  ·  data dir: {_acc_dir.relative_to(ROOT)}/")
+
     client = Anthropic()
     cl = get_client()
 
-    log(f"loading profile @{ACCOUNT}")
-    user_id = cl.user_id_from_username(ACCOUNT)
+    log(f"loading profile @{account}")
+    user_id = cl.user_id_from_username(account)
     user_info = cl.user_info(user_id)
     log(
         f"profile: {user_info.full_name} · {user_info.media_count:,} posts · "
         f"{user_info.follower_count:,} followers"
     )
 
-    seen_posts = existing_shortcodes(POSTS_FILE)
-    seen_triage = existing_shortcodes(TRIAGE_FILE)
+    seen_posts = existing_shortcodes(posts_file)
+    seen_triage = existing_shortcodes(triage_file)
     log(f"already on file: {len(seen_posts):,} posts, {len(seen_triage):,} triaged")
 
     since_dt = None
@@ -423,7 +435,7 @@ def main() -> int:
             continue
 
         if media.code not in seen_posts:
-            append_jsonl(POSTS_FILE, rec)
+            append_jsonl(posts_file, rec)
             seen_posts.add(media.code)
 
         if args.dry_run:
@@ -449,7 +461,7 @@ def main() -> int:
             "triaged_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "model": HAIKU_MODEL,
         }
-        append_jsonl(TRIAGE_FILE, triage_row)
+        append_jsonl(triage_file, triage_row)
         seen_triage.add(rec["shortcode"])
 
         bucket = triage.get("bucket", "skip")
@@ -482,7 +494,7 @@ def main() -> int:
     log(f"  contextual:  {counts['contextual']}")
     log(f"  skip:        {counts['skip']}")
     log(f"  errors:      {counts['errors']}")
-    log(f"output: {TRIAGE_FILE.relative_to(ROOT)}")
+    log(f"output: {triage_file.relative_to(ROOT)}")
     return 0
 
 

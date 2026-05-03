@@ -50,16 +50,27 @@ load_dotenv(ROOT / ".env")
 
 DATA_DIR = ROOT / "data"
 DATA_DIR.mkdir(exist_ok=True)
-TRIAGE_FILE = DATA_DIR / "triage.jsonl"
-POSTS_FILE = DATA_DIR / "posts.jsonl"
-RECORDS_FILE = DATA_DIR / "records.jsonl"
-EXTRACTED_FILE = DATA_DIR / "extracted.jsonl"   # one row per post processed (success or no-records)
 SETTINGS_FILE = DATA_DIR / ".ig-session.json"
 
 MEDIA_DIR = ROOT / "media"
 MEDIA_DIR.mkdir(exist_ok=True)
 TRANSCRIPTS_DIR = ROOT / "transcripts"
 TRANSCRIPTS_DIR.mkdir(exist_ok=True)
+
+DEFAULT_ACCOUNT = "bradfordgrams"
+
+
+def account_paths(account: str) -> dict:
+    """Return all account-namespaced paths."""
+    acc_dir = DATA_DIR / account
+    acc_dir.mkdir(exist_ok=True)
+    return {
+        "triage": acc_dir / "triage.jsonl",
+        "posts": acc_dir / "posts.jsonl",
+        "records": acc_dir / "records.jsonl",
+        "extracted": acc_dir / "extracted.jsonl",
+        "dir": acc_dir,
+    }
 
 OPUS_MODEL = "claude-opus-4-7"
 HAIKU_MODEL = "claude-haiku-4-5"
@@ -435,9 +446,8 @@ def append_jsonl(path: Path, row: dict) -> None:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
-def already_extracted_shortcodes() -> set[str]:
-    out = {row["shortcode"] for row in load_jsonl(EXTRACTED_FILE) if "shortcode" in row}
-    return out
+def already_extracted_shortcodes(extracted_file: Path) -> set[str]:
+    return {row["shortcode"] for row in load_jsonl(extracted_file) if "shortcode" in row}
 
 
 # ---------------------------------------------------------------------------
@@ -454,6 +464,9 @@ def parse_args() -> argparse.Namespace:
                    help="skip whisper transcription (caption-only extraction)")
     p.add_argument("--shortcode", type=str, default=None,
                    help="extract a single post by shortcode (debugging)")
+    p.add_argument("--account", type=str, default=DEFAULT_ACCOUNT,
+                   help=f"Instagram handle whose triage/posts to extract from "
+                        f"(default: {DEFAULT_ACCOUNT}). Reads/writes data/<account>/")
     return p.parse_args()
 
 
@@ -463,13 +476,17 @@ def main() -> int:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         log("FATAL: ANTHROPIC_API_KEY missing")
         return 1
-    if not TRIAGE_FILE.exists():
-        log(f"FATAL: triage file missing — run scripts/triage.py first")
+
+    paths = account_paths(args.account)
+    log(f"account: @{args.account}  ·  data dir: {paths['dir'].relative_to(ROOT)}/")
+
+    if not paths["triage"].exists():
+        log(f"FATAL: triage file missing — run scripts/triage.py --account {args.account} first")
         return 1
 
-    triages = load_jsonl(TRIAGE_FILE)
-    posts_by_code = {row["shortcode"]: row for row in load_jsonl(POSTS_FILE)}
-    extracted = already_extracted_shortcodes()
+    triages = load_jsonl(paths["triage"])
+    posts_by_code = {row["shortcode"]: row for row in load_jsonl(paths["posts"])}
+    extracted = already_extracted_shortcodes(paths["extracted"])
     log(f"triage rows: {len(triages):,} · posts: {len(posts_by_code):,} · already extracted: {len(extracted):,}")
 
     # Filter to candidates
@@ -518,7 +535,12 @@ def main() -> int:
             f"{'video' if is_video else 'still'}{' (transcribe)' if needs_transcript and not args.no_transcribe else ''}")
 
         transcript = None
-        if bucket == "substantive" and is_video and needs_transcript and not args.no_transcribe:
+        # Belt-and-suspenders: transcribe ALL substantive videos, regardless of
+        # whether triage flagged needs_transcript=true. Whisper is local + free
+        # in compute terms; closes the "what did the speaker add beyond the
+        # caption" gap. Contextual videos still skip whisper since they only
+        # get a light Haiku character-note extraction.
+        if bucket == "substantive" and is_video and not args.no_transcribe:
             if cl is None:
                 cl = get_client()
             audio = download_audio(cl, sc, date_iso)
@@ -546,7 +568,7 @@ def main() -> int:
                             "source_text": "transcript+caption" if transcript else "caption",
                             **item,
                         }
-                        append_jsonl(RECORDS_FILE, record)
+                        append_jsonl(paths["records"], record)
                         records_this_post += 1
             elif bucket == "contextual":
                 result = extract_contextual(post, client)
@@ -561,7 +583,7 @@ def main() -> int:
                         "source_text": "caption",
                         **result,
                     }
-                    append_jsonl(RECORDS_FILE, record)
+                    append_jsonl(paths["records"], record)
                     records_this_post += 1
         except Exception as e:
             log(f"  extraction error: {e!r}")
@@ -570,7 +592,7 @@ def main() -> int:
             continue
 
         # Mark as completed (even if zero records — so we don't retry)
-        append_jsonl(EXTRACTED_FILE, {
+        append_jsonl(paths["extracted"], {
             "shortcode": sc,
             "post_date": date_iso,
             "bucket": bucket,
@@ -594,7 +616,7 @@ def main() -> int:
     log(f"  records written: {counts['records']}")
     log(f"  videos transcribed: {counts['videos_transcribed']}")
     log(f"  errors: {counts['errors']}")
-    log(f"output: {RECORDS_FILE.relative_to(ROOT)}")
+    log(f"output: {paths['records'].relative_to(ROOT)}")
     return 0
 
 
