@@ -10,8 +10,8 @@ data/.ig-session.json
 media/
 audio/
 
-# Transcripts can be large; safe to commit, but exclude work-in-progress
-transcripts/.partial/
+# Generated transcripts (regenerated from cached audio)
+transcripts/
 
 # Pipeline logs
 *.log
@@ -37,3 +37,7 @@ node_modules/
 *.swp
 *~
 .vercel
+.superpowers/
+
+# Council voting record raw source files (large; re-derive with ingest_votes.py)
+City Council Member Voting Record 2006-2026/
