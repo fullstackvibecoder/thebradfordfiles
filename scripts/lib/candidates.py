@@ -30,10 +30,15 @@ def load_all_candidates() -> list[dict]:
 
 
 def load_candidate(handle: str) -> dict | None:
+    """Load a single candidate manifest by handle.
+    Returns None if the file is missing or contains malformed JSON."""
     manifest_path = DATA_DIR / handle / "candidate.json"
     if not manifest_path.exists():
         return None
-    return json.loads(manifest_path.read_text())
+    try:
+        return json.loads(manifest_path.read_text())
+    except json.JSONDecodeError:
+        return None
 
 
 def alias_handles_for(handle: str) -> list[str]:

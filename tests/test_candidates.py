@@ -50,3 +50,16 @@ def test_load_all_candidates_sorts_alphabetically_by_surname(tmp_path, monkeypat
     monkeypatch.setattr(candidates, "DATA_DIR", tmp_path)
     surnames = [c["surname"] for c in candidates.load_all_candidates()]
     assert surnames == ["Bradford", "Brown", "Chow"]
+
+
+def test_load_candidate_returns_none_on_malformed_json(tmp_path, monkeypatch):
+    cand = tmp_path / "bradfordgrams"
+    cand.mkdir()
+    (cand / "candidate.json").write_text("{ not valid json")
+    monkeypatch.setattr(candidates, "DATA_DIR", tmp_path)
+    assert candidates.load_candidate("bradfordgrams") is None
+
+
+def test_load_candidate_returns_none_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(candidates, "DATA_DIR", tmp_path)
+    assert candidates.load_candidate("nonexistent") is None
