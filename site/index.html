@@ -173,63 +173,39 @@
     border-bottom-color: var(--c-accent);
     background: rgba(0,0,0,0.18);
   }
-  /* Scarborough Watch tab — give it a quiet TTC-line-3 accent (the
-     "Scarborough RT" line color). Light-blue dot before the label. */
-  .tabs button.tab-scarborough::before {
-    content: "";
-    display: inline-block;
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--ttc-line3);
-    margin-right: 7px;
-    vertical-align: 1px;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
-  }
-  .tabs button.tab-scarborough.active { background: rgba(0,164,228,0.20); }
-  /* Scarborough Watch view styling */
-  .scarb-summary {
+  /* Neighbourhood view — generic chip style for all Toronto neighbourhoods */
+  .hood-summary {
     background: white;
     border: 1px solid var(--c-border);
-    border-left: 4px solid var(--ttc-line3);
-    padding: 18px 22px;
-    margin-bottom: 22px;
+    border-left: 4px solid var(--c-primary);
+    padding: 16px 20px;
+    margin-bottom: 18px;
   }
-  .scarb-summary h3 {
-    font: 700 16px/1.2 "Source Serif Pro", Georgia, serif;
+  .hood-summary h3 {
+    font: 700 15px/1.2 "Source Serif Pro", Georgia, serif;
     color: var(--c-primary-dark);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
-  .scarb-summary .scarb-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 14px;
-    margin-top: 12px;
-  }
-  .scarb-stat .num {
-    font: 700 22px/1 "Source Serif Pro", Georgia, serif;
-    color: var(--ttc-line3);
-  }
-  .scarb-stat .lbl {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--c-base-light);
-    margin-top: 4px;
-  }
-  .scarb-neighborhoods {
+  .hood-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
-  .scarb-hood-chip {
-    background: rgba(0,164,228,0.08);
-    border: 1px solid var(--ttc-line3);
+  .hood-chip {
+    background: var(--c-bg-cool);
+    border: 1px solid var(--c-primary-light);
     color: var(--c-primary-dark);
     padding: 4px 10px;
     font-size: 12px;
     font-weight: 600;
+    cursor: pointer;
+    user-select: none;
   }
+  .hood-chip:hover { background: var(--c-primary); color: white; border-color: var(--c-primary); }
+  .hood-chip.active { background: var(--c-primary); color: white; border-color: var(--c-primary); }
+  .hood-chip .hood-chip-count { color: rgba(255,255,255,0.85); font-weight: 500; }
+  .hood-chip:not(.active) .hood-chip-count { color: var(--c-base-light); font-weight: 400; }
 
   .container {
     max-width: 1280px;
@@ -569,7 +545,7 @@
       <div><div class="stat-num" id="stat-posts">…</div><div class="stat-lbl">Posts indexed</div></div>
       <div><div class="stat-num" id="stat-records">…</div><div class="stat-lbl">Structured records</div></div>
       <div><div class="stat-num" id="stat-substantive">…</div><div class="stat-lbl">Substantive posts</div></div>
-      <div><div class="stat-num" id="stat-scarborough">…</div><div class="stat-lbl">Scarborough mentions</div></div>
+      <div><div class="stat-num" id="stat-range">…</div><div class="stat-lbl">Date range</div></div>
     </div>
   </div>
 </header>
@@ -585,7 +561,6 @@
 <nav class="tabs" role="navigation" aria-label="Section navigation">
   <div class="tabs-inner">
     <button data-tab="said-done" class="active">Said vs. Done</button>
-    <button data-tab="scarborough" class="tab-scarborough">Scarborough Watch</button>
     <button data-tab="positions">Positions</button>
     <button data-tab="pledges">Pledges</button>
     <button data-tab="actions">Actions</button>
@@ -593,6 +568,7 @@
     <button data-tab="appearances">Appearances</button>
     <button data-tab="quotes">Quotes</button>
     <button data-tab="by-topic">By Topic</button>
+    <button data-tab="by-neighbourhood">By Neighbourhood</button>
     <button data-tab="not-surfaced">Posts Not Surfaced</button>
     <button data-tab="methodology">Methodology</button>
   </div>
@@ -600,16 +576,17 @@
 
 <div class="container">
 
-<section class="view" id="view-scarborough">
+<section class="view" id="view-by-neighbourhood">
   <div class="view-header">
-    <h2>Scarborough Watch</h2>
+    <h2>By Neighbourhood</h2>
     <div class="lede">
-      Scarborough is the eastern third of Toronto, home to roughly 630,000 residents — but it's chronically underrepresented at City Hall and in mayoral coverage. This view filters every record that mentions Scarborough or its neighbourhoods, so the candidate's attention to the borough is measurable, not assumed.
+      Records grouped by the Toronto neighbourhood they reference — from Scarborough's Agincourt and Malvern to Etobicoke's Mimico, the Beaches to the Junction. Each neighbourhood gets equal billing; the volume reflects only what the candidate has posted about, not editorial weighting.
     </div>
   </div>
-  <div id="scarb-summary"></div>
-  <div class="meta-row" id="count-scarborough"></div>
-  <div class="records-grid" id="grid-scarborough"></div>
+  <div class="filters" id="filters-neighbourhood"></div>
+  <div class="meta-row" id="count-neighbourhood"></div>
+  <div id="hood-summary"></div>
+  <div class="records-grid" id="grid-neighbourhood"></div>
 </section>
 
 <section class="view active" id="view-said-done">
@@ -825,10 +802,18 @@ function renderHeader() {
   document.getElementById("stat-records").textContent = (m.record_count || 0).toLocaleString();
   document.getElementById("stat-substantive").textContent = substantive.toLocaleString();
 
-  // Scarborough mention count goes in the fourth header stat
-  const scarbCount = (DATA.records || []).filter(isScarborough).length;
-  const scarbEl = document.getElementById("stat-scarborough");
-  if (scarbEl) scarbEl.textContent = scarbCount.toLocaleString();
+  // Date range — earliest to latest across all configured accounts
+  let earliest = null, latest = null;
+  for (const acc of Object.keys(m.per_account || {})) {
+    const e = m.per_account[acc].earliest;
+    const l = m.per_account[acc].latest;
+    if (e && (!earliest || e < earliest)) earliest = e;
+    if (l && (!latest || l > latest)) latest = l;
+  }
+  const rangeEl = document.getElementById("stat-range");
+  if (rangeEl && earliest && latest) {
+    rangeEl.textContent = earliest.slice(0, 4) + " – " + latest.slice(0, 4);
+  }
 }
 
 // ---------- RECORD CARD (universal renderer) ----------
@@ -1049,70 +1034,128 @@ function renderByTopic() {
   refresh();
 }
 
-// ---------- SCARBOROUGH WATCH ----------
-function renderScarborough() {
-  const summary = document.getElementById("scarb-summary");
-  const grid = document.getElementById("grid-scarborough");
-  const cnt = document.getElementById("count-scarborough");
-  clear(summary); clear(grid);
+// ---------- BY NEIGHBOURHOOD ----------
+// Toronto neighbourhood detection — broad list across all six former
+// boroughs, deliberately covering the full city not just one part.
+const TORONTO_HOODS = [
+  // Scarborough
+  "Scarborough", "Agincourt", "Malvern", "Cliffside", "Cliffcrest",
+  "Guildwood", "Rouge", "West Hill", "Birch Cliff", "Birchcliff",
+  "Wexford", "Bendale", "Highland Creek", "Morningside", "Port Union",
+  "Woburn", "Eglinton East", "Centennial", "Dorset Park", "Tam O'Shanter",
+  "L'Amoreaux", "Lamoreaux", "Ionview", "Kennedy Park", "Oakridge",
+  "Clairlea", "Golden Mile", "Pleasant View", "Henry Farm",
+  "Scarborough Village", "Scarborough Junction", "Scarborough City Centre",
+  // East York / Beaches
+  "East York", "Beaches", "The Beaches", "Beaches-East York",
+  "Greektown", "Danforth", "Riverdale", "Leslieville", "Coxwell",
+  "Woodbine", "Birchmount", "Pape", "Donlands", "East Danforth",
+  // Old Toronto / Downtown
+  "Annex", "The Annex", "Yorkville", "Trinity-Bellwoods", "Trinity Bellwoods",
+  "Kensington", "Kensington Market", "Chinatown", "Distillery District",
+  "Liberty Village", "Fashion District", "Entertainment District",
+  "Financial District", "Harbourfront", "Cabbagetown", "Corktown",
+  "Regent Park", "Moss Park", "St. Lawrence", "Church-Wellesley",
+  "Queen West", "King West", "Ossington", "Little Italy", "Little Portugal",
+  "Dovercourt", "Dufferin Grove", "Parkdale", "Roncesvalles",
+  "Bloor West Village", "High Park", "Junction", "The Junction",
+  "Junction Triangle",
+  // North / midtown
+  "Forest Hill", "Rosedale", "Lawrence Park", "Davisville",
+  "Yonge-Eglinton", "Yonge and Eglinton", "Mount Pleasant",
+  "Allenby", "Lytton Park", "St. Clair West",
+  // North York
+  "North York", "Don Mills", "Willowdale", "Bayview Village",
+  "Lansing", "Newtonbrook", "Bedford Park", "Hoggs Hollow",
+  "Lawrence Manor", "Bathurst Manor", "Downsview", "Jane and Finch",
+  "Black Creek", "York Mills",
+  // Etobicoke
+  "Etobicoke", "Mimico", "New Toronto", "Long Branch", "Islington",
+  "Bloordale", "Six Points", "Humber Bay", "Kingsway", "The Kingsway",
+  "Stonegate", "The Queensway", "Sunnylea", "Markland Wood",
+  "Rexdale", "Smithfield", "Thistletown", "West Humber",
+  "Princess Anne Manor", "Edenbridge",
+  // Other / city-wide
+  "Toronto", "GTA",
+];
 
-  const scarb = (DATA.records || []).filter(isScarborough);
-  const allHoods = new Map();  // hood → count
-  for (const r of scarb) {
-    for (const h of detectedScarbHoods(r)) {
-      allHoods.set(h, (allHoods.get(h) || 0) + 1);
+const HOOD_RE_MAP = TORONTO_HOODS.reduce((acc, h) => {
+  acc[h] = new RegExp("\\b" + h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b", "i");
+  return acc;
+}, {});
+
+function detectHoods(record) {
+  const blob = [
+    record.location, record.neighborhood, record.summary, record.pledge_text,
+    record.specifics, record.source_quote, record.event_label, record.topic_focus,
+    record.context,
+  ].filter(Boolean).join(" ");
+  const found = new Set();
+  for (const h of TORONTO_HOODS) {
+    if (HOOD_RE_MAP[h].test(blob)) {
+      // Skip the city-wide "Toronto" / "GTA" tags from neighbourhood-level grouping;
+      // they apply to almost everything and dilute the view.
+      if (h === "Toronto" || h === "GTA") continue;
+      found.add(h);
     }
   }
+  return [...found];
+}
 
-  // Compute share of scarb records vs total
-  const total = (DATA.records || []).length;
-  const pct = total ? Math.round(100 * scarb.length / total) : 0;
+let _hoodFilterState = null;
 
-  // Compute kind breakdown
-  const kindCounts = {};
-  for (const r of scarb) kindCounts[r.kind] = (kindCounts[r.kind] || 0) + 1;
+function renderByNeighbourhood() {
+  const summary = document.getElementById("hood-summary");
+  const grid = document.getElementById("grid-neighbourhood");
+  const cnt = document.getElementById("count-neighbourhood");
+  const filters = document.getElementById("filters-neighbourhood");
+  clear(summary); clear(grid); clear(filters);
 
-  // Render the summary block
-  const block = el("div", { class: "scarb-summary" });
-  block.appendChild(el("h3", null, "Scarborough on the record"));
-  block.appendChild(el("div", { style: "font-size:13.5px;color:var(--c-base-light);line-height:1.55;" },
-    `${scarb.length} of ${total} records (${pct}%) reference Scarborough or one of its neighbourhoods. ` +
-    `Includes pledges on Scarborough transit, council actions affecting eastern wards, appearances in the borough, ` +
-    `and stated positions on issues that disproportionately affect Scarborough residents.`));
+  const all = DATA.records || [];
 
-  // Stat row
-  const stats = el("div", { class: "scarb-stats" });
-  const stat = (n, l) => {
-    const w = el("div", { class: "scarb-stat" });
-    w.appendChild(el("div", { class: "num" }, String(n)));
-    w.appendChild(el("div", { class: "lbl" }, l));
-    return w;
-  };
-  stats.appendChild(stat(kindCounts.position || 0, "Positions"));
-  stats.appendChild(stat(kindCounts.pledge || 0, "Pledges"));
-  stats.appendChild(stat(kindCounts.action || 0, "Actions"));
-  stats.appendChild(stat(kindCounts.appearance || 0, "Appearances"));
-  stats.appendChild(stat(allHoods.size, "Neighbourhoods cited"));
-  block.appendChild(stats);
-
-  // Hood chips
-  if (allHoods.size) {
-    block.appendChild(el("div", { style: "margin-top:14px;font-size:11px;color:var(--c-base-light);text-transform:uppercase;letter-spacing:0.06em;font-weight:700;" }, "Neighbourhoods referenced"));
-    const chips = el("div", { class: "scarb-neighborhoods" });
-    [...allHoods.entries()].sort((a, b) => b[1] - a[1]).forEach(([h, n]) => {
-      chips.appendChild(el("span", { class: "scarb-hood-chip" }, `${h} · ${n}`));
-    });
-    block.appendChild(chips);
+  // Build hood → records index
+  const hoodIndex = new Map();
+  for (const r of all) {
+    for (const h of detectHoods(r)) {
+      if (!hoodIndex.has(h)) hoodIndex.set(h, []);
+      hoodIndex.get(h).push(r);
+    }
   }
+  const ranked = [...hoodIndex.entries()].sort((a, b) => b[1].length - a[1].length);
+
+  // Summary block — counts and chip cloud
+  const block = el("div", { class: "hood-summary" });
+  block.appendChild(el("h3", null, "Toronto neighbourhoods on the record"));
+  block.appendChild(el("div", { style: "font-size:13.5px;color:var(--c-base-light);line-height:1.55;" },
+    `${all.length} records reference ${ranked.length} distinct Toronto neighbourhoods. ` +
+    `Click any chip to filter the list below; click again to clear.`));
+
+  const chipsRow = el("div", { class: "hood-chips" });
+  ranked.forEach(([h, rs]) => {
+    const chip = el("button", { class: "hood-chip" + (_hoodFilterState === h ? " active" : "") }, h);
+    chip.appendChild(el("span", { class: "hood-chip-count" }, " · " + rs.length));
+    chip.addEventListener("click", () => {
+      _hoodFilterState = (_hoodFilterState === h ? null : h);
+      renderByNeighbourhood();
+    });
+    chipsRow.appendChild(chip);
+  });
+  block.appendChild(chipsRow);
   summary.appendChild(block);
 
-  // Records grid (sorted newest-first)
-  if (scarb.length === 0) {
-    cnt.textContent = "No Scarborough-tagged records yet — extraction is still in progress.";
-    return;
+  // Filter records
+  let filtered;
+  if (_hoodFilterState) {
+    filtered = hoodIndex.get(_hoodFilterState) || [];
+    cnt.textContent = `${filtered.length} record${filtered.length === 1 ? "" : "s"} for ${_hoodFilterState}.`;
+  } else {
+    // Show all records that have at least one detected hood
+    const hooded = all.filter(r => detectHoods(r).length > 0);
+    filtered = hooded;
+    cnt.textContent = `${filtered.length} of ${all.length} records reference a named Toronto neighbourhood.`;
   }
-  cnt.textContent = `${scarb.length} record${scarb.length === 1 ? "" : "s"} reference Scarborough.`;
-  scarb.slice().sort((a, b) => (b.post_date || "").localeCompare(a.post_date || ""))
+
+  filtered.slice().sort((a, b) => (b.post_date || "").localeCompare(a.post_date || ""))
     .forEach(r => grid.appendChild(renderCard(r)));
 }
 
@@ -1185,7 +1228,7 @@ function setTab(key) {
   // Lazy renders (only when first visited)
   if (key === "methodology") renderMethodology();
   if (key === "by-topic") renderByTopic();
-  if (key === "scarborough") renderScarborough();
+  if (key === "by-neighbourhood") renderByNeighbourhood();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
