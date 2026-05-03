@@ -1,4 +1,5 @@
-instaloader>=4.15
+instagrapi>=2.0
 anthropic>=0.97
 python-dotenv>=1.0
 openai-whisper>=20240930
+deepgram-sdk>=3.0

@@ -327,8 +327,8 @@ def download_audio(cl: IGClient, shortcode: str, date: str) -> Path | None:
     return out if out.exists() else None
 
 
-def transcribe(audio: Path, shortcode: str, date: str) -> str | None:
-    """Run whisper small.en on the audio, return the transcript text."""
+def transcribe_whisper(audio: Path, shortcode: str, date: str) -> str | None:
+    """Local Whisper small.en fallback. Slow but free."""
     out_txt = transcript_path(shortcode, date)
     if out_txt.exists():
         return out_txt.read_text().strip()
@@ -344,11 +344,69 @@ def transcribe(audio: Path, shortcode: str, date: str) -> str | None:
     except Exception as e:
         log(f"  whisper failed for {shortcode}: {e!r}")
         return None
-    # whisper writes to <stem>.txt — rename to our convention if needed
     whisper_default = TRANSCRIPTS_DIR / (audio.stem + ".txt")
     if whisper_default.exists() and whisper_default != out_txt:
         whisper_default.rename(out_txt)
     return out_txt.read_text().strip() if out_txt.exists() else None
+
+
+def transcribe_deepgram(audio: Path, shortcode: str, date: str) -> str | None:
+    """Deepgram Nova 3 transcription via deepgram-sdk v7. Cloud-fast (~10-30s
+    for a 3-min video) vs. local whisper which takes minutes. Caches to disk
+    on success so re-runs are free."""
+    out_txt = transcript_path(shortcode, date)
+    if out_txt.exists():
+        return out_txt.read_text().strip()
+    try:
+        from deepgram import DeepgramClient
+    except ImportError:
+        log("  deepgram-sdk not installed; falling back to whisper")
+        return transcribe_whisper(audio, shortcode, date)
+    api_key = os.environ.get("DEEPGRAM_API_KEY", "").strip()
+    if not api_key:
+        return transcribe_whisper(audio, shortcode, date)
+    try:
+        client = DeepgramClient(api_key=api_key)
+        with audio.open("rb") as f:
+            buffer_data = f.read()
+        # v7: flat kwargs on the v1.media.transcribe_file method
+        response = client.listen.v1.media.transcribe_file(
+            request=buffer_data,
+            model="nova-3",
+            smart_format=True,
+            punctuate=True,
+            paragraphs=True,
+            language="en",
+        )
+        # Walk the response. Shape: response.results.channels[0].alternatives[0].
+        text = ""
+        try:
+            alt = response.results.channels[0].alternatives[0]
+            paragraphs_obj = getattr(alt, "paragraphs", None)
+            if paragraphs_obj is not None:
+                text = (getattr(paragraphs_obj, "transcript", None) or "").strip()
+            if not text:
+                text = (getattr(alt, "transcript", None) or "").strip()
+        except Exception as e:
+            log(f"  deepgram response parse error for {shortcode}: {e!r}")
+            text = ""
+        if not text:
+            log(f"  deepgram returned empty transcript for {shortcode}")
+            return None
+        out_txt.write_text(text)
+        return text
+    except Exception as e:
+        log(f"  deepgram failed for {shortcode}: {e!r}; falling back to whisper")
+        return transcribe_whisper(audio, shortcode, date)
+
+
+def transcribe(audio: Path, shortcode: str, date: str) -> str | None:
+    """Dispatch to Deepgram if DEEPGRAM_API_KEY is set, else local whisper.
+    Both backends share the same on-disk cache (transcripts/<date>_<shortcode>.txt)
+    so switching backends mid-run preserves prior work."""
+    if os.environ.get("DEEPGRAM_API_KEY", "").strip():
+        return transcribe_deepgram(audio, shortcode, date)
+    return transcribe_whisper(audio, shortcode, date)
 
 
 # ---------------------------------------------------------------------------
