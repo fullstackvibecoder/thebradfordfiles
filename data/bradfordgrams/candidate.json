@@ -1,0 +1,21 @@
+{
+  "handle": "bradfordgrams",
+  "slug": "bradford",
+  "display_name": "Brad Bradford",
+  "surname": "Bradford",
+  "files_label": "The Bradford Files",
+  "current_role": "City Councillor, Beaches–East York (since 2018)",
+  "former_roles": ["Former city planner"],
+  "council_terms": ["2018-2022", "2022-2026"],
+  "council_name_for_vote_lookup": {"first": "Brad", "last": "Bradford"},
+  "candidacy_status": "declared",
+  "declared_date": "2026-05-01",
+  "result_2023": {"placement": 8, "vote_share_pct": 1.5, "votes": 9000, "approximate": true},
+  "platform_pillars": ["crime", "congestion", "cost of living"],
+  "ig_handle": "bradfordgrams",
+  "alias_handles": ["beybradford"],
+  "sources": [
+    "CBC News (May 1, 2026)",
+    "2023 City of Toronto mayoral byelection results"
+  ]
+}

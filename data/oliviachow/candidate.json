@@ -1,0 +1,24 @@
+{
+  "handle": "oliviachow",
+  "slug": "chow",
+  "display_name": "Olivia Chow",
+  "surname": "Chow",
+  "files_label": "The Chow Files",
+  "current_role": "Mayor of Toronto (since June 2023)",
+  "former_roles": [
+    "NDP Member of Parliament for Trinity-Spadina (2006-2014)",
+    "Toronto City Councillor (1991-2005)"
+  ],
+  "council_terms": ["2022-2026"],
+  "council_name_for_vote_lookup": {"first": "Olivia", "last": "Chow"},
+  "candidacy_status": "expected",
+  "declared_date": null,
+  "result_2023": {"placement": 1, "vote_share_pct": 37.0, "votes": 270000, "approximate": true},
+  "platform_pillars": ["housing affordability", "transit investment", "social services"],
+  "ig_handle": "oliviachow",
+  "alias_handles": [],
+  "sources": [
+    "2023 City of Toronto mayoral byelection results",
+    "CBC News (May 1, 2026)"
+  ]
+}
