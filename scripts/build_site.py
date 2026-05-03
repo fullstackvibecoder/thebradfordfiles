@@ -1,163 +1,266 @@
 #!/usr/bin/env python3
+"""build_site.py: assemble per-candidate dossiers + landing JSON.
+
+Reads candidate manifests under data/<handle>/candidate.json plus their
+triage/records/posts/extracted data, and writes:
+
+  site/landing.json                  -- one row per candidate for the card grid
+  site/candidates/<slug>.json        -- full dossier per candidate
+  site/<slug>/index.html             -- per-candidate page from the template
+  site/data.json                     -- back-compat aggregate (kept for now)
 """
-build_site.py — assemble site/data.json for The Bradford Files dashboard.
-
-Reads:
-  data/<account>/records.jsonl    — structured records from extract.py
-  data/<account>/posts.jsonl      — full post metadata
-  data/<account>/triage.jsonl     — per-post triage decisions
-  data/<account>/extracted.jsonl  — per-post completion log
-
-Writes:
-  site/data.json — single source of truth for the dashboard
-
-Run:
-  python scripts/build_site.py
-  python scripts/build_site.py --accounts bradfordgrams beybradford
-"""
-
 from __future__ import annotations
 
 import argparse
 import json
-from collections import Counter, defaultdict
+import os
+import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib import candidates as _candidates  # type: ignore  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
-SITE_DIR.mkdir(exist_ok=True)
-OUT = SITE_DIR / "data.json"
+MATCHES_FILE = DATA_DIR / "votes" / "matches.jsonl"
 
 
-def load_jsonl(path: Path) -> list[dict]:
+def _load_jsonl(path: Path) -> list[dict]:
     if not path.exists():
         return []
-    rows = []
+    rows: list[dict] = []
     for line in path.read_text().splitlines():
         line = line.strip()
         if not line:
             continue
         try:
             rows.append(json.loads(line))
-        except Exception:
-            pass
+        except json.JSONDecodeError:
+            continue
     return rows
 
 
-def parse_args() -> argparse.Namespace:
-    p = argparse.ArgumentParser()
-    p.add_argument(
-        "--accounts",
-        nargs="+",
-        default=["bradfordgrams", "beybradford"],
-        help="Account directories under data/ to merge",
-    )
-    return p.parse_args()
-
-
-def main() -> int:
-    args = parse_args()
-
-    all_records: list[dict] = []
-    posts_by_code: dict[str, dict] = {}
-    triage_by_code: dict[str, dict] = {}
-    extracted_by_code: dict[str, dict] = {}
-    skip_log: list[dict] = []
-
-    per_account_stats: dict[str, dict] = {}
-
-    for account in args.accounts:
-        acc_dir = DATA_DIR / account
-        if not acc_dir.exists():
-            print(f"  [skip] {account}: data dir not present")
+def _load_matches() -> dict[str, dict]:
+    if not MATCHES_FILE.exists():
+        return {}
+    out: dict[str, dict] = {}
+    for line in MATCHES_FILE.read_text().splitlines():
+        line = line.strip()
+        if not line:
             continue
+        try:
+            m = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        sc = m.get("record_shortcode")
+        if not sc:
+            continue
+        existing = out.get(sc)
+        if not existing or m.get("confidence", 0) > existing.get("confidence", 0):
+            out[sc] = m
+    return out
 
-        records = load_jsonl(acc_dir / "records.jsonl")
-        posts = load_jsonl(acc_dir / "posts.jsonl")
-        triages = load_jsonl(acc_dir / "triage.jsonl")
-        extracted = load_jsonl(acc_dir / "extracted.jsonl")
 
-        # Tag every record with its source account so the UI can split if needed
-        for r in records:
-            r.setdefault("source_account", account)
-        all_records.extend(records)
+def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
+    handle = manifest["handle"]
+    handles_to_load = [handle] + manifest.get("alias_handles", [])
 
-        # Index posts by shortcode (account-qualified key in case of collision —
-        # IG shortcodes are globally unique but be defensive)
-        for p in posts:
+    records: list[dict] = []
+    posts_index: dict[str, dict] = {}
+    triages: list[dict] = []
+    skip_log: list[dict] = []
+    extracted: list[dict] = []
+
+    for h in handles_to_load:
+        d = DATA_DIR / h
+        if not d.exists():
+            continue
+        records.extend(_load_jsonl(d / "records.jsonl"))
+        for p in _load_jsonl(d / "posts.jsonl"):
             sc = p.get("shortcode")
-            if not sc:
-                continue
-            posts_by_code[sc] = {**p, "source_account": account}
-
-        # Index triage decisions
-        triage_buckets = Counter()
-        for t in triages:
-            sc = t.get("shortcode")
-            if not sc:
-                continue
-            triage_by_code[sc] = {**t, "source_account": account}
-            triage_buckets[t.get("triage", {}).get("bucket", "unknown")] += 1
-            # Skipped posts get logged for transparency
+            if sc:
+                posts_index[sc] = {**p, "source_account": h}
+        for t in _load_jsonl(d / "triage.jsonl"):
+            triages.append(t)
             if t.get("triage", {}).get("bucket") == "skip":
                 skip_log.append({
-                    "shortcode": sc,
-                    "source_account": account,
+                    "shortcode": t.get("shortcode"),
+                    "source_account": h,
                     "date": t.get("date", ""),
                     "url": t.get("url", ""),
                     "type": t.get("type", ""),
                     "caption_excerpt": t.get("caption_excerpt", ""),
                     "reason": t.get("triage", {}).get("reason", ""),
                 })
+        extracted.extend(_load_jsonl(d / "extracted.jsonl"))
 
-        for e in extracted:
-            sc = e.get("shortcode")
-            if sc:
-                extracted_by_code[sc] = {**e, "source_account": account}
+    for r in records:
+        r.setdefault("candidate_slug", manifest["slug"])
+        r.setdefault("source_account", handle)
+        if r.get("kind") == "action":
+            sc = r.get("shortcode")
+            if sc and sc in matches_by_sc:
+                r["council_verification"] = matches_by_sc[sc]
 
-        per_account_stats[account] = {
-            "total_posts": len(triages),
-            "buckets": dict(triage_buckets),
-            "extracted_posts": len(extracted),
-            "records": len(records),
-            "earliest": min((t["date"][:10] for t in triages), default=None),
-            "latest": max((t["date"][:10] for t in triages), default=None),
-        }
-
-    # Aggregate stats across accounts
-    record_kinds = Counter(r.get("kind", "?") for r in all_records)
-    record_topics = Counter(r.get("topic") for r in all_records if r.get("topic"))
-
-    # Sort all records newest first by post_date
-    all_records.sort(key=lambda r: r.get("post_date", ""), reverse=True)
-
-    # Sort skip log newest first
+    records.sort(key=lambda r: r.get("post_date", ""), reverse=True)
     skip_log.sort(key=lambda r: r.get("date", ""), reverse=True)
 
-    out = {
+    triage_buckets = Counter(t.get("triage", {}).get("bucket", "?") for t in triages)
+    record_kinds = Counter(r.get("kind", "?") for r in records)
+    record_topics = Counter(r.get("topic") for r in records if r.get("topic"))
+
+    substantive_posts = {t["shortcode"] for t in triages
+                         if t.get("triage", {}).get("bucket") == "substantive" and t.get("shortcode")}
+    emphasis: dict[str, float] = {}
+    if substantive_posts:
+        topic_post_count: dict[str, set[str]] = {}
+        for r in records:
+            sc = r.get("shortcode")
+            t = r.get("topic")
+            if not (sc and t and sc in substantive_posts):
+                continue
+            topic_post_count.setdefault(t, set()).add(sc)
+        for topic, scs in topic_post_count.items():
+            emphasis[topic] = round(100 * len(scs) / len(substantive_posts), 1)
+
+    dates = sorted(t["date"][:10] for t in triages if t.get("date"))
+    earliest = dates[0] if dates else None
+    latest = dates[-1] if dates else None
+
+    return {
         "meta": {
-            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "accounts": args.accounts,
-            "per_account": per_account_stats,
-            "record_count": len(all_records),
+            **manifest,
+            "post_count": len(triages),
+            "extracted_count": len(extracted),
+            "record_count": len(records),
+            "buckets": dict(triage_buckets),
             "record_kinds": dict(record_kinds.most_common()),
             "record_topics": dict(record_topics.most_common()),
+            "emphasis": emphasis,
+            "date_range": {"earliest": earliest, "latest": latest},
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         },
-        "records": all_records,
-        "posts": posts_by_code,
+        "records": records,
+        "posts": posts_index,
         "skip_log": skip_log,
     }
 
-    OUT.write_text(json.dumps(out, ensure_ascii=False, indent=None) + "\n")
 
-    size_kb = OUT.stat().st_size / 1024
-    print(f"  wrote site/data.json ({size_kb:.1f} KB, {len(all_records):,} records)")
-    print(f"  per-account:")
-    for acc, s in per_account_stats.items():
-        print(f"    @{acc}: {s['records']:,} records · {s['extracted_posts']:,} posts extracted · {s['total_posts']:,} triaged · {s['earliest']} → {s['latest']}")
-    print(f"  record kinds: {dict(record_kinds.most_common(7))}")
+def _landing_card(dossier: dict) -> dict:
+    m = dossier["meta"]
+    return {
+        "slug": m["slug"],
+        "surname": m["surname"],
+        "display_name": m["display_name"],
+        "files_label": m["files_label"],
+        "current_role": m.get("current_role", ""),
+        "candidacy_status": m.get("candidacy_status", "unknown"),
+        "declared_date": m.get("declared_date"),
+        "result_2023": m.get("result_2023"),
+        "platform_pillars": m.get("platform_pillars", []),
+        "post_count": m["post_count"],
+        "record_count": m["record_count"],
+        "extracted_count": m["extracted_count"],
+        "emphasis": m.get("emphasis", {}),
+        "date_range": m["date_range"],
+    }
+
+
+def _build_tagline(manifest: dict) -> str:
+    name = manifest["display_name"]
+    role = manifest.get("current_role", "")
+    return (
+        f"{name} — {role}. A sourced record of their public political "
+        f"content on Instagram: positions, pledges, council actions, "
+        f"endorsements, and appearances."
+    )
+
+
+def _emit_candidate_html(manifest: dict) -> None:
+    slug = manifest["slug"]
+    template_path = SITE_DIR / "candidate-template.html"
+    if not template_path.exists():
+        print(f"  WARN: candidate-template.html not found; skipping HTML for {slug}")
+        return
+    template = template_path.read_text()
+    rendered = (
+        template
+        .replace("__CANDIDATE_DOSSIER__", f"/candidates/{slug}.json")
+        .replace("__FILES_LABEL__", manifest["files_label"])
+        .replace("__BRAND_TAGLINE__", _build_tagline(manifest))
+        .replace("__TURNSTILE_SITE_KEY__",
+                 os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"))
+    )
+    out_dir = SITE_DIR / slug
+    out_dir.mkdir(exist_ok=True)
+    (out_dir / "index.html").write_text(rendered)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser()
+    parser.parse_args(argv)
+
+    SITE_DIR.mkdir(exist_ok=True)
+    (SITE_DIR / "candidates").mkdir(exist_ok=True)
+
+    primaries = _candidates.load_all_candidates()
+    if not primaries:
+        print("[build] no candidates found in data/")
+        return 0
+
+    matches_by_sc = _load_matches()
+
+    landing_cards: list[dict] = []
+    combined_records: list[dict] = []
+    combined_posts: dict[str, dict] = {}
+    combined_skip: list[dict] = []
+
+    for manifest in primaries:
+        dossier = _candidate_dossier(manifest, matches_by_sc)
+        slug = manifest["slug"]
+        out_path = SITE_DIR / "candidates" / f"{slug}.json"
+        out_path.write_text(json.dumps(dossier, ensure_ascii=False))
+        size_kb = out_path.stat().st_size / 1024
+        print(f"  wrote site/candidates/{slug}.json ({size_kb:.1f} KB, "
+              f"{dossier['meta']['record_count']} records)")
+        landing_cards.append(_landing_card(dossier))
+        combined_records.extend(dossier["records"])
+        combined_posts.update(dossier["posts"])
+        combined_skip.extend(dossier["skip_log"])
+        _emit_candidate_html(manifest)
+
+    landing = {
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "candidates": landing_cards,
+    }
+    (SITE_DIR / "landing.json").write_text(json.dumps(landing, ensure_ascii=False, indent=2))
+    print(f"  wrote site/landing.json ({len(landing_cards)} candidates)")
+
+    combined = {
+        "meta": {
+            "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "accounts": [c["slug"] for c in landing_cards],
+            "record_count": len(combined_records),
+        },
+        "records": combined_records,
+        "posts": combined_posts,
+        "skip_log": combined_skip,
+    }
+    (SITE_DIR / "data.json").write_text(json.dumps(combined, ensure_ascii=False))
+    print(f"  wrote site/data.json (back-compat, {len(combined_records)} records)")
+
+    issues_path = SITE_DIR / "issues" / "index.html"
+    if issues_path.exists():
+        text = issues_path.read_text()
+        text = text.replace(
+            "__TURNSTILE_SITE_KEY__",
+            os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"),
+        )
+        issues_path.write_text(text)
+
     return 0
 
 
