@@ -6,13 +6,14 @@
 <title>The Chow Files &middot; The Mayoral Record</title>
 <meta name="description" content="An independent civic transparency record of Brad Bradford's public Instagram political content. Every record sourced. Not affiliated with the candidate or campaign.">
 <meta name="theme-color" content="#112e51">
-
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://thebradfordfiles.bottlenecklabs.ai/">
-<meta property="og:site_name" content="The Bradford Files">
-<meta property="og:title" content="The Bradford Files · Independent civic-transparency record">
-<meta property="og:description" content="A searchable record of Brad Bradford's public political content. Every record sourced to a specific Instagram post.">
-
+<meta property="og:url" content="https://www.mayoralrecord.com/chow">
+<meta property="og:title" content="The Chow Files · The Mayoral Record">
+<meta property="og:description" content="A sourced record of Olivia Chow's public political content. Every record cited.">
+<meta property="og:image" content="https://www.mayoralrecord.com/api/og?type=candidate&name=Olivia+Chow&records=470&dot=green&files_label=The+Chow+Files">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
@@ -733,6 +734,7 @@
     <h3>The Bradford Files</h3>
     <p>An independent civic-transparency project. Not affiliated with the candidate, his campaign, or any political party. No financial relationship with the candidate.</p>
     <p>Every record on this site is sourced to a specific public Instagram post; click the source link on any record to verify against the original. If you believe a record is inaccurate or misclassified, <a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues" target="_blank" rel="noopener">open an issue on the public repository</a>.</p>
+    <div style="margin-top:8px;font-size:12px"><a href="/privacy" style="color:#fff">Privacy</a> · <a href="/terms" style="color:#fff">Terms</a> · <a href="/methodology" style="color:#fff">Methodology</a></div>
     <div class="footer-credits">
       Built in the 6 by <a href="https://bottlenecklabs.ai" target="_blank" rel="noopener">BottleneckLabs</a> · Open source at <a href="https://github.com/fullstackvibecoder/thebradfordfiles" target="_blank" rel="noopener">github.com/fullstackvibecoder/thebradfordfiles</a> · MIT licensed · From Scarborough to Etobicoke and back
     </div>
@@ -820,7 +822,7 @@ function detectedScarbHoods(record) {
 }
 
 // ---------- VOTE WIDGET ----------
-const TURNSTILE_SITE_KEY = "__TURNSTILE_SITE_KEY__";
+const TURNSTILE_SITE_KEY = "0x4AAAAAADIpIfpk8chZt_UO";
 let _turnstileLoaded = false;
 
 function ensureTurnstile() {
@@ -1018,7 +1020,7 @@ function renderAggregate(target, counts) {
 }
 
 async function getTurnstileToken(widget) {
-  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "__TURNSTILE_SITE_KEY__") return "dev";
+  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "0x4AAAAAADIpIfpk8chZt_UO") return "dev";
   return new Promise(resolve => {
     function attempt() {
       if (window.turnstile) {
@@ -1563,6 +1565,6 @@ window.addEventListener("hashchange", () => {
   if (h) setTab(h);
 });
 </script>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4f282783f3244ab19e90a9d05037cf43"}'></script>
 </body>
 </html>
