@@ -113,7 +113,7 @@ Layout, top to bottom:
 3. Tagline. Source Serif italic, 14px, muted. "Toronto's 2026 mayoral race, sourced and queryable."
 4. Command bar. White, hairline border, soft shadow. Placeholder: "Ask about a candidate, a topic, or a vote." Right side: `↵ ASK` mono pill in ochre. Press Enter or click the pill to submit.
 5. Intent chips, two rows max, centered. Locked labels: `Housing record`, `Transit record`, `Public safety`, `Tax & fiscal`, `Parks & environment`, `Infrastructure`, `Social services`, `Small business`, `Civic engagement`, `Governance & ethics`. Click submits a default query for that topic.
-6. Section divider with label. `— SURFACED FROM THE RECORD —` (mono, ochre, with hairlines on each side).
+6. Section divider with label. The label `SURFACED FROM THE RECORD` (mono, ochre, uppercase) sits inline on a 1px hairline rule that runs full-width with the label punching through the rule. No glyph dashes around the label.
 7. Three surfaced cards in a 1-1-1 grid. Cards rendered server-side from real data. Card types: `Stance evolved`, `Verified vote`, `From the synthesis`. Drop cap renders only on the `From the synthesis` card.
 8. Footer. Hairline above. Inter 11px muted gray. "Independent civic-transparency project. No campaign affiliation." Followed by links: Methodology, Privacy, Terms, All candidates.
 
