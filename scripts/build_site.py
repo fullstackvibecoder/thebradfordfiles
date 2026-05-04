@@ -253,6 +253,38 @@ def _emit_candidate_html(manifest: dict) -> None:
     (out_dir / "index.html").write_text(rendered)
 
 
+SITE_BASE_URL = "https://www.mayoralrecord.com"
+
+
+def _emit_sitemap(landing_cards: list[dict], generated_at: str) -> None:
+    """Write site/sitemap.xml listing all public routes."""
+    static_routes = [
+        ("/",                                     generated_at),
+        ("/compare",                              generated_at),
+        ("/issues",                               generated_at),
+        ("/issues/transit-funding/discuss",       generated_at),
+        ("/methodology",                          generated_at),
+        ("/about",                                generated_at),
+        ("/privacy",                              generated_at),
+        ("/terms",                                generated_at),
+    ]
+    candidate_routes = [
+        (f"/{c['slug']}", (c.get("date_range") or {}).get("latest") or generated_at)
+        for c in landing_cards
+    ]
+    all_routes = static_routes + candidate_routes
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for path, lastmod in all_routes:
+        lines.append("  <url>")
+        lines.append(f"    <loc>{SITE_BASE_URL}{path}</loc>")
+        lines.append(f"    <lastmod>{lastmod[:10]}</lastmod>")
+        lines.append("  </url>")
+    lines.append("</urlset>")
+    (SITE_DIR / "sitemap.xml").write_text("\n".join(lines) + "\n")
+    print(f"  wrote site/sitemap.xml ({len(all_routes)} routes)")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.parse_args(argv)
@@ -297,6 +329,8 @@ def main(argv: list[str] | None = None) -> int:
     }
     (SITE_DIR / "landing.json").write_text(json.dumps(landing, ensure_ascii=False, indent=2))
     print(f"  wrote site/landing.json ({len(landing_cards)} candidates)")
+
+    _emit_sitemap(landing_cards, landing["generated_at"])
 
     combined = {
         "meta": {
