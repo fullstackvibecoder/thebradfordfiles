@@ -1,0 +1,170 @@
+{
+  "slug": "housing-supply-mechanism",
+  "topic": "Should Toronto add housing supply primarily through private-sector incentives (cutting development charges, accelerating approvals) or through a city-as-developer model on city-owned land?",
+  "topic_short": "Housing supply mechanism",
+  "pull_quote": "Research on Auckland's 2016 upzoning finds permitting roughly doubled within five years, while research on Vienna's limited-profit and municipal stock finds new social rents averaging close to 30 percent below private rents. Both mechanisms produce measurable supply, on different timelines, with different incidence on who actually moves in.",
+  "who_benefits": {
+    "intro": "Each candidate's preferred mechanism redistributes who pays and who benefits over different time horizons. The empirical literature on impact-fee incidence and on limited-profit housing systems lets the two paths be compared on the same framework.",
+    "mechanisms": [
+      {
+        "candidate_handle": "bradfordgrams",
+        "summary": "Cutting development charges and accelerating approvals tends to benefit, in the near term, owners of developable land and current homebuyers in active submarkets. Empirical work on impact-fee incidence (Skaburskis and Qadeer, 1992; Skaburskis, 2003) finds the burden shifts forward to buyers in competitive markets and back to landowners in supply-constrained or hot markets, so the savings from a DC cut do not flow uniformly to renters. A 2021 IMFG paper (Found, 2021) cautions that DCs can also be neutral or positive for affordability if they fund the infrastructure that makes new supply possible, meaning a cut may simply shift cost from new buyers to existing taxpayers."
+      },
+      {
+        "candidate_handle": "oliviachow",
+        "summary": "City-as-developer plus the Purpose-Built Rental Incentives stream is designed to deliver units at rents below private-market levels, with affordability requirements (at least 20 percent affordable for 40 to 99 years) attached to a defined share of stock. Comparative work on Vienna finds limited-profit and municipal rents averaging roughly 27 to 30 percent below private rents (Kadi, 2024; Housing Europe, 2023). U.S. evidence on rent-restricted construction (Diamond, McQuade, and Qian, 2019) cautions that any policy that lowers rents below market without offsetting new construction can reduce overall rental supply, so the gain depends on whether the public-led units are net additions rather than substitutions."
+      }
+    ],
+    "literature_row": [
+      { "tier": "T3", "label": "Skaburskis and Qadeer, An Empirical Estimation of the Price Effects of Development Impact Fees, Urban Studies, 1992", "url": "https://journals.sagepub.com/doi/10.1080/00420989220080611" },
+      { "tier": "T2", "label": "Found, Development Charges and Housing Affordability: A False Dichotomy?, IMFG Papers No. 56, 2021", "url": "https://imfg.munkschool.utoronto.ca/research/doc/?doc_id=574" },
+      { "tier": "T3", "label": "Greenaway-McGrevy and Phillips, The impact of upzoning on housing construction in Auckland, Journal of Urban Economics, 2023", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0094119023000244" },
+      { "tier": "T3", "label": "Diamond, McQuade, and Qian, The Effects of Rent Control Expansion on Tenants, Landlords, and Inequality, American Economic Review, 2019", "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20181289" },
+      { "tier": "T3", "label": "Kadi, Layers of Commodification in the City of Decommodification, Housing, Theory and Society, 2024", "url": "https://www.tandfonline.com/doi/full/10.1080/14036096.2024.2382417" },
+      { "tier": "T1", "label": "OECD Housing Sector Country Snapshot: Austria, Housing Policy Toolkit, 2023", "url": "https://housingpolicytoolkit.oecd.org/www/CountryFiches/housing-policy-Austria.pdf" },
+      { "tier": "T2", "label": "Housing Europe, New research from Austria demonstrates that not-for-profit housing can tame the housing market, 2023", "url": "https://www.housingeurope.eu/new-research-from-austria-demonstrates-that-not-for-profit-housing-can-tame-the-housing-market/" }
+    ]
+  },
+  "positions": [
+    {
+      "candidate_handle": "bradfordgrams",
+      "candidate_name": "Brad Bradford",
+      "summary": "Bradford has stated he would draw on Toronto's DC reduction funds and has called for development charges to be dropped, framing the city's current rental plan as too dependent on other governments. He has also released an office-to-residential conversion proposal: as-of-right approvals for conversions that do not enlarge the building, paired with a 20 percent affordable requirement.",
+      "citations": [
+        { "tier": "T2", "label": "Beach Metro Community News, City's not real plan for more rental housing, November 4, 2024", "url": "https://beachmetro.com/2024/11/04/citys-not-real-plan-for-more-rental-housing-is-too-dependent-on-funding-from-other-levels-of-government-says-beaches-east-york-councillor-bradford/" },
+        { "tier": "T2", "label": "TorontoToday, Toronto's homebuilding taxes could be cut in half, 2026", "url": "https://www.torontotoday.ca/local/city-hall/toronto-homebuilding-development-charge-cut-half-what-that-means-12131312" },
+        { "tier": "T2", "label": "Storeys, Brad Bradford Looks to Convert Empty Toronto Office into Homes, 2023", "url": "https://storeys.com/brad-bradford-toronto-mayor-office-residential-conversion/" },
+        { "tier": "T2", "label": "votebradford.ca campaign release, No More Waiting: Realistic Plan to Get More Homes Built", "url": "https://www.votebradford.ca/nomorewaitinggetmorehomesbuiltnr" }
+      ]
+    },
+    {
+      "candidate_handle": "oliviachow",
+      "candidate_name": "Olivia Chow",
+      "summary": "Chow's stated target is approximately 25,000 additional rental homes layered on top of the HousingTO 2020-2030 Action Plan target of 65,000 rent-controlled homes, delivered through a mix of the Purpose-Built Rental Incentives stream (Council vote 23 to 1, November 2024) and a Public Developer Delivery model launched on city-owned sites in 2024. In March 2026, Chow signed a tri-government agreement with Carney and Ford that cuts DCs by 50 percent for three years on eligible projects.",
+      "citations": [
+        { "tier": "T1", "label": "City of Toronto news release, City unlocks more than 7,000 net new rental homes through purpose-built rental incentives stream, 2024", "url": "https://www.toronto.ca/news/city-of-toronto-unlocks-more-than-7000-net-new-rental-homes-through-purpose-built-rental-housing-incentives-stream/" },
+        { "tier": "T1", "label": "City of Toronto news release, City breaks ground on first Public Developer Delivery model project at 11 Brock Ave., December 2024", "url": "https://www.toronto.ca/news/city-of-toronto-breaks-ground-on-first-public-developer-delivery-model-affordable-housing-project-at-11-brock-ave/" },
+        { "tier": "T1", "label": "Prime Minister of Canada news release, Carney secures new partnership with Ontario to cut taxes on housing, March 30, 2026", "url": "https://www.pm.gc.ca/en/news/news-releases/2026/03/30/prime-minister-carney-secures-new-partnership-ontario-cut-taxes" }
+      ]
+    }
+  ],
+  "status_quo": {
+    "summary": "As of the 2024 to 2025 HousingTO progress report, Toronto Council had approved nearly 30,000 new rent-controlled homes, about 46 percent of its 10-year target. City-led and city-supported projects accounted for roughly 65 percent of all rental housing starts in Toronto between January and August 2025. On the private side, Toronto CMA per-capita homebuilding fell to its lowest level since 1996 in 2025, driven by a roughly 60 percent drop in condominium starts; rental apartment starts also fell about 8 percent year over year. Toronto DCs on a non-rental one-bedroom rose from $4,985 in 2009 to $52,676 by 2024.",
+    "existing_policy_stack": [
+      {
+        "label": "HousingTO 2020-2030 Action Plan: target of 65,000 rent-controlled homes.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, HousingTO 2024-2025 Housing Progress Report, November 2025", "url": "https://www.toronto.ca/wp-content/uploads/2025/11/978e-HousingTO2024-2025ProgressReport.pdf" }
+        ]
+      },
+      {
+        "label": "Purpose-Built Rental Incentives stream: indefinite DC deferral, 35-year 15 percent property tax reduction, fee waivers for affordable units; Council approved November 2024.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto news release on Purpose-Built Rental Incentives stream, 2024", "url": "https://www.toronto.ca/news/city-of-toronto-unlocks-more-than-7000-net-new-rental-homes-through-purpose-built-rental-housing-incentives-stream/" },
+          { "tier": "T2", "label": "Stikeman Elliott, Toronto City Council Approves Incentive Plan for Private Developers of Rental Units, 2024", "url": "https://stikeman.com/en-ca/kh/real-estate-municipal/toronto-city-council-approves-incentive-plan-for-private-developers-of-rental-units" }
+        ]
+      },
+      {
+        "label": "Public Developer Delivery model: city as direct builder on city-owned sites including 11 Brock Ave. and 35 Bellevue Ave.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto news release on Public Developer Delivery model, December 2024", "url": "https://www.toronto.ca/news/city-of-toronto-breaks-ground-on-first-public-developer-delivery-model-affordable-housing-project-at-11-brock-ave/" }
+        ]
+      },
+      {
+        "label": "Multiplex as-of-right: 2 to 4 units permitted citywide; sixplex permissions adopted June 2025 in nine wards.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, Multiplex Zoning By-law Amendment background file, May 2025", "url": "https://www.toronto.ca/wp-content/uploads/2025/05/96a1-city-planning-multiplex-zoning-by-law-haf-six-units.pdf" }
+        ]
+      },
+      {
+        "label": "Federal Housing Accelerator Fund: $471 million agreement signed December 20, 2023, tied to 60,980 net new permitted homes.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto news release on Federal Housing Accelerator Fund, 2023", "url": "https://www.toronto.ca/news/city-of-toronto-receives-471-million-from-the-government-of-canada-to-create-11780-new-homes-in-toronto/" },
+          { "tier": "T1", "label": "CMHC HAF Action Plan summary, Toronto", "url": "https://assets.cmhc-schl.gc.ca/sites/cmhc/professional/project-funding-and-mortgage-financing/funding-programs/all-funding-programs/housing-accelerator-fund/action-plan-summaries/haf-action-plan-summaries-toronto-en.pdf" }
+        ]
+      },
+      {
+        "label": "Quayside / Ookwemin Minising: $975 million tri-government waterfront commitment, January 2025, targeting more than 14,000 homes.",
+        "citations": [
+          { "tier": "T1", "label": "Waterfront Toronto, Governments Invest to Rapidly Build Housing on Toronto's Waterfront, January 2025", "url": "https://www.waterfrontoronto.ca/news/governments-invest-rapidly-to-build-housing-create-jobs-and-new-destinations-on-torontos-waterfront" }
+        ]
+      },
+      {
+        "label": "Carney-Ford-Chow $8.8 billion DC reduction deal: 50 percent DC cut for three years on eligible projects, March 30, 2026.",
+        "citations": [
+          { "tier": "T1", "label": "Prime Minister of Canada news release, March 30, 2026", "url": "https://www.pm.gc.ca/en/news/news-releases/2026/03/30/prime-minister-carney-secures-new-partnership-ontario-cut-taxes" }
+        ]
+      }
+    ],
+    "citations": [
+      { "tier": "T1", "label": "City of Toronto, HousingTO 2024-2025 Housing Progress Report, November 2025", "url": "https://www.toronto.ca/wp-content/uploads/2025/11/978e-HousingTO2024-2025ProgressReport.pdf" },
+      { "tier": "T1", "label": "City of Toronto, Development Charge Rates Effective June 6, 2024 and May 1, 2025", "url": "https://www.toronto.ca/wp-content/uploads/2025/04/97eb-DC-Rates-Effective-June-6-2024-and-May-1-2025.pdf" },
+      { "tier": "T1", "label": "CMHC, Housing starts up 5.6% in 2025 from 2024, January 2026", "url": "https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2026/housing-starts-december-2025" },
+      { "tier": "T1", "label": "CMHC, Slowdown in Toronto, Vancouver leave national housing starts flat in first half of 2025", "url": "https://www.cmhc-schl.gc.ca/media-newsroom/news-releases/2025/slowdown-toronto-vancouver-leave-national-housing-starts-flat-first-half-2025" }
+    ]
+  },
+  "comparables": [
+    {
+      "name": "Auckland",
+      "period": "2016 to 2024",
+      "summary": "The Auckland Unitary Plan upzoned approximately three quarters of residential land in 2016, roughly tripling permitted dwelling capacity. Greenaway-McGrevy and Phillips (2023) find upzoning roughly doubled the permitting rate within five years and produced an approximate 80 percent increase in cumulative permits over six years.",
+      "outcome": "Roughly 80 percent cumulative permit increase over six years; rents grew about 29 percent versus 47 percent income growth from 2016 to 2023, with the rent-to-income ratio falling from 22.7 to 19.4 percent.",
+      "citations": [
+        { "tier": "T3", "label": "Greenaway-McGrevy and Phillips, The impact of upzoning on housing construction in Auckland, Journal of Urban Economics, 136, 103555, 2023", "url": "https://www.sciencedirect.com/science/article/abs/pii/S0094119023000244" },
+        { "tier": "T2", "label": "Greenaway-McGrevy, Can Zoning Reform Reduce Housing Costs? Auckland EPC Working Paper WP016", "url": "https://cdn.auckland.ac.nz/assets/business/about/our-research/research-institutes-and-centres/Economic-Policy-Centre--EPC-/WP016.pdf" }
+        ],
+      "caveats": "New Zealand has different DC regimes, weaker tenant protection law, and a smaller share of land owned by major institutional developers than Toronto."
+    },
+    {
+      "name": "Vienna",
+      "period": "1990s to present",
+      "summary": "Roughly 21 percent of Vienna's housing stock is municipally owned and another 18 to 21 percent is held by limited-profit housing associations (LPHAs), with new LPHA rents averaging about 27 percent below private rents. The OECD reports Austria spends about 0.25 percent of GDP on social housing, third highest in the OECD.",
+      "outcome": "New LPHA rents average about 27 percent below private rents; Vienna's combined social share is near 44 percent of the city stock, sustained over decades.",
+      "citations": [
+        { "tier": "T3", "label": "Kadi, Layers of Commodification in the City of Decommodification, Housing, Theory and Society, 2024", "url": "https://www.tandfonline.com/doi/full/10.1080/14036096.2024.2382417" },
+        { "tier": "T1", "label": "OECD Housing Policy Toolkit, Austria snapshot, 2023", "url": "https://housingpolicytoolkit.oecd.org/www/CountryFiches/housing-policy-Austria.pdf" }
+      ],
+      "caveats": "Austria has unitary federal-state housing law, decades of accumulated public land, and a non-profit institutional sector with no Canadian equivalent at scale."
+    },
+    {
+      "name": "Houston",
+      "period": "1998 to present",
+      "summary": "Houston cut minimum lot sizes from roughly 5,000 to 1,400 square feet inside Loop 610 in 1998, later citywide, catalyzing thousands of small-lot infill homes. Glaeser and Gyourko's regulatory-tax estimates place Houston's regulatory tax near zero, versus 20 percent or more in tightly regulated coastal markets.",
+      "outcome": "Regulatory tax on housing measured near zero; thousands of small-lot infill homes built where minimum lot sizes were reduced.",
+      "citations": [
+        { "tier": "T3", "label": "Glaeser and Gyourko, The Economic Implications of Housing Supply, Journal of Economic Perspectives, 32(1), 2018, DOI 10.1257/jep.32.1.3" }
+      ],
+      "caveats": "Houston has no zoning code in the Toronto sense, a Sun Belt land-supply context, and weaker design and heritage protections than any Canadian city."
+    },
+    {
+      "name": "Berlin",
+      "period": "2020 to 2021",
+      "summary": "Berlin's Mietendeckel froze and rolled back rents from February 2020 until April 15, 2021, when the Federal Constitutional Court ruled it void on federalism grounds, retroactively obligating tenants to repay foregone rent. Pre-ruling research found short-run rent reductions in regulated stock and reduced supply on listing platforms.",
+      "outcome": "Rent cap ruled void after 14 months; short-run rent reductions in regulated stock paired with reduced platform supply, then retroactive repayment of foregone rent.",
+      "citations": [
+        { "tier": "T1", "label": "Bundesverfassungsgericht, Press release 28/2021, Act Governing the Rent Cap for Residential Premises in Berlin is void, April 15, 2021", "url": "https://www.bundesverfassungsgericht.de/SharedDocs/Pressemitteilungen/EN/2021/bvg21-028.html" }
+      ],
+      "caveats": "Included as a cautionary case on the limits of rent control as a stand-alone supply lever, not as a model either Toronto candidate is proposing."
+    },
+    {
+      "name": "Singapore HDB",
+      "period": "1960 to present",
+      "summary": "Roughly 77 to 80 percent of Singapore's resident population lives in Housing and Development Board flats, with about 90 percent of HDB residents owning their unit, financed through Central Provident Fund withdrawals.",
+      "outcome": "About 77 to 80 percent of residents housed in HDB flats; about 90 percent of HDB residents own their unit.",
+      "citations": [
+        { "tier": "T1", "label": "Singapore Housing and Development Board, official statistics" },
+        { "tier": "T2", "label": "Statista, Share of resident population in HDB flats, 2023" }
+      ],
+      "caveats": "Singapore is a city-state with full control over land assembly, a compulsory savings system, and a unitary national government. Included only as the high-end of what state-as-developer can reach in principle, not as a proposal under either Toronto platform."
+    }
+  ],
+  "projections": {
+    "kind": "thin",
+    "rationale": "Literature does not support a confident singular projection on this question. Toronto-specific evidence is thin: the city's own 2024 to 2025 progress data show 65 percent of recent rental starts came from city-led or city-supported channels under the current policy mix, but isolating the marginal effect of DC cuts versus public delivery requires a counterfactual the published research does not yet provide. The comparable-jurisdiction outcomes (Auckland's roughly 80 percent cumulative permit increase over six years; Vienna's new social rents averaging roughly 27 to 30 percent below private rents at sustained 0.25 percent of GDP public spend) are the closest defensible numerical anchors."
+  },
+  "time_horizon": "Auckland's permitting response showed up within one to three years; Vienna's stock share took roughly three decades of sustained public investment; Berlin's rent-cap experiment unwound in 14 months. For Toronto, the published evidence supports near-term effects (years 1 to 3) on permits from approval-speed and DC changes, and decade-scale effects on stock composition from city-as-developer programs.",
+  "meta": {
+    "last_reviewed": "2026-05-04",
+    "next_review": "2026-06-01"
+  }
+}
