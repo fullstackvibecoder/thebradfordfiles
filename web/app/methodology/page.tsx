@@ -31,6 +31,23 @@ export default function Methodology() {
 
       <h2>Corrections</h2>
       <p><a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues">Open an issue on GitHub</a> if you spot an error.</p>
+
+      <h2>Policy scenario cards</h2>
+      <p>
+        Some pages on this site analyse contested positions through a Policy Scenario card. Cards live at <a href="/scenarios">/scenarios</a>. Each one surfaces who each candidate&apos;s mechanism reaches, what Toronto already does, and what comparable cities have shown. Every claim cites its source.
+      </p>
+      <h2>Source-tier system</h2>
+      <p>Every citation on a scenario card carries a tier badge. The four tiers track the actual evidentiary gradient:</p>
+      <ul>
+        <li><strong>T1. Primary government data.</strong> City of Toronto budget, Auditor General reports, Statistics Canada releases, CMHC, planning department published data, federal and provincial budget documents.</li>
+        <li><strong>T2. Independent analysis.</strong> Wellesley Institute, IMFG, OECD, CHRA, Toronto Region Board of Trade, Conference Board, BIA-commissioned studies, investigative journalism with traceable primary sources.</li>
+        <li><strong>T3. Peer-reviewed academic.</strong> DOI-bearing journal articles only.</li>
+        <li><strong>T4. Mayoral Record extrapolation.</strong> In-house arithmetic or projection. Used rarely. When a card includes a T4 claim, the card carries a methodology paragraph describing assumptions, inputs, and limits.</li>
+      </ul>
+      <h2>Editorial discipline</h2>
+      <p>
+        The chat agent retrieves curated cards. It does not generate modeling content at query time. When a question does not match any curated card, the agent says so and the question logs to an editorial backlog. New cards are reviewed before publish, not auto-generated. When the underlying literature does not support a confident singular projection, the card says so explicitly rather than fabricating one.
+      </p>
     </StaticPage>
   );
 }
