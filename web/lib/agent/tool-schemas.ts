@@ -53,6 +53,21 @@ export const TOOL_SCHEMAS: Tool[] = [
     },
   },
   {
+    name: "get_scenario_card",
+    description: "Retrieve a curated policy scenario card for the user's question. Use when the user asks 'what would this mean', 'who benefits', 'what would happen if', or any question that asks about implications of a candidate's position rather than what they said. Never generate modeling content yourself; this tool returns curated, reviewed cards or a no-match response. On match, emit a single_answer card whose answer is the returned pull_quote, with one stamp linking to /scenarios/<slug>. On no_match, tell the reader the question hasn't been modeled yet.",
+    input_schema: {
+      type: "object",
+      required: ["query"],
+      properties: {
+        query: { type: "string", description: "The user's verbatim question" },
+        topic_hint: {
+          type: "string",
+          description: "Best-guess topic slug if recognisable: housing-supply-mechanism, transit-operating-funding, property-tax-stance, public-safety-approach, climate-parks-investment.",
+        },
+      },
+    },
+  },
+  {
     name: "emit_card",
     description: "Emit the final structured card payload as the answer. This is the terminal tool call.",
     input_schema: {
