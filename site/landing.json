@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T01:29:04+00:00",
+  "generated_at": "2026-05-04T13:58:15+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -41,7 +41,8 @@
       "date_range": {
         "earliest": "2015-01-28",
         "latest": "2026-05-02"
-      }
+      },
+      "consistency_dot": "yellow"
     },
     {
       "slug": "chow",
@@ -83,7 +84,8 @@
       "date_range": {
         "earliest": "2014-01-20",
         "latest": "2025-08-25"
-      }
+      },
+      "consistency_dot": "green"
     }
   ]
 }
