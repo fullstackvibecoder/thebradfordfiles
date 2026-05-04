@@ -1,0 +1,173 @@
+{
+  "slug": "property-tax-stance",
+  "topic": "Should Toronto residential property taxes be held to inflation or below (Bradford), or remain a primary lever for fiscal sustainability with at-or-above-inflation increases plus progressive add-ons (Chow)?",
+  "topic_short": "Property tax stance",
+  "pull_quote": "Toronto's residential rate ran at or below inflation for most of 2010 to 2022, then rose 7.0 percent in 2023, 9.5 percent in 2024, and 6.9 percent in 2025 before the 2026 budget settled at 2.2 percent. The ten-year capital plan grew to $63.1 billion in 2026, with an $18 billion state-of-good-repair gap still outstanding.",
+  "who_benefits": {
+    "intro": "Each candidate's stance shifts incidence between current owner-occupiers, renters, the non-residential base, and users of city services that depend on the capital plan. The property-tax incidence literature offers competing views (the benefit view, the new view, and assessment-regressivity work) that bracket the same trade-off.",
+    "mechanisms": [
+      {
+        "candidate_handle": "bradfordgrams",
+        "summary": "Restraint at or below inflation reduces the year-over-year cash burden on owner-occupiers and pass-through to tenants in the short run. Property tax incidence research is split: from the perspective of a single jurisdiction the local tax is borne mainly by local residents and is roughly proportional to housing consumption (Mieszkowski and Zodrow, 1989), and assessment-based regressivity has been documented at the national level in U.S. data (Avenancio-Leon and Howard, 2022). However, Toronto's own infrastructure backlog means restraint shifts cost into deferred capital, debt service, or service reductions whose incidence falls on transit riders, social housing tenants, and users of city facilities."
+      },
+      {
+        "candidate_handle": "oliviachow",
+        "summary": "At-or-above-inflation residential increases plus progressive add-ons (3 percent Vacant Home Tax, graduated luxury MLTT to 8.6 percent) raise the immediate cash burden on owner-occupiers while drawing additional revenue from non-occupied units and high-value transactions. The new view of property tax incidence holds that the nationwide-average burden falls on capital owners and is progressive, while the above-average local component drives capital out of high-tax jurisdictions and is borne by local residents (Mieszkowski, 1972; Zodrow, 2001). Tassonyi, Bird, and Slack (2015) found GTA municipalities had not exhausted the revenue-raising side of the property tax curve, suggesting room to raise rates without crossing the revenue-hill peak, though they flagged tax-competition effects between Toronto and surrounding municipalities."
+      }
+    ],
+    "literature_row": [
+      { "tier": "T3", "label": "Mieszkowski, The Property Tax: An Excise Tax or a Profits Tax?, Journal of Public Economics, 1972" },
+      { "tier": "T3", "label": "Mieszkowski and Zodrow, Taxation and the Tiebout Model, Journal of Economic Literature, 1989" },
+      { "tier": "T3", "label": "Zodrow, The Property Tax as a Capital Tax, National Tax Journal, 2001" },
+      { "tier": "T2", "label": "Tassonyi, Bird, and Slack, Can GTA Municipalities Raise Property Taxes? IMFG Papers, 2015" },
+      { "tier": "T3", "label": "Avenancio-Leon and Howard, The Assessment Gap: Racial Inequalities in Property Taxation, Quarterly Journal of Economics, 2022" },
+      { "tier": "T2", "label": "Caracciolo and Miglino, Vancouver Empty Homes Tax difference-in-differences evaluation, 2024" },
+      { "tier": "T2", "label": "Slack and IMFG, Canadian Municipal Fiscal Sustainability, IMFG, 2024" }
+    ]
+  },
+  "positions": [
+    {
+      "candidate_handle": "bradfordgrams",
+      "candidate_name": "Brad Bradford",
+      "summary": "In his 2023 mayoral byelection platform Bradford committed to keep property tax increases at or below the rate of inflation. In council, he voted against the 2025 6.9 percent increase, called it a record-breaking tax increase, and on the 2026 budget pressed Mayor Chow on whether she would commit to keeping property taxes at the rate of inflation in a future term, characterizing the 2026 reduction as a pre-election move financed from reserves.",
+      "citations": [
+        { "tier": "T2", "label": "Global News promise tracker on Bradford 2023 mayoral byelection platform, 2023" },
+        { "tier": "T2", "label": "CBC News, Toronto city council finalizes new budget with 6.9% property tax hike, March 5, 2025", "url": "https://www.cbc.ca/news/canada/toronto/toronto-2025-budget-council-meeting-1.7455475" },
+        { "tier": "T2", "label": "CBC News, Toronto city council finalizes 2026 budget, February 11, 2026" }
+      ]
+    },
+    {
+      "candidate_handle": "oliviachow",
+      "candidate_name": "Olivia Chow",
+      "summary": "Chow's three budgets delivered a 9.5 percent residential increase in 2024, 6.9 percent in 2025, and 2.2 percent in 2026, with the lower 2026 figure attributed to revenue from progressive levies (3 percent Vacant Home Tax, graduated luxury MLTT) rather than a permanent shift in approach. On the 2024 budget Chow noted that closing the $1.776 billion opening pressure with residential property taxes alone would have required a 42 percent increase.",
+      "citations": [
+        { "tier": "T1", "label": "City of Toronto, 2024 Budget materials" },
+        { "tier": "T1", "label": "City of Toronto, 2025 Budget materials" },
+        { "tier": "T1", "label": "City of Toronto, 2026 Budget release, February 10, 2026", "url": "https://www.toronto.ca/news/city-of-torontos-2026-budget-now-final-focuses-on-affordability-service-stability-and-financial-sustainability/" },
+        { "tier": "T2", "label": "CBC News, Toronto mayor's 2026 budget keeps 2.2% property tax increase, February 4, 2026", "url": "https://www.cbc.ca/news/canada/toronto/toronto-mayors-budget-2026-9.7068896" }
+      ]
+    }
+  ],
+  "status_quo": {
+    "summary": "What is actually happening in Toronto now (2026 budget, adopted February 10, 2026): operating budget of $18.9 billion ($16.61 billion tax-supported, $2.25 billion rate-supported); ten-year capital plan of $63.1 billion (2026 to 2035); 2026 residential property tax increase of 0.7 percent base plus 1.5 percent City Building Fund equals 2.2 percent combined; approximate annual impact on the typical home of about $91.53 per year; state-of-good-repair gap of $18 billion over the next decade as of 2025, down from a previously reported $26 billion.",
+    "existing_policy_stack": [
+      {
+        "label": "City Building Fund levy at 1.5 percent per year, dedicated to transit and housing capital, in place through 2025 and continued in 2026.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto Council, City Building Fund decision, December 2019" }
+        ]
+      },
+      {
+        "label": "Vacant Home Tax raised from 1 percent to 3 percent for the 2024 tax year, with projected annual revenue of approximately $105 million.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, Vacant Home Tax 2024 update" }
+        ]
+      },
+      {
+        "label": "Municipal Land Transfer Tax with graduated luxury rates: 4.4 percent for $3 to $4 million, scaling up to 8.6 percent for $20 million-plus, projected $152 million in 2026.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto Council, MLTT luxury-tier amendment, December 2025", "url": "https://secure.toronto.ca/council/agenda-item.do?item=2025.EX28.1" },
+          { "tier": "T2", "label": "CBC News, Toronto city council approves hike in land transfer tax for luxury homebuyers, December 17, 2025", "url": "https://www.cbc.ca/news/canada/toronto/toronto-luxury-homes-land-transfer-tax-increase-approved-city-council-9.7020160" }
+        ]
+      },
+      {
+        "label": "15 percent reduction in property tax rates for more than 28,000 small business properties continued in 2025.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, Small Business Property Tax Subclass, 2025" }
+        ]
+      },
+      {
+        "label": "Multi-residential, commercial, and industrial property classes taxed at separate rates from residential.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, Property tax rate by-law, 2025" }
+        ]
+      }
+    ],
+    "citations": [
+      { "tier": "T1", "label": "City of Toronto, 2026 Budget release, February 10, 2026", "url": "https://www.toronto.ca/news/city-of-torontos-2026-budget-now-final-focuses-on-affordability-service-stability-and-financial-sustainability/" },
+      { "tier": "T2", "label": "CBC News, Toronto mayor's 2026 budget keeps 2.2% property tax increase, January 7, 2026", "url": "https://www.cbc.ca/news/canada/toronto/toronto-mayors-budget-2026-9.7068896" },
+      { "tier": "T2", "label": "Ontario Construction News, Toronto 10-year capital plan, 2026" },
+      { "tier": "T2", "label": "CBC News, Toronto state-of-good-repair gap reporting, May 2025" }
+    ]
+  },
+  "comparables": [
+    {
+      "name": "Toronto",
+      "period": "2010 to 2026",
+      "summary": "Year-by-year total residential increases (base plus dedicated levies) ranged from 0.0 percent in 2011 to 9.5 percent in 2024. Under restraint years (Ford-era 2011 to 2014 and the early Tory era through 2019), Toronto's state-of-good-repair backlog grew. Under the 2024 to 2025 increases, the city reported $8 billion of progress against the renewal gap and a $63.1 billion ten-year capital plan in 2026.",
+      "outcome": "Restraint years coincided with deteriorating municipal infrastructure per IMFG analysis; expansion years (2024 to 2025) produced an $8 billion reduction in the state-of-good-repair gap.",
+      "citations": [
+        { "tier": "T2", "label": "Slack and IMFG, Canadian Municipal Fiscal Sustainability, 2024" },
+        { "tier": "T2", "label": "CBC News, Toronto state-of-good-repair backlog reporting, 2025" },
+        { "tier": "T2", "label": "Ontario Construction News, Toronto 10-year capital plan, 2026" }
+      ],
+      "caveats": "Tax history mixes base rate, Scarborough Subway levy, and City Building Fund levy. Pandemic-era operating pressures (refugee shelter costs, transit ridership shortfall) are partial explanations for 2023 to 2025 increases and complicate clean attribution to mayoral preference."
+    },
+    {
+      "name": "Calgary",
+      "period": "2024 to 2026",
+      "summary": "Calgary council approved a plan in November 2023 to shift one percentage point of total tax share from non-residential to residential properties each year from 2024 through 2026, with a 2024 residential increase of 7.8 percent paired with 3.5 percent non-residential. In November 2025, council cancelled the planned 1 percent shift for 2026 and reduced the overall 2026 increase to 1.64 percent.",
+      "outcome": "Residential tax share moved from roughly 52:48 toward 55:45 then partially reversed. The 2026 reduction was achieved through reserve reallocation rather than a permanent revenue source.",
+      "citations": [
+        { "tier": "T2", "label": "CTV Calgary, Council shifts tax share from non-residential to residential, 2023" },
+        { "tier": "T2", "label": "CBC Calgary, Council approves 3.6% increase for 2025, 2024" },
+        { "tier": "T1", "label": "City of Calgary, 2026 Budget update, 2025" },
+        { "tier": "T2", "label": "Sprawl Calgary, 2026 reduction analysis, 2025" }
+      ],
+      "caveats": "Alberta's provincial education property tax adds a separate top-line increase that compounds municipal decisions. Calgary's non-residential base differs in scale from Toronto's and faces sustained downtown office vacancy."
+    },
+    {
+      "name": "Vancouver Empty Homes Tax",
+      "period": "2017 to 2025",
+      "summary": "Vancouver's Empty Homes Tax has generated $194.3 million for affordable housing since 2017 and the number of declared or deemed-vacant homes fell to 979 in 2024, a 0.49 percent vacancy rate. Caracciolo and Miglino (2024) used a difference-in-differences design across the Vancouver and Burnaby boundary and estimated the tax lowered vacancy by 1.5 percentage points and reduced empty units by approximately 5,355 between 2016 and 2021.",
+      "outcome": "$194.3 million for affordable housing since 2017; vacancy reduced by 1.5 percentage points (about 5,355 units); no measured effect on average rent.",
+      "citations": [
+        { "tier": "T1", "label": "City of Vancouver, Empty Homes Tax annual report, 2025" },
+        { "tier": "T2", "label": "Caracciolo and Miglino, Vancouver Empty Homes Tax difference-in-differences evaluation, 2024" }
+      ],
+      "caveats": "Vancouver and Toronto differ in housing market structure. Toronto's revamped 3 percent Vacant Home Tax projected approximately $105 million in 2024 revenue but has had administrative issues including 2023 declaration program errors that prompted a 2024 program redesign."
+    },
+    {
+      "name": "Property tax incidence literature",
+      "period": "1972 to 2022",
+      "summary": "The benefit view treats property tax as a payment for local services and so as roughly non-distortionary; the new view pioneered by Mieszkowski (1972) treats nationwide-average property tax as a tax on capital owners (progressive) and the above-average local component as borne by local residents through capital outflows. Recent U.S. work documents systematic regressivity in assessment-based incidence at the parcel level. Tassonyi, Bird, and Slack (2015) found GTA municipalities had not reached the revenue-maximizing point on the property tax curve.",
+      "outcome": "Theoretical bracketing of incidence: capital-tax incidence is progressive nationally; local incidence on capital outflows is regressive at the jurisdiction margin; assessment-based regressivity is documented at the parcel level. GTA municipalities have available revenue room.",
+      "citations": [
+        { "tier": "T3", "label": "Mieszkowski and Zodrow, Taxation and the Tiebout Model, Journal of Economic Literature, 1989" },
+        { "tier": "T3", "label": "Zodrow, The Property Tax as a Capital Tax, National Tax Journal, 2001" },
+        { "tier": "T3", "label": "Avenancio-Leon and Howard, The Assessment Gap, Quarterly Journal of Economics, 2022" },
+        { "tier": "T2", "label": "Tassonyi, Bird, and Slack, Can GTA Municipalities Raise Property Taxes? IMFG, 2015" }
+      ],
+      "caveats": "The U.S. assessment-regressivity literature uses parcel-level sales-ratio data not directly transferable to MPAC's mass-appraisal regime in Ontario. Theoretical incidence views differ in assumed capital mobility and time horizon and are not directly comparable to a single-year council decision."
+    }
+  ],
+  "projections": {
+    "kind": "plural",
+    "intro": "Three plural framings the literature does support. Literature does not support a confident singular projection on this question.",
+    "items": [
+      {
+        "scenario_label": "Sustained restraint (Bradford-style at or below inflation)",
+        "range_or_value": "Continuing growth in the state-of-good-repair backlog absent a substitute revenue source",
+        "citation": { "tier": "T2", "label": "Slack and IMFG, Canadian Municipal Fiscal Sustainability, 2024" },
+        "notes": "Consistent with the deferred-capital pattern observed in Toronto from roughly 2011 through 2022."
+      },
+      {
+        "scenario_label": "Continued at-or-above-inflation residential increases (Chow trajectory)",
+        "range_or_value": "Operating-budget stabilization paired with documented annual cost increase relative to a freeze counterfactual",
+        "citation": { "tier": "T2", "label": "Tassonyi, Bird, and Slack, Can GTA Municipalities Raise Property Taxes? IMFG, 2015" },
+        "notes": "Available revenue room exists in the GTA, but tax-competition effects on the non-residential base are documented."
+      },
+      {
+        "scenario_label": "Hybrid path (modest residential increases plus expanded progressive levies, as in 2026)",
+        "range_or_value": "VHT projected $105 million in 2024; luxury MLTT projected $152 million in 2026",
+        "citation": { "tier": "T1", "label": "City of Toronto budget summaries, 2024 to 2026" },
+        "notes": "These are smaller than the operating-budget gap absorbed by the 2024 9.5 percent increase, so the literature does not support a claim that progressive levies alone substitute for residential rate decisions over a four-year term."
+      }
+    ]
+  },
+  "time_horizon": "Property tax rate decisions affect household cash flow in year one and accumulate compoundingly across a four-year term. State-of-good-repair effects of restraint or expansion materialize across roughly five to fifteen years as deferred renewal feeds into asset failures and service disruptions. Capital tax incidence effects under the new view are long-run general-equilibrium effects measured across decades.",
+  "meta": {
+    "last_reviewed": "2026-05-04",
+    "next_review": "2026-06-01"
+  }
+}
