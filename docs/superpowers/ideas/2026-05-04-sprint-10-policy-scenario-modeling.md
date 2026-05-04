@@ -1,7 +1,7 @@
-# Policy Scenario Modeling (future planning session)
+# Sprint 10. Policy Scenario Modeling
 
 **Date logged:** 2026-05-04
-**Status:** Idea, not yet specced. Slated for a separate brainstorm/spec/plan cycle.
+**Status:** Idea, not yet specced. Slated as Sprint 10. Brainstorm/spec/plan cycle to begin after Sprint 9 (the redesign and chat agent) ships and accumulates real usage data.
 
 ## The user's framing (verbatim)
 
