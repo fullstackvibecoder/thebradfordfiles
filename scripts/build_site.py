@@ -271,9 +271,10 @@ def _emit_sitemap(landing_cards: list[dict], generated_at: str) -> None:
         ("/terms",                                generated_at),
     ]
     candidate_routes = [
-        (f"/{c['slug']}", (c.get("date_range") or {}).get("latest") or generated_at)
+        (f"/candidates/{c['slug']}", (c.get("date_range") or {}).get("latest") or generated_at)
         for c in landing_cards
     ]
+    candidate_routes.append(("/candidates", generated_at))
     all_routes = static_routes + candidate_routes
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -283,8 +284,10 @@ def _emit_sitemap(landing_cards: list[dict], generated_at: str) -> None:
         lines.append(f"    <lastmod>{lastmod[:10]}</lastmod>")
         lines.append("  </url>")
     lines.append("</urlset>")
-    (SITE_DIR / "sitemap.xml").write_text("\n".join(lines) + "\n")
-    print(f"  wrote site/sitemap.xml ({len(all_routes)} routes)")
+    sitemap_xml = "\n".join(lines) + "\n"
+    (SITE_DIR / "sitemap.xml").write_text(sitemap_xml)
+    (WEB_DATA_DIR.parent / "sitemap.xml").write_text(sitemap_xml)
+    print(f"  wrote site/sitemap.xml + web/public/sitemap.xml ({len(all_routes)} routes)")
 
 
 def main(argv: list[str] | None = None) -> int:
