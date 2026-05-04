@@ -1,0 +1,15 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "safety_crime",
+  "summary": null,
+  "consistency": null,
+  "key_positions": [],
+  "key_actions": [],
+  "input_record_count": 2,
+  "input_records_hash": "sha256:d85d2f858c248770fbd99587cfbea35d029b9654743e9cfba8384f0433a7a13c",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:47:25+00:00",
+  "synthesis_skipped_reason": "insufficient_data"
+}

@@ -1,0 +1,134 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "safety_crime",
+  "summary": "Bradford treats safety and crime as a top priority across transit, public spaces, road safety, and protections for faith communities. Bradford states Toronto \"has never felt less safe\" and supports visible police presence (including officers at every TTC subway station), enforced bylaws, more speed cameras, and stronger bail compliance. Bradford championed bubble zones around places of worship, schools and daycares, opposed encampments near playgrounds/schools/daycares (proposing 200m/48-hour clearance), and brought motions on jet ski no-go zones at Woodbine Beach. Bradford repeatedly condemns antisemitism and hate-motivated attacks, calls for prosecution to the fullest extent of the law, and frames police funding cuts as harmful to response times. Bradford also supported a non-police pilot for non-violent crisis calls and community-based youth violence prevention partnerships.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-03-22",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports placing police officers at every TTC subway station and visible police presence to restore transit safety.",
+      "supporting_records": [
+        "DWPZGCUFT_z",
+        "DWFOTgOCdsC",
+        "DVhJtcuD2D5",
+        "DWhiBdhjRbG",
+        "DTn-8hvDusj"
+      ]
+    },
+    {
+      "stance": "Supports bubble zones / safe access zones around places of worship, schools, and daycares to protect against hate and harassment.",
+      "supporting_records": [
+        "DLqIg7XSd8J",
+        "DJ-VovGNcWT",
+        "DJ95bBcO7_v",
+        "DIj5gmSSZXJ",
+        "DHD8cX7gMuu",
+        "DDxCGOzRSW5",
+        "C7fI8TjP2zZ",
+        "C5f-hlSgPPP"
+      ]
+    },
+    {
+      "stance": "Opposes encampments near playgrounds, schools, and daycares; proposes 200m no-go zones with 48-hour removal after report.",
+      "supporting_records": [
+        "DRAJ0bKguJx",
+        "DRCZSYbjSpb",
+        "DQwumxDjYhU",
+        "DQ1p-5ECq1K",
+        "DRAiOA7Ea4W",
+        "DTu89cQjtBR"
+      ]
+    },
+    {
+      "stance": "Opposes antisemitism and hate-motivated attacks; calls for prosecution to the fullest extent of the law.",
+      "supporting_records": [
+        "DVloXWPDe6p",
+        "DVzJnfTAZwm",
+        "DQo7TiHjCd0",
+        "DFLookxywBt",
+        "DC7JGIzSrH3",
+        "C82rphdS27z"
+      ]
+    },
+    {
+      "stance": "Supports stronger road safety measures including speed cameras, traffic calming, school safety zones, and Vision Zero initiatives.",
+      "supporting_records": [
+        "Cs4C_BsAm2d",
+        "CdbglhTJRBl",
+        "CWMHoO4L6ry",
+        "BvPcJ3jgr8R",
+        "CTnHE-zrvZE",
+        "CPEBDCerUX8"
+      ]
+    },
+    {
+      "stance": "Opposes cuts to the Toronto Police budget and supports fully funding the police to improve response times.",
+      "supporting_records": [
+        "C2yJR2BNf_s",
+        "C3WbP3NN2_C",
+        "B7J7syAFkTj"
+      ]
+    },
+    {
+      "stance": "Supports creating Bail Compliance Units within Toronto Police Service to monitor offenders out on bail.",
+      "supporting_records": [
+        "CtMhuqtAB3r",
+        "CrQwa9jgbX-",
+        "CrO78kSgWyV",
+        "CrjVIMdvq-u"
+      ]
+    },
+    {
+      "stance": "Opposes illegal/unregulated jet ski operations at Woodbine Beach and supports motorized watercraft no-go zones.",
+      "supporting_records": [
+        "DMipr7MyKc4",
+        "DMQkYU1g0Gt",
+        "DN27QKaWhTo",
+        "DXufqImlfOt",
+        "DL7lVShAJ5K"
+      ]
+    },
+    {
+      "stance": "Supports community-based youth violence prevention through partnerships with community leaders and other governments.",
+      "supporting_records": [
+        "DPUXaE7CbRl",
+        "DPCo-WljTLB",
+        "DNoomTGNuU7"
+      ]
+    },
+    {
+      "stance": "Supports a non-police-led response pilot for non-violent crisis calls as part of policing reform.",
+      "supporting_records": [
+        "CK7Gvnfhfh2",
+        "CCCIzJShDKU"
+      ]
+    },
+    {
+      "stance": "Supports 'no bail, go to jail' policy for anyone who fires a gun in Toronto.",
+      "supporting_records": [
+        "DNl6e-cOJq8"
+      ]
+    },
+    {
+      "stance": "States Toronto currently feels less safe and that safety is the issue heard most from residents.",
+      "supporting_records": [
+        "DWZyuhICoQQ",
+        "DWU5JzJiHrx",
+        "DRkhUKqjmI5",
+        "DPzqe-gAexQ",
+        "DQsMRB7F5nL"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 605,
+  "input_records_hash": "sha256:42bdf65b4cb5799d8f31e60c935f91f4b74087c70e74ef723c636c64cbc560d4",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:41:11+00:00",
+  "synthesis_skipped_reason": null
+}

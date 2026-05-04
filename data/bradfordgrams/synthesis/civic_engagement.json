@@ -1,0 +1,83 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "civic_engagement",
+  "summary": "Bradford's public Instagram content presents civic engagement as central to municipal governance, framing community consultation, door-knocking, and resident feedback as essential to decision-making (B73xxLAFpMQ, Cf9TcTSrfK-, CMNrXXwBVIj). Bradford repeatedly states that residents are \"local experts\" and that engagement should occur before plans are confirmed, including with under-represented communities (CCl4ptXhZxc, CI_KpVLBu4U, CUvS2zjrRq1). Bradford has hosted budget consultations, town halls, podcast episodes, and community meetings, and has criticized processes he views as limiting deputations or charging admission to public events (DUdUQSkkQHd, DMK2uOQgteh, DXNNYyaDSsq). Bradford regularly attends and recognizes diverse cultural and faith communities — including Jewish, Tamil, Armenian, Ukrainian, Iranian, Bangladeshi, Indigenous, and 2SLGBTQI+ communities — and supports commemorative monuments and laneway namings (CWySJSmLlR8, CGurGZ3hxpR, C8aZOEXycEo). Bradford emphasizes unity over division and standing against hate (CSWHgnWDKpn, BnrhyyKhewN).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-03-24",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports robust community engagement and public input as a cornerstone of municipal decision-making, with residents treated as local experts.",
+      "supporting_records": [
+        "Cf9TcTSrfK-",
+        "CMNrXXwBVIj",
+        "CCl4ptXhZxc",
+        "CUvS2zjrRq1",
+        "B73xxLAFpMQ",
+        "CdOorJ6uYiV",
+        "Co4879LLoS3",
+        "C4gXmgdPCjm"
+      ]
+    },
+    {
+      "stance": "Supports engaging under-represented and under-consulted communities and frontline workers before policy decisions are made.",
+      "supporting_records": [
+        "CI_KpVLBu4U",
+        "DMbDXVkypkL",
+        "CNqTlC-BMhP"
+      ]
+    },
+    {
+      "stance": "Opposes processes that limit or silence public deputations and consultation, including narrowly scoped zoning discussions and selective silencing at committee.",
+      "supporting_records": [
+        "DMK2uOQgteh",
+        "DMh0vq3Ah6o"
+      ]
+    },
+    {
+      "stance": "Supports celebrating Toronto's diversity and standing in solidarity with cultural, faith, and equity-deserving communities; opposes hate, harassment and division.",
+      "supporting_records": [
+        "DDM-2PDRiM7",
+        "C7SKP90vXcs",
+        "CWySJSmLlR8",
+        "DVroVunldzD",
+        "CyMdh1gN8KG",
+        "DJy5tn5tigh",
+        "DI1vpTbuI1V",
+        "Cs90g_-gBQU",
+        "BnrhyyKhewN"
+      ]
+    },
+    {
+      "stance": "Supports public events and civic celebrations being free and accessible rather than gated by admission fees.",
+      "supporting_records": [
+        "DXNNYyaDSsq"
+      ]
+    },
+    {
+      "stance": "Supports transparency, collaboration, and direct communication from public agencies (e.g., Metrolinx) rather than reactive information sharing.",
+      "supporting_records": [
+        "CMKoKv_h5pK",
+        "CJZLy2zh6UQ"
+      ]
+    },
+    {
+      "stance": "States democracy works best when people participate, engage, and work together, and that listening builds trust at City Hall.",
+      "supporting_records": [
+        "CeSLjqnLuXR",
+        "DMK2uOQgteh",
+        "Bi1_dMhBk4k"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 182,
+  "input_records_hash": "sha256:7c8025ce941c5db87cc0521759c96a258c58df651b444b6936ac5b383d795d5b",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:44:14+00:00",
+  "synthesis_skipped_reason": null
+}

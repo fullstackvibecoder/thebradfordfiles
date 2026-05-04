@@ -1,0 +1,133 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "social_services",
+  "summary": "Across 2014 and 2023 Instagram posts, Olivia Chow articulates broad support for strengthening Toronto's social services. Chow advocates for expanded childcare, school nutrition programs, after-school care, and youth employment supports, and identifies child poverty as a priority concern (tTEEA0OtEL, tlEZvnutGS, ugKSbCutDk). Chow supports public libraries operating seven days a week, expanded shelter and respite services for unhoused people, increased core funding for non-profits, and the city-wide expansion of the Toronto Community Crisis Service (Cszj-OQtdG9, CsHejOWP0rO, Cs7XZJHAug5, CuX95hrA4Qv). Chow states support for 2SLGBTQI+ communities, opposition to Islamophobia and antisemitism, and backing for culturally sensitive health services and Indigenous-focused responses to gender-based violence (Cs9ZwzVPU-L, Cuh98p0PPkX, CtSF49tP4K6, CswRXNBAo-m, Cr33PZjPo8E). Chow also pledges support for seniors, workers, and people with disabilities (uJqN2uOtLA, CrtSNhOgByS, tQqAqWOtEK).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2014-09-23",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports expanded childcare, including creation of new childcare spaces and $15/day childcare",
+      "supporting_records": [
+        "tlEZvnutGS",
+        "ugKSbCutDk",
+        "8qjgVJutDR",
+        "7fwa5AutIs",
+        "tlafPkutIw",
+        "uQcoMzOtN7"
+      ]
+    },
+    {
+      "stance": "Supports expanding school nutrition and food programs",
+      "supporting_records": [
+        "tTEEA0OtEL",
+        "scsok8OtFw",
+        "sfCqOVOtEM",
+        "ugKSbCutDk"
+      ]
+    },
+    {
+      "stance": "Supports addressing youth unemployment and creating jobs and after-school programs for young people",
+      "supporting_records": [
+        "ssdY-qutFs",
+        "ua_T1UOtDT",
+        "uWPY0KutDY",
+        "n8YQQzutIs",
+        "ugKSbCutDk"
+      ]
+    },
+    {
+      "stance": "Supports expanding public library service so all branches operate seven days a week",
+      "supporting_records": [
+        "Cs11w9iAxGJ",
+        "Cszj-OQtdG9",
+        "CsofTO1groz"
+      ]
+    },
+    {
+      "stance": "Supports expanded supports for unhoused people, including 24/7 respite spaces, wrap-around services, and shelter funding; opposes the City's prior approach of moving unhoused people between locations",
+      "supporting_records": [
+        "CsHejOWP0rO",
+        "CsHQt2JpsZ0"
+      ]
+    },
+    {
+      "stance": "Supports city-wide expansion of the Toronto Community Crisis Service for non-police mental-health response",
+      "supporting_records": [
+        "CuX95hrA4Qv"
+      ]
+    },
+    {
+      "stance": "Supports increased and improved core funding for non-profit social-service organizations",
+      "supporting_records": [
+        "Cs7XZJHAug5",
+        "CsHQt2JpsZ0"
+      ]
+    },
+    {
+      "stance": "Supports the 2SLGBTQI+ community and opposes rising homophobia and transphobia",
+      "supporting_records": [
+        "Cs9ZwzVPU-L",
+        "Ct2rNF5NJRl",
+        "kFrb2HutDz"
+      ]
+    },
+    {
+      "stance": "Opposes Islamophobia and antisemitism and supports public education and anti-hate campaigns",
+      "supporting_records": [
+        "Cuh98p0PPkX",
+        "CtSF49tP4K6"
+      ]
+    },
+    {
+      "stance": "Supports addressing gender-based and intimate partner violence, including in the context of reconciliation with Indigenous communities",
+      "supporting_records": [
+        "Cujn8P6utFZ",
+        "Cr33PZjPo8E",
+        "8qjgVJutDR"
+      ]
+    },
+    {
+      "stance": "Supports caring for seniors through accessible transit, community housing, and affordable property taxes",
+      "supporting_records": [
+        "uJqN2uOtLA"
+      ]
+    },
+    {
+      "stance": "Supports hiring more people with disabilities and ensuring no neighbourhood is left behind",
+      "supporting_records": [
+        "tQqAqWOtEK",
+        "uZgJS3utLW"
+      ]
+    },
+    {
+      "stance": "Supports strong public services and unionized public-sector workers",
+      "supporting_records": [
+        "Cr036r2ABQo",
+        "CrtSNhOgByS",
+        "CrTWBZ9g4Uc",
+        "Crjw7hQNrMP",
+        "CrQzv0YgkZV",
+        "Cto_GfyArl8",
+        "CtiJjtEA_dw"
+      ]
+    },
+    {
+      "stance": "Supports culturally sensitive health services for racialized communities",
+      "supporting_records": [
+        "CswRXNBAo-m",
+        "8OiVuzOtI4"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 70,
+  "input_records_hash": "sha256:0d2fa3552af618729c9294d467295b4391f8c39bf55e673cb043880f0bebb894",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:49:30+00:00",
+  "synthesis_skipped_reason": null
+}

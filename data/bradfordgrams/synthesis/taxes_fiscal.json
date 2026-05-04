@@ -1,0 +1,15 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "taxes_fiscal",
+  "summary": null,
+  "consistency": null,
+  "key_positions": [],
+  "key_actions": [],
+  "input_record_count": 214,
+  "input_records_hash": "sha256:5c59ec4a54b28e444cf257eb09688f971bbf99fb53f2ee3ab31f228617852e3b",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:53:14+00:00",
+  "synthesis_skipped_reason": null
+}

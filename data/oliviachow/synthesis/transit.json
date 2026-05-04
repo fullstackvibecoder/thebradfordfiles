@@ -1,0 +1,125 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "transit",
+  "summary": "Across two mayoral campaigns (2014 and 2023), Olivia Chow's Instagram content consistently positions transit as a top infrastructure priority, emphasizing immediate bus service improvements, accessibility, and reliability. In 2014, Chow advocated for the Scarborough LRT, Finch West LRT, Sheppard East LRT, the subway relief line, GO electrification, fare integration, and accessible TTC stations, while opposing the Ford-Tory subway plan (CtiJjtEA_dw, t2bRE6OtJ0, tnpNLvutDi, uo9OStutNY, uZbnNbutFW, ogAfBlutOi, tQqAqWOtEK, tgMcsautPN). In 2023, Chow called for reversing TTC service cuts, keeping fares affordable, and pledged a dedicated Scarborough busway from Kennedy Station to Scarborough Town Centre—funded through savings from converting the eastern Gardiner to a boulevard—projected to save commuters 20 minutes daily (CswVZjUAkFp, Cr4WrKxgk3H, CryXD1ULOhA, CryleZgp5KY). Throughout, Chow frames transit as needing investment \"now.\"",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2014-03-20",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports immediate improvements to bus service as a near-term transit priority",
+      "supporting_records": [
+        "t3MBnVOtEX",
+        "r2TYXbutKW",
+        "uZbnNbutFW",
+        "lxWqfeutCv",
+        "lxCaIRutHH"
+      ]
+    },
+    {
+      "stance": "Supports light rail projects including the Scarborough LRT, Finch West LRT, and Sheppard East LRT",
+      "supporting_records": [
+        "t2bRE6OtJ0",
+        "tnpNLvutDi",
+        "uo9OStutNY",
+        "tLSU1yOtPX",
+        "tI4_ksutP4"
+      ]
+    },
+    {
+      "stance": "Opposes the Ford-Tory subway plan, citing accessibility limitations and threats to neighbourhoods like Mt. Dennis",
+      "supporting_records": [
+        "tI4_ksutP4",
+        "tgMcsautPN",
+        "t0vDBdOtOZ"
+      ]
+    },
+    {
+      "stance": "Supports making TTC stations and transit accessible",
+      "supporting_records": [
+        "tQqAqWOtEK",
+        "uJqN2uOtLA",
+        "t2bRE6OtJ0"
+      ]
+    },
+    {
+      "stance": "Supports GO electrification and fare integration across regional transit",
+      "supporting_records": [
+        "ogAfBlutOi"
+      ]
+    },
+    {
+      "stance": "Supports stable, long-term public transit investment",
+      "supporting_records": [
+        "67bmXJOtGB",
+        "tGazGDutPq",
+        "r70QtIOtBI"
+      ]
+    },
+    {
+      "stance": "Supports reversing TTC service cuts and keeping fares affordable",
+      "supporting_records": [
+        "CswVZjUAkFp",
+        "Cr4WrKxgk3H"
+      ]
+    },
+    {
+      "stance": "Supports building a dedicated Scarborough busway from Kennedy Station to Scarborough Town Centre via the existing RT corridor",
+      "supporting_records": [
+        "CryXD1ULOhA",
+        "CryleZgp5KY"
+      ]
+    },
+    {
+      "stance": "Supports starting work on the subway relief (downtown relief) line",
+      "supporting_records": [
+        "uZbnNbutFW"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Announced a Better Bus Service plan and transit platform details in 2014",
+      "supporting_records": [
+        "lxWqfeutCv",
+        "lzsRWZOtC5",
+        "r2TYXbutKW"
+      ]
+    },
+    {
+      "action": "Unveiled a transit map at campaign headquarters (August 2014)",
+      "supporting_records": [
+        "r70QtIOtBI"
+      ]
+    },
+    {
+      "action": "Announced a plan for a dedicated Scarborough busway from Kennedy Station to Scarborough Town Centre, with funding sourced from converting the eastern Gardiner to a boulevard (May 2023)",
+      "supporting_records": [
+        "CryXD1ULOhA",
+        "CryleZgp5KY"
+      ]
+    },
+    {
+      "action": "Made an announcement related to improving traffic flow (April 2014)",
+      "supporting_records": [
+        "m5eU5SutK1"
+      ]
+    },
+    {
+      "action": "Pledged as mayor to invest in transit to ensure it is affordable, safe, and reliable",
+      "supporting_records": [
+        "Cr4WrKxgk3H",
+        "CtzK0BGg36K"
+      ]
+    }
+  ],
+  "input_record_count": 37,
+  "input_records_hash": "sha256:c5b8fb6c62764f6c8c086542fcead6436f5544b5b772a924b0ffb1dcc9fddb5c",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:47:25+00:00",
+  "synthesis_skipped_reason": null
+}

@@ -1,0 +1,19 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "social_services",
+  "summary": "Bradford's Instagram record on social services spans homelessness, mental health, food security, vaccinations, seniors, refugees, Indigenous reconciliation, and 2SLGBTQ+ and faith communities. Bradford supports more shelters, supportive housing, mental health and addiction supports, and outreach workers connecting encampment residents to shelter and treatment, while supporting encampment clearing when shelter is offered (DTu89cQjtBR, DRDb8H5AUN5, DMK2uOQgteh, DRholf-lx3s). Bradford frames addiction and mental health as provincial health-care responsibilities and presses the federal government to fund refugee shelter costs (DSZ7R5JgJZS, DQwumxDjYhU, CtW8t0Pp_Ix). Bradford backs targeted COVID-19 vaccination in hot-spot neighbourhoods, food banks, the Toronto Rent Bank, Community Paramedicine, Meals on Wheels, the Mobile Crisis Intervention Team, and cultural/community spaces including the Tamil Community Centre (CNvRUVohDnq, CePKa3EuuIj, CVVldUcLs0O, DXXFDckDmhp, DHzTfsny-ut). Bradford consistently expresses solidarity with 2SLGBTQ+, Jewish, Muslim, Indigenous, Black and trans communities (DJwW46pyNSo, DGtWb8rS4d3, CZU1A-COwLS, CqdUY-9Ag4L).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2019",
+    "changes": []
+  },
+  "key_positions": [],
+  "key_actions": [],
+  "input_record_count": 196,
+  "input_records_hash": "sha256:4f3f60629977d9a2f37f9e7ba89d9ef43758028f713d342294ba14b4e30cf732",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:46:31+00:00",
+  "synthesis_skipped_reason": null
+}

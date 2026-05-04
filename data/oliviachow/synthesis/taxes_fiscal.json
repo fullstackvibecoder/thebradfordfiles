@@ -1,0 +1,58 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "taxes_fiscal",
+  "summary": "Olivia Chow's public Instagram content on taxes and fiscal policy centers on progressive revenue measures paired with affordability for ordinary homeowners. In 2014, Chow announced a plan to make city taxes more progressive to fund programs such as nutritious food in schools, while also pledging to keep property taxes affordable. In 2023, Chow proposed a luxury homes tax on sales over $3 million, framing it as asking the wealthiest to \"chip in a bit more\" or \"pay their fair share\" to raise millions for housing and homelessness supports. Across both periods, the consistent thread is shifting more of the fiscal burden toward higher-end wealth and luxury transactions while protecting general property taxpayers, and directing resulting revenue to social programs including housing, homelessness services, and school food.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2014-09-02",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports making municipal taxes more progressive to fund social programs such as nutritious food in schools.",
+      "supporting_records": [
+        "scsok8OtFw"
+      ]
+    },
+    {
+      "stance": "Supports keeping general property taxes affordable.",
+      "supporting_records": [
+        "uJqN2uOtLA"
+      ]
+    },
+    {
+      "stance": "Supports a luxury homes tax on homes sold for over $3 million to fund housing and homelessness services.",
+      "supporting_records": [
+        "CsHejOWP0rO"
+      ]
+    },
+    {
+      "stance": "Supports asking the wealthiest residents to pay a larger share to fund urgently needed supports.",
+      "supporting_records": [
+        "CsHQt2JpsZ0",
+        "CsHejOWP0rO"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Announced a policy to make city taxes more progressive in order to invest in programs like nutritious food in schools.",
+      "supporting_records": [
+        "scsok8OtFw"
+      ]
+    },
+    {
+      "action": "Pledged, conditional on election, to introduce a luxury homes tax on home sales over $3 million to raise revenue for housing and homelessness supports.",
+      "supporting_records": [
+        "CsHejOWP0rO"
+      ]
+    }
+  ],
+  "input_record_count": 7,
+  "input_records_hash": "sha256:5345e672d458fe4a6ad47ecde606d5a4300df65bbf6023ecf2b385335c85b8d1",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:47:36+00:00",
+  "synthesis_skipped_reason": null
+}

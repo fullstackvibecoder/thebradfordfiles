@@ -1,0 +1,19 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "housing",
+  "summary": "Bradford's Instagram record on housing centers on increasing supply, reducing what he describes as government-imposed costs, and streamlining approvals. Bradford repeatedly supports \"missing middle\" housing, multiplexes, sixplexes, mid-rise on Avenues, garden and laneway suites, modular and rapid-build construction, office-to-residential conversions, and ending exclusionary zoning. Bradford supports purpose-built rental and supportive housing with wraparound services, citing East York projects he advanced. Bradford opposes additional housing-related taxes, including the Vacant Home Tax in its current form and a luxury home tax, and characterizes Mayor Chow's rental incentive and public-builder approaches as inadequate. Bradford has moved motions to cut development charges (25% on condos, 100% on purpose-built rental), expand the first-time homebuyer rebate, raise the Avenues unit cap from 30 to 60, and streamline modular permitting. Bradford frames red tape, fees, and design rules (e.g., angular plane) as central barriers.",
+  "consistency": {
+    "label": "evolving",
+    "stable_since": "2019",
+    "changes": []
+  },
+  "key_positions": [],
+  "key_actions": [],
+  "input_record_count": 859,
+  "input_records_hash": "sha256:489a2ca459d0721162eacab4e35dd9fa6870a073e629e11628fae805f54bc595",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:40:23+00:00",
+  "synthesis_skipped_reason": null
+}

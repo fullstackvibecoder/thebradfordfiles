@@ -854,6 +854,12 @@ function appendTopicSynthesis(blockEl, topic) {
   const s = all[topic];
   if (!s) return;
   if (s.synthesis_skipped_reason) return;  // insufficient_data: hide the block
+  // Also hide when the model produced no usable content (all fields null/empty).
+  const hasSummary = s.summary && s.summary.length > 0;
+  const hasLabel = s.consistency && s.consistency.label;
+  const hasPositions = s.key_positions && s.key_positions.length > 0;
+  const hasActions = s.key_actions && s.key_actions.length > 0;
+  if (!hasSummary && !hasLabel && !hasPositions && !hasActions) return;
   const wrap = el("div", {style:"background:#fcfcfd;border-left:3px solid #1a4480;padding:14px 18px;margin:12px 0"});
   // Consistency badge
   if (s.consistency && s.consistency.label) {

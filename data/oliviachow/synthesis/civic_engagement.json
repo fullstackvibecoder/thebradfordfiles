@@ -1,0 +1,111 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "civic_engagement",
+  "summary": "Across nearly a decade of Instagram posts, Olivia Chow consistently frames civic engagement as central to democratic life in Toronto. Chow encourages voting—including early voting and voting based on belief rather than fear (uGINR0utA2, t-5vGnutPZ, pJp-RlutGb, CtUbO-FgORx)—and characterizes democracy as strengthened by exchange of ideas (CuAqVppPbav). Chow celebrates volunteerism, community organizing, and working people as forces for a more equitable city (rfmY9OOtJG, Csrr8tmPhyK), and expresses solidarity with specific communities including 2SLGBTQI+ Torontonians and the Sikh community (Ct422Chv9qe, Cr9ZV3pvq-u). Chow argues younger voters face systemic barriers and must be met on social media (Cst4qC_JZ4B), and emphasizes direct consultation with residents, citing outreach to Flemingdon families about the Science Centre (CrPADE5p7N1, Cr9aUuAtQRF) and a pledge to listen and learn as Mayor (CrqpZEkgbe7).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2014-06-12",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Encourages voting and electoral participation, including early voting",
+      "supporting_records": [
+        "uGINR0utA2",
+        "t-5vGnutPZ",
+        "pJp-RlutGb"
+      ]
+    },
+    {
+      "stance": "Frames democracy as strengthened by lively exchange of ideas and unity around common goals",
+      "supporting_records": [
+        "CuAqVppPbav",
+        "CtCgQ3WgGuj"
+      ]
+    },
+    {
+      "stance": "Views volunteerism, community organizing, and working people as central to building a just and equitable Toronto",
+      "supporting_records": [
+        "rfmY9OOtJG",
+        "Csrr8tmPhyK"
+      ]
+    },
+    {
+      "stance": "States that younger voters face systemic barriers to engagement and that candidates must reach them on social media",
+      "supporting_records": [
+        "Cst4qC_JZ4B"
+      ]
+    },
+    {
+      "stance": "Expresses solidarity with specific communities, including 2SLGBTQI+ Torontonians and the Sikh community",
+      "supporting_records": [
+        "Ct422Chv9qe",
+        "Ct2rNF5NJRl",
+        "Cr9ZV3pvq-u"
+      ]
+    },
+    {
+      "stance": "Supports cultural and community spaces in neighbourhoods outside the downtown core",
+      "supporting_records": [
+        "Cr9aUuAtQRF"
+      ]
+    },
+    {
+      "stance": "Pledges to listen to and learn from Torontonians as Mayor",
+      "supporting_records": [
+        "CrqpZEkgbe7"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Cast a ballot in early voting for the Toronto mayoral by-election",
+      "supporting_records": [
+        "CtUbO-FgORx"
+      ]
+    },
+    {
+      "action": "Stood with OPSEU/SEFPO workers and Thorncliffe/Flemingdon residents opposing the relocation of the Ontario Science Centre",
+      "supporting_records": [
+        "Cr9aUuAtQRF"
+      ]
+    },
+    {
+      "action": "Consulted Flemingdon families directly about the future of the Ontario Science Centre",
+      "supporting_records": [
+        "CrPADE5p7N1"
+      ]
+    },
+    {
+      "action": "Presented the 2023 Mayor's Purchase Awards at the Toronto Outdoor Art Fair",
+      "supporting_records": [
+        "CucpS8YAYdc"
+      ]
+    },
+    {
+      "action": "Participated in canvassing in Spadina–Fort York focused on women's issues",
+      "supporting_records": [
+        "8qjgVJutDR"
+      ]
+    },
+    {
+      "action": "Joined a rally with residents and NDP colleagues to oppose Bill C-51",
+      "supporting_records": [
+        "7igUmiOtPX"
+      ]
+    },
+    {
+      "action": "Presented the first Jack Layton Progress Prize to Fay Blaney of the Women's Memorial March Committee",
+      "supporting_records": [
+        "0wB8t1OtIm"
+      ]
+    }
+  ],
+  "input_record_count": 26,
+  "input_records_hash": "sha256:0b035ff806ceda692c736d565c8f30a7833188218c6b8834e958c66a0c4b7f7f",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
+  "synthesis_generated_at": "2026-05-04T13:48:19+00:00",
+  "synthesis_skipped_reason": null
+}
