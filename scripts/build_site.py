@@ -64,6 +64,47 @@ def _load_matches() -> dict[str, dict]:
     return out
 
 
+SYNTHESIS_DIR_NAME = "synthesis"
+
+
+def _load_synthesis_for_handle(handle: str) -> dict[str, dict]:
+    """Return {topic: synthesis_object} for a handle. Empty if no synthesis dir."""
+    synth_dir = DATA_DIR / handle / SYNTHESIS_DIR_NAME
+    if not synth_dir.is_dir():
+        return {}
+    out: dict[str, dict] = {}
+    for path in sorted(synth_dir.glob("*.json")):
+        try:
+            data = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            continue
+        topic = data.get("topic") or path.stem
+        out[topic] = data
+    return out
+
+
+def _consistency_dot_color(synthesis_by_topic: dict[str, dict]) -> str:
+    """Compute the landing-card dot color from per-topic consistency labels.
+
+    - "green"  — all topics with synthesis data are "consistent"
+    - "yellow" — at least one is "evolving"; none are "shifted"
+    - "red"    — at least one is "shifted"
+    - "gray"   — fewer than 3 topics meet the data threshold (i.e. fewer than 3
+                 topics have non-skipped synthesis).
+    """
+    with_data = [s for s in synthesis_by_topic.values()
+                 if not s.get("synthesis_skipped_reason")
+                 and s.get("consistency")]
+    if len(with_data) < 3:
+        return "gray"
+    labels = [s["consistency"]["label"] for s in with_data]
+    if any(l == "shifted" for l in labels):
+        return "red"
+    if any(l == "evolving" for l in labels):
+        return "yellow"
+    return "green"
+
+
 def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
     handle = manifest["handle"]
     handles_to_load = [handle] + manifest.get("alias_handles", [])
@@ -130,6 +171,8 @@ def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
     earliest = dates[0] if dates else None
     latest = dates[-1] if dates else None
 
+    synthesis_by_topic = _load_synthesis_for_handle(handle)
+
     return {
         "meta": {
             **manifest,
@@ -140,6 +183,8 @@ def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
             "record_kinds": dict(record_kinds.most_common()),
             "record_topics": dict(record_topics.most_common()),
             "emphasis": emphasis,
+            "synthesis": synthesis_by_topic,
+            "consistency_dot": _consistency_dot_color(synthesis_by_topic),
             "date_range": {"earliest": earliest, "latest": latest},
             "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         },
@@ -166,6 +211,7 @@ def _landing_card(dossier: dict) -> dict:
         "extracted_count": m["extracted_count"],
         "emphasis": m.get("emphasis", {}),
         "date_range": m["date_range"],
+        "consistency_dot": m.get("consistency_dot", "gray"),
     }
 
 
