@@ -124,3 +124,10 @@ def test_synthesis_tool_schema_has_required_fields():
         "summary", "consistency", "key_positions", "key_actions", "synthesis_skipped_reason"
     }
     assert props["consistency"]["properties"]["label"]["enum"] == ["consistent", "evolving", "shifted"]
+    # Sprint 8A: synthesis_skipped_reason is now string-only with two valid values.
+    # null is no longer permitted as a value — its absence on a real synthesis is
+    # what the schema-validator interprets as success.
+    assert props["synthesis_skipped_reason"]["enum"] == [
+        "insufficient_data", "model_declined"
+    ]
+    assert props["synthesis_skipped_reason"]["type"] == ["string", "null"]

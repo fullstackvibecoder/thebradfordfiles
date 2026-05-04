@@ -38,9 +38,14 @@ RULES:
 4. If fewer than 5 substantive records exist on this topic, return
    synthesis_skipped_reason="insufficient_data" and null fields for
    summary and consistency.
-5. Use the candidate's name (not pronouns) in the first sentence of summary.
-6. The summary is 80–150 words, plain prose. No headers, no lists.
-7. NEVER speculate about future actions, party affiliation, or electoral
+5. If records are present but lack substantive policy claims, or are too
+   repetitive to derive distinct positions, return
+   synthesis_skipped_reason="model_declined" with null fields. NEVER
+   return null fields without setting synthesis_skipped_reason — that
+   is a degenerate response and will be rejected.
+6. Use the candidate's name (not pronouns) in the first sentence of summary.
+7. The summary is 80-150 words, plain prose. No headers, no lists.
+8. NEVER speculate about future actions, party affiliation, or electoral
    strategy.
 
 OUTPUT: emit a single tool call (emit_synthesis) with the structured
@@ -118,7 +123,7 @@ SYNTHESIS_TOOL_SCHEMA = {
             },
             "synthesis_skipped_reason": {
                 "type": ["string", "null"],
-                "enum": [None, "insufficient_data"],
+                "enum": ["insufficient_data", "model_declined"],
             },
         },
     },

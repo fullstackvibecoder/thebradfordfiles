@@ -99,6 +99,16 @@ def synthesize_one(handle: str, topic: str, *,
     )
 
     tool_input = _extract_tool_input(response)
+
+    # Sprint 8A: reject degenerate responses (all-null without skipped_reason).
+    if (tool_input.get("summary") is None
+            and tool_input.get("consistency") is None
+            and tool_input.get("synthesis_skipped_reason") is None):
+        raise ValueError(
+            f"degenerate model response for ({handle}, {topic}): "
+            "all fields null and no synthesis_skipped_reason provided"
+        )
+
     out = {
         "candidate_handle": handle,
         "candidate_slug": _candidate_slug(handle),

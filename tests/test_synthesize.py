@@ -141,3 +141,32 @@ def test_synthesize_invalidates_cache_on_records_change(tmp_path, monkeypatch):
     _seed_candidate(tmp_path, "bradfordgrams", "bradford", records)
     synthesize.synthesize_one("bradfordgrams", "transit", client=client, force=False)
     assert client.messages.create.call_count == 2
+
+
+def test_synthesize_rejects_degenerate_response(tmp_path, monkeypatch):
+    """If the model returns null summary, null consistency, AND null
+    synthesis_skipped_reason — that's a degenerate state. The handler
+    should raise rather than write a useless cache file."""
+    records = [
+        {"shortcode": f"R{i}", "kind": "position", "topic": "transit", "summary": "x"}
+        for i in range(7)
+    ]
+    _seed_candidate(tmp_path, "bradfordgrams", "bradford", records)
+    monkeypatch.setattr(synthesis, "DATA_DIR", tmp_path)
+
+    degenerate_input = {
+        "summary": None,
+        "consistency": None,
+        "key_positions": [],
+        "key_actions": [],
+        "synthesis_skipped_reason": None,  # this is what we now reject
+    }
+    client = _make_fake_client(degenerate_input)
+
+    import pytest as _pytest
+    with _pytest.raises(ValueError, match="degenerate"):
+        synthesize.synthesize_one("bradfordgrams", "transit", client=client, force=False)
+
+    # Cache file must NOT have been written
+    cache_path = synthesis.synthesis_path("bradfordgrams", "transit")
+    assert not cache_path.exists(), "should not write cache on degenerate response"
