@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-ink font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    background-color: #f6f3ea;
+    color: #5a4a2a;
+  }
+}
+
+@layer components {
+  .label {
+    @apply font-mono text-[9.5px] uppercase tracking-label text-accent;
+  }
+  .stamp {
+    @apply inline-flex items-center gap-1 bg-stamp-bg border border-stamp-border text-stamp-text font-mono text-[10.5px] tracking-wider px-2 py-[3px] rounded-sm;
+  }
+  .stamp-verified {
+    @apply bg-stamp-verified-bg border-stamp-verified-border text-stamp-verified-text;
+  }
+  .chip {
+    @apply inline-flex items-center bg-white border border-stamp-border text-ink font-medium text-[12.5px] px-3 py-[5px] rounded-full hover:border-accent transition-colors;
+  }
+  .drop-cap::first-letter {
+    @apply font-serif font-bold float-left text-accent;
+    font-size: 2.7em;
+    line-height: 0.85;
+    margin: 0.06em 0.1em -0.05em 0;
+  }
+}

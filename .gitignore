@@ -44,3 +44,9 @@ City Council Member Voting Record 2006-2026/
 data/votes/raw/
 data/votes/by-councillor/
 .env*.local
+
+# Next.js web/ artifacts
+web/node_modules/
+web/.next/
+web/.vercel/
+web/next-env.d.ts
