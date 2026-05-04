@@ -2,124 +2,41 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "housing",
-  "summary": "Bradford has consistently positioned housing as Toronto's central affordability challenge and advocated for increasing supply through regulatory and fiscal reform. Bradford supports ending exclusionary zoning, legalizing multiplexes, sixplexes, garden and laneway suites, mid-rise on Avenues, and 'missing middle' housing forms. Bradford has championed cutting development charges (proposing 25% reductions and 100% on purpose-built rental), waiving fees, streamlining approvals, and expediting modular and rapid-build construction. Bradford has opposed the Vacant Home Tax in its current form and the Mayor's luxury home tax, characterizing additional housing taxes as counterproductive to affordability. Bradford supports supportive housing with wraparound mental health and addiction services, citing projects delivered in Beaches-East York. Bradford has also supported partnerships with private, non-profit, federal, and provincial actors, and proposed expanding the first-time homebuyer rebate.",
+  "summary": "Bradford's Instagram record on housing centers on increasing supply and reducing barriers to construction in Toronto. Bradford supports legalizing multiplexes, sixplexes, garden suites, laneway suites, missing middle and mid-rise buildings on Avenues, modular and rapid-build housing, and converting offices to homes. Bradford advocates cutting development charges (proposing 25% cuts), eliminating the angular plane rule, allowing single-egress stairs, removing parking minimums, and streamlining approvals. Bradford supports purpose-built rental, supportive housing with wraparound services (citing Cedarvale and Trenton projects), and Inclusionary Zoning. Bradford opposes Mayor Chow's luxury home tax and characterizes the public builder approach as ineffective bureaucracy, instead favoring partnerships with private and non-profit builders. Bradford proposed doubling the first-time homebuyer rebate and supports the federal Housing Accelerator Fund. Bradford has criticized the Vacant Home Tax's reverse-onus design while initially supporting the policy.",
   "consistency": {
-    "label": "consistent",
-    "stable_since": "2018",
-    "changes": []
+    "label": "evolving",
+    "stable_since": "2019",
+    "changes": [
+      {
+        "from_stance": "Supported the Vacant Home Tax as smart policy to curb housing speculation and improve affordability",
+        "to_stance": "Called for halting/cutting the Vacant Home Tax unless the reverse-onus on homeowners is fixed",
+        "approximate_date": "2024-09",
+        "supporting_records": [
+          "CIVqabzhUD0",
+          "CI3-wNihD_A",
+          "DA_PG3-Rmwz",
+          "DAUHQEaSHox"
+        ]
+      },
+      {
+        "from_stance": "Supported 'growth pays for growth' planning principle implicitly through development charge regime",
+        "to_stance": "Stated the 'growth pays for growth' notion is not realistic and pushed for substantial development charge cuts",
+        "approximate_date": "2024-11",
+        "supporting_records": [
+          "DC1rwlZuDII",
+          "DRholf-lx3s",
+          "DHuRDSGs0Bh"
+        ]
+      }
+    ]
   },
-  "key_positions": [
-    {
-      "stance": "Supports increasing housing supply through 'missing middle' forms — multiplexes, sixplexes, garden suites, laneway suites, and mid-rise on Avenues citywide.",
-      "supporting_records": [
-        "DLV5wxxMq3u",
-        "CsFNxk8N7cZ",
-        "CWt7E1Pr3un",
-        "CKPOZt3h1yE",
-        "DNqH55bN8ws",
-        "DMc4SEuux8R",
-        "CZfwUldKm45"
-      ]
-    },
-    {
-      "stance": "Supports cutting development charges and municipal fees on housing, including a 25% reduction on condos and 100% on affordable and purpose-built rental.",
-      "supporting_records": [
-        "DIQ9MbhxPaw",
-        "DHuRDSGs0Bh",
-        "DRholf-lx3s",
-        "DJEbmKVtRhs",
-        "CyEbET7AQE3",
-        "DR5QW7XEnaA"
-      ]
-    },
-    {
-      "stance": "Supports streamlining approvals, cutting red tape, and reforming zoning rules (including eliminating angular plane requirements and the two-staircase requirement).",
-      "supporting_records": [
-        "DDX7Ejwymg5",
-        "C71lXZFAXRh",
-        "C9nDy41A1tp",
-        "DOLktyADflt",
-        "DRM18tcjY_n",
-        "C8ZW8p7AGA-"
-      ]
-    },
-    {
-      "stance": "Supports modular and rapid-build construction, including expanding pre-qualified vendors and certified plans for multiplexes and laneway/garden suites.",
-      "supporting_records": [
-        "DJUSN88N7oA",
-        "DHWh10by6CQ",
-        "DHJ9qe-yi5e",
-        "C5RB1qMtiQ6",
-        "DIhEMewO0bp",
-        "C6GzEH8rUYN"
-      ]
-    },
-    {
-      "stance": "Opposes additional housing-related taxes, including the Vacant Home Tax in its current form and the proposed luxury home tax, arguing they harm affordability.",
-      "supporting_records": [
-        "DA_PG3-Rmwz",
-        "DAUHQEaSHox",
-        "DSYdN4TDaeE",
-        "DSabj0Mjkvw",
-        "DTgCZ4LgsBK"
-      ]
-    },
-    {
-      "stance": "Supports supportive housing with wraparound mental health, addiction, and job-training supports as a long-term solution to homelessness.",
-      "supporting_records": [
-        "DQwumxDjYhU",
-        "DMh0vq3Ah6o",
-        "DMK2uOQgteh",
-        "C_siA0Px9L9",
-        "CMQGps1h-ku",
-        "CMFjTlZBpiy"
-      ]
-    },
-    {
-      "stance": "Supports increasing the first-time homebuyer rebate threshold from $400,000 to $750,000 and doubling the rebate as alternatives to new taxes.",
-      "supporting_records": [
-        "Cw2crzygFOv",
-        "Cw722WFAAvD",
-        "DSabj0Mjkvw",
-        "C0jwMLJg7y8"
-      ]
-    },
-    {
-      "stance": "Supports purpose-built rental housing, office-to-residential conversions, and waiving fees on rental projects.",
-      "supporting_records": [
-        "DXw_o1TifLm",
-        "DBtwbHDvOC5",
-        "C0w9QjVvwHo",
-        "Ctzc7IdvhFf",
-        "CsbZtSYNc9m",
-        "DAI4e_SRIql"
-      ]
-    },
-    {
-      "stance": "Supports inclusionary zoning, with up to 22% affordability requirements in designated areas.",
-      "supporting_records": [
-        "CWEjlp8gxH4",
-        "CVlviIsAkmJ",
-        "ByDvsNJFA33"
-      ]
-    },
-    {
-      "stance": "Opposes the City acting as a 'public builder' and characterizes Mayor Chow's housing approach as inadequate, citing limited results and reliance on subsidies.",
-      "supporting_records": [
-        "Czd4LtCAoAN",
-        "DCm6A_6SGCQ",
-        "DCmILuvR04J",
-        "DBwopPUSP-B",
-        "DQwumxDjYhU"
-      ]
-    }
-  ],
+  "key_positions": [],
   "key_actions": [],
   "input_record_count": 859,
   "input_records_hash": "sha256:1e84bee71376ec9980f5a6572aa86ee8cbfdaab5c7593e4b3eeb33d94fbbbf08",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T17:16:46+00:00",
+  "synthesis_generated_at": "2026-05-04T19:52:56+00:00",
   "synthesis_skipped_reason": null
 }

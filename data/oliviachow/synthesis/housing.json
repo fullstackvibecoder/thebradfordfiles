@@ -2,7 +2,7 @@
   "candidate_handle": "oliviachow",
   "candidate_slug": "chow",
   "topic": "housing",
-  "summary": "Olivia Chow's Instagram record presents housing affordability as a central priority, framing Toronto as facing an affordability and homelessness crisis after a decade of inaction (CspF_1zANJZ, Cr_i5mPJMRP). Chow advocates the City acting as a public developer, pledging 25,000 rent-controlled homes over 8 years on city-owned land under a \"City Homes Plan\" (Cr_Yy69ga2k, Cr_i5mPJMRP, CtHTQmxAsFH). Chow proposes $100M/year to prevent renovictions, 1,000–3,000 rent supplements, and a Toronto Renters Action Committee (CtPRf7mgQPR, CsHejOWP0rO, CtkGd5mPLWL). Chow supports community land trusts, co-op housing, culturally responsive housing, and stronger tenant protections against renovictions, demovictions, and bad landlords (CtPRf7mgQPR, Cujn8P6utFZ, CtIQZymtA3s, uY0e37utHo). Earlier 2014 posts similarly back community housing, tenant rights, and fighting federal co-op funding cuts (uJqN2uOtLA, rpM-RoutEa, qCNKA4utO3).",
+  "summary": "Olivia Chow's Instagram record on housing centers on building affordable, rent-controlled, and community-owned housing while strengthening renter protections. Chow announced a City Homes Plan to build 25,000 rent-controlled homes over 8 years on city-owned land, with the City acting as a public developer (Cr_Yy69ga2k, CseTHadgMsU, Cr_i5mPJMRP). Chow pledged $100M annually to prevent renovictions and secure affordable homes (CtPRf7mgQPR, CtHTQmxAsFH), 1,000 new municipal rent supplements with a request to match for 2,000 more (CsHejOWP0rO), a Toronto Renters Action Committee (CtkGd5mPLWL), and support for community land trusts (CtPRf7mgQPR, CuhH7M2gv1Z). Chow framed surging rents and renovictions as an affordability and homelessness crisis requiring urgent action (Cr_i5mPJMRP, CtWvYrQAEZt, CrojPrcvfK2). Earlier 2014 posts similarly endorsed more community/affordable housing and stronger tenant protections (uY0e37utHo, tQqAqWOtEK, qCNKA4utO3).",
   "consistency": {
     "label": "consistent",
     "stable_since": "2014-07-04",
@@ -10,121 +10,106 @@
   },
   "key_positions": [
     {
-      "stance": "Supports the City of Toronto acting as a public developer to build affordable housing, rather than relying on private developers alone.",
+      "stance": "Supports building more affordable and rent-controlled housing in Toronto, including on city-owned land",
       "supporting_records": [
-        "Cr_Yy69ga2k",
-        "CseTHadgMsU"
-      ]
-    },
-    {
-      "stance": "Supports building 25,000 new rent-controlled homes on city-owned land.",
-      "supporting_records": [
+        "CuVafEstXQq",
+        "Ct5R-vnNqCL",
+        "CtHTQmxAsFH",
         "Cr_i5mPJMRP",
-        "Cr_Yy69ga2k",
-        "CtHTQmxAsFH"
+        "CrojPrcvfK2",
+        "tQqAqWOtEK"
       ]
     },
     {
-      "stance": "Supports community land trusts and community ownership models to keep homes affordable and prevent displacement.",
+      "stance": "Supports the City of Toronto acting as a public developer rather than relying on private developers alone",
       "supporting_records": [
-        "CuhH7M2gv1Z",
-        "CtPRf7mgQPR",
-        "CreQrXcPPIo"
+        "CseTHadgMsU",
+        "Cr_Yy69ga2k"
       ]
     },
     {
-      "stance": "Supports stronger renter protections, including preventing renovictions, demovictions, above-guideline increases, and protecting affordable rentals.",
+      "stance": "Supports stronger renter protections, including preventing renovictions, demovictions, and above-guideline rent increases",
       "supporting_records": [
         "CtkGd5mPLWL",
+        "CtPRf7mgQPR",
         "CrwuyFLop4-",
         "CreQrXcPPIo",
         "uY0e37utHo"
       ]
     },
     {
-      "stance": "Supports rent supplements to help people secure permanent housing.",
+      "stance": "Supports community ownership models such as community land trusts to preserve affordable homes",
+      "supporting_records": [
+        "CtPRf7mgQPR",
+        "CuhH7M2gv1Z",
+        "CreQrXcPPIo"
+      ]
+    },
+    {
+      "stance": "Supports rent supplements and supportive/culturally responsive housing for vulnerable populations",
       "supporting_records": [
         "CsHejOWP0rO",
-        "CtHTQmxAsFH"
-      ]
-    },
-    {
-      "stance": "Supports preserving existing affordable housing, including co-op housing.",
-      "supporting_records": [
-        "CrojPrcvfK2",
-        "rpM-RoutEa"
-      ]
-    },
-    {
-      "stance": "Supports affordable, supportive, and culturally responsive housing for diverse populations including seniors and survivors of gender-based violence.",
-      "supporting_records": [
-        "Cujn8P6utFZ",
         "CtIQZymtA3s",
+        "Cujn8P6utFZ",
         "Cr33PZjPo8E"
       ]
     },
     {
-      "stance": "Frames housing affordability and homelessness as an urgent crisis requiring city action after a decade of inaction.",
+      "stance": "Characterizes Toronto's housing situation as an affordability and homelessness crisis worsened by a decade of inaction",
       "supporting_records": [
         "CspF_1zANJZ",
         "Cr_i5mPJMRP",
-        "CtWvYrQAEZt"
+        "CtWvYrQAEZt",
+        "CrZJPRIvr1f"
       ]
     }
   ],
   "key_actions": [
     {
-      "action": "Announced the City Homes Plan to build 25,000 rent-controlled homes over 8 years on city-owned land.",
+      "action": "Announced the City Homes Plan to build 25,000 rent-controlled homes over 8 years on city-owned land",
       "supporting_records": [
-        "Cr_Yy69ga2k"
+        "Cr_Yy69ga2k",
+        "Cr_i5mPJMRP"
       ]
     },
     {
-      "action": "Released a Secure Affordable Homes / renter protection plan to fund proven measures protecting renters.",
+      "action": "Released a renter protection plan including $100M/yr to prevent renovictions, 3,000 rent supplements, and stronger building standards",
       "supporting_records": [
-        "CrojPrcvfK2",
-        "CreQrXcPPIo"
-      ]
-    },
-    {
-      "action": "Pledged $100M/year to prevent renovictions and secure affordable homes.",
-      "supporting_records": [
+        "CtHTQmxAsFH",
         "CtPRf7mgQPR",
-        "CtHTQmxAsFH"
+        "CrwuyFLop4-",
+        "CrojPrcvfK2"
       ]
     },
     {
-      "action": "Pledged 1,000 new rent supplements with a request to provincial/federal governments to match for 2,000 more.",
+      "action": "Pledged to establish a Toronto Renters Action Committee",
+      "supporting_records": [
+        "CtkGd5mPLWL"
+      ]
+    },
+    {
+      "action": "Pledged 1,000 new municipal rent supplements and asked provincial/federal governments to match for 2,000 more",
       "supporting_records": [
         "CsHejOWP0rO"
       ]
     },
     {
-      "action": "Pledged to establish a Toronto Renters Action Committee.",
+      "action": "Met with renters, community land trust members, seniors, and United Way partners to discuss housing models and tenant experiences",
       "supporting_records": [
-        "CtkGd5mPLWL"
+        "CuVafEstXQq",
+        "CtkGd5mPLWL",
+        "CtPRf7mgQPR",
+        "CtIQZymtA3s"
       ]
     },
     {
-      "action": "Met with renters affected by demovictions, renovictions, and rent increases.",
-      "supporting_records": [
-        "CtkGd5mPLWL"
-      ]
-    },
-    {
-      "action": "Met with United Way Greater Toronto and partners to discuss community-focused housing models like Scarborough's Golden Mile.",
-      "supporting_records": [
-        "CuVafEstXQq"
-      ]
-    },
-    {
-      "action": "Announced an affordable housing plan during 2014 mayoral campaign.",
+      "action": "Announced an affordable housing plan during the 2014 mayoral campaign",
       "supporting_records": [
         "qCNKA4utO3"
       ]
     },
     {
-      "action": "Pledged to fight federal cuts to co-op housing support for 29 co-ops.",
+      "action": "Pledged to fight federal cuts to support for 29 housing co-ops in 2014",
       "supporting_records": [
         "rpM-RoutEa"
       ]
@@ -133,8 +118,8 @@
   "input_record_count": 50,
   "input_records_hash": "sha256:32dd4c6cdbed3a9a64457b78ad0e09c1d8c150b1767f1f9b6e9a6d37ffc27758",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T17:24:05+00:00",
+  "synthesis_generated_at": "2026-05-04T20:00:15+00:00",
   "synthesis_skipped_reason": null
 }

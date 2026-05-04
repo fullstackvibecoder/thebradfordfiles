@@ -2,70 +2,64 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "safety_crime",
-  "summary": "Bradford has built safety and crime as a central, recurring policy area, framing Toronto as having seen a \"collapse in safety\" and identifying it as a top concern of residents. Bradford supports increased police presence including officers at every TTC subway station, improved lighting and cleanliness on transit, and platform edge doors. Bradford supports clearing encampments within 200 metres of playgrounds, schools, and daycares within 48 hours of being reported, and has brought multiple council motions to that effect. Bradford champions \"bubble zone\" bylaws around places of worship, schools, and daycares, opposes antisemitic and Islamophobic incidents, and supports stronger enforcement against illegal jet ski rentals and reckless drivers. Bradford has pledged Bail Compliance Units within Toronto Police, opposed cuts to the police budget, and supported community-based youth violence prevention.",
+  "summary": "Bradford's Instagram record on safety and crime is extensive and centers on a recurring theme that Toronto \"feels less safe.\" Bradford ties this to specific files: TTC safety (motion to place officers in all subway stations, improve lighting/cleanliness, build platform edge doors), encampments near schools/daycares/playgrounds (a 200m/48-hour clearance proposal), bubble zones around places of worship, schools, and daycares (advocacy from 2024 through passage in May 2025), gun violence (\"no bail, go to jail\"), and youth violence prevention via community partnerships. Bradford also pushed motorized watercraft restrictions at Woodbine Beach, jet ski licensing, road safety/Vision Zero measures, school safety zones, automated speed enforcement, and Bail Compliance Units inside Toronto Police. Bradford repeatedly opposes Mayor Chow's encampment protocol and police budget cuts, and supports fully funding the police.",
   "consistency": {
     "label": "evolving",
-    "stable_since": "2023-04",
+    "stable_since": "2023-03",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports placing police officers at every TTC subway station and improving lighting, cleanliness, and platform edge doors on transit",
+      "stance": "Supports placing police officers in all TTC subway stations, plus improved lighting, cleanliness standards, and platform edge doors",
       "supporting_records": [
         "DWFOTgOCdsC",
         "DVhJtcuD2D5",
         "DWPZGCUFT_z",
-        "DWhiBdhjRbG",
-        "DTn-8hvDusj"
+        "DWhiBdhjRbG"
       ]
     },
     {
-      "stance": "Supports clearing encampments within 200 metres of playgrounds, schools, and daycares within 48 hours of being reported, opposing Mayor Chow's encampment protocol",
+      "stance": "Opposes encampments near schools, daycares, and playgrounds, proposing a 200-metre exclusion zone with 48-hour removal after report",
       "supporting_records": [
-        "DRCZSYbjSpb",
         "DRAJ0bKguJx",
         "DQwumxDjYhU",
         "DQ1p-5ECq1K",
-        "DRDb8H5AUN5",
+        "DRCZSYbjSpb",
         "DTu89cQjtBR"
       ]
     },
     {
-      "stance": "Supports bubble zone/safe access bylaws around places of worship, schools, and daycares, having advocated for them since 2024",
+      "stance": "Supports bubble zone bylaws creating safe access areas around places of worship, schools, and daycares",
       "supporting_records": [
-        "DLqIg7XSd8J",
         "DJ95bBcO7_v",
         "DJ-VovGNcWT",
-        "DHD8cX7gMuu",
+        "DLqIg7XSd8J",
         "DIj5gmSSZXJ",
-        "DDxCGOzRSW5",
-        "C7fI8TjP2zZ"
+        "C7fI8TjP2zZ",
+        "DDxCGOzRSW5"
       ]
     },
     {
-      "stance": "Opposes antisemitism and hate-motivated attacks on Jewish institutions, businesses, and individuals; calls for prosecution as hate crimes",
+      "stance": "States Toronto has experienced rising antisemitism and hate crimes and opposes hate-motivated attacks on Jewish, Muslim, and other communities",
       "supporting_records": [
+        "DVzJnfTAZwm",
         "DVloXWPDe6p",
-        "DCihHc0g0oi",
-        "DQo7TiHjCd0",
-        "DFqZYn0yDJh",
-        "C82rphdS27z",
-        "C7eaKWngv0c",
-        "DVzJnfTAZwm"
+        "DOtI3KfDXDC",
+        "DC7JGIzSrH3",
+        "C8clx1BAy8Q",
+        "DFLookxywBt"
       ]
     },
     {
-      "stance": "Supports stronger enforcement and regulation of motorized watercraft and jet ski rentals at Toronto beaches",
+      "stance": "Supports fully funding Toronto Police and opposed cuts to the Police Board-approved budget",
       "supporting_records": [
-        "DMipr7MyKc4",
-        "DMQkYU1g0Gt",
-        "DN27QKaWhTo",
-        "DXufqImlfOt",
-        "DL7lVShAJ5K"
+        "C2yJR2BNf_s",
+        "C3WbP3NN2_C",
+        "DRholf-lx3s"
       ]
     },
     {
-      "stance": "Supports a 'no bail, go to jail' approach for gun offences and creating Toronto Police Bail Compliance Units",
+      "stance": "Supports a 'no bail, go to jail' policy for anyone who fires a gun in Toronto and creating Bail Compliance Units within TPS",
       "supporting_records": [
         "DNl6e-cOJq8",
         "CtMhuqtAB3r",
@@ -75,37 +69,57 @@
       ]
     },
     {
-      "stance": "Opposes cuts to the police budget and supports fully funding police including hiring frontline officers",
-      "supporting_records": [
-        "C2yJR2BNf_s",
-        "C3WbP3NN2_C",
-        "B7J7syAFkTj"
-      ]
-    },
-    {
-      "stance": "Supports investing in youth violence prevention programs in partnership with community-embedded organizations",
+      "stance": "Supports tackling youth violence by funding community-embedded organizations rather than expanding city bureaucracy",
       "supporting_records": [
         "DPUXaE7CbRl",
-        "DPCo-WljTLB",
-        "DNoomTGNuU7"
+        "DPCo-WljTLB"
       ]
     },
     {
-      "stance": "Supports Vision Zero road safety measures including speed cameras, school safety zones, and traffic calming, while criticizing repeated speed camera vandalism",
+      "stance": "Supports motorized watercraft exclusion zones at Woodbine and Cherry Beaches, jet ski licensing, and tougher enforcement",
       "supporting_records": [
-        "BvPcJ3jgr8R",
+        "DXufqImlfOt",
+        "DMipr7MyKc4",
+        "DMQkYU1g0Gt",
+        "DN27QKaWhTo",
+        "DL7lVShAJ5K"
+      ]
+    },
+    {
+      "stance": "Supports road-safety/Vision Zero interventions including speed humps, school safety zones, automated speed enforcement, and lower speed limits",
+      "supporting_records": [
         "Cs4C_BsAm2d",
+        "CWMHoO4L6ry",
+        "CTnHE-zrvZE",
+        "CdbglhTJRBl",
+        "CcGpo64g2fC",
+        "BvPcJ3jgr8R"
+      ]
+    },
+    {
+      "stance": "Opposes vandalism of speed cameras and calls current city reinstallation approach ineffective",
+      "supporting_records": [
         "DOb5c9Jkfrt",
         "DOZUm5aDjn_",
-        "CTnHE-zrvZE",
-        "CWMHoO4L6ry"
+        "DPjtFCpjso2"
       ]
     },
     {
-      "stance": "Supports a non-police response pilot for non-violent crisis calls and reform of policing roles",
+      "stance": "Characterizes Mayor Chow as insufficiently prioritizing community safety, transit safety, and encampment clearing",
+      "supporting_records": [
+        "DWFOTgOCdsC",
+        "DQwumxDjYhU",
+        "DLTpRKNMXfH",
+        "DDLJ59gSk_L",
+        "HBcdV0AZ_I",
+        "DHBcdV0AZ_I"
+      ]
+    },
+    {
+      "stance": "Supports a non-police led pilot response to non-violent crisis calls and broader policing reform",
       "supporting_records": [
         "CK7Gvnfhfh2",
-        "CB-MxpVNs4b",
+        "CCCIzJShDKU",
         "CDzb6FwB5oV"
       ]
     }
@@ -114,8 +128,8 @@
   "input_record_count": 605,
   "input_records_hash": "sha256:b66a98e642018a6cd5fd1022eea11ea03486f935765d7aa277678215f9ff17f1",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T17:18:20+00:00",
+  "synthesis_generated_at": "2026-05-04T19:54:30+00:00",
   "synthesis_skipped_reason": null
 }

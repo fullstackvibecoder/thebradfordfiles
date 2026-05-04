@@ -2,15 +2,15 @@
   "candidate_handle": "oliviachow",
   "candidate_slug": "chow",
   "topic": "civic_engagement",
-  "summary": "Olivia Chow's public posts on civic engagement emphasize broad participation in democratic life, community organizing, and direct consultation with affected residents. Chow repeatedly encourages voting, including early voting and voting based on conviction rather than fear (uGINR0utA2, t-5vGnutPZ, pJp-RlutGb, CtUbO-FgORx), and frames democracy as strengthened by exchange of ideas (CuAqVppPbav). Chow highlights systemic barriers to younger voters' engagement and the need to meet them on social media (Cst4qC_JZ4B), and recognizes working people, volunteers, and faith-community organizations as builders of a more equitable city (Csrr8tmPhyK, rfmY9OOtJG, Cr9ZV3pvq-u). Chow describes consulting Flemingdon families on the Science Centre and standing with workers and residents (CrPADE5p7N1, Cr9aUuAtQRF), expresses solidarity with Pride and Sikh communities (Ct422Chv9qe, Ct2rNF5NJRl), and pledges to listen and learn from Torontonians as Mayor (CrqpZEkgbe7).",
+  "summary": "Across nearly a decade of posts, Olivia Chow frames civic engagement as participatory, community-rooted, and accessible. Chow repeatedly encourages voting, including early voting, and urges people to vote for their beliefs rather than out of fear (uGINR0utA2, t-5vGnutPZ, pJp-RlutGb, CtUbO-FgORx). Chow emphasizes consultation and listening, pledging as Mayor to learn from Torontonians' experiences and consulting Flemingdon families directly about the Science Centre (CrqpZEkgbe7, CrPADE5p7N1). Chow recognizes systemic barriers to youth engagement and argues candidates must meet younger voters on social media (Cst4qC_JZ4B). Chow celebrates volunteerism, working people, and community organizations such as Sikh seva groups (rfmY9OOtJG, Csrr8tmPhyK, Cr9ZV3pvq-u), and participates in rallies, canvasses, and cultural recognition events (7igUmiOtPX, 8qjgVJutDR, Cr9aUuAtQRF, CucpS8YAYdc).",
   "consistency": {
     "label": "consistent",
-    "stable_since": "2014-06-12",
+    "stable_since": "2014-06",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Encourages broad voter participation, including early voting and voting based on conviction",
+      "stance": "Encourages voting and early voting as accessible civic participation",
       "supporting_records": [
         "uGINR0utA2",
         "t-5vGnutPZ",
@@ -18,32 +18,30 @@
       ]
     },
     {
-      "stance": "Frames democracy as strengthened by lively exchange of ideas and people demanding better",
+      "stance": "Supports direct consultation with affected communities on local decisions",
       "supporting_records": [
-        "CuAqVppPbav",
-        "CtCgQ3WgGuj"
+        "CrPADE5p7N1",
+        "CrqpZEkgbe7"
       ]
     },
     {
-      "stance": "Identifies systemic barriers to younger generations' political engagement and calls on candidates to meet them on social media",
+      "stance": "Frames lower youth engagement with traditional formats as systemic barriers, not apathy, and urges meeting young voters on social media",
       "supporting_records": [
         "Cst4qC_JZ4B"
       ]
     },
     {
-      "stance": "Recognizes working people, volunteers, and community organizations as central to building a more equitable Toronto",
+      "stance": "Celebrates volunteerism, working people, and community organizations as central to civic life",
       "supporting_records": [
-        "Csrr8tmPhyK",
         "rfmY9OOtJG",
+        "Csrr8tmPhyK",
         "Cr9ZV3pvq-u"
       ]
     },
     {
-      "stance": "Expresses solidarity with marginalized and diaspora communities, including 2SLGBTQI+ and Sikh communities",
+      "stance": "Affirms democracy is strengthened by exchange of ideas during campaigns",
       "supporting_records": [
-        "Ct422Chv9qe",
-        "Ct2rNF5NJRl",
-        "Cr9ZV3pvq-u"
+        "CuAqVppPbav"
       ]
     },
     {
@@ -53,41 +51,29 @@
       ]
     },
     {
-      "stance": "Values direct consultation with affected residents on civic decisions",
+      "stance": "Expresses solidarity with 2SLGBTQI+ communities and frames Pride as political",
       "supporting_records": [
-        "CrPADE5p7N1",
-        "CrqpZEkgbe7"
+        "Ct422Chv9qe",
+        "Ct2rNF5NJRl"
       ]
     }
   ],
   "key_actions": [
     {
-      "action": "Cast a ballot in early voting in the Toronto mayoral by-election",
+      "action": "Cast ballot in early voting for the Toronto mayoral by-election",
       "supporting_records": [
         "CtUbO-FgORx"
       ]
     },
     {
-      "action": "Consulted Flemingdon families about the future of the Ontario Science Centre and stood with OPSEU/SEFPO workers and residents to oppose its relocation",
+      "action": "Consulted Flemingdon families and stood with OPSEU/SEFPO workers and residents on the Ontario Science Centre",
       "supporting_records": [
         "CrPADE5p7N1",
         "Cr9aUuAtQRF"
       ]
     },
     {
-      "action": "Presented the 2023 Mayor's Purchase Awards at the Toronto Outdoor Art Fair",
-      "supporting_records": [
-        "CucpS8YAYdc"
-      ]
-    },
-    {
-      "action": "Presented the first Jack Layton Progress Prize to Fay Blaney of the Women's Memorial March Committee",
-      "supporting_records": [
-        "0wB8t1OtIm"
-      ]
-    },
-    {
-      "action": "Joined a rally with Spadina–Fort York residents and NDP colleagues to oppose Bill C-51",
+      "action": "Joined a rally with Spadina–Fort York residents to oppose Bill C-51",
       "supporting_records": [
         "7igUmiOtPX"
       ]
@@ -99,17 +85,29 @@
       ]
     },
     {
-      "action": "Pledged, as Mayor, to listen and learn from Torontonians and act to make their lives easier",
+      "action": "Presented the inaugural Jack Layton Progress Prize to Fay Blaney of the Women's Memorial March Committee",
       "supporting_records": [
-        "CrqpZEkgbe7"
+        "0wB8t1OtIm"
+      ]
+    },
+    {
+      "action": "Presented the 2023 Mayor's Purchase Awards at the Toronto Outdoor Art Fair",
+      "supporting_records": [
+        "CucpS8YAYdc"
+      ]
+    },
+    {
+      "action": "Co-produced and co-hosted Global TV's Morning Show",
+      "supporting_records": [
+        "uQcoMzOtN7"
       ]
     }
   ],
   "input_record_count": 26,
   "input_records_hash": "sha256:92eb44aef9c83efb45107eca78a293a48e57abf4642bd8520f0b8f2dd304f3c4",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T17:25:21+00:00",
+  "synthesis_generated_at": "2026-05-04T20:01:35+00:00",
   "synthesis_skipped_reason": null
 }

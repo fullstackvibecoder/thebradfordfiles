@@ -2,122 +2,121 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "transit",
-  "summary": "Bradford's transit positions span TTC reliability, safety, congestion, transit expansion, and active transportation. Bradford has consistently advocated for a TTC 15-minute money-back service guarantee (DSKkoPtDZFM, DSIfzz2jjCo, DRhNrDEDKmt), platform edge doors, police presence, and cleanliness/lighting standards through a \"Safer TTC\" motion (DWZyuhICoQQ, DVhJtcuD2D5). Bradford has pressed for Scarborough/Eglinton East LRT funding parity with the Waterfront East LRT (DXc5lIFjQo_, DW9omxgiiuh) and supports transit separated from car traffic (DUbXa8rClRC). On congestion, Bradford backs a Congestion Relief Commissioner (Cth_Y8zAPV0, DIPfGv-yL6S), opposes ride-share caps (CyWIsi2gS-6, DDIZpJfyQQA), and has proposed reopening King Street to vehicles during streetcar suspensions (DLYR_Fru6ru). On cycling, Bradford supports \"safe and sensible\" bike lanes built case-by-case with community consultation (DBrZ4Ogytu6, DBMivFtSg_w), and has championed Destination Danforth and Bike Share expansion (CNYbaD7Bj9U, CBN92ZVhLYb).",
+  "summary": "Bradford's transit positions span TTC reliability and safety, transit expansion (especially in Scarborough), congestion and gridlock, active transportation, and ride-share. Bradford supports a 15-minute TTC money-back guarantee, platform edge doors, uniformed police at every subway station, and station cleanliness/lighting standards. Bradford backs the Eglinton East and Scarborough LRTs, opposes what he calls Scarborough being left behind on funding, and supports building rapid transit separated from traffic. On gridlock, Bradford has called for a Congestion Relief Commissioner, opposed the RapidTO permanent reconfiguration, opposed Bloor West bike lanes while supporting Danforth bike lanes built with consultation, and proposed temporarily reopening King Street to vehicles. Bradford opposes the rideshare cap, supports Bike Share expansion, electric buses, fare freezes, and the Fair Pass program. Bradford has consistently framed transit and traffic as core city responsibilities requiring accountability.",
   "consistency": {
-    "label": "evolving",
-    "stable_since": "2023-04",
+    "label": "consistent",
+    "stable_since": "2020",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports a 15-minute TTC money-back service guarantee that refunds fares for delays of 15 minutes or more, modeled on GO Transit, London, and Washington DC.",
+      "stance": "Supports a 15-minute TTC money-back guarantee that refunds fares when service is delayed by 15 minutes or more, modeled on GO Transit, London, Singapore, and Washington DC.",
       "supporting_records": [
         "DVMonZBCog7",
+        "DSV6M1pDbgv",
         "DSKkoPtDZFM",
         "DSIfzz2jjCo",
         "DRhNrDEDKmt",
-        "DSV6M1pDbgv"
+        "DSIrAAjEuUl"
       ]
     },
     {
-      "stance": "Supports installing platform edge doors at every TTC subway station, along with police presence and cleanliness/lighting standards.",
+      "stance": "Supports a TTC safety package: uniformed police at every subway station, cleanliness and lighting standards, and platform edge doors system-wide.",
       "supporting_records": [
-        "DVhJtcuD2D5",
         "DWU5JzJiHrx",
-        "DWPZGCUFT_z",
+        "DWZyuhICoQQ",
         "DWhiBdhjRbG",
+        "DVhJtcuD2D5",
+        "DWPZGCUFT_z",
         "Cso4n-TgMxA"
       ]
     },
     {
-      "stance": "Supports advancing the Eglinton East / Scarborough LRT and argues Scarborough has been left behind on transit funding compared to the Downtown Waterfront LRT.",
+      "stance": "Supports expanding transit in Scarborough, including the Eglinton East LRT and Scarborough LRT, and characterizes current funding as leaving Scarborough behind.",
       "supporting_records": [
+        "DXiEz2GDX03",
         "DXc5lIFjQo_",
         "DW9omxgiiuh",
         "DW6x_2yjv-x",
-        "DXiEz2GDX03"
+        "DX116uejXjn"
       ]
     },
     {
-      "stance": "Supports rapid transit physically separated from car traffic, citing Finch West LRT as an example of failure when transit shares the road.",
+      "stance": "Supports building rapid transit separated from car traffic, citing Finch West as an example where road-sharing produced delays.",
       "supporting_records": [
         "DUbXa8rClRC",
         "DUYE_qxDAfc"
       ]
     },
     {
-      "stance": "Supports appointing a Congestion Relief Commissioner / Traffic Czar with accountability for reducing Toronto traffic.",
+      "stance": "Supports creating a Congestion Relief Commissioner / Traffic Czar with responsibility and accountability for Toronto traffic.",
       "supporting_records": [
-        "Cth_Y8zAPV0",
+        "DIPfGv-yL6S",
         "CrwaKnCAqwY",
-        "DIPfGv-yL6S"
+        "Cth_Y8zAPV0"
       ]
     },
     {
-      "stance": "Opposes caps on ride-share (Uber/Lyft) vehicles, arguing they raise prices and wait times and reduce options where transit is insufficient.",
+      "stance": "Opposes the proposed cap on Uber and Lyft vehicles, stating it raises prices, lengthens waits, and reduces service in underserved areas.",
       "supporting_records": [
-        "CyWIsi2gS-6",
-        "DDIZpJfyQQA",
         "DDvEmSJSGX-",
+        "DDIZpJfyQQA",
+        "CyWIsi2gS-6",
         "C0kONitPwVR"
       ]
     },
     {
-      "stance": "Supports bike lanes built case-by-case with genuine community consultation; opposes processes lacking engagement (e.g., Bloor West) and supports adjusting lanes that are not working.",
+      "stance": "Supports bike lanes built case-by-case with community consultation; supports the Danforth bike lane process and opposes how Bloor West was implemented.",
       "supporting_records": [
-        "DBrZ4Ogytu6",
         "DBMivFtSg_w",
+        "DBrZ4Ogytu6",
         "DQeNBJDCZM4",
-        "DAJmU2hS28M"
+        "DAJmU2hS28M",
+        "CetylJBuuTB"
       ]
     },
     {
-      "stance": "Supports active transportation expansion including Destination Danforth, ActiveTO, and Bike Share Toronto growth.",
+      "stance": "Opposes the RapidTO permanent reconfiguration of Bathurst and Dufferin, proposing a time-limited World Cup pilot following the 2015 Pan Am model.",
       "supporting_records": [
-        "CNYbaD7Bj9U",
-        "CBN92ZVhLYb",
-        "CAvjJk1h4Qj",
-        "CFu-AsFBVQq",
-        "CO242W6B6vP"
+        "DMdv3_AyOl2",
+        "DL995QSAviF"
       ]
     },
     {
-      "stance": "Opposes the RapidTO permanent reconfiguration of Bathurst/Dufferin, supporting only a time-limited World Cup pilot following the 2015 Pan Am model.",
-      "supporting_records": [
-        "DMdv3_AyOl2"
-      ]
-    },
-    {
-      "stance": "Supports reopening King Street to personal vehicles while streetcars are diverted due to construction.",
+      "stance": "Supports temporarily reopening King Street to vehicles while streetcars are diverted due to construction.",
       "supporting_records": [
         "DLYR_Fru6ru",
         "DLXh9istqRd",
+        "DLIkRmTuQtI",
         "DLIIDWfg_9d",
         "DLFiuzrA65z"
       ]
     },
     {
-      "stance": "Supports continuous transit expansion (subway, LRT, higher-order transit) by all levels of government, citing decades of underbuilding.",
-      "supporting_records": [
-        "DOtxsuKj3Mg",
-        "DO_uTgMDqB1",
-        "CGqQQw3Bozr"
-      ]
-    },
-    {
-      "stance": "Supports electrifying the TTC bus fleet and moving toward a zero-emissions fleet by 2040.",
+      "stance": "Supports Bike Share Toronto expansion, electric buses, accessible stations, and TTC fare freezes; supports the Fair Pass program.",
       "supporting_records": [
         "CR6kRktrfna",
-        "CNqIYvThZ2M"
+        "CNqIYvThZ2M",
+        "CI6Pp_SBFy0",
+        "CBN92ZVhLYb",
+        "CLIMnPUhuua",
+        "CRCaTezrOpj"
       ]
     },
     {
-      "stance": "Supports bus priority lanes/RapidTO corridors to improve service for transit-dependent communities.",
+      "stance": "Opposes tearing down the Gardiner Expressway, characterizing it as keeping drivers in gridlock.",
       "supporting_records": [
-        "CDMzeQbBohA",
-        "CCYxrBvBLJ7",
-        "CGA2WRCBCu6",
-        "CBTKEoGhZlq"
+        "Csr5vK4gdwK"
+      ]
+    },
+    {
+      "stance": "States Toronto is the most congested city in North America and that traffic/congestion is the top issue residents raise.",
+      "supporting_records": [
+        "DTnfBKDDxMU",
+        "DTh9YI3ksfl",
+        "DAJmU2hS28M",
+        "DEp1GYLv7Vg",
+        "C9fk81Cvbcx"
       ]
     }
   ],
@@ -125,8 +124,8 @@
   "input_record_count": 446,
   "input_records_hash": "sha256:dce7d43a1649ceb5c5fd77dd99b2334ed23d3da6459e0f7dc59caa4a20b1bd5f",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T17:17:32+00:00",
+  "synthesis_generated_at": "2026-05-04T19:53:41+00:00",
   "synthesis_skipped_reason": null
 }
