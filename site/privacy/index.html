@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy &middot; The Mayoral Record</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.65 system-ui,sans-serif;color:#1b1b1b;max-width:760px;margin:60px auto;padding:0 24px}
+h1{font:700 28px/1.2 "Source Serif Pro",Georgia,serif;color:#0d2f5c;margin:24px 0 8px}
+h2{font:700 18px/1.3 "Source Serif Pro",Georgia,serif;color:#0d2f5c;margin:24px 0 8px}
+ul{padding-left:22px;margin-bottom:16px}
+li{margin-bottom:4px}
+p{margin-bottom:14px}
+a{color:#0050d8}
+.note{background:#f3f3f3;padding:10px 14px;font-size:13px;margin-top:24px;border-left:3px solid #c9c9c9}
+.note p{margin-bottom:6px}
+.note p:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+<a href="/" style="color:#0050d8">&larr; Back to Candidates</a>
+<h1>Privacy</h1>
+<p>The Mayoral Record is an independent civic-transparency project. We collect as little data as possible.</p>
+
+<h2>What we collect</h2>
+<ul>
+  <li><strong>Anonymous browser fingerprint hash.</strong> When you submit a reader vote (kept / broke / too early on a topic, or a list of issues you care about), the site generates a random 32-character identifier in your browser's local storage, hashes it with SHA-256, and uses the hash to prevent the same browser from voting twice on the same record. The original fingerprint never leaves your device. The hash is one-way and is not linked to any other data about you.</li>
+  <li><strong>Aggregate page-view counts</strong> via Cloudflare Web Analytics. This is cookieless and does not track you across sites. <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare's privacy explainer</a>.</li>
+  <li><strong>Cloudflare Turnstile challenge tokens</strong> when you submit a vote. Turnstile is a no-CAPTCHA bot-detection challenge; it may use device characteristics to distinguish humans from bots. <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener">Cloudflare Turnstile</a>.</li>
+</ul>
+
+<h2>What we don't collect</h2>
+<ul>
+  <li>No accounts. You don't sign up.</li>
+  <li>No email address. No phone. No name.</li>
+  <li>No IP-address logging beyond what Cloudflare and Vercel keep for security and abuse prevention. We don't read or query those logs in normal operation.</li>
+  <li>No third-party advertising trackers. No retargeting.</li>
+  <li>No cross-site tracking.</li>
+</ul>
+
+<h2>Third parties</h2>
+<ul>
+  <li><strong>Cloudflare</strong> (analytics, Turnstile bot detection): subject to <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's privacy policy</a>.</li>
+  <li><strong>Upstash</strong> (Redis storage of vote counters and dedup hashes): subject to <a href="https://upstash.com/trust/privacy" target="_blank" rel="noopener">Upstash's privacy policy</a>.</li>
+  <li><strong>Vercel</strong> (hosting): subject to <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Vercel's privacy policy</a>.</li>
+  <li><strong>Pol.is</strong> (deliberation embed at /issues/transit-funding/discuss and similar pages): when you load that page, Pol.is loads its own iframe and may set its own cookies. Subject to <a href="https://pol.is/privacy" target="_blank" rel="noopener">Pol.is's privacy policy</a>. We do not control Pol.is's data practices.</li>
+  <li><strong>Anthropic</strong> (Claude API for content extraction and synthesis): we send public Instagram content to Anthropic for processing. We do not send any reader-submitted data to Anthropic.</li>
+</ul>
+
+<h2>Data retention</h2>
+<ul>
+  <li>Aggregate vote counters in Redis are retained indefinitely.</li>
+  <li>Per-fingerprint dedup keys auto-expire after 365 days.</li>
+  <li>Server logs (Vercel/Cloudflare) retain per their providers' policies; we do not retain copies.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Questions about privacy? <a href="https://github.com/fullstackvibecoder/thebradfordfiles/issues">Open a GitHub issue</a> or email <a href="mailto:hello@bottlenecklabs.ai">hello@bottlenecklabs.ai</a>.</p>
+
+<div class="note">
+<p>This is a plain-English disclosure. It is not legal advice. If you have a specific privacy concern, please contact us.</p>
+<p>Last updated: 2026-05-04.</p>
+</div>
+</body>
+</html>
