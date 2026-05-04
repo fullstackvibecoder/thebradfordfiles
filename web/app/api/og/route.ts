@@ -76,18 +76,20 @@ function scenariosIndexCard() {
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const type = url.searchParams.get("type") ?? "landing";
+  let element: any;
   if (type === "scenario") {
     const slug = url.searchParams.get("slug") ?? "";
     const card = getScenario(slug);
     if (!card) {
       return new Response("not found", { status: 404 });
     }
-    return new ImageResponse(scenarioCard(card.topic_short, card.pull_quote, card.slug), { width: 1200, height: 630 });
+    element = scenarioCard(card.topic_short, card.pull_quote, card.slug);
+    return new ImageResponse(element, { width: 1200, height: 630 });
   }
   if (type === "scenarios-index") {
-    return new ImageResponse(scenariosIndexCard(), { width: 1200, height: 630 });
+    element = scenariosIndexCard();
+    return new ImageResponse(element, { width: 1200, height: 630 });
   }
-  let element: any;
   if (type === "candidate") {
     element = candidateCard(
       url.searchParams.get("name") ?? "Candidate",
