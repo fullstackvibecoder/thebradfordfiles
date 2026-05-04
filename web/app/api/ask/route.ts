@@ -34,6 +34,7 @@ function callTool(name: string, input: Record<string, unknown>): unknown {
     case "lookup_council_vote": return tools.lookup_council_vote(input);
     case "get_synthesis": return tools.get_synthesis(input as { slug: string; topic: string });
     case "get_record_detail": return tools.get_record_detail(input as { shortcode: string });
+    case "get_scenario_card": return tools.get_scenario_card(input as { query?: string; topic_hint?: string });
     default: throw new Error(`unknown tool ${name}`);
   }
 }
@@ -86,7 +87,7 @@ export async function POST(req: Request) {
           } else {
             send("tool_call", { tool: use.name, args: use.input, status: "running" });
             try {
-              const result = callTool(use.name, use.input as Record<string, unknown>);
+              const result = await Promise.resolve(callTool(use.name, use.input as Record<string, unknown>));
               send("tool_call", { tool: use.name, args: use.input, status: "complete", result_summary: summarizeResult(use.name, result) });
               toolResultsContent.push({ type: "tool_result", tool_use_id: use.id, content: JSON.stringify(result) });
             } catch (err) {
@@ -139,6 +140,10 @@ function summarizeResult(toolName: string, result: unknown): string {
   if (toolName === "get_record_detail") {
     const r = result as { record: unknown };
     return r.record ? "record loaded" : "not found";
+  }
+  if (toolName === "get_scenario_card") {
+    const r = result as { status: string; slug?: string };
+    return r.status === "matched" ? `matched ${r.slug}` : "no_match";
   }
   return "ok";
 }

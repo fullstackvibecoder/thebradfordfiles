@@ -6,6 +6,8 @@ import {
   type RecordEntry,
   type SynthesisCell,
 } from "./data-loader";
+import { Redis } from "@upstash/redis";
+import { getScenarioCard, type ScenarioToolInput, type ScenarioToolResult } from "./scenario-tool";
 
 export interface ListCandidatesResult {
   candidates: CandidateLanding[];
@@ -119,4 +121,20 @@ export interface ListRecentQuestionsResult {
 
 export function list_recent_questions(): ListRecentQuestionsResult {
   return { questions: [] };
+}
+
+export async function get_scenario_card(
+  input: { query?: string; topic_hint?: string }
+): Promise<ScenarioToolResult> {
+  const url = process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+  const logger = url && token ? new Redis({ url, token }) : null;
+  const reasoning = typeof input?.topic_hint === "string"
+    ? "topic_hint: " + input.topic_hint
+    : "no topic_hint provided";
+  const scenarioInput: ScenarioToolInput = {
+    query: String(input?.query ?? ""),
+    topic_hint: input?.topic_hint,
+  };
+  return await getScenarioCard(scenarioInput, logger, reasoning);
 }
