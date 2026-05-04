@@ -241,6 +241,12 @@ def _emit_candidate_html(manifest: dict) -> None:
                  os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"))
         .replace("__CLOUDFLARE_BEACON_TOKEN__",
                  os.environ.get("CLOUDFLARE_BEACON_TOKEN", "__CLOUDFLARE_BEACON_TOKEN__"))
+        .replace("__SLUG__", manifest["slug"])
+        .replace("__DISPLAY_NAME__", manifest["display_name"])
+        .replace("__DISPLAY_NAME_URL__", manifest["display_name"].replace(" ", "+"))
+        .replace("__FILES_LABEL_URL__", manifest["files_label"].replace(" ", "+"))
+        .replace("__RECORD_COUNT__", str(manifest.get("_record_count", 0)))
+        .replace("__DOT_COLOR__", manifest.get("_dot_color", "gray"))
     )
     out_dir = SITE_DIR / slug
     out_dir.mkdir(exist_ok=True)
@@ -278,7 +284,12 @@ def main(argv: list[str] | None = None) -> int:
         combined_records.extend(dossier["records"])
         combined_posts.update(dossier["posts"])
         combined_skip.extend(dossier["skip_log"])
-        _emit_candidate_html(manifest)
+        manifest_for_html = {
+            **manifest,
+            "_record_count": dossier["meta"]["record_count"],
+            "_dot_color": dossier["meta"].get("consistency_dot", "gray"),
+        }
+        _emit_candidate_html(manifest_for_html)
 
     landing = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
