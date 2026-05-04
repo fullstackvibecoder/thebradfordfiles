@@ -34,7 +34,7 @@ function score(query: string, haystack: string): number {
   return hits / q.size;
 }
 
-const MATCH_THRESHOLD = 0.4;
+const MATCH_THRESHOLD = 0.25;
 
 export async function getScenarioCard(
   input: ScenarioToolInput,
