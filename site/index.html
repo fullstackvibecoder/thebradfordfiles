@@ -97,6 +97,25 @@ function el(tag, attrs, children){
 function row(label, value){
   return el("div", null, [el("span", {class:"lbl"}, label + " "), el("span", null, value)]);
 }
+function renderConsistencyDot(state) {
+  const colors = {
+    green:  "#1a5b1a",
+    yellow: "#b58a32",
+    red:    "#b50909",
+    gray:   "#999",
+  };
+  const tooltips = {
+    green:  "Consistent across all topics with sufficient data",
+    yellow: "Some topics show evolving stances",
+    red:    "At least one topic shows a contradicted prior stance",
+    gray:   "Insufficient data on enough topics for an overall reading",
+  };
+  const dot = document.createElement("span");
+  dot.title = (tooltips[state] || "") + " — see methodology";
+  dot.setAttribute("aria-label", tooltips[state] || state);
+  dot.style.cssText = `display:inline-block;width:10px;height:10px;border-radius:50%;background:${colors[state] || "#ccc"};cursor:help`;
+  return dot;
+}
 function fmtPlacement(p){return p === 1 ? "1st" : p === 2 ? "2nd" : p === 3 ? "3rd" : p + "th";}
 function fmt2023(r){return r ? `${fmtPlacement(r.placement)} · ~${r.vote_share_pct}%` : null;}
 
@@ -106,7 +125,10 @@ fetch("/landing.json", {cache:"no-store"}).then(r => r.json()).then(d => {
   for (const c of d.candidates){
     const isAwaiting = c.candidacy_status === "expected" || c.candidacy_status === "awaiting";
     const card = el("a", {href: "/" + c.slug, class: "card" + (isAwaiting ? " awaiting" : "")});
-    card.appendChild(el("div", {class:"card-name"}, c.display_name));
+    const nameWrap = el("div", {class:"card-name", style:"display:flex;align-items:center;gap:8px"});
+    nameWrap.appendChild(document.createTextNode(c.display_name));
+    if (c.consistency_dot) nameWrap.appendChild(renderConsistencyDot(c.consistency_dot));
+    card.appendChild(nameWrap);
     const statusText = c.candidacy_status === "declared"
       ? `Declared ${c.declared_date || ""}`
       : c.candidacy_status === "expected" ? "Expected to declare" : "Awaiting declaration";
