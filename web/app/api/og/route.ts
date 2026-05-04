@@ -1,9 +1,14 @@
 import { ImageResponse } from "@vercel/og";
-export const runtime = "edge";
+import { getScenario } from "@/lib/scenario-loader";
+export const runtime = "nodejs";
 
 const COLORS = {
   navy: "#0d2f5c", red: "#da291c", white: "#ffffff",
   green: "#1a5b1a", yellow: "#b58a32", redDot: "#b50909", gray: "#999",
+};
+
+const DOC = {
+  bg: "#fbfbf9", ink: "#1c1c1c", muted: "#5a5a55", accent: "#a07223",
 };
 
 function frame(children: any) {
@@ -47,9 +52,41 @@ function answerCard(q: string) {
   ]);
 }
 
+function docFrame(children: any) {
+  return { type: "div", props: { style: { display: "flex", flexDirection: "column", width: "1200px", height: "630px", background: DOC.bg, color: DOC.ink, padding: "60px 80px", fontFamily: "system-ui, sans-serif" }, children } };
+}
+
+function scenarioCard(topicShort: string, pullQuote: string, slug: string) {
+  return docFrame([
+    { type: "div", props: { style: { fontFamily: "ui-monospace, monospace", fontSize: 16, textTransform: "uppercase", letterSpacing: "0.12em", color: DOC.muted, marginBottom: 24 }, children: "Scenario . The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 32, letterSpacing: "-0.02em" }, children: topicShort } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 1000 }, children: pullQuote } },
+    { type: "div", props: { style: { marginTop: "auto", fontFamily: "ui-monospace, monospace", fontSize: 14, color: DOC.muted, textTransform: "uppercase", letterSpacing: "0.1em" }, children: `mayoralrecord.com/scenarios/${slug}` } },
+  ]);
+}
+
+function scenariosIndexCard() {
+  return docFrame([
+    { type: "div", props: { style: { fontFamily: "ui-monospace, monospace", fontSize: 16, textTransform: "uppercase", letterSpacing: "0.12em", color: DOC.muted, marginBottom: 24 }, children: "Scenarios . The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 80, fontWeight: 700, lineHeight: 1.05, marginBottom: 32, letterSpacing: "-0.02em" }, children: "Policy scenarios" } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 980 }, children: "Curated, evidence-backed analysis of contested positions in the Toronto 2026 race." } },
+  ]);
+}
+
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const type = url.searchParams.get("type") ?? "landing";
+  if (type === "scenario") {
+    const slug = url.searchParams.get("slug") ?? "";
+    const card = getScenario(slug);
+    if (!card) {
+      return new Response("not found", { status: 404 });
+    }
+    return new ImageResponse(scenarioCard(card.topic_short, card.pull_quote, card.slug), { width: 1200, height: 630 });
+  }
+  if (type === "scenarios-index") {
+    return new ImageResponse(scenariosIndexCard(), { width: 1200, height: 630 });
+  }
   let element: any;
   if (type === "candidate") {
     element = candidateCard(
