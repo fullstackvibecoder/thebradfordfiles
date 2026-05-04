@@ -43,3 +43,4 @@ node_modules/
 City Council Member Voting Record 2006-2026/
 data/votes/raw/
 data/votes/by-councillor/
+.env*.local

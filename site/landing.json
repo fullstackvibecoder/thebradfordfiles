@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T00:40:42+00:00",
+  "generated_at": "2026-05-04T01:29:04+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -21,22 +21,22 @@
         "cost of living"
       ],
       "post_count": 3832,
-      "record_count": 5322,
-      "extracted_count": 1748,
+      "record_count": 5435,
+      "extracted_count": 1796,
       "emphasis": {
-        "transit": 12.6,
-        "governance_ethics": 11.4,
-        "infrastructure": 9.2,
-        "safety_crime": 16.1,
+        "transit": 12.7,
+        "governance_ethics": 11.5,
+        "infrastructure": 9.5,
+        "safety_crime": 16.6,
         "taxes_fiscal": 6.0,
         "campaign_logistics": 3.2,
-        "housing": 18.0,
+        "housing": 18.5,
         "personal_context": 1.1,
-        "other": 1.7,
-        "social_services": 7.1,
-        "civic_engagement": 8.3,
-        "parks_environment": 8.3,
-        "small_business_economy": 11.7
+        "other": 1.8,
+        "social_services": 7.4,
+        "civic_engagement": 8.6,
+        "parks_environment": 8.6,
+        "small_business_economy": 12.1
       },
       "date_range": {
         "earliest": "2015-01-28",
@@ -63,18 +63,22 @@
         "social services"
       ],
       "post_count": 719,
-      "record_count": 108,
-      "extracted_count": 52,
+      "record_count": 470,
+      "extracted_count": 248,
       "emphasis": {
-        "housing": 4.8,
-        "social_services": 3.6,
-        "civic_engagement": 2.4,
-        "other": 0.8,
-        "campaign_logistics": 2.0,
-        "infrastructure": 0.8,
-        "small_business_economy": 1.2,
-        "transit": 0.8,
-        "parks_environment": 1.2
+        "housing": 10.9,
+        "social_services": 17.7,
+        "civic_engagement": 8.9,
+        "other": 1.6,
+        "campaign_logistics": 4.4,
+        "infrastructure": 1.6,
+        "small_business_economy": 4.8,
+        "transit": 10.5,
+        "parks_environment": 3.2,
+        "governance_ethics": 2.4,
+        "taxes_fiscal": 1.6,
+        "endorsements": 0.4,
+        "safety_crime": 0.8
       },
       "date_range": {
         "earliest": "2014-01-20",
