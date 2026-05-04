@@ -73,6 +73,7 @@ def synthesize_one(handle: str, topic: str, *,
             "input_records_hash": records_hash,
             "model": _s.MODEL,
             "system_prompt_hash": _s.SYSTEM_PROMPT_HASH,
+            "cache_namespace": _s.CACHE_NAMESPACE,
             "synthesis_generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "synthesis_skipped_reason": "insufficient_data",
         }
@@ -82,7 +83,8 @@ def synthesize_one(handle: str, topic: str, *,
     # Cache check.
     if not force:
         cached = _s.load_cached_synthesis(handle, topic)
-        if _s.is_cache_valid(cached, records_hash, _s.SYSTEM_PROMPT_HASH, _s.MODEL):
+        if _s.is_cache_valid(cached, records_hash, _s.SYSTEM_PROMPT_HASH,
+                             _s.MODEL, _s.CACHE_NAMESPACE):
             return out_path
 
     # Live call.
@@ -121,6 +123,7 @@ def synthesize_one(handle: str, topic: str, *,
         "input_records_hash": records_hash,
         "model": _s.MODEL,
         "system_prompt_hash": _s.SYSTEM_PROMPT_HASH,
+        "cache_namespace": _s.CACHE_NAMESPACE,
         "synthesis_generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "synthesis_skipped_reason": tool_input.get("synthesis_skipped_reason"),
     }

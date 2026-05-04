@@ -74,8 +74,10 @@ def test_is_cache_valid_returns_true_when_all_keys_match():
         "input_records_hash": "sha256:abc",
         "system_prompt_hash": "sha256:xyz",
         "model": "claude-opus-4-7",
+        "cache_namespace": "production-v1",
     }
-    assert synthesis.is_cache_valid(cached, "sha256:abc", "sha256:xyz", "claude-opus-4-7")
+    assert synthesis.is_cache_valid(cached, "sha256:abc", "sha256:xyz",
+                                    "claude-opus-4-7", "production-v1")
 
 
 def test_is_cache_valid_returns_false_on_records_change():
@@ -83,8 +85,10 @@ def test_is_cache_valid_returns_false_on_records_change():
         "input_records_hash": "sha256:abc",
         "system_prompt_hash": "sha256:xyz",
         "model": "claude-opus-4-7",
+        "cache_namespace": "production-v1",
     }
-    assert not synthesis.is_cache_valid(cached, "sha256:DIFFERENT", "sha256:xyz", "claude-opus-4-7")
+    assert not synthesis.is_cache_valid(cached, "sha256:DIFFERENT", "sha256:xyz",
+                                        "claude-opus-4-7", "production-v1")
 
 
 def test_is_cache_valid_returns_false_on_prompt_change():
@@ -92,8 +96,10 @@ def test_is_cache_valid_returns_false_on_prompt_change():
         "input_records_hash": "sha256:abc",
         "system_prompt_hash": "sha256:xyz",
         "model": "claude-opus-4-7",
+        "cache_namespace": "production-v1",
     }
-    assert not synthesis.is_cache_valid(cached, "sha256:abc", "sha256:DIFFERENT", "claude-opus-4-7")
+    assert not synthesis.is_cache_valid(cached, "sha256:abc", "sha256:DIFFERENT",
+                                        "claude-opus-4-7", "production-v1")
 
 
 def test_is_cache_valid_returns_false_on_model_change():
@@ -101,12 +107,30 @@ def test_is_cache_valid_returns_false_on_model_change():
         "input_records_hash": "sha256:abc",
         "system_prompt_hash": "sha256:xyz",
         "model": "claude-opus-4-7",
+        "cache_namespace": "production-v1",
     }
-    assert not synthesis.is_cache_valid(cached, "sha256:abc", "sha256:xyz", "claude-sonnet-4-6")
+    assert not synthesis.is_cache_valid(cached, "sha256:abc", "sha256:xyz",
+                                        "claude-sonnet-4-6", "production-v1")
 
 
 def test_is_cache_valid_handles_missing_keys():
-    assert not synthesis.is_cache_valid({}, "h", "h", "m")
+    assert not synthesis.is_cache_valid({}, "h", "h", "m", "production-v1")
+
+
+def test_is_cache_valid_returns_false_on_namespace_change():
+    cached = {
+        "input_records_hash": "sha256:abc",
+        "system_prompt_hash": "sha256:xyz",
+        "model": "claude-opus-4-7",
+        "cache_namespace": "test",
+    }
+    assert not synthesis.is_cache_valid(
+        cached, "sha256:abc", "sha256:xyz", "claude-opus-4-7", "production-v1"
+    )
+
+
+def test_cache_namespace_constant_is_production():
+    assert synthesis.CACHE_NAMESPACE == "production-v1"
 
 
 def test_system_prompt_hash_is_stable():

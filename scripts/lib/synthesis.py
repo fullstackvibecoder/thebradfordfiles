@@ -20,6 +20,10 @@ INSUFFICIENT_DATA_THRESHOLD = 5
 
 MODEL = "claude-opus-4-7"
 
+# Cache namespace prevents test fixture data from poisoning real-data
+# caches. Tests override to "test"; production keeps the default.
+CACHE_NAMESPACE = "production-v1"
+
 # The SYSTEM_PROMPT is the editorial contract. Editing it invalidates
 # every cached synthesis (intentionally; see methodology page).
 SYSTEM_PROMPT = """\
@@ -182,13 +186,15 @@ def collect_records_for_topic(handle: str, topic: str) -> list[dict]:
 
 
 def is_cache_valid(cached: dict, current_records_hash: str,
-                   current_prompt_hash: str, current_model: str) -> bool:
+                   current_prompt_hash: str, current_model: str,
+                   current_cache_namespace: str) -> bool:
     if not cached:
         return False
     return (
         cached.get("input_records_hash") == current_records_hash
         and cached.get("system_prompt_hash") == current_prompt_hash
         and cached.get("model") == current_model
+        and cached.get("cache_namespace") == current_cache_namespace
     )
 
 
