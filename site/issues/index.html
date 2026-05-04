@@ -1,7 +1,185 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Issues &middot; The T.O. Mayoral Files</title><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="font-family:system-ui,sans-serif;max-width:720px;margin:80px auto;padding:0 24px;color:#1b1b1b">
-<a href="/" style="color:#0050d8">&larr; Back to Candidates</a>
-<h1 style="font-family:Georgia,serif;color:#0d2f5c;margin-top:24px">Issues &amp; Agenda Gap</h1>
-<p style="color:#5a6573;line-height:1.6">Reader issue-priority polling and agenda-gap analysis ship in a later phase.</p>
-</body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Issues &amp; Agenda Gap &middot; The T.O. Mayoral Files</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.5 "Public Sans",system-ui,sans-serif;color:#1b1b1b;background:#f7f8fa;min-height:100vh}
+.container{max-width:1100px;margin:0 auto;padding:32px 24px 60px}
+header.topnav{background:#0d2f5c;color:#fff;padding:16px 24px}
+header.topnav .inner{max-width:1100px;margin:0 auto;display:flex;gap:16px;align-items:center;font:600 13px/1 inherit}
+header.topnav a{color:#fff;text-decoration:none;opacity:.85}
+header.topnav a:hover,header.topnav a.active{opacity:1;border-bottom:2px solid #da291c}
+h1{font:700 28px/1.2 "Source Serif Pro",Georgia,serif;color:#0d2f5c;margin-bottom:6px}
+.lede{font-size:14.5px;color:#5a6573;max-width:780px;line-height:1.55;margin-bottom:24px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.tag{background:#fff;border:1px solid #c9c9c9;padding:8px 14px;font-size:13px;cursor:pointer;user-select:none}
+.tag.selected{background:#0d2f5c;color:#fff;border-color:#0d2f5c;font-weight:600}
+.tag:hover{border-color:#0d2f5c}
+.submit{background:#da291c;color:#fff;border:none;padding:10px 18px;font-weight:700;font-size:13px;cursor:pointer;margin-top:8px}
+.submit:disabled{opacity:.5;cursor:not-allowed}
+.gap-table{margin-top:32px;background:#fff;border:1px solid #dfe1e2}
+.gap-table h2{font:700 16px Source Serif Pro,Georgia,serif;color:#0d2f5c;padding:14px 18px;border-bottom:1px solid #eee}
+.gap-row{display:grid;grid-template-columns:160px 1fr;gap:12px;padding:10px 18px;border-bottom:1px solid #f3f3f3;align-items:center;font-size:13px}
+.gap-row:last-child{border:none}
+.gap-row .topic-name{font-weight:600}
+.gap-row .reader-pct{font-size:11px;color:#5a6573}
+.gap-cands{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.gap-cell{background:#f7f8fa;padding:6px 8px;border-left:3px solid #1a4480}
+.gap-cell .name{font-size:11px;color:#666;font-weight:600}
+.gap-cell .bar{height:10px;background:#e9eef4;margin:4px 0;display:flex}
+.gap-cell .bar div{background:#1a4480;height:100%}
+.gap-cell .gap{font-size:10px;color:#666}
+.gap-cell .gap.over{color:#b58a32}
+.gap-cell .gap.under{color:#b50909}
+.dis{font-style:italic;color:#999;font-size:11.5px;margin-top:14px}
+</style>
+</head>
+<body>
+<header class="topnav"><div class="inner"><a href="/">The T.O. Mayoral Files</a><a href="/">Candidates</a><a href="/compare">Compare</a><a href="/issues" class="active">Issues</a><a href="/methodology">Methodology</a><a href="/about">About</a></div></header>
+<div class="container">
+<h1>Issues &amp; Agenda Gap</h1>
+<p class="lede">Click any Toronto issues that matter to you. We compare reader priority against each candidate's posting frequency on each topic. Anonymous, no login. <a href="/methodology">How this is computed.</a></p>
+<div class="tags" id="tags"></div>
+<button class="submit" id="submit" disabled>Submit my priorities</button>
+<div id="thanks" style="display:none;margin-top:8px;color:#00923f;font-weight:600">Thanks. Your priorities are factored into the chart below.</div>
+<div class="gap-table"><h2>Reader priority vs. candidate emphasis</h2><div id="gap-rows">Loading&hellip;</div></div>
+<div class="dis">Reader priority based on anonymous self-selected sample &mdash; not a representative poll. Candidate emphasis derived from extracted records weighted by topic frequency.</div>
+</div>
+<script>
+const TOPICS = {
+  housing: "Housing", transit: "Transit", safety_crime: "Public safety",
+  taxes_fiscal: "Taxes / fiscal", parks_environment: "Parks & environment",
+  infrastructure: "Infrastructure", civic_engagement: "Civic engagement",
+  governance_ethics: "Governance / ethics",
+  small_business_economy: "Small business / economy",
+  social_services: "Social services",
+};
+const SITEKEY = "test_dev_key";
+const selected = new Set();
+
+function el(tag, attrs, children){
+  const n = document.createElement(tag);
+  if (attrs) for (const [k,v] of Object.entries(attrs)){
+    if (v == null) continue;
+    if (k === "class") n.className = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2).toLowerCase(), v);
+    else n.setAttribute(k, v);
+  }
+  if (children != null){
+    const arr = Array.isArray(children) ? children : [children];
+    for (const c of arr){
+      if (c == null) continue;
+      n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+    }
+  }
+  return n;
+}
+
+const tagsEl = document.getElementById("tags");
+const submitBtn = document.getElementById("submit");
+for (const [key, label] of Object.entries(TOPICS)){
+  const t = el("button", {class:"tag"}, label);
+  t.addEventListener("click", () => {
+    if (selected.has(key)){ selected.delete(key); t.classList.remove("selected"); }
+    else { selected.add(key); t.classList.add("selected"); }
+    submitBtn.disabled = selected.size === 0;
+  });
+  tagsEl.appendChild(t);
+}
+
+function getFingerprint() {
+  let fp = localStorage.getItem("tomf-fp");
+  if (!fp) {
+    fp = [...crypto.getRandomValues(new Uint8Array(16))]
+      .map(b => b.toString(16).padStart(2, "0")).join("");
+    localStorage.setItem("tomf-fp", fp);
+  }
+  return fp;
+}
+
+let _ts = false;
+function ensureTurnstile() {
+  if (_ts) return;
+  _ts = true;
+  const s = document.createElement("script");
+  s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+  s.async = true;
+  document.head.appendChild(s);
+}
+ensureTurnstile();
+
+async function getToken() {
+  if (!SITEKEY || SITEKEY === "test_dev_key") return "dev";
+  return new Promise(resolve => {
+    function attempt() {
+      if (window.turnstile) {
+        const ctr = document.createElement("div"); ctr.style.display = "none"; document.body.appendChild(ctr);
+        window.turnstile.render(ctr, {
+          sitekey: SITEKEY, size: "invisible",
+          callback: t => resolve(t),
+          "error-callback": () => resolve(null),
+        });
+      } else {
+        setTimeout(attempt, 200);
+      }
+    }
+    attempt();
+  });
+}
+
+submitBtn.addEventListener("click", async () => {
+  const token = await getToken();
+  const r = await fetch("/api/issue-vote", {
+    method: "POST", headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({topics: [...selected], turnstile_token: token, fingerprint: getFingerprint()}),
+  });
+  if (r.ok) {
+    document.getElementById("thanks").style.display = "";
+    refreshGap();
+  }
+});
+
+function gapClass(gap){ return gap > 5 ? "over" : gap < -5 ? "under" : ""; }
+
+async function refreshGap() {
+  const [reader, landing] = await Promise.all([
+    fetch("/api/issues-aggregate").then(r => r.json()).catch(() => ({counts:{}, total_voters:0})),
+    fetch("/landing.json").then(r => r.json()),
+  ]);
+  const total = reader.total_voters || 1;
+  const candidates = landing.candidates;
+  const rowsEl = document.getElementById("gap-rows");
+  rowsEl.replaceChildren();
+  for (const [key, label] of Object.entries(TOPICS)) {
+    const reader_pct = Math.round(100 * (reader.counts[key] || 0) / total);
+    const row = el("div", {class:"gap-row"});
+    const topicCol = el("div", {class:"topic-name"}, [
+      label,
+      el("div", {class:"reader-pct"}, "Reader: " + reader_pct + "%"),
+    ]);
+    row.appendChild(topicCol);
+    const cands = el("div", {class:"gap-cands"});
+    for (const c of candidates) {
+      const emph = (c.emphasis && c.emphasis[key]) || 0;
+      const gap = Math.round(emph - reader_pct);
+      const cell = el("div", {class:"gap-cell"});
+      cell.appendChild(el("div", {class:"name"}, c.surname));
+      const bar = el("div", {class:"bar"});
+      bar.appendChild(el("div", {style: "width:" + Math.min(100, emph) + "%"}));
+      cell.appendChild(bar);
+      cell.appendChild(el("div", {class: "gap " + gapClass(gap)},
+        emph + "% emphasis · gap " + (gap >= 0 ? "+" : "") + gap));
+      cands.appendChild(cell);
+    }
+    row.appendChild(cands);
+    rowsEl.appendChild(row);
+  }
+}
+refreshGap();
+</script>
+</body>
+</html>
