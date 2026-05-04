@@ -41,3 +41,5 @@ node_modules/
 
 # Council voting record raw source files (large; re-derive with ingest_votes.py)
 City Council Member Voting Record 2006-2026/
+data/votes/raw/
+data/votes/by-councillor/
