@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -25,6 +26,7 @@ from lib import candidates as _candidates  # type: ignore  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
 SITE_DIR = ROOT / "site"
+WEB_DATA_DIR = ROOT / "web" / "public" / "data"
 MATCHES_FILE = DATA_DIR / "votes" / "matches.jsonl"
 
 
@@ -291,6 +293,8 @@ def main(argv: list[str] | None = None) -> int:
 
     SITE_DIR.mkdir(exist_ok=True)
     (SITE_DIR / "candidates").mkdir(exist_ok=True)
+    WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    (WEB_DATA_DIR / "candidates").mkdir(parents=True, exist_ok=True)
 
     primaries = _candidates.load_all_candidates()
     if not primaries:
@@ -312,6 +316,8 @@ def main(argv: list[str] | None = None) -> int:
         size_kb = out_path.stat().st_size / 1024
         print(f"  wrote site/candidates/{slug}.json ({size_kb:.1f} KB, "
               f"{dossier['meta']['record_count']} records)")
+        web_out_path = WEB_DATA_DIR / "candidates" / f"{slug}.json"
+        web_out_path.write_text(json.dumps(dossier, ensure_ascii=False))
         landing_cards.append(_landing_card(dossier))
         combined_records.extend(dossier["records"])
         combined_posts.update(dossier["posts"])
@@ -329,6 +335,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     (SITE_DIR / "landing.json").write_text(json.dumps(landing, ensure_ascii=False, indent=2))
     print(f"  wrote site/landing.json ({len(landing_cards)} candidates)")
+    (WEB_DATA_DIR / "landing.json").write_text(json.dumps(landing, ensure_ascii=False, indent=2))
 
     _emit_sitemap(landing_cards, landing["generated_at"])
 
@@ -344,6 +351,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     (SITE_DIR / "data.json").write_text(json.dumps(combined, ensure_ascii=False))
     print(f"  wrote site/data.json (back-compat, {len(combined_records)} records)")
+    (WEB_DATA_DIR / "data.json").write_text(json.dumps(combined, ensure_ascii=False))
 
     static_pages_with_substitutions = [
         SITE_DIR / "index.html",
@@ -366,6 +374,20 @@ def main(argv: list[str] | None = None) -> int:
         for placeholder, value in substitutions.items():
             text = text.replace(placeholder, value)
         page.write_text(text)
+
+    synthesis_target = WEB_DATA_DIR / "synthesis"
+    synthesis_target.mkdir(parents=True, exist_ok=True)
+    for handle_dir in DATA_DIR.iterdir():
+        if not handle_dir.is_dir():
+            continue
+        src_synth = handle_dir / "synthesis"
+        if not src_synth.is_dir():
+            continue
+        dst_synth = synthesis_target / handle_dir.name
+        dst_synth.mkdir(parents=True, exist_ok=True)
+        for json_file in src_synth.glob("*.json"):
+            shutil.copy(json_file, dst_synth / json_file.name)
+    print(f"  copied synthesis cells to web/public/data/synthesis/")
 
     return 0
 
