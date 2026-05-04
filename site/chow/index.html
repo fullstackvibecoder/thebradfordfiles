@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Chow Files &middot; The T.O. Mayoral Files</title>
+<title>The Chow Files &middot; The Mayoral Record</title>
 <meta name="description" content="An independent civic transparency record of Brad Bradford's public Instagram political content. Every record sourced. Not affiliated with the candidate or campaign.">
 <meta name="theme-color" content="#112e51">
 
@@ -820,7 +820,7 @@ function detectedScarbHoods(record) {
 }
 
 // ---------- VOTE WIDGET ----------
-const TURNSTILE_SITE_KEY = "0x4AAAAAADIpIfpk8chZt_UO";
+const TURNSTILE_SITE_KEY = "__TURNSTILE_SITE_KEY__";
 let _turnstileLoaded = false;
 
 function ensureTurnstile() {
@@ -1018,7 +1018,7 @@ function renderAggregate(target, counts) {
 }
 
 async function getTurnstileToken(widget) {
-  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "0x4AAAAAADIpIfpk8chZt_UO") return "dev";
+  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "__TURNSTILE_SITE_KEY__") return "dev";
   return new Promise(resolve => {
     function attempt() {
       if (window.turnstile) {
