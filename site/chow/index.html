@@ -881,6 +881,13 @@ function renderCard(record) {
   if (record.kind === "action" && record.outcome) {
     meta.appendChild(el("span", { class: "stance-tag stance-" + (record.outcome === "passed" || record.outcome === "passed_unanimously" || record.outcome === "completed" ? "supports" : record.outcome === "failed" ? "opposes" : "announces") }, record.outcome.replace(/_/g, " ")));
   }
+  if (record.kind === "action" && record.council_verification) {
+    const verifiedTag = el("span", {
+      class: "stance-tag",
+      style: "color:#fff;background:#00923f;border-color:#00923f"
+    }, "✓ Verified");
+    meta.appendChild(verifiedTag);
+  }
   if (record.kind === "endorsement" && record.direction) {
     meta.appendChild(el("span", { class: "topic-tag" }, record.direction));
   }
@@ -913,6 +920,23 @@ function renderCard(record) {
   }
   if (record.kind === "endorsement" && record.context) {
     card.appendChild(el("div", { style: "font-size:13px;color:var(--c-base-light);margin-bottom:8px;" }, record.context));
+  }
+
+  // Council verification detail box
+  if (record.kind === "action" && record.council_verification) {
+    const v = record.council_verification;
+    const box = el("div", {style:"background:#f0f7ed;border:1px solid #00923f;border-left-width:3px;padding:8px 10px;margin:8px 0;font-size:12px"});
+    box.appendChild(el("div", {style:"color:#00923f;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:10px"},
+      "✓ Verified · Toronto Council voting record"));
+    const detail = el("div", {style:"margin-top:4px;color:#333"});
+    detail.appendChild(el("strong", null, v.agenda_item || ""));
+    if (v.vote_description) detail.appendChild(document.createTextNode(" — " + v.vote_description));
+    box.appendChild(detail);
+    box.appendChild(el("div", {style:"color:#666;font-size:11px;margin-top:2px"},
+      `Voted ${v.vote_disposition} · ${v.result || ""} · ${(v.vote_date || "").split(" ")[0]}`));
+    box.appendChild(el("div", {style:"margin-top:4px;font-size:10px;color:#666"},
+      `Match confidence: ${(v.confidence * 100).toFixed(0)}% (${v.match_type})`));
+    card.appendChild(box);
   }
 
   // Source quote (verbatim)

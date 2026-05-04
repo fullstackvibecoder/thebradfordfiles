@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T00:26:15+00:00",
+  "generated_at": "2026-05-04T00:40:42+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -21,21 +21,21 @@
         "cost of living"
       ],
       "post_count": 3832,
-      "record_count": 5247,
-      "extracted_count": 1698,
+      "record_count": 5322,
+      "extracted_count": 1748,
       "emphasis": {
-        "transit": 12.5,
+        "transit": 12.6,
         "governance_ethics": 11.4,
-        "infrastructure": 9.1,
-        "safety_crime": 16.0,
+        "infrastructure": 9.2,
+        "safety_crime": 16.1,
         "taxes_fiscal": 6.0,
         "campaign_logistics": 3.2,
-        "housing": 17.7,
+        "housing": 18.0,
         "personal_context": 1.1,
         "other": 1.7,
-        "social_services": 6.8,
-        "civic_engagement": 8.0,
-        "parks_environment": 8.1,
+        "social_services": 7.1,
+        "civic_engagement": 8.3,
+        "parks_environment": 8.3,
         "small_business_economy": 11.7
       },
       "date_range": {
@@ -63,9 +63,19 @@
         "social services"
       ],
       "post_count": 719,
-      "record_count": 0,
-      "extracted_count": 0,
-      "emphasis": {},
+      "record_count": 108,
+      "extracted_count": 52,
+      "emphasis": {
+        "housing": 4.8,
+        "social_services": 3.6,
+        "civic_engagement": 2.4,
+        "other": 0.8,
+        "campaign_logistics": 2.0,
+        "infrastructure": 0.8,
+        "small_business_economy": 1.2,
+        "transit": 0.8,
+        "parks_environment": 1.2
+      },
       "date_range": {
         "earliest": "2014-01-20",
         "latest": "2025-08-25"
