@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Transit funding deliberation &middot; The T.O. Mayoral Files</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.5 "Public Sans",system-ui,sans-serif;color:#1b1b1b;background:#f7f8fa}
+.container{max-width:980px;margin:0 auto;padding:24px}
+h1{font:700 24px/1.2 "Source Serif Pro",Georgia,serif;color:#0d2f5c}
+.lede{color:#5a6573;line-height:1.55;margin:8px 0 18px;font-size:14px}
+.embed-wrap{background:#fff;border:1px solid #dfe1e2;min-height:600px}
+.dis{font-style:italic;color:#999;font-size:11.5px;margin-top:14px}
+header.topnav{background:#0d2f5c;color:#fff;padding:14px 24px}
+header.topnav a{color:#fff;text-decoration:none;margin-right:14px;font-size:13px;font-weight:600}
+.setup-pending{padding:60px 24px;text-align:center;color:#5a6573}
+.setup-pending h2{font:600 16px/1.3 "Source Serif Pro",Georgia,serif;color:#0d2f5c;margin-bottom:8px}
+.setup-pending p{font-size:13px;line-height:1.55;max-width:560px;margin:0 auto}
+</style></head>
+<body>
+<header class="topnav"><a href="/">The T.O. Mayoral Files</a><a href="/issues">Issues</a></header>
+<div class="container">
+  <h1>Should Toronto raise property tax to fund TTC expansion?</h1>
+  <p class="lede">A deliberative conversation on transit funding. Vote agree/disagree on community-submitted statements; the algorithm clusters opinion groups and surfaces statements that bridge across groups. Powered by <a href="https://pol.is" target="_blank" rel="noopener">Pol.is</a>.</p>
+  <div class="embed-wrap">
+    <div class="polis" data-conversation_id="REPLACE-ME-WITH-CONVERSATION-ID"></div>
+    <script async src="https://pol.is/embed.js"></script>
+    <div class="setup-pending" id="setup-pending">
+      <h2>Conversation setup pending</h2>
+      <p>This deliberation is being prepared. The seed statements (5-7 community claims about transit funding) are being drafted; the live Pol.is conversation will replace this notice once provisioned.</p>
+    </div>
+  </div>
+  <p class="dis">Statements are submitted and voted on by Pol.is users; The T.O. Mayoral Files seeds initial statements but does not moderate. Conversation results are not a representative poll.</p>
+</div>
+<script>
+// If the placeholder hasn't been replaced, hide the broken Pol.is mount and show the setup notice.
+(function(){
+  var mount = document.querySelector(".polis");
+  var pending = document.getElementById("setup-pending");
+  if (mount && mount.getAttribute("data-conversation_id") === "REPLACE-ME-WITH-CONVERSATION-ID") {
+    mount.style.display = "none";
+  } else if (pending) {
+    pending.style.display = "none";
+  }
+})();
+</script>
+</body></html>
