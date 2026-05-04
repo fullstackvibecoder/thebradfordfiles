@@ -624,6 +624,7 @@ def main() -> int:
                             "extracted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                             "model": OPUS_MODEL,
                             "source_text": "transcript+caption" if transcript else "caption",
+                            "source_account": args.account,
                             **item,
                         }
                         append_jsonl(paths["records"], record)
@@ -639,6 +640,7 @@ def main() -> int:
                         "extracted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                         "model": HAIKU_MODEL,
                         "source_text": "caption",
+                        "source_account": args.account,
                         **result,
                     }
                     append_jsonl(paths["records"], record)
