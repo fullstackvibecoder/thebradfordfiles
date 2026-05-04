@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-05-04T00:26:15+00:00",
+  "candidates": [
+    {
+      "slug": "bradford",
+      "surname": "Bradford",
+      "display_name": "Brad Bradford",
+      "files_label": "The Bradford Files",
+      "current_role": "City Councillor, Beaches–East York (since 2018)",
+      "candidacy_status": "declared",
+      "declared_date": "2026-05-01",
+      "result_2023": {
+        "placement": 8,
+        "vote_share_pct": 1.5,
+        "votes": 9000,
+        "approximate": true
+      },
+      "platform_pillars": [
+        "crime",
+        "congestion",
+        "cost of living"
+      ],
+      "post_count": 3832,
+      "record_count": 5247,
+      "extracted_count": 1698,
+      "emphasis": {
+        "transit": 12.5,
+        "governance_ethics": 11.4,
+        "infrastructure": 9.1,
+        "safety_crime": 16.0,
+        "taxes_fiscal": 6.0,
+        "campaign_logistics": 3.2,
+        "housing": 17.7,
+        "personal_context": 1.1,
+        "other": 1.7,
+        "social_services": 6.8,
+        "civic_engagement": 8.0,
+        "parks_environment": 8.1,
+        "small_business_economy": 11.7
+      },
+      "date_range": {
+        "earliest": "2015-01-28",
+        "latest": "2026-05-02"
+      }
+    },
+    {
+      "slug": "chow",
+      "surname": "Chow",
+      "display_name": "Olivia Chow",
+      "files_label": "The Chow Files",
+      "current_role": "Mayor of Toronto (since June 2023)",
+      "candidacy_status": "expected",
+      "declared_date": null,
+      "result_2023": {
+        "placement": 1,
+        "vote_share_pct": 37.0,
+        "votes": 270000,
+        "approximate": true
+      },
+      "platform_pillars": [
+        "housing affordability",
+        "transit investment",
+        "social services"
+      ],
+      "post_count": 719,
+      "record_count": 0,
+      "extracted_count": 0,
+      "emphasis": {},
+      "date_range": {
+        "earliest": "2014-01-20",
+        "latest": "2025-08-25"
+      }
+    }
+  ]
+}
