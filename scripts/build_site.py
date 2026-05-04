@@ -239,6 +239,8 @@ def _emit_candidate_html(manifest: dict) -> None:
         .replace("__BRAND_TAGLINE__", _build_tagline(manifest))
         .replace("__TURNSTILE_SITE_KEY__",
                  os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"))
+        .replace("__CLOUDFLARE_BEACON_TOKEN__",
+                 os.environ.get("CLOUDFLARE_BEACON_TOKEN", "__CLOUDFLARE_BEACON_TOKEN__"))
     )
     out_dir = SITE_DIR / slug
     out_dir.mkdir(exist_ok=True)
@@ -298,14 +300,27 @@ def main(argv: list[str] | None = None) -> int:
     (SITE_DIR / "data.json").write_text(json.dumps(combined, ensure_ascii=False))
     print(f"  wrote site/data.json (back-compat, {len(combined_records)} records)")
 
-    issues_path = SITE_DIR / "issues" / "index.html"
-    if issues_path.exists():
-        text = issues_path.read_text()
-        text = text.replace(
-            "__TURNSTILE_SITE_KEY__",
-            os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"),
-        )
-        issues_path.write_text(text)
+    static_pages_with_substitutions = [
+        SITE_DIR / "index.html",
+        SITE_DIR / "issues" / "index.html",
+        SITE_DIR / "issues" / "transit-funding" / "discuss" / "index.html",
+        SITE_DIR / "methodology" / "index.html",
+        SITE_DIR / "about" / "index.html",
+        SITE_DIR / "compare" / "index.html",
+        SITE_DIR / "privacy" / "index.html",
+        SITE_DIR / "terms" / "index.html",
+    ]
+    substitutions = {
+        "__TURNSTILE_SITE_KEY__": os.environ.get("TURNSTILE_SITE_KEY", "__TURNSTILE_SITE_KEY__"),
+        "__CLOUDFLARE_BEACON_TOKEN__": os.environ.get("CLOUDFLARE_BEACON_TOKEN", "__CLOUDFLARE_BEACON_TOKEN__"),
+    }
+    for page in static_pages_with_substitutions:
+        if not page.exists():
+            continue
+        text = page.read_text()
+        for placeholder, value in substitutions.items():
+            text = text.replace(placeholder, value)
+        page.write_text(text)
 
     return 0
 
