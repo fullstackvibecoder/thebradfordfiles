@@ -2,7 +2,7 @@
   "candidate_handle": "oliviachow",
   "candidate_slug": "chow",
   "topic": "small_business_economy",
-  "summary": "Olivia Chow's public Instagram positions on the small business economy center on supporting local small businesses, creating jobs (especially for young people), and expanding training and apprenticeships. Chow has pledged to fix CaféTO by shortening timelines, reducing costs, and creating more certainty for small businesses (CthUWn7ADCq). Chow frames small business support as a tool to fight unemployment (mGBcU_OtEi), backs community land trusts as a way for local businesses to thrive (CtPVCP5gBX9), and advocates affordability for artists and the arts sector (CtzvsM3gu6l, CrY6z-PJU2k). Chow has met with taxi drivers about industry fairness (CrqpZEkgbe7) and previously supported a $15/hour federal minimum wage (8qjgVJutDR). Earlier campaign material emphasized job-creation platforms and apprenticeship expansion modeled on the Orlando Training Centre (sx04g1utNg, mGBcU_OtEi).",
+  "summary": "Olivia Chow consistently frames small business support as central to local job creation, affordability, and community vitality across both the 2014 and 2023 mayoral campaigns. Chow has pledged to fix CaféTO by shortening timelines, reducing costs, and giving operators more certainty, and has tied small business success to community land trusts and strong local economies. Earlier positions emphasized fighting unemployment through small businesses, creating 5,000 jobs for young people over four years, and expanding training and apprenticeships modelled on the Orlando Training Centre. Chow has also voiced support for fairness in the taxi industry, affordability for artists, the importance of arts and film, local journalism, and a $15/hour federal minimum wage. Documented actions include releasing a job creation platform, touring training facilities, and meeting directly with affected workers such as taxi drivers.",
   "consistency": {
     "label": "consistent",
     "stable_since": "2014-03-28",
@@ -10,42 +10,49 @@
   },
   "key_positions": [
     {
-      "stance": "Supports small businesses as a means of fighting unemployment and creating local jobs",
+      "stance": "Supports small businesses as a tool to fight unemployment and grow local economies",
       "supporting_records": [
         "mGBcU_OtEi",
-        "sqky7FOtOJ",
-        "ugqgIPutGs"
+        "CtPVCP5gBX9"
       ]
     },
     {
-      "stance": "Supports fixing CaféTO by shortening timelines, reducing costs, and reducing burdensome processes",
+      "stance": "Supports fixing the CaféTO program by shortening timelines, reducing costs, and creating more certainty for small businesses",
       "supporting_records": [
         "CthUWn7ADCq"
       ]
     },
     {
-      "stance": "Supports expanding training and apprenticeships, citing the Orlando Training Centre as a model",
+      "stance": "Supports job creation for young people, including a target of 5,000 jobs over four years",
+      "supporting_records": [
+        "ugqgIPutGs",
+        "sqky7FOtOJ",
+        "tNw78vOtI-"
+      ]
+    },
+    {
+      "stance": "Supports expanding training and apprenticeship programs, citing the Orlando Training Centre as a model",
       "supporting_records": [
         "sx04g1utNg"
       ]
     },
     {
-      "stance": "Supports community land trusts as a foundation for strong local economies",
-      "supporting_records": [
-        "CtPVCP5gBX9"
-      ]
-    },
-    {
-      "stance": "Supports affordability for artists and recognizes arts and film as important to Toronto's economy",
+      "stance": "Supports making Toronto more affordable for artists and recognizes arts and film as important to the city's economy",
       "supporting_records": [
         "CtzvsM3gu6l",
         "CrY6z-PJU2k"
       ]
     },
     {
-      "stance": "Supports fairness in the taxi industry",
+      "stance": "Supports fairness for taxi drivers and the taxi industry",
       "supporting_records": [
         "CrqpZEkgbe7"
+      ]
+    },
+    {
+      "stance": "Supports community land trusts as a means for small businesses to thrive",
+      "supporting_records": [
+        "CtPVCP5gBX9"
       ]
     },
     {
@@ -59,50 +66,45 @@
       "supporting_records": [
         "CsKjd_GtkLD"
       ]
-    },
-    {
-      "stance": "Opposed relocating 5,000 jobs out of Toronto",
-      "supporting_records": [
-        "tNw78vOtI-"
-      ]
     }
   ],
   "key_actions": [
     {
-      "action": "Released the first planks of a job creation and business platform focused on supporting small businesses (March 2014)",
+      "action": "Released the first planks of a job creation and business platform focused on supporting small businesses",
       "supporting_records": [
         "mGBcU_OtEi"
       ]
     },
     {
-      "action": "Toured the Orlando Training Centre as a model for expanding training and apprenticeships (September 2014)",
+      "action": "Toured the Orlando Training Centre as a model for an apprenticeship and training plan",
       "supporting_records": [
         "sx04g1utNg"
       ]
     },
     {
-      "action": "Publicly questioned John Tory about relocating 5,000 jobs out of Toronto (September 2014)",
+      "action": "Publicly questioned John Tory over a proposal to relocate 5,000 jobs out of Toronto",
       "supporting_records": [
         "tNw78vOtI-"
       ]
     },
     {
-      "action": "Met with taxi drivers from across Toronto to discuss fairness in their industry (April 2023)",
+      "action": "Met with taxi drivers from across Toronto to discuss industry concerns and fairness",
       "supporting_records": [
         "CrqpZEkgbe7"
       ]
     },
     {
-      "action": "Pledged as mayor to fix CaféTO by shortening timelines, reducing costs, and creating certainty (June 2023)",
+      "action": "Pledged to fix CaféTO by shortening timelines, reducing costs, and creating more certainty",
       "supporting_records": [
         "CthUWn7ADCq"
       ]
     }
   ],
   "input_record_count": 18,
-  "input_records_hash": "sha256:a79973efc8b103afad988dea8a8b1cb5da785450bbd694af9fe87c0f15f9952e",
+  "input_records_hash": "sha256:1b21f250cf3e48c2165257ece0d0c59916907b9b9727d3cf453a56349a2b0c22",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:48:52+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:25:53+00:00",
   "synthesis_skipped_reason": null
 }

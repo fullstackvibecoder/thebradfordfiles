@@ -7,9 +7,10 @@
   "key_positions": [],
   "key_actions": [],
   "input_record_count": 4,
-  "input_records_hash": "sha256:0b940f3cbf13fca0b61f029351bcfc95cf566da51ed2fd07f5f804878eb5c650",
+  "input_records_hash": "sha256:8e0dcdcaa514a1a6f0b3bfd5b4248c0b3f81ca349b786fe0fc2e8258dda722f2",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:47:54+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:24:55+00:00",
   "synthesis_skipped_reason": "insufficient_data"
 }

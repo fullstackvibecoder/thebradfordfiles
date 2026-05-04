@@ -2,14 +2,111 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "taxes_fiscal",
-  "summary": null,
-  "consistency": null,
-  "key_positions": [],
+  "summary": "Bradford's Instagram record on taxes and fiscal policy centers on opposition to recent property tax increases under Mayor Chow, characterizing a cumulative roughly 25% rise over three years as unaffordable and not matched by service improvements (DE2RXwfRFVN, DFdqfBhSsqJ, DTjStlDiiBi). Bradford opposes drawing approximately $512M from reserves to fund the 2026 budget, arguing it will trigger a roughly 10.5% increase the following year (DUl96QKkebM, DT3EAOSkTOp, DUUBF2LEktS). Bradford supports targeted property tax cuts—proposing a 25% industrial property tax reduction funded by the tax stabilization reserve in response to U.S. tariffs (DF7o2skxQ5R, DF8fbeLy4kM)—and opposes the Vacant Home Tax and the luxury home (land transfer) tax increase (DW2FRA0ANLp, DSabj0Mjkvw, C56wHybPF4Q). Bradford supports open tendering projected to save $200M annually (CsUNNf3AEZE) and a new fiscal deal with senior governments (Cw2crzygFOv, CG3Fps3hZRc).",
+  "consistency": {
+    "label": "evolving",
+    "stable_since": "2023-05",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Opposes property tax increases that exceed the rate of inflation, citing a cumulative ~25% rise over three years (9.5% in 2024, 6.9% in 2025) without commensurate service improvements",
+      "supporting_records": [
+        "DFdqfBhSsqJ",
+        "DE2RXwfRFVN",
+        "DExr-I1yGsL",
+        "DTjStlDiiBi",
+        "C3WbP3NN2_C",
+        "C2QHu7FA40M"
+      ]
+    },
+    {
+      "stance": "Opposes drawing ~$512M from reserve funds in the 2026 budget, characterizing it as financially irresponsible and likely to require a ~10.5% tax increase next year",
+      "supporting_records": [
+        "DUl96QKkebM",
+        "DUUBF2LEktS",
+        "DT3EAOSkTOp",
+        "DURNM3vggmF",
+        "DTQlvAvD_TV",
+        "DTc0JOhlNtb"
+      ]
+    },
+    {
+      "stance": "Supports a 25% property tax cut for industrial properties and small businesses, funded by the tax stabilization reserve, framed as tariff/trade-war emergency relief",
+      "supporting_records": [
+        "DF7o2skxQ5R",
+        "DF8fbeLy4kM",
+        "DF6VebxtJGc",
+        "DF5xWk4SBYU",
+        "DIcIi5byoAH",
+        "C3GD7yhgljQ"
+      ]
+    },
+    {
+      "stance": "Opposes the Vacant Home Tax, calling it a tax grab with poor administration and supporting its suspension or shelving",
+      "supporting_records": [
+        "DW2FRA0ANLp",
+        "C56wHybPF4Q",
+        "C5ZXwgZPJn8",
+        "C9dKajpSgMd"
+      ]
+    },
+    {
+      "stance": "Opposes the luxury home (land transfer) tax increase on homes over $3M",
+      "supporting_records": [
+        "DSabj0Mjkvw"
+      ]
+    },
+    {
+      "stance": "Supports reducing taxes, red tape, and regulation to improve Toronto's competitiveness and affordability",
+      "supporting_records": [
+        "DHTvxMfOQc7",
+        "DGyGAp0yfRv",
+        "C7AO6i1PZNz"
+      ]
+    },
+    {
+      "stance": "Supports open tendering for city construction contracts, projected to save at least $200M annually",
+      "supporting_records": [
+        "CsUNNf3AEZE",
+        "CsTmzDEtnY9",
+        "CsY6Y5Dgwml"
+      ]
+    },
+    {
+      "stance": "Supports a new fiscal deal between Toronto and senior levels of government",
+      "supporting_records": [
+        "Cw2crzygFOv",
+        "CxLVkkfg2GY",
+        "Cylzy9NALa_",
+        "CG3Fps3hZRc",
+        "CDRZ-o1hy9j"
+      ]
+    },
+    {
+      "stance": "Supports targeted property tax reductions for live music venues (up to 50%) and increased land transfer tax rebates for first-time homebuyers",
+      "supporting_records": [
+        "CLfQJ_UhWry",
+        "C0jwMLJg7y8"
+      ]
+    },
+    {
+      "stance": "Frames Toronto's fiscal challenge as 'paying more and getting less,' calling for value for money and prioritization of core services",
+      "supporting_records": [
+        "DLS-CKDuvMY",
+        "DGdIF70RdfV",
+        "DE0M_7oSJqL",
+        "DQ-LC_PDqof",
+        "DE2RXwfRFVN"
+      ]
+    }
+  ],
   "key_actions": [],
   "input_record_count": 214,
-  "input_records_hash": "sha256:5c59ec4a54b28e444cf257eb09688f971bbf99fb53f2ee3ab31f228617852e3b",
+  "input_records_hash": "sha256:742014a96f0e9dd02fa8c46e97fa5a06f15e52305b9ecb313077b0fd637d8463",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:53:14+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:19:02+00:00",
   "synthesis_skipped_reason": null
 }

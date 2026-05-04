@@ -2,52 +2,36 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "transit",
-  "summary": "Bradford's Instagram record on transit centers on improving TTC reliability, safety, and accountability while addressing congestion. Bradford supports a 15-minute TTC money-back guarantee, platform edge doors, police presence and cleanliness/lighting standards in stations, and a Congestion Relief Commissioner. Bradford advocates for grade-separated rapid transit, citing Finch West, and pushes for the Eglinton East and Scarborough LRTs alongside the Waterfront East LRT. Bradford opposes the rideshare cap, the simultaneous Gardiner/Line 2 closures, and the RapidTO permanent reconfiguration tied to the World Cup. On cycling, Bradford supports \"safe and sensible\" bike lanes built with community consultation (citing Danforth), criticizing Bloor West's process. Bradford previously championed ActiveTO, Destination Danforth, electric buses, Bike Share expansion, and the King Street Pilot as TTC Chair and councillor.",
+  "summary": "Bradford's transit positions span TTC reliability, safety, congestion, transit expansion, and active transportation. Bradford has consistently advocated for a TTC 15-minute money-back service guarantee (DSKkoPtDZFM, DSIfzz2jjCo, DRhNrDEDKmt), platform edge doors, police presence, and cleanliness/lighting standards through a \"Safer TTC\" motion (DWZyuhICoQQ, DVhJtcuD2D5). Bradford has pressed for Scarborough/Eglinton East LRT funding parity with the Waterfront East LRT (DXc5lIFjQo_, DW9omxgiiuh) and supports transit separated from car traffic (DUbXa8rClRC). On congestion, Bradford backs a Congestion Relief Commissioner (Cth_Y8zAPV0, DIPfGv-yL6S), opposes ride-share caps (CyWIsi2gS-6, DDIZpJfyQQA), and has proposed reopening King Street to vehicles during streetcar suspensions (DLYR_Fru6ru). On cycling, Bradford supports \"safe and sensible\" bike lanes built case-by-case with community consultation (DBrZ4Ogytu6, DBMivFtSg_w), and has championed Destination Danforth and Bike Share expansion (CNYbaD7Bj9U, CBN92ZVhLYb).",
   "consistency": {
     "label": "evolving",
-    "stable_since": null,
+    "stable_since": "2023-04",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports a 15-minute TTC money-back service guarantee that refunds fares when trips are delayed",
+      "stance": "Supports a 15-minute TTC money-back service guarantee that refunds fares for delays of 15 minutes or more, modeled on GO Transit, London, and Washington DC.",
       "supporting_records": [
         "DVMonZBCog7",
-        "DSV6M1pDbgv",
         "DSKkoPtDZFM",
         "DSIfzz2jjCo",
-        "DSIrAAjEuUl",
         "DRhNrDEDKmt",
-        "DRmvaYKCp3Q"
+        "DSV6M1pDbgv"
       ]
     },
     {
-      "stance": "Supports installing platform edge doors at TTC subway stations",
+      "stance": "Supports installing platform edge doors at every TTC subway station, along with police presence and cleanliness/lighting standards.",
       "supporting_records": [
-        "DWhiBdhjRbG",
         "DVhJtcuD2D5",
         "DWU5JzJiHrx",
         "DWPZGCUFT_z",
-        "DWFOTgOCdsC",
-        "Cso4n-TgMxA"
-      ]
-    },
-    {
-      "stance": "Supports increased police/security presence, cleanliness, and lighting standards at TTC stations",
-      "supporting_records": [
         "DWhiBdhjRbG",
-        "DWZyuhICoQQ",
-        "DWU5JzJiHrx",
-        "DTtRhP8jSSP",
-        "DWPZGCUFT_z",
         "Cso4n-TgMxA"
       ]
     },
     {
-      "stance": "Supports the Eglinton East and Scarborough LRT projects, criticizing what is described as inequitable funding compared to the Downtown Waterfront LRT",
+      "stance": "Supports advancing the Eglinton East / Scarborough LRT and argues Scarborough has been left behind on transit funding compared to the Downtown Waterfront LRT.",
       "supporting_records": [
-        "DXz7S9euglk",
-        "DX116uejXjn",
         "DXc5lIFjQo_",
         "DW9omxgiiuh",
         "DW6x_2yjv-x",
@@ -55,103 +39,94 @@
       ]
     },
     {
-      "stance": "Supports a Congestion Relief Commissioner / Traffic Czar with accountability for reducing gridlock",
-      "supporting_records": [
-        "DIPfGv-yL6S",
-        "Cth_Y8zAPV0",
-        "CrwaKnCAqwY"
-      ]
-    },
-    {
-      "stance": "Supports rapid transit grade-separated from car traffic, citing Finch West LRT as cautionary example",
+      "stance": "Supports rapid transit physically separated from car traffic, citing Finch West LRT as an example of failure when transit shares the road.",
       "supporting_records": [
         "DUbXa8rClRC",
         "DUYE_qxDAfc"
       ]
     },
     {
-      "stance": "Opposes caps on rideshare (Uber/Lyft) vehicle licenses",
+      "stance": "Supports appointing a Congestion Relief Commissioner / Traffic Czar with accountability for reducing Toronto traffic.",
       "supporting_records": [
-        "DDvEmSJSGX-",
-        "DDIZpJfyQQA",
-        "C0kONitPwVR",
-        "CyWIsi2gS-6"
+        "Cth_Y8zAPV0",
+        "CrwaKnCAqwY",
+        "DIPfGv-yL6S"
       ]
     },
     {
-      "stance": "Supports 'safe and sensible' bike lanes built with community consultation on a case-by-case basis",
+      "stance": "Opposes caps on ride-share (Uber/Lyft) vehicles, arguing they raise prices and wait times and reduce options where transit is insufficient.",
       "supporting_records": [
-        "DQeNBJDCZM4",
+        "CyWIsi2gS-6",
+        "DDIZpJfyQQA",
+        "DDvEmSJSGX-",
+        "C0kONitPwVR"
+      ]
+    },
+    {
+      "stance": "Supports bike lanes built case-by-case with genuine community consultation; opposes processes lacking engagement (e.g., Bloor West) and supports adjusting lanes that are not working.",
+      "supporting_records": [
         "DBrZ4Ogytu6",
         "DBMivFtSg_w",
-        "CXUYDxPL-GI",
+        "DQeNBJDCZM4",
         "DAJmU2hS28M"
       ]
     },
     {
-      "stance": "Opposes RapidTO permanent reconfiguration of Bathurst/Dufferin tied to World Cup; supports time-limited pilot",
+      "stance": "Supports active transportation expansion including Destination Danforth, ActiveTO, and Bike Share Toronto growth.",
       "supporting_records": [
-        "DMdv3_AyOl2",
-        "DL995QSAviF"
+        "CNYbaD7Bj9U",
+        "CBN92ZVhLYb",
+        "CAvjJk1h4Qj",
+        "CFu-AsFBVQq",
+        "CO242W6B6vP"
       ]
     },
     {
-      "stance": "Supports reopening King Street to vehicles while streetcars are not running due to construction",
+      "stance": "Opposes the RapidTO permanent reconfiguration of Bathurst/Dufferin, supporting only a time-limited World Cup pilot following the 2015 Pan Am model.",
+      "supporting_records": [
+        "DMdv3_AyOl2"
+      ]
+    },
+    {
+      "stance": "Supports reopening King Street to personal vehicles while streetcars are diverted due to construction.",
       "supporting_records": [
         "DLYR_Fru6ru",
         "DLXh9istqRd",
-        "DLIkRmTuQtI",
         "DLIIDWfg_9d",
         "DLFiuzrA65z"
       ]
     },
     {
-      "stance": "Supports electrifying the TTC bus fleet by 2040 and investments in zero-emissions transit",
+      "stance": "Supports continuous transit expansion (subway, LRT, higher-order transit) by all levels of government, citing decades of underbuilding.",
+      "supporting_records": [
+        "DOtxsuKj3Mg",
+        "DO_uTgMDqB1",
+        "CGqQQw3Bozr"
+      ]
+    },
+    {
+      "stance": "Supports electrifying the TTC bus fleet and moving toward a zero-emissions fleet by 2040.",
       "supporting_records": [
         "CR6kRktrfna",
         "CNqIYvThZ2M"
       ]
     },
     {
-      "stance": "Supports Bike Share Toronto expansion and active transportation infrastructure",
+      "stance": "Supports bus priority lanes/RapidTO corridors to improve service for transit-dependent communities.",
       "supporting_records": [
-        "CO242W6B6vP",
-        "CBN92ZVhLYb",
-        "CPi5fHvhsde",
-        "Cky9P5tuMgE",
-        "CQtTA7gLRyW"
-      ]
-    },
-    {
-      "stance": "Opposes simultaneous Gardiner Expressway and Line 2 weekend closures as poor planning",
-      "supporting_records": [
-        "DXpl18qCgFE"
-      ]
-    },
-    {
-      "stance": "States TTC reliability has declined and ridership/safety needs to be restored",
-      "supporting_records": [
-        "DSLZp97CqpM",
-        "DE8UGQYScAK",
-        "DE2RXwfRFVN",
-        "DScgmZfjTg0",
-        "Cs7TEENAbAt"
-      ]
-    },
-    {
-      "stance": "Supports building cell service across the TTC network",
-      "supporting_records": [
-        "Cso4n-TgMxA",
-        "Cq-pGU8Ap4u",
-        "Cq8fbIrJUyM"
+        "CDMzeQbBohA",
+        "CCYxrBvBLJ7",
+        "CGA2WRCBCu6",
+        "CBTKEoGhZlq"
       ]
     }
   ],
   "key_actions": [],
   "input_record_count": 446,
-  "input_records_hash": "sha256:16dd9c2419fbfb4f9a6c3938e6a1ca40fdf93789b10c82d98da775ccd740353c",
+  "input_records_hash": "sha256:dce7d43a1649ceb5c5fd77dd99b2334ed23d3da6459e0f7dc59caa4a20b1bd5f",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:52:30+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:17:32+00:00",
   "synthesis_skipped_reason": null
 }

@@ -2,18 +2,131 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "social_services",
-  "summary": "Bradford's Instagram record on social services spans homelessness, mental health, food security, vaccinations, seniors, refugees, Indigenous reconciliation, and 2SLGBTQ+ and faith communities. Bradford supports more shelters, supportive housing, mental health and addiction supports, and outreach workers connecting encampment residents to shelter and treatment, while supporting encampment clearing when shelter is offered (DTu89cQjtBR, DRDb8H5AUN5, DMK2uOQgteh, DRholf-lx3s). Bradford frames addiction and mental health as provincial health-care responsibilities and presses the federal government to fund refugee shelter costs (DSZ7R5JgJZS, DQwumxDjYhU, CtW8t0Pp_Ix). Bradford backs targeted COVID-19 vaccination in hot-spot neighbourhoods, food banks, the Toronto Rent Bank, Community Paramedicine, Meals on Wheels, the Mobile Crisis Intervention Team, and cultural/community spaces including the Tamil Community Centre (CNvRUVohDnq, CePKa3EuuIj, CVVldUcLs0O, DXXFDckDmhp, DHzTfsny-ut). Bradford consistently expresses solidarity with 2SLGBTQ+, Jewish, Muslim, Indigenous, Black and trans communities (DJwW46pyNSo, DGtWb8rS4d3, CZU1A-COwLS, CqdUY-9Ag4L).",
+  "summary": "Bradford's Instagram record on social services spans homelessness, mental health, public health, anti-hate work, refugee support, seniors, and equity-seeking communities. Bradford supports clearing encampments while pairing removals with offers of shelter, treatment, and outreach (DTu89cQjtBR, DRholf-lx3s, DRCZSYbjSpb, DMK2uOQgteh). Bradford frames mental health and addictions as provincial health-care responsibilities requiring provincial funding (DSZ7R5JgJZS) and similarly calls on Ottawa to fund refugee shelter costs (DQwumxDjYhU, CtW8t0Pp_Ix). Bradford pledged a \"There For You Toronto\" agency for people in distress (Cs6kSzKgQxQ) and the Mobile Crisis Intervention Team model (DXXFDckDmhp). Bradford supports food banks, Out of the Cold, Meals on Wheels, rent bank permanence, community paramedicine, youth spaces, and arts funding (CbfuRSWAZQX, CpxcwUmgRXx, CVd490bgrii, CePKa3EuuIj, CVVldUcLs0O, CRzHXkjrNBJ, DCX1fRQNc0a). Bradford consistently affirms 2SLGBTQ+, Indigenous, Jewish, Muslim, Tamil, Black, and trans communities and opposed provincial narrowing of the disability definition (B6OqTISF622).",
   "consistency": {
     "label": "consistent",
-    "stable_since": "2019",
+    "stable_since": "2019-12-18",
     "changes": []
   },
-  "key_positions": [],
+  "key_positions": [
+    {
+      "stance": "Supports clearing encampments while requiring shelter, treatment, and outreach supports be offered first",
+      "supporting_records": [
+        "DTu89cQjtBR",
+        "DRholf-lx3s",
+        "DRCZSYbjSpb",
+        "DRDb8H5AUN5",
+        "DMK2uOQgteh"
+      ]
+    },
+    {
+      "stance": "Frames mental health, addictions, and refugee shelter costs as provincial/federal responsibilities that municipalities should not bear alone via property taxes",
+      "supporting_records": [
+        "DSZ7R5JgJZS",
+        "DQwumxDjYhU",
+        "CtW8t0Pp_Ix",
+        "B8O1pcJlVZp"
+      ]
+    },
+    {
+      "stance": "Supports expanded mental health services, including Mobile Crisis Intervention Teams and East End mental health facilities",
+      "supporting_records": [
+        "DXXFDckDmhp",
+        "Cf-S8pxrMLn",
+        "CM0W8qRBoe9",
+        "CLXSSUwh85u"
+      ]
+    },
+    {
+      "stance": "Supports food security programs, food banks, and emergency meal programs as essential supports during affordability crisis",
+      "supporting_records": [
+        "DFELJymSBgT",
+        "CbfuRSWAZQX",
+        "CpxcwUmgRXx",
+        "CVDnLKQLvQM",
+        "CJXEEP3hmO8"
+      ]
+    },
+    {
+      "stance": "Supports services and programs for seniors including community paramedicine, Meals on Wheels, and integrated long-term care developments",
+      "supporting_records": [
+        "DWjaxtoCmxp",
+        "DG3775hy4XS",
+        "CVd490bgrii",
+        "CVVldUcLs0O",
+        "DUdUQSkkQHd"
+      ]
+    },
+    {
+      "stance": "Supports 2SLGBTQ+ communities and stands against homophobia, biphobia, and transphobia",
+      "supporting_records": [
+        "DJwW46pyNSo",
+        "DH31KwRSrOg",
+        "CsWpcXUy7SH",
+        "CqdUY-9Ag4L",
+        "CN F-TITBh2l",
+        "DCmeUqAyQUg"
+      ]
+    },
+    {
+      "stance": "Supports truth and reconciliation with Indigenous peoples and the Reconciliation Action Plan",
+      "supporting_records": [
+        "DJRulc7t7Ie",
+        "C6mcUOuyj1w",
+        "CjIieceuiOM",
+        "CcBq_fmLPzw",
+        "CUcfHBFLvxz",
+        "BZAFOuKgVrF"
+      ]
+    },
+    {
+      "stance": "Supports welcoming refugees (including Ukrainian and asylum seekers) and standing against hate, antisemitism, and Islamophobia",
+      "supporting_records": [
+        "CxQyUYgA5No",
+        "CsumfL6tBn8",
+        "CsYkOoVA-5k",
+        "CZU1A-COwLS",
+        "CzKdJzpN2-0",
+        "BP2gD02F9H5",
+        "CuhuKjngzaO"
+      ]
+    },
+    {
+      "stance": "Opposes provincial narrowing of the definition of disability that would reduce benefits for vulnerable Torontonians",
+      "supporting_records": [
+        "B6OqTISF622"
+      ]
+    },
+    {
+      "stance": "Supports arts sector funding and pushed to increase Toronto Arts Council and LASO funding earlier than Council ultimately approved",
+      "supporting_records": [
+        "DCX1fRQNc0a"
+      ]
+    },
+    {
+      "stance": "Supports targeted, hyper-local COVID-19 vaccination outreach to hot-spot and underserved communities",
+      "supporting_records": [
+        "CN2PeO_Be1f",
+        "CNvRUVohDnq",
+        "CR9wsvSLzSO",
+        "CZ4fSjJgbnE",
+        "CPQfQpHhqgc"
+      ]
+    },
+    {
+      "stance": "Supports affordable and accessible childcare/daycare",
+      "supporting_records": [
+        "CdTgj8pr76Q",
+        "CdTgaiELKLt"
+      ]
+    }
+  ],
   "key_actions": [],
   "input_record_count": 196,
-  "input_records_hash": "sha256:4f3f60629977d9a2f37f9e7ba89d9ef43758028f713d342294ba14b4e30cf732",
+  "input_records_hash": "sha256:a547a0ce338d1eda81be139b4b4fa068df20c2af364b6d552745e684d013937d",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:46:31+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:23:36+00:00",
   "synthesis_skipped_reason": null
 }

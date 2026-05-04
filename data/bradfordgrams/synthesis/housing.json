@@ -2,18 +2,124 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "housing",
-  "summary": "Bradford's Instagram record on housing centers on increasing supply, reducing what he describes as government-imposed costs, and streamlining approvals. Bradford repeatedly supports \"missing middle\" housing, multiplexes, sixplexes, mid-rise on Avenues, garden and laneway suites, modular and rapid-build construction, office-to-residential conversions, and ending exclusionary zoning. Bradford supports purpose-built rental and supportive housing with wraparound services, citing East York projects he advanced. Bradford opposes additional housing-related taxes, including the Vacant Home Tax in its current form and a luxury home tax, and characterizes Mayor Chow's rental incentive and public-builder approaches as inadequate. Bradford has moved motions to cut development charges (25% on condos, 100% on purpose-built rental), expand the first-time homebuyer rebate, raise the Avenues unit cap from 30 to 60, and streamline modular permitting. Bradford frames red tape, fees, and design rules (e.g., angular plane) as central barriers.",
+  "summary": "Bradford has consistently positioned housing as Toronto's central affordability challenge and advocated for increasing supply through regulatory and fiscal reform. Bradford supports ending exclusionary zoning, legalizing multiplexes, sixplexes, garden and laneway suites, mid-rise on Avenues, and 'missing middle' housing forms. Bradford has championed cutting development charges (proposing 25% reductions and 100% on purpose-built rental), waiving fees, streamlining approvals, and expediting modular and rapid-build construction. Bradford has opposed the Vacant Home Tax in its current form and the Mayor's luxury home tax, characterizing additional housing taxes as counterproductive to affordability. Bradford supports supportive housing with wraparound mental health and addiction services, citing projects delivered in Beaches-East York. Bradford has also supported partnerships with private, non-profit, federal, and provincial actors, and proposed expanding the first-time homebuyer rebate.",
   "consistency": {
-    "label": "evolving",
-    "stable_since": "2019",
+    "label": "consistent",
+    "stable_since": "2018",
     "changes": []
   },
-  "key_positions": [],
+  "key_positions": [
+    {
+      "stance": "Supports increasing housing supply through 'missing middle' forms — multiplexes, sixplexes, garden suites, laneway suites, and mid-rise on Avenues citywide.",
+      "supporting_records": [
+        "DLV5wxxMq3u",
+        "CsFNxk8N7cZ",
+        "CWt7E1Pr3un",
+        "CKPOZt3h1yE",
+        "DNqH55bN8ws",
+        "DMc4SEuux8R",
+        "CZfwUldKm45"
+      ]
+    },
+    {
+      "stance": "Supports cutting development charges and municipal fees on housing, including a 25% reduction on condos and 100% on affordable and purpose-built rental.",
+      "supporting_records": [
+        "DIQ9MbhxPaw",
+        "DHuRDSGs0Bh",
+        "DRholf-lx3s",
+        "DJEbmKVtRhs",
+        "CyEbET7AQE3",
+        "DR5QW7XEnaA"
+      ]
+    },
+    {
+      "stance": "Supports streamlining approvals, cutting red tape, and reforming zoning rules (including eliminating angular plane requirements and the two-staircase requirement).",
+      "supporting_records": [
+        "DDX7Ejwymg5",
+        "C71lXZFAXRh",
+        "C9nDy41A1tp",
+        "DOLktyADflt",
+        "DRM18tcjY_n",
+        "C8ZW8p7AGA-"
+      ]
+    },
+    {
+      "stance": "Supports modular and rapid-build construction, including expanding pre-qualified vendors and certified plans for multiplexes and laneway/garden suites.",
+      "supporting_records": [
+        "DJUSN88N7oA",
+        "DHWh10by6CQ",
+        "DHJ9qe-yi5e",
+        "C5RB1qMtiQ6",
+        "DIhEMewO0bp",
+        "C6GzEH8rUYN"
+      ]
+    },
+    {
+      "stance": "Opposes additional housing-related taxes, including the Vacant Home Tax in its current form and the proposed luxury home tax, arguing they harm affordability.",
+      "supporting_records": [
+        "DA_PG3-Rmwz",
+        "DAUHQEaSHox",
+        "DSYdN4TDaeE",
+        "DSabj0Mjkvw",
+        "DTgCZ4LgsBK"
+      ]
+    },
+    {
+      "stance": "Supports supportive housing with wraparound mental health, addiction, and job-training supports as a long-term solution to homelessness.",
+      "supporting_records": [
+        "DQwumxDjYhU",
+        "DMh0vq3Ah6o",
+        "DMK2uOQgteh",
+        "C_siA0Px9L9",
+        "CMQGps1h-ku",
+        "CMFjTlZBpiy"
+      ]
+    },
+    {
+      "stance": "Supports increasing the first-time homebuyer rebate threshold from $400,000 to $750,000 and doubling the rebate as alternatives to new taxes.",
+      "supporting_records": [
+        "Cw2crzygFOv",
+        "Cw722WFAAvD",
+        "DSabj0Mjkvw",
+        "C0jwMLJg7y8"
+      ]
+    },
+    {
+      "stance": "Supports purpose-built rental housing, office-to-residential conversions, and waiving fees on rental projects.",
+      "supporting_records": [
+        "DXw_o1TifLm",
+        "DBtwbHDvOC5",
+        "C0w9QjVvwHo",
+        "Ctzc7IdvhFf",
+        "CsbZtSYNc9m",
+        "DAI4e_SRIql"
+      ]
+    },
+    {
+      "stance": "Supports inclusionary zoning, with up to 22% affordability requirements in designated areas.",
+      "supporting_records": [
+        "CWEjlp8gxH4",
+        "CVlviIsAkmJ",
+        "ByDvsNJFA33"
+      ]
+    },
+    {
+      "stance": "Opposes the City acting as a 'public builder' and characterizes Mayor Chow's housing approach as inadequate, citing limited results and reliance on subsidies.",
+      "supporting_records": [
+        "Czd4LtCAoAN",
+        "DCm6A_6SGCQ",
+        "DCmILuvR04J",
+        "DBwopPUSP-B",
+        "DQwumxDjYhU"
+      ]
+    }
+  ],
   "key_actions": [],
   "input_record_count": 859,
-  "input_records_hash": "sha256:489a2ca459d0721162eacab4e35dd9fa6870a073e629e11628fae805f54bc595",
+  "input_records_hash": "sha256:1e84bee71376ec9980f5a6572aa86ee8cbfdaab5c7593e4b3eeb33d94fbbbf08",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:40:23+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:16:46+00:00",
   "synthesis_skipped_reason": null
 }

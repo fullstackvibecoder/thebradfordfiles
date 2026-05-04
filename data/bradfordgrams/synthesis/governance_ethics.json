@@ -2,14 +2,116 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "governance_ethics",
-  "summary": null,
-  "consistency": null,
-  "key_positions": [],
+  "summary": "Bradford's governance and ethics positions center on a \"back to basics\" framing: City Hall should narrow its scope to core municipal services and stop spreading thin (DP_5x5EEV9I, DC2JInwSBDO, DRnLqAVjeQS). Bradford calls for greater accountability, transparency, and performance measurement, including livestreaming mayoral press conferences (DLA96NhSJlq), expanding the Auditor General's office (DUqlANUDKKH), zero tolerance for fraud by city staff (DUqlANUDKKH), and tying labour negotiations to service standards (DA4MS6ySTPg). Bradford repeatedly criticizes Mayor Chow's administration for deflecting blame, broken promises (FIFA Fan Fest, snow clearing, pool closures), and a \"culture of no\" or delay at City Hall (DXfZVpDDbXy, DGjJrWmS8zt, DLS-CKDuvMY, DMu56jJg-wA). Bradford supports cross-government coordination (DXz7S9euglk, DXz7S9euglk, B79insoFYPL), evidence-based decisions over ideology (C3p_JTpA7p_), and previously supported ranked-ballot voting (CF2m1snh5pn).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-08-19",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports refocusing City Hall on a narrow set of core local government basics rather than expanding scope",
+      "supporting_records": [
+        "DP_5x5EEV9I",
+        "DC2JInwSBDO",
+        "DRnLqAVjeQS",
+        "DFfkFCCxHK-",
+        "DRholf-lx3s"
+      ]
+    },
+    {
+      "stance": "Supports stronger accountability and transparency at City Hall, including livestreaming press conferences and expanding the Auditor General's office",
+      "supporting_records": [
+        "DLA96NhSJlq",
+        "DUqlANUDKKH",
+        "DA4MS6ySTPg",
+        "DA5rTsex_6D",
+        "DFgE1BJSnGq"
+      ]
+    },
+    {
+      "stance": "Opposes what he characterizes as the Mayor and administration deflecting blame and breaking promises (FIFA fee, snow, pools, Gardiner)",
+      "supporting_records": [
+        "DXfZVpDDbXy",
+        "DNNYyaDSsq",
+        "DGjJrWmS8zt",
+        "DLS-CKDuvMY",
+        "C90bVJNSuKq",
+        "DLQhveAufkH"
+      ]
+    },
+    {
+      "stance": "Opposes a 'culture of no,' delays, and excessive bureaucracy at City Hall; supports a 'culture of yes' and faster permits/approvals",
+      "supporting_records": [
+        "DXz7S9euglk",
+        "DPzqe-gAexQ",
+        "DBbDa3eOlQ3",
+        "DBTkyVRRNyT",
+        "DMu56jJg-wA",
+        "DMgFSkBy2JN"
+      ]
+    },
+    {
+      "stance": "Supports evidence- and data-informed decision making over ideology",
+      "supporting_records": [
+        "C3p_JTpA7p_",
+        "CNqTlC-BMhP",
+        "DMdv3_AyOl2",
+        "DPUXaE7CbRl"
+      ]
+    },
+    {
+      "stance": "Supports cross-government coordination among municipal, provincial, and federal levels",
+      "supporting_records": [
+        "DX1rX3cN-Nj",
+        "B79insoFYPL",
+        "Cylzy9NALa_",
+        "CGadsYJh619",
+        "C0KyqzrNzdl"
+      ]
+    },
+    {
+      "stance": "Frames City Hall issues as non-partisan, practical, and quality-of-life-oriented rather than left/right",
+      "supporting_records": [
+        "DVeO_X8CFKB",
+        "DQl_X1wD6UW",
+        "DEimbnHyADX"
+      ]
+    },
+    {
+      "stance": "Opposes the use of the Notwithstanding clause for the 2018 Toronto council size reduction and supports more rather than less council representation",
+      "supporting_records": [
+        "BnkTXWbhwwO",
+        "BnuFGzzh9CO",
+        "BmeZYjsBRiv"
+      ]
+    },
+    {
+      "stance": "Supports zero tolerance for city worker fraud and stronger consequences for stealing from taxpayers",
+      "supporting_records": [
+        "DUqlANUDKKH"
+      ]
+    },
+    {
+      "stance": "Supports ranked ballot voting as a more representative system",
+      "supporting_records": [
+        "CF2m1snh5pn"
+      ]
+    },
+    {
+      "stance": "Supports performance-based accountability for city services, including tying labour agreements to service standards",
+      "supporting_records": [
+        "DA4MS6ySTPg",
+        "DA5rTsex_6D"
+      ]
+    }
+  ],
   "key_actions": [],
   "input_record_count": 320,
-  "input_records_hash": "sha256:0ea17e793d59694f5c00c02c994b228f0714eb00e117a577bd9c4d0d8a6938b6",
+  "input_records_hash": "sha256:4dea334a67964591ef198bdd2522e6ac2fc2f5495832414fccf8f865c59a1cfa",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:53:59+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:29:20+00:00",
   "synthesis_skipped_reason": null
 }

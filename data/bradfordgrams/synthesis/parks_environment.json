@@ -2,155 +2,116 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "parks_environment",
-  "summary": "Bradford's Instagram record on parks and environment centres on expanding accessible recreation, maintaining basic park services, opposing facility closures, and advancing climate-related infrastructure like EV charging and district energy. Bradford has consistently advocated for protecting Toronto's ravines (notably Small's Creek), expanding tree canopy, and supporting Toronto's net-zero-by-2040 target. Bradford opposes closing rinks (including Weston Arena), the toboggan ban, and cutting Dentonia Golf Course, and has criticized City performance on summer pool openings, washroom availability, and park cleanliness. Bradford opposes encampments in parks and brought a \"Protect Parks and Playgrounds\" motion. More recently, Bradford has criticized a \"tree equity\" policy and a $35M Parks budget increase with new staff hires, framing accountability before headcount. Bradford also championed pickleball, cricket, and disc golf facilities, and supported alcohol-in-parks and lifting the toboggan ban.",
+  "summary": "Bradford's parks and environment positions center on expanding and maintaining recreation infrastructure, protecting green space and ravines, and advancing climate measures like EV charging and district energy. Bradford opposes closing recreation facilities such as Weston Arena and Dentonia Park Golf Course, and instead supports building \"net new\" facilities including dedicated pickleball courts, cricket pitches, splash pads, and a disc golf course. Bradford emphasizes \"back to basics\" service delivery—open pools, clean parks, functioning washrooms, lifeguard staffing—and frames recent City failures as accountability problems rather than budget shortfalls. Bradford supports Toronto's net-zero-by-2040 target, EV charging expansion, tree canopy growth, and ravine protection (notably Small's Creek). Bradford opposes encampments in parks, the toboggan ban, and what is characterized as a tree-equity policy distraction. Bradford supports the alcohol-in-parks pilot, ActiveTO, and protecting waterfront use including a motorized watercraft exclusion zone at Woodbine Beach.",
   "consistency": {
-    "label": "evolving",
-    "stable_since": null,
+    "label": "consistent",
+    "stable_since": "2018-09-02",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports expanding recreation facilities (pickleball, cricket, disc golf, skateparks) rather than closing existing ones",
+      "stance": "Opposes closing existing recreation facilities (Weston Arena, Dentonia Golf Course, rinks); supports building net new facilities instead",
       "supporting_records": [
         "DVZirJagS2O",
         "DU39HXHjwvm",
-        "DTbLjggAKoA",
         "DTVfhqCiMQL",
+        "CYjRl5SL3Lm"
+      ]
+    },
+    {
+      "stance": "Supports expanded recreation infrastructure including dedicated pickleball courts, cricket pitches, splash pads, skateparks, and a disc golf course",
+      "supporting_records": [
         "DLiv7hNMxlq",
         "DJ4BrBONDQT",
         "CtoydMUA_RS",
-        "CLfeo7uh0I1"
+        "C-bDR2gyR5H",
+        "CLfeo7uh0I1",
+        "DTbLjggAKoA"
       ]
     },
     {
-      "stance": "Opposes closing rinks and recreation facilities, including Weston Arena",
+      "stance": "Supports a 'back to basics' approach: clean parks, open pools, functioning washrooms, adequate lifeguard staffing",
       "supporting_records": [
-        "DVZirJagS2O",
-        "DU39HXHjwvm",
-        "DTVfhqCiMQL"
+        "DRholf-lx3s",
+        "DN-w-7QDpMj",
+        "DLS-CKDuvMY",
+        "DLQhveAufkH",
+        "DNBsemmSR-F"
       ]
     },
     {
-      "stance": "Supports protecting Toronto's ravines and tree canopy, particularly Small's Creek",
+      "stance": "Supports Toronto's net-zero-by-2040 target and climate action through EV charging, district energy, and home retrofits",
+      "supporting_records": [
+        "CgPjxB6ORFp",
+        "Cf1aVDrrVWi",
+        "CR6kRktrfna",
+        "COI5z2Yhqlc",
+        "CHyL5MWh5RJ"
+      ]
+    },
+    {
+      "stance": "Supports protecting ravines, tree canopy, and ecological integrity, especially Small's Creek",
       "supporting_records": [
         "CS7J8p-gSXJ",
-        "CMKoKv_h5pK",
-        "CK4d5-5hiWq",
         "CKjqtNfB45D",
         "CJZLy2zh6UQ",
-        "CWjUNC4rr_o",
+        "CMKoKv_h5pK",
         "DO4MuCbjpcS",
         "CrgrVd8vauJ"
       ]
     },
     {
-      "stance": "Supports Toronto's net-zero-by-2040 climate target and district energy",
-      "supporting_records": [
-        "CgPjxB6ORFp",
-        "Cf1aVDrrVWi",
-        "CR6kRktrfna",
-        "C7CY9uKgcuK",
-        "CITlvYYhbxK"
-      ]
-    },
-    {
-      "stance": "Supports expanding EV charging infrastructure across Toronto",
-      "supporting_records": [
-        "CHyL5MWh5RJ",
-        "CHTUwhrhnW2",
-        "CG-uWaXB5zF",
-        "CdtW5vlutJb",
-        "CljSwL7rkmG",
-        "C4jI6TmPJPO",
-        "CgPjxB6ORFp"
-      ]
-    },
-    {
-      "stance": "Opposes encampments in parks and supports clearing them while connecting people with supports",
+      "stance": "Opposes encampments in parks adjacent to schools, daycares, and playgrounds",
       "supporting_records": [
         "DQxGSD7jrXm",
-        "DQwumxDjYhU",
         "DU6pUk8ifeU",
         "DFgE1BJSnGq"
       ]
     },
     {
-      "stance": "Supports City delivering 'basics' — clean parks, open pools and washrooms in summer, cut grass",
-      "supporting_records": [
-        "DN-w-7QDpMj",
-        "DLQhveAufkH",
-        "DLS-CKDuvMY",
-        "DRholf-lx3s",
-        "DRnLqAVjeQS",
-        "DNBsemmSR-F",
-        "DA4MS6ySTPg",
-        "DWXXm8Yiazl"
-      ]
-    },
-    {
-      "stance": "Opposes the toboggan ban and supports common-sense safety mitigation to allow tobogganing",
+      "stance": "Opposes the City's toboggan ban; supports common-sense safety measures instead",
       "supporting_records": [
         "C2isoN1NNF5",
+        "C2nH39PgsTL",
         "C2Ifyn5P7TK",
-        "C2Ba9hItqxv",
         "C22sCiKA7cy",
-        "C2nH39PgsTL"
+        "C2Ba9hItqxv"
       ]
     },
     {
-      "stance": "Supports allowing alcohol consumption in designated parks",
+      "stance": "Supports public alcohol consumption in designated parks",
       "supporting_records": [
         "CvcqDMjgcd7",
         "CswXtehAr6R"
       ]
     },
     {
-      "stance": "Opposes the City's tree equity policy as a misallocation of focus",
+      "stance": "Supports protecting public waterfront use, including restricting high-powered motorized watercraft at Woodbine Beach",
+      "supporting_records": [
+        "DMX_0DkAzXr",
+        "DMQkYU1g0Gt",
+        "Cd9UM9HAFyy"
+      ]
+    },
+    {
+      "stance": "Opposes the City's tree equity policy as a misplaced priority",
       "supporting_records": [
         "DXKu-UHDqz2"
       ]
     },
     {
-      "stance": "Opposes a $35M Parks budget increase and additional staff hires without accountability measures first",
+      "stance": "Opposes increasing the Parks budget by $35M and adding 122 staff without first improving accountability",
       "supporting_records": [
         "DFgE1BJSnGq"
-      ]
-    },
-    {
-      "stance": "Opposes cutting Dentonia Park Golf Course in half",
-      "supporting_records": [
-        "CYjRl5SL3Lm",
-        "C9N09XlyhLU"
-      ]
-    },
-    {
-      "stance": "Supports protecting waterfront/beach access and proactive enforcement (e.g., motorized watercraft exclusion zone at Woodbine)",
-      "supporting_records": [
-        "DMX_0DkAzXr",
-        "DMQkYU1g0Gt",
-        "CPTOrrRBTlS",
-        "CQKYjJYB72f"
-      ]
-    },
-    {
-      "stance": "Supports Rail Deck Park as a downtown signature park",
-      "supporting_records": [
-        "BIp1TMWDAeE",
-        "BNxknAHj1s2"
-      ]
-    },
-    {
-      "stance": "Supports banning single-use plastic in Toronto",
-      "supporting_records": [
-        "BlEzN6wB4Vj"
       ]
     }
   ],
   "key_actions": [],
   "input_record_count": 257,
-  "input_records_hash": "sha256:f1e3f6cbac6a8bdd4106bbb8a2c3caa53688fe5ca757f3926b32682c5418790e",
+  "input_records_hash": "sha256:2240651bda1cb88ce375e679abbcdc7457764435f1284e63b9e37a23fddc79c9",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:42:41+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:19:45+00:00",
   "synthesis_skipped_reason": null
 }

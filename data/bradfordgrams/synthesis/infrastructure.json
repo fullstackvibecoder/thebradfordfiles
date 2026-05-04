@@ -2,14 +2,156 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "infrastructure",
-  "summary": null,
-  "consistency": null,
-  "key_positions": [],
+  "summary": "Bradford's infrastructure positions center on accelerating construction, reducing congestion, and delivering basic services. Bradford repeatedly advocated for 24/7 construction on the Gardiner Expressway, off-site prefabrication, and the creation of a Congestion Relief Commissioner / \"Traffic Czar\" to coordinate competing projects. Bradford opposed tearing down the Gardiner and supported the Province uploading the Gardiner and DVP. On winter operations, Bradford characterized snow clearing as a core service, criticized multi-week response times, and proposed prioritizing school zones, main roads, sidewalks, and transit access. Bradford championed \"complete streets,\" road-design-based safety, traffic calming, cycling infrastructure including the Danforth bike lanes, EV charging, and community facilities (Dawes Road Library, Weston Lions Arena, Ontario Science Centre). Bradford opposed the $150M West Toronto Railpath extension and a Foxbar Road median, while supporting open tendering and intergovernmental partnership to fund infrastructure.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-08",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports 24/7 construction and off-site prefabrication to accelerate the Gardiner Expressway rebuild",
+      "supporting_records": [
+        "C7PdhVOv8RX",
+        "C7MlGLqAQ6b",
+        "C7J--LXgxkL",
+        "C7EtyHHgHga",
+        "C95kvpUygaW",
+        "C8pJ4ezA9dd",
+        "Csr5vK4gdwK",
+        "CtPVG--yRmh",
+        "DQZAvNEFSMe"
+      ]
+    },
+    {
+      "stance": "Supports creating a Congestion Relief Commissioner / 'Traffic Czar' to coordinate construction across governments",
+      "supporting_records": [
+        "CyjIhGdAqUA",
+        "DAGZ9Kzx2yn",
+        "DIzoevoM2C7",
+        "DLFiuzrA65z"
+      ]
+    },
+    {
+      "stance": "Opposes tearing down the Gardiner Expressway",
+      "supporting_records": [
+        "CtiEcAlgh-v",
+        "C0KyqzrNzdl",
+        "DUjUAnhkdaK"
+      ]
+    },
+    {
+      "stance": "Supports treating snow removal as a core city service with prioritization of main roads, sidewalks, school zones, and transit access",
+      "supporting_records": [
+        "DQ-LC_PDqof",
+        "DTlzW2diYT0",
+        "DUKE4-qkoJ7",
+        "DUGzjNNiLyD",
+        "DGTy1LHyeGN",
+        "DGRMzlzyj03",
+        "DGdIF70RdfV"
+      ]
+    },
+    {
+      "stance": "Opposes multi-week snow response timelines and inadequate winter maintenance",
+      "supporting_records": [
+        "DGTy1LHyeGN",
+        "DGRMzlzyj03",
+        "DGQ_O_Dytzb",
+        "DGjJrWmS8zt",
+        "BuRPis6AAVc"
+      ]
+    },
+    {
+      "stance": "Supports 'complete streets' and road-design-based safety over punitive enforcement",
+      "supporting_records": [
+        "DPjtFCpjso2",
+        "C7hOwyDgwSv",
+        "BtbEx0dFjLA",
+        "Bg2biqMHZLV",
+        "BcnznOMg6KO",
+        "Cr3d6JBgHco"
+      ]
+    },
+    {
+      "stance": "Supports investment in cycling infrastructure including Destination Danforth bike lanes and Woodbine bike lanes",
+      "supporting_records": [
+        "CBlbgV1jEI2",
+        "CWRetGnrNSc",
+        "CJd9fyzhh6r",
+        "BYZLPZFgwvM",
+        "CfkS3IFAduM",
+        "Cr3d6JBgHco"
+      ]
+    },
+    {
+      "stance": "Opposes the $150M West Toronto Railpath extension as unreasonable spending",
+      "supporting_records": [
+        "C-p4xGrghbz",
+        "C-se8h5AGrD",
+        "DAbKFl5xaK6"
+      ]
+    },
+    {
+      "stance": "Supports protecting and investing in community facilities (Weston Lions Arena, Dawes Road Library, Ontario Science Centre, Secord School)",
+      "supporting_records": [
+        "DUtZoxjjJ3O",
+        "DT_Gjxjgu7h",
+        "CKaZbiAu4SL",
+        "Cr4IEiEgs_T",
+        "DPUh8xKjkOr",
+        "C6eVG7fAk77"
+      ]
+    },
+    {
+      "stance": "Supports keeping parallel routes open and not closing them simultaneously during construction",
+      "supporting_records": [
+        "C9kR5IeggK3",
+        "C_0RHDzR-YO",
+        "C7EtyHHgHga"
+      ]
+    },
+    {
+      "stance": "Supports intergovernmental (federal/provincial/city) partnership to fund infrastructure",
+      "supporting_records": [
+        "DX1rX3cN-Nj",
+        "C8ClIyOs1Wa",
+        "Cz__8mSvRSW",
+        "C0KyqzrNzdl"
+      ]
+    },
+    {
+      "stance": "Supports EV charging infrastructure including front yard parking pads and on-street chargers",
+      "supporting_records": [
+        "CG-uWaXB5zF",
+        "CHyL5MWh5RJ",
+        "Cc5e0EYLLla",
+        "Ce4Q5z-OJ_K"
+      ]
+    },
+    {
+      "stance": "Supports open tendering for construction contracts",
+      "supporting_records": [
+        "CsTmzDEtnY9"
+      ]
+    },
+    {
+      "stance": "Supports flood mitigation and basement flooding protection programs",
+      "supporting_records": [
+        "DObLpOUDV_D",
+        "C_lvRjOSsep",
+        "C_N2Qckxt8i",
+        "CCrb1OhRnE0",
+        "C9h-rEBACo-"
+      ]
+    }
+  ],
   "key_actions": [],
   "input_record_count": 324,
-  "input_records_hash": "sha256:8f13b44a461a3ebfe808dc4906e2d57bbccb36c309ec6fccc76a1d4debf0827e",
+  "input_records_hash": "sha256:ca8fb922489963a9d6e2ea6a1b3cf6e4cc238e8ef8a2cb7e36ae1b88d84c5da2",
   "model": "claude-opus-4-7",
-  "system_prompt_hash": "sha256:82300c1b3a109eeb1286e9c5496d25bd0c786313916afda5aead5f59da77c09e",
-  "synthesis_generated_at": "2026-05-04T13:54:45+00:00",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:28:36+00:00",
   "synthesis_skipped_reason": null
 }
