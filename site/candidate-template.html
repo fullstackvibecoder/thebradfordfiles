@@ -819,6 +819,124 @@ function detectedScarbHoods(record) {
   return [...found];
 }
 
+// ---------- VOTE WIDGET ----------
+const TURNSTILE_SITE_KEY = "__TURNSTILE_SITE_KEY__";
+let _turnstileLoaded = false;
+
+function ensureTurnstile() {
+  if (_turnstileLoaded) return;
+  _turnstileLoaded = true;
+  const s = document.createElement("script");
+  s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+  s.async = true;
+  document.head.appendChild(s);
+}
+
+function getFingerprint() {
+  let fp = localStorage.getItem("tomf-fp");
+  if (!fp) {
+    fp = [...crypto.getRandomValues(new Uint8Array(16))]
+      .map(b => b.toString(16).padStart(2, "0")).join("");
+    localStorage.setItem("tomf-fp", fp);
+  }
+  return fp;
+}
+
+function buildTopicRecordId(topic) {
+  const slug = (DATA.meta && DATA.meta.slug) ? DATA.meta.slug.toLowerCase() : "x";
+  const safeTopic = topic.replace(/[^a-z0-9]/gi, "-");
+  return `vt-${slug}-${safeTopic}`.slice(0, 32);
+}
+
+function renderTopicVoteWidget(topic) {
+  ensureTurnstile();
+  const recordId = buildTopicRecordId(topic);
+  const widget = el("div", {style:"border-top:2px solid #f0f0f0;background:#f7f8fa;padding:18px 24px;margin-top:14px"});
+
+  const header = el("div", {style:"display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap"});
+  const left = el("div");
+  left.appendChild(el("div", {style:"font:700 11px ui-monospace,monospace;letter-spacing:0.1em;color:#666"}, "READER JUDGMENT"));
+  left.appendChild(el("div", {style:"font-weight:600;font-size:14px;margin-top:2px"},
+    `Has the candidate kept their ${topic.replace(/_/g, " ")} pledge(s)?`));
+  header.appendChild(left);
+
+  const buttonsWrap = el("div", {style:"display:flex;gap:6px"});
+  const labels = {kept:"✓ Kept", broke:"✗ Broke", too_early:"⊘ Too early"};
+  const colors = {kept:"#00923f", broke:"#b50909", too_early:"#999"};
+  for (const j of ["kept", "broke", "too_early"]) {
+    const btn = el("button", {
+      style: `padding:8px 14px;background:#fff;border:1px solid ${colors[j]};color:${colors[j]};font-weight:700;font-size:12px;cursor:pointer`,
+      onclick: () => submitVote(recordId, j, widget),
+    }, labels[j]);
+    buttonsWrap.appendChild(btn);
+  }
+  header.appendChild(buttonsWrap);
+  widget.appendChild(header);
+
+  const aggregate = el("div", {style:"margin-top:10px;display:none"});
+  aggregate.id = `agg-${recordId}`;
+  widget.appendChild(aggregate);
+
+  widget.appendChild(el("div", {style:"margin-top:6px;font-size:10.5px;color:#999;font-style:italic"},
+    "Reader response · Not a representative poll · See methodology"));
+
+  fetch(`/api/aggregate?record_id=${encodeURIComponent(recordId)}`)
+    .then(r => r.json())
+    .then(d => renderAggregate(aggregate, d.counts))
+    .catch(() => {});
+  return widget;
+}
+
+function renderAggregate(target, counts) {
+  if (!counts || !counts.total) return;
+  const total = counts.total;
+  const pct = k => Math.round((counts[k] / total) * 100);
+  target.style.display = "";
+  target.replaceChildren();
+  const bar = el("div", {style:"flex:1;height:8px;display:flex;border-radius:2px;overflow:hidden;min-width:120px"});
+  bar.appendChild(el("div", {style:`flex:${counts.kept};background:#00923f`}));
+  bar.appendChild(el("div", {style:`flex:${counts.broke};background:#b50909`}));
+  bar.appendChild(el("div", {style:`flex:${counts.too_early};background:#aaa`}));
+  const wrap = el("div", {style:"display:flex;align-items:center;gap:12px;font-size:12px;color:#666"});
+  wrap.appendChild(bar);
+  wrap.appendChild(el("span", {style:"white-space:nowrap"},
+    `${pct("kept")}% kept · ${pct("broke")}% broke · ${pct("too_early")}% too early · ${total} responses`));
+  target.appendChild(wrap);
+}
+
+async function getTurnstileToken(widget) {
+  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "__TURNSTILE_SITE_KEY__") return "dev";
+  return new Promise(resolve => {
+    function attempt() {
+      if (window.turnstile) {
+        const ctr = document.createElement("div"); ctr.style.display = "none"; widget.appendChild(ctr);
+        window.turnstile.render(ctr, {
+          sitekey: TURNSTILE_SITE_KEY, size: "invisible",
+          callback: t => resolve(t),
+          "error-callback": () => resolve(null),
+        });
+      } else {
+        setTimeout(attempt, 200);
+      }
+    }
+    attempt();
+  });
+}
+
+async function submitVote(recordId, judgment, widget) {
+  const token = await getTurnstileToken(widget);
+  const r = await fetch("/api/vote", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({record_id: recordId, judgment, turnstile_token: token, fingerprint: getFingerprint()}),
+  });
+  if (r.ok) {
+    const data = await r.json();
+    const target = document.getElementById(`agg-${recordId}`);
+    if (target) renderAggregate(target, data.counts);
+  }
+}
+
 // ---------- DATA ----------
 let DATA = null;
 
@@ -1067,6 +1185,7 @@ function renderSaidDone() {
     cols.appendChild(said);
     cols.appendChild(done);
     block.appendChild(cols);
+    block.appendChild(renderTopicVoteWidget(t));
     wrap.appendChild(block);
   });
 }
