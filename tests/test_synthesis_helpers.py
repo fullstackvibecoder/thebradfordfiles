@@ -140,6 +140,11 @@ def test_system_prompt_hash_is_stable():
     assert h1.startswith("sha256:")
 
 
+def test_system_prompt_forbids_em_dashes():
+    assert "em dashes" in synthesis.SYSTEM_PROMPT
+    assert "U+2014" in synthesis.SYSTEM_PROMPT
+
+
 def test_synthesis_tool_schema_has_required_fields():
     schema = synthesis.SYNTHESIS_TOOL_SCHEMA
     assert schema["name"] == "emit_synthesis"

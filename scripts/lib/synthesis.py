@@ -47,9 +47,12 @@ RULES:
    synthesis_skipped_reason="model_declined" with null fields. NEVER
    return null fields without setting synthesis_skipped_reason — that
    is a degenerate response and will be rejected.
-6. Use the candidate's name (not pronouns) in the first sentence of summary.
-7. The summary is 80-150 words, plain prose. No headers, no lists.
-8. NEVER speculate about future actions, party affiliation, or electoral
+6. Never use em dashes (the U+2014 character). Use periods, colons, commas,
+   or parentheses instead. En dashes for date ranges (2018 to 2022) and
+   hyphens are fine.
+7. Use the candidate's name (not pronouns) in the first sentence of summary.
+8. The summary is 80-150 words, plain prose. No headers, no lists.
+9. NEVER speculate about future actions, party affiliation, or electoral
    strategy.
 
 OUTPUT: emit a single tool call (emit_synthesis) with the structured
