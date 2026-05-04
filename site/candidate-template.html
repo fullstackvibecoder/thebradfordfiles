@@ -848,6 +848,113 @@ function buildTopicRecordId(topic) {
   return `vt-${slug}-${safeTopic}`.slice(0, 32);
 }
 
+function appendTopicSynthesis(blockEl, topic) {
+  // DATA.meta.synthesis is the per-topic dict folded in by build_site.py.
+  const all = (DATA.meta && DATA.meta.synthesis) || {};
+  const s = all[topic];
+  if (!s) return;
+  if (s.synthesis_skipped_reason) return;  // insufficient_data: hide the block
+  const wrap = el("div", {style:"background:#fcfcfd;border-left:3px solid #1a4480;padding:14px 18px;margin:12px 0"});
+  // Consistency badge
+  if (s.consistency && s.consistency.label) {
+    const badge = renderConsistencyBadge(s.consistency);
+    wrap.appendChild(badge);
+  }
+  // Summary paragraph
+  if (s.summary) {
+    wrap.appendChild(el("p", {style:"font-size:14px;line-height:1.55;color:#1b1b1b;margin-top:8px"},
+      s.summary));
+  }
+  // Key positions and actions, with superscript citations
+  if (s.key_positions && s.key_positions.length) {
+    wrap.appendChild(renderCitedList("Key positions", s.key_positions, "stance"));
+  }
+  if (s.key_actions && s.key_actions.length) {
+    wrap.appendChild(renderCitedList("Key actions", s.key_actions, "action"));
+  }
+  // Detected stance change subsection
+  if (s.consistency && s.consistency.label === "shifted" && s.consistency.changes) {
+    wrap.appendChild(renderStanceChanges(s.consistency.changes));
+  }
+  blockEl.appendChild(wrap);
+}
+
+function renderConsistencyBadge(consistency) {
+  const styles = {
+    consistent: "background:#d3eecd;color:#1a5b1a;border-color:#1a5b1a",
+    evolving:   "background:#fff4d3;color:#8a5a00;border-color:#b58a32",
+    shifted:    "background:#f8d7d7;color:#7a1212;border-color:#b50909",
+  };
+  const labels = {
+    consistent: "✓ Consistent",
+    evolving:   "↻ Evolving",
+    shifted:    "⚠ Shifted",
+  };
+  const lbl = labels[consistency.label] || consistency.label;
+  const since = consistency.stable_since ? ` since ${consistency.stable_since}` : "";
+  const text = consistency.label === "consistent" ? lbl + since : lbl;
+  return el("span", {
+    style: `display:inline-block;padding:3px 9px;font:700 11px ui-monospace,monospace;letter-spacing:0.05em;border:1px solid ${styles[consistency.label] || ""};` + (styles[consistency.label] || ""),
+  }, text);
+}
+
+function renderCitedList(title, items, claimKey) {
+  const wrap = el("div", {style:"margin-top:10px"});
+  wrap.appendChild(el("div", {style:"font:700 10px ui-monospace,monospace;letter-spacing:0.1em;color:#666;text-transform:uppercase;margin-bottom:4px"}, title));
+  const ul = el("ul", {style:"margin:0;padding-left:18px;font-size:13px;color:#1b1b1b"});
+  for (const item of items) {
+    const li = el("li", {style:"margin-bottom:3px"});
+    li.appendChild(document.createTextNode(item[claimKey] || ""));
+    li.appendChild(document.createTextNode(" "));
+    for (const sc of (item.supporting_records || [])) {
+      const sup = el("a", {
+        href: "#record-" + sc,
+        style: "color:#0050d8;font-size:10px;text-decoration:none;margin-right:2px",
+        title: "shortcode " + sc,
+      }, "[" + sc.slice(0, 6) + "]");
+      sup.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.getElementById("record-" + sc);
+        if (target) {
+          target.scrollIntoView({behavior:"smooth", block:"center"});
+          target.style.outline = "2px solid #da291c";
+          setTimeout(() => target.style.outline = "", 1800);
+        }
+      });
+      li.appendChild(sup);
+    }
+    ul.appendChild(li);
+  }
+  wrap.appendChild(ul);
+  return wrap;
+}
+
+function renderStanceChanges(changes) {
+  const wrap = el("div", {style:"margin-top:10px;padding:8px 10px;background:#fff4f4;border:1px dashed #b50909;font-size:12.5px"});
+  wrap.appendChild(el("div", {style:"font:700 10px ui-monospace,monospace;color:#b50909;letter-spacing:0.05em;text-transform:uppercase"},
+    "Detected stance change"));
+  const ul = el("ul", {style:"margin:6px 0 0;padding-left:18px;color:#1b1b1b"});
+  for (const c of changes) {
+    const li = el("li", {style:"margin-bottom:4px"});
+    li.appendChild(document.createTextNode(`From: "${c.from_stance}" → To: "${c.to_stance}" (${c.approximate_date}) `));
+    for (const sc of (c.supporting_records || [])) {
+      const sup = el("a", {
+        href: "#record-" + sc,
+        style: "color:#b50909;font-size:10px;text-decoration:none;margin-right:2px",
+      }, "[" + sc.slice(0, 6) + "]");
+      sup.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.getElementById("record-" + sc);
+        if (target) target.scrollIntoView({behavior:"smooth", block:"center"});
+      });
+      li.appendChild(sup);
+    }
+    ul.appendChild(li);
+  }
+  wrap.appendChild(ul);
+  return wrap;
+}
+
 function renderTopicVoteWidget(topic) {
   ensureTurnstile();
   const recordId = buildTopicRecordId(topic);
@@ -980,7 +1087,7 @@ function renderHeader() {
 
 // ---------- RECORD CARD (universal renderer) ----------
 function renderCard(record) {
-  const card = el("div", { class: "record-card kind-" + record.kind });
+  const card = el("div", { class: "record-card kind-" + record.kind, id: "record-" + (record.shortcode || "") });
 
   // Top meta row: kind tag + topic tag + stance/conditional tag + date
   const meta = el("div", { class: "record-meta" });
@@ -1184,6 +1291,7 @@ function renderSaidDone() {
 
     cols.appendChild(said);
     cols.appendChild(done);
+    appendTopicSynthesis(block, t);
     block.appendChild(cols);
     block.appendChild(renderTopicVoteWidget(t));
     wrap.appendChild(block);
