@@ -1,0 +1,182 @@
+{
+  "slug": "transit-operating-funding",
+  "topic": "How Toronto pays for the operating cost of running the TTC over 2026 to 2034, and what each candidate would do as the Ontario New Deal funding expires in 2027.",
+  "topic_short": "Transit operating funding",
+  "pull_quote": "Toronto's 2026 TTC operating budget passed at roughly $3.0 billion, with a $1.48 billion city subsidy and a $35 million reserve draw to hold fares flat. The provincial New Deal funding expires in 2027, and TTC documents project a $379 million shortfall in 2027 and a further $145 million shortfall in 2028 if it is not renewed.",
+  "who_benefits": {
+    "intro": "The 2027 expiry of provincial New Deal operating support forces Toronto to choose between expanding municipal revenue tools, leaning further on fare and reserve draws, or seeking renewed federal and provincial transfers. Each candidate's preferred mix shifts incidence between riders, owner-occupiers, home buyers, and downtown commercial property.",
+    "mechanisms": [
+      {
+        "candidate_handle": "bradfordgrams",
+        "summary": "Bradford's stated approach combines fare-revenue protection (fare-evasion enforcement, service reliability), fiscal restraint at the property-tax line, and reliance on federal and provincial transfers rather than new municipal revenue tools. Incidence research finds transit operating support is broadly progressive at the rider level because lower-income households are over-represented among transit-dependent riders, but the distributional effect of how that subsidy is financed depends on whether the funding source is property tax, fare revenue, or sales-style instruments (Boisjoly et al., 2018). Reliance on existing transfers and on fare revenue rather than expanded local revenue tools shifts more of the financing burden onto riders if higher orders of government do not renew or expand support, since fare revenue funds roughly a third of operating costs and ridership has not recovered to 2019 levels (FAO Ontario, 2024)."
+      },
+      {
+        "candidate_handle": "oliviachow",
+        "summary": "Chow's approach combines an expanded Municipal Land Transfer Tax on luxury homes (passed at council December 2025, taking effect April 2026), a fare freeze plus monthly fare-capping at 47 paid trips through PRESTO, continued use of the City Building Fund levy for transit and housing capital, and active lobbying for renewed federal and provincial operating support. Incidence work on land transfer taxes finds the statutory burden falls on home buyers, with empirical evidence that a non-trivial share is capitalized into prices and reduces transaction volumes (Dachis, Duranton and Turner, 2012). Fare-cap and fare-freeze incidence studies find the largest gains accrue to riders making 30 plus trips a month, who are disproportionately lower-income commuters (TransitCenter, 2021)."
+      }
+    ],
+    "literature_row": [
+      { "tier": "T3", "label": "Boisjoly et al., Invest in the ride: 14 year longitudinal analysis of transit ridership in 25 North American cities, Transportation Research Part A, 2018" },
+      { "tier": "T3", "label": "Dachis, Duranton, and Turner, The effects of land transfer taxes on real estate markets: evidence from Toronto, Journal of Economic Geography, 2012" },
+      { "tier": "T1", "label": "Financial Accountability Office of Ontario, Public Transit Agencies: Ridership, Finances and Operating Subsidies, September 2024", "url": "https://fao-on.org/en/report/transit-subsidies-2024/" },
+      { "tier": "T3", "label": "Eliasson, A cost-benefit analysis of the Stockholm congestion charging system, Transportation Research Part A, 2009" },
+      { "tier": "T3", "label": "Borjesson and Kristoffersson, The Swedish congestion charges: Ten years on, Transportation Research Part A, 2018" },
+      { "tier": "T3", "label": "Leape, The London Congestion Charge, Journal of Economic Perspectives, 2006" },
+      { "tier": "T1", "label": "Office of the New York State Comptroller, Report tracking MTA's shifting revenue streams, May 2025", "url": "https://www.osc.ny.gov/press/releases/2025/05/dinapoli-report-tracks-mtas-shifting-revenue-streams" },
+      { "tier": "T1", "label": "City of Toronto, 2026 Budget Notes: Toronto Transit Commission, February 2026", "url": "https://www.toronto.ca/legdocs/mmis/2026/bu/bgrd/backgroundfile-261481.pdf" }
+    ]
+  },
+  "positions": [
+    {
+      "candidate_handle": "bradfordgrams",
+      "candidate_name": "Brad Bradford",
+      "summary": "Bradford has voted against Mayor Chow's 2024 (9.5 percent), 2025 (6.9 percent), and 2026 (2.2 percent) property tax and City Building Fund packages, arguing that residents are paying more without receiving improved service, and has criticized the use of reserve funds to balance the operating budget. His stated transit priorities are fare-evasion enforcement, building the Eglinton East LRT, and reliance on federal and provincial funding rather than new local revenue tools.",
+      "citations": [
+        { "tier": "T2", "label": "CBC News, Toronto city council approves largest property tax hike in more than 25 years, February 2024", "url": "https://www.cbc.ca/news/canada/toronto/toronto-budget-debate-tax-hike-1.7114394" },
+        { "tier": "T2", "label": "CBC News, Toronto city council finalizes new budget with 6.9% property tax hike, February 2025", "url": "https://www.cbc.ca/news/canada/toronto/toronto-2025-budget-council-meeting-1.7455475" },
+        { "tier": "T2", "label": "TorontoToday, In Scarborough, Chow and Bradford fight for transit and votes, April 2026", "url": "https://www.torontotoday.ca/local/city-hall/scarborough-eglinton-east-lrt-chow-bradford-fight-votes-12121661" },
+        { "tier": "T2", "label": "NOW Toronto, Olivia Chow and Brad Bradford launch separate plans for the same Scarborough transit project, March 2026", "url": "https://nowtoronto.com/news/olivia-chow-and-brad-bradford-launch-separate-plans-for-the-same-scarborough-transit-project/" }
+      ]
+    },
+    {
+      "candidate_handle": "oliviachow",
+      "candidate_name": "Olivia Chow",
+      "summary": "Chow's 2026 budget held the property-tax-plus-City-Building-Fund increase to 2.2 percent, delivered a $1.48 billion TTC subsidy, froze fares for a third year, and introduced PRESTO monthly fare capping at 47 paid trips effective September 1, 2026, with a planned reduction to 40 trips in 2027. Chow's executive committee has previously advanced a commercial parking levy, an expanded MLTT on homes over $3 million (passed December 2025, effective April 2026), and federal-provincial cost-sharing on the Waterfront East LRT and other capital projects.",
+      "citations": [
+        { "tier": "T1", "label": "City of Toronto, 2026 Budget now final, February 10, 2026", "url": "https://www.toronto.ca/news/city-of-torontos-2026-budget-now-final-focuses-on-affordability-service-stability-and-financial-sustainability/" },
+        { "tier": "T2", "label": "CP24, Toronto is introducing fare capping for TTC riders in 2026, December 8, 2025", "url": "https://www.cp24.com/politics/toronto-city-hall/2025/12/08/toronto-is-introducing-fare-capping-for-ttc-riders-in-2026-heres-what-you-need-to-know/" },
+        { "tier": "T2", "label": "Toronto Life, Chow wants to go after luxury homes with a juiced-up Land Transfer Tax, December 2025", "url": "https://torontolife.com/city/mayor-olivia-chow-land-transfer-tax-luxury-homes-election-2026/" },
+        { "tier": "T2", "label": "CBC News, Toronto city council approves hike in land transfer tax for luxury homebuyers, December 17, 2025", "url": "https://www.cbc.ca/news/canada/toronto/toronto-luxury-homes-land-transfer-tax-increase-approved-city-council-9.7020160" }
+      ]
+    }
+  ],
+  "status_quo": {
+    "summary": "The TTC's 2026 operating budget is approximately $3.03 billion, up roughly $210 million from 2025, with a city subsidy of $1.48 billion (about 49 percent of operating expenses) and a $35 million draw on TTC reserves to hold fares constant. In 2022 the TTC funded 35.9 percent of operating expenses from own-source revenue and 64.1 percent from government subsidies; the operating subsidy per ride rose from $1.18 in 2019 to $2.62 in 2024 as ridership recovery lagged costs. 2026 ridership is projected at 426 million trips, roughly 81 percent of the 525 million carried in 2019. The Ontario-Toronto New Deal of November 2023 included $330 million per year in operating support tied to provincial transit lines (Eglinton Crosstown, Finch West) over three years and expires in 2027; TTC documents project a $379 million operating shortfall in 2027 and $145 million in 2028 if it is not renewed.",
+    "existing_policy_stack": [
+      {
+        "label": "City of Toronto 2026 Budget: 2.2 percent combined residential property-tax plus City Building Fund increase, $1.48 billion TTC subsidy, $35 million reserve draw.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, 2026 Budget now final, February 10, 2026", "url": "https://www.toronto.ca/news/city-of-torontos-2026-budget-now-final-focuses-on-affordability-service-stability-and-financial-sustainability/" }
+        ]
+      },
+      {
+        "label": "TTC fare freeze for 2026 plus monthly fare cap at 47 PRESTO trips effective September 1, 2026.",
+        "citations": [
+          { "tier": "T2", "label": "CP24, Toronto is introducing fare capping for TTC riders in 2026, December 8, 2025", "url": "https://www.cp24.com/politics/toronto-city-hall/2025/12/08/toronto-is-introducing-fare-capping-for-ttc-riders-in-2026-heres-what-you-need-to-know/" }
+        ]
+      },
+      {
+        "label": "Ontario gas tax to municipal transit: roughly $178 million to Toronto in FY 2024-25, split roughly equally between TTC operating and capital.",
+        "citations": [
+          { "tier": "T2", "label": "Steve Munro, TTC Financial Planning and Subsidy Streams, March 30, 2026", "url": "https://stevemunro.ca/2026/03/30/ttc-financial-planning-subsidy-streams/" }
+        ]
+      },
+      {
+        "label": "Ontario-Toronto New Deal (signed November 2023): $1.2 billion in transit-related support, $330 million per year in dedicated operating funding for provincial lines for three years, expires 2027.",
+        "citations": [
+          { "tier": "T2", "label": "CBC News, Ontario has promised Toronto over $1B in new funding, November 2023", "url": "https://www.cbc.ca/news/canada/toronto/toronto-ontario-deal-breakdown-1.7042324" }
+        ]
+      },
+      {
+        "label": "Federal Canada Public Transit Fund (announced July 2024): $30 billion over ten years; Toronto's baseline allocation announced at $1.2 billion over ten years, primarily capital.",
+        "citations": [
+          { "tier": "T1", "label": "Prime Minister of Canada, The largest public transit investment in Canadian history, July 17, 2024", "url": "https://www.pm.gc.ca/en/news/news-releases/2024/07/17/largest-public-transit-investment-canadian-hist" },
+          { "tier": "T1", "label": "Department of Finance Canada, Deputy Prime Minister announces $1.2 billion for Toronto, November 2024", "url": "https://www.canada.ca/en/department-finance/news/2024/11/deputy-prime-minister-announces-12-billion-for-toronto-enabling-purchase-of-new-line-2-subway-cars.html" }
+        ]
+      },
+      {
+        "label": "Municipal Land Transfer Tax: graduated luxury-tier rates passed December 2025 effective April 2026, projected to add $13.8 million in 2026 revenue.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto, Council item 2025.EX28.1, MLTT luxury-tier amendment", "url": "https://secure.toronto.ca/council/agenda-item.do?item=2025.EX28.1" },
+          { "tier": "T2", "label": "Toronto Life, Chow wants to go after luxury homes with a juiced-up Land Transfer Tax, December 2025", "url": "https://torontolife.com/city/mayor-olivia-chow-land-transfer-tax-luxury-homes-election-2026/" }
+        ]
+      },
+      {
+        "label": "Commercial Parking Levy: under study, deferred in early 2025; staff and external estimates of $100 to $150 million annual gross revenue.",
+        "citations": [
+          { "tier": "T1", "label": "City of Toronto CFO, Update on the Implementation of a Commercial Parking Levy, January 17, 2025", "url": "https://www.toronto.ca/legdocs/mmis/2025/ex/bgrd/backgroundfile-252271.pdf" }
+        ]
+      }
+    ],
+    "citations": [
+      { "tier": "T1", "label": "City of Toronto, 2026 Budget Notes: Toronto Transit Commission", "url": "https://www.toronto.ca/legdocs/mmis/2026/bu/bgrd/backgroundfile-261481.pdf" },
+      { "tier": "T1", "label": "Financial Accountability Office of Ontario, Public Transit Agencies: Ridership, Finances and Operating Subsidies, September 2024", "url": "https://fao-on.org/en/report/transit-subsidies-2024/" },
+      { "tier": "T2", "label": "CBC News, TTC asking for more money from city hall in 2026 budget that freezes fares, December 8, 2025", "url": "https://www.cbc.ca/news/canada/toronto/ttc-budget-2026-9.7036570" },
+      { "tier": "T2", "label": "TorontoToday, TTC board passes $3B budget but 2027 will bring more money trouble, December 2025", "url": "https://www.torontotoday.ca/local/transportation-infrastructure/ttc-budget-board-passes-3-billion-2027-looming-money-crunch-11709887" }
+    ]
+  },
+  "comparables": [
+    {
+      "name": "Stockholm",
+      "period": "2006 to present",
+      "summary": "Stockholm introduced a cordon-based congestion charge in January 2006 as a trial, then permanently from August 2007, with revenues directed to transport investment. Net annual revenues reached approximately 1.3 billion SEK by the late 2010s and operating costs fell to roughly 7 percent of revenue.",
+      "outcome": "Reduced cordon traffic by approximately 20 to 22 percent; system found socially beneficial in ex-post cost-benefit analysis with infrastructure investment recovered in roughly three to four years.",
+      "citations": [
+        { "tier": "T3", "label": "Eliasson, A cost-benefit analysis of the Stockholm congestion charging system, Transportation Research Part A, 2009, DOI 10.1016/j.tra.2008.09.014" },
+        { "tier": "T3", "label": "Borjesson and Kristoffersson, The Swedish congestion charges: Ten years on, Transportation Research Part A, 2018, DOI 10.1016/j.tra.2017.11.001" }
+      ],
+      "caveats": "Stockholm's transit network is denser per capita than Toronto's, the legal regime is national rather than municipal, and the 2006 baseline economy and fuel-price environment differ from Toronto in 2026."
+    },
+    {
+      "name": "London",
+      "period": "2003 to present",
+      "summary": "London introduced a daytime central-zone congestion charge in February 2003, with statutory ring-fencing of net revenue to transport investment. Leape (2006) reports a 21 percent reduction in chargeable traffic and significant mode shift.",
+      "outcome": "Approximately 21 percent reduction in chargeable traffic; gross revenue of roughly 2.6 billion pounds over the first decade with about 1.2 billion pounds reinvested in public transport, road, and active-transport improvements.",
+      "citations": [
+        { "tier": "T3", "label": "Leape, The London Congestion Charge, Journal of Economic Perspectives, 20(4), 2006, DOI 10.1257/jep.20.4.157" },
+        { "tier": "T1", "label": "Transport for London Annual Reports" }
+      ],
+      "caveats": "Net revenue has flattened since 2013 as private-hire vehicle volumes grew. The scheme operates under UK national legislation and is administered by a regional transport authority with revenue-recycling rules that Toronto does not currently have."
+    },
+    {
+      "name": "New York",
+      "period": "2025 to present",
+      "summary": "The MTA's Central Business District tolling program (congestion pricing) launched January 5, 2025, with revenue legally dedicated to backing $15 billion in MTA capital borrowing. On the operating side, the Payroll Mobility Tax was increased in 2023 and now generates roughly $3.1 billion annually, the MTA's single largest tax source of operating revenue.",
+      "outcome": "First-year congestion pricing reported approximately $500 million in net revenue, an 11 percent reduction in vehicles entering the zone, and 27 million fewer vehicle entries year over year. Payroll Mobility Tax accounts for about 40 percent of own-source operating revenue.",
+      "citations": [
+        { "tier": "T1", "label": "Office of Governor Kathy Hochul, Less Traffic, Better Transit: First Anniversary of Congestion Pricing, December 2025", "url": "https://www.governor.ny.gov/news/less-traffic-better-transit-its-first-anniversary-governor-hochul-celebrates-transformational" },
+        { "tier": "T1", "label": "Metropolitan Transportation Authority, MTA Congestion Relief Zone Tolling Program, 2025", "url": "https://www.mta.info/project/CBDTP" },
+        { "tier": "T1", "label": "Office of the New York State Comptroller, MTA's shifting revenue streams, May 2025", "url": "https://www.osc.ny.gov/press/releases/2025/05/dinapoli-report-tracks-mtas-shifting-revenue-streams" }
+      ],
+      "caveats": "New York's authority to levy a regional payroll tax and a CBD toll comes from state legislation. Toronto would require equivalent provincial enabling action."
+    },
+    {
+      "name": "Metro Vancouver / TransLink",
+      "period": "2010s to present",
+      "summary": "TransLink funds operations from a regional motor-fuel tax (set at 18.5 cents per litre), parking sales tax, fare revenue, and a regional property-tax share. The 2018 Mobility Pricing Independent Commission estimated that a regional distance-based road charge could raise $1 billion to $1.6 billion annually.",
+      "outcome": "Approximately 25 percent of TransLink's operating revenue, on the order of $400 million annually, has historically come from the fuel tax, but staff and independent analysis have flagged this revenue source as declining due to fuel-economy improvements and electrification.",
+      "citations": [
+        { "tier": "T1", "label": "TransLink, Metro Vancouver Mobility Pricing Independent Commission Report, 2018", "url": "https://www.translink.ca/-/media/translink/documents/plans-and-projects/managing-the-transit-network/mobility-pricing/mpic_commission_report_-_final_-_digital_version.pdf" }
+      ],
+      "caveats": "TransLink is a regional authority with provincial legislative backing for these tools. Toronto has narrower revenue authority under the City of Toronto Act, 2006."
+    }
+  ],
+  "projections": {
+    "kind": "plural",
+    "intro": "Plural ranges that are defensible from the cited sources. Literature does not support a confident singular projection on the precise revenue mix that will close the post-2027 operating gap.",
+    "items": [
+      {
+        "scenario_label": "TTC operating gap absent New Deal renewal",
+        "range_or_value": "$379 million in 2027 and $145 million in 2028",
+        "citation": { "tier": "T2", "label": "TorontoToday, TTC board passes $3B budget but 2027 will bring more money trouble, December 2025", "url": "https://www.torontotoday.ca/local/transportation-infrastructure/ttc-budget-board-passes-3-billion-2027-looming-money-crunch-11709887" },
+        "notes": "Per TTC budget documents and City of Toronto 2026 TTC Operating Budget Notes."
+      },
+      {
+        "scenario_label": "Toronto commercial parking levy gross revenue",
+        "range_or_value": "$100 million to $150 million annually",
+        "citation": { "tier": "T1", "label": "City of Toronto CFO, Update on the Implementation of a Commercial Parking Levy, January 17, 2025", "url": "https://www.toronto.ca/legdocs/mmis/2025/ex/bgrd/backgroundfile-252271.pdf" },
+        "notes": "Range reflects City staff and external consultants (KPMG, Access Planning)."
+      },
+      {
+        "scenario_label": "Toronto MLTT luxury-tier expansion",
+        "range_or_value": "$13.8 million incremental in 2026, against a luxury-tier total near $152 million",
+        "citation": { "tier": "T2", "label": "Toronto Life, Chow wants to go after luxury homes with a juiced-up Land Transfer Tax, December 2025", "url": "https://torontolife.com/city/mayor-olivia-chow-land-transfer-tax-luxury-homes-election-2026/" }
+      }
+    ]
+  },
+  "time_horizon": "Operating-funding effects materialize on a one to three year horizon: the New Deal expiry in 2027 forces a financing decision in the 2027 and 2028 budgets, while revenue tools that require provincial enabling (cordon pricing, payroll-style mobility taxes) typically take three to seven years from authorization to first revenue based on the New York and London experiences.",
+  "meta": {
+    "last_reviewed": "2026-05-04",
+    "next_review": "2026-06-01"
+  }
+}
