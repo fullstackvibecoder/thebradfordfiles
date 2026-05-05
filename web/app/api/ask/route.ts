@@ -4,7 +4,26 @@ import { AGENT_SYSTEM_PROMPT } from "@/lib/agent/system-prompt";
 import { TOOL_SCHEMAS, AGENT_MODEL } from "@/lib/agent/tool-schemas";
 import { verifyTurnstile } from "@/lib/agent/turnstile";
 import * as tools from "@/lib/agent/tools";
+import { listCandidates } from "@/lib/agent/data-loader";
 import { validateCard, containsEmDash, type AnyCard } from "@/lib/card-types";
+
+function enrichComparisonCard(card: AnyCard): AnyCard {
+  if (card.type !== "comparison") return card;
+  const candidatesIndex = new Map(listCandidates().map(c => [c.slug, c]));
+  return {
+    ...card,
+    candidates: card.candidates.map(c => {
+      const ref = candidatesIndex.get(c.slug);
+      if (!ref) return c;
+      return {
+        ...c,
+        record_count: c.record_count ?? ref.record_count ?? 0,
+        consistency_label: c.consistency_label ?? ref.consistency_dot ?? "Records noted",
+        consistency_dot: c.consistency_dot ?? (ref.consistency_dot as "green" | "yellow" | "red" | "gray" | undefined) ?? "gray",
+      };
+    }),
+  };
+}
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -79,7 +98,7 @@ export async function POST(req: Request) {
           if (use.name === "emit_card") {
             const card = validateCard(use.input);
             if (card && !containsEmDash(card)) {
-              finalCard = card;
+              finalCard = enrichComparisonCard(card);
             } else {
               finalCard = { ...FALLBACK_CARD, query_restated: query };
             }

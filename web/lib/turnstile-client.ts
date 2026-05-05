@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     turnstile?: {
-      render: (el: HTMLElement, options: { sitekey: string; size: string; callback: (t: string) => void; "error-callback"?: () => void }) => void;
+      render: (el: HTMLElement, options: { sitekey: string; size?: "compact" | "flexible" | "normal"; appearance?: "always" | "execute" | "interaction-only"; callback: (t: string) => void; "error-callback"?: () => void }) => void;
     };
   }
 }
@@ -31,7 +31,8 @@ export async function getTurnstileToken(siteKey: string | undefined): Promise<st
       document.body.appendChild(ctr);
       window.turnstile.render(ctr, {
         sitekey: siteKey,
-        size: "invisible",
+        size: "flexible",
+        appearance: "interaction-only",
         callback: (token: string) => resolve(token),
         "error-callback": () => resolve(""),
       });
