@@ -31,8 +31,8 @@ export function ComparisonCard({ card, onFollowUp }: { card: ComparisonCardType;
             <div className="font-sans font-semibold text-[16px] leading-[1.2] text-ink tracking-tight mb-1.5">{c.display_name}</div>
             <div className="flex items-center gap-2 font-sans text-[11.5px] text-muted">
               <span className={`inline-block w-2 h-2 rounded-full ${DOT_COLORS[c.consistency_dot] ?? DOT_COLORS.gray}`} />
-              <span>{c.consistency_label}.</span>
-              <span className="text-[#999]">{c.record_count.toLocaleString()} records.</span>
+              <span>{c.consistency_label ?? "Records noted"}.</span>
+              <span className="text-[#999]">{(c.record_count ?? 0).toLocaleString()} records.</span>
             </div>
           </div>
         ))}
@@ -63,8 +63,8 @@ export function ComparisonCard({ card, onFollowUp }: { card: ComparisonCardType;
           <div key={c.slug} className={`px-5 py-4 ${i < cols - 1 ? "border-r border-[#f3f1ed]" : ""}`}>
             <div className="label mb-2.5">Key positions</div>
             <ul className="pl-[18px] list-disc font-sans text-[12.5px] leading-[1.6] text-[#3a3a35] space-y-1">
-              {c.key_positions.map((p, j) => (
-                <li key={j}>{p.stance} {p.citations.length > 0 && <span className="font-mono text-accent text-[10.5px]">[{p.citations[0].slice(0, 6)}]</span>}</li>
+              {(c.key_positions ?? []).map((p, j) => (
+                <li key={j}>{p.stance} {(p.citations?.length ?? 0) > 0 && <span className="font-mono text-accent text-[10.5px]">[{p.citations[0].slice(0, 6)}]</span>}</li>
               ))}
             </ul>
           </div>
@@ -76,7 +76,7 @@ export function ComparisonCard({ card, onFollowUp }: { card: ComparisonCardType;
           <div key={c.slug} className={`px-5 py-4 ${i < cols - 1 ? "border-r border-[#f3f1ed]" : ""}`}>
             <div className="label mb-2.5">Council votes</div>
             <div className="font-sans text-[12.5px] leading-[1.6] text-[#3a3a35] space-y-1.5">
-              {c.council_votes.map((v, j) => (
+              {(c.council_votes ?? []).map((v, j) => (
                 <div key={j}><strong>{v.vote}</strong> on {v.agenda_item} {v.title}</div>
               ))}
             </div>
@@ -87,7 +87,7 @@ export function ComparisonCard({ card, onFollowUp }: { card: ComparisonCardType;
       <div className="px-5 py-4 border-b border-[#f3f1ed]">
         <div className="label mb-2.5">Evidence</div>
         <div className="flex gap-1.5 flex-wrap">
-          {card.candidates.flatMap(c => c.evidence).map((s, i) => <StampPill key={i} stamp={s} />)}
+          {card.candidates.flatMap(c => c.evidence ?? []).map((s, i) => <StampPill key={i} stamp={s} />)}
         </div>
       </div>
 

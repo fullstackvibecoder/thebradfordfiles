@@ -11,11 +11,11 @@ export function RecordTrailCard({ card, onFollowUp }: { card: RecordTrailCardTyp
         {card.entries.map((e, i) => (
           <div key={i} className="relative">
             <div className="absolute -left-[18px] top-1 w-2 h-2 rounded-full bg-accent" />
-            <div className="font-mono text-[10.5px] uppercase tracking-label text-muted mb-1">{e.date.slice(0, 10)} . {e.label}</div>
+            <div className="font-mono text-[10.5px] uppercase tracking-label text-muted mb-1">{(e.date ?? "").slice(0, 10)} . {e.label}</div>
             <p className="font-serif text-[13px] leading-[1.65] text-[#2a2a28]">{e.body}</p>
-            {e.evidence.length > 0 && (
+            {(e.evidence?.length ?? 0) > 0 && (
               <div className="flex gap-1.5 flex-wrap mt-2">
-                {e.evidence.map((s, j) => <StampPill key={j} stamp={s} />)}
+                {(e.evidence ?? []).map((s, j) => <StampPill key={j} stamp={s} />)}
               </div>
             )}
           </div>

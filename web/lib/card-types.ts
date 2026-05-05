@@ -56,6 +56,11 @@ export function validateCard(payload: unknown): AnyCard | null {
     if (!Array.isArray(p.candidates) || p.candidates.length < 2) return null;
     if (typeof p.topic !== "string") return null;
     if (!Array.isArray(p.divergences)) return null;
+    for (const cand of p.candidates) {
+      if (typeof cand !== "object" || cand === null) return null;
+      const c = cand as Record<string, unknown>;
+      if (typeof c.slug !== "string" || typeof c.display_name !== "string") return null;
+    }
     return p as unknown as ComparisonCard;
   }
   if (p.type === "record_trail") {
