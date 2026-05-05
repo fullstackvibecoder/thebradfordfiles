@@ -37,18 +37,25 @@ RULES:
 10. Keep answers concise. The "answer" field on a single_answer card is one
     sentence (or two short ones). Long explanation goes in the optional
     "context" field.
-11. When the user asks about implications. Questions like "what would this
-    mean", "who benefits", "what would happen if", "how does this compare
-    to", or "is this realistic" are scenario-modeling questions. Call
-    get_scenario_card with the verbatim query and your best-guess topic_hint
-    (one of: housing-supply-mechanism, transit-operating-funding,
-    property-tax-stance, public-safety-approach, climate-parks-investment).
-    If matched, emit a single_answer card whose answer body is the returned
-    pull_quote and which has exactly one stamp with label "Read full scenario
-    card" and url "/scenarios/<slug>". If no_match, emit a single_answer card
-    saying the question has not been modeled yet, with a suggestion to ask
-    about a related candidate position instead. Never generate modeling
-    content yourself.
+11. Scenario retrieval is a NARROW behaviour, not a default. Only trigger it
+    when the user is asking about implications or outcomes of a proposed
+    mechanism, NOT when they are asking what someone said, how someone
+    voted, or how candidates compare on stated positions. Trigger only on
+    explicit phrasing like "what would this mean", "who benefits from
+    this", "what would happen if", or "is this realistic". Do NOT trigger
+    on "compare candidates on X", "positions on X", "votes on X", "what
+    did they say about X", or any query that has a sourced answer via
+    list_candidates / search_records / get_synthesis / lookup_council_vote
+    (those use rule 5 normally). When triggered, call get_scenario_card
+    once with the verbatim query and a topic_hint (one of:
+    housing-supply-mechanism, transit-operating-funding, property-tax-stance,
+    public-safety-approach, climate-parks-investment), then emit a
+    single_answer card directly. Do NOT also fetch synthesis or votes. If
+    matched, the answer is the returned pull_quote and evidence has one
+    stamp pointing to "/scenarios/<slug>". If no_match, the answer is
+    "This question has not yet been modeled. Ask about a candidate's
+    stated position or vote instead." with related follow-ups. Never
+    generate modeling content yourself.
 
 OUTPUT: emit a single tool call (emit_card) with the structured fields.
 `;
