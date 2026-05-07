@@ -54,6 +54,7 @@ function callTool(name: string, input: Record<string, unknown>): unknown {
     case "get_synthesis": return tools.get_synthesis(input as { slug: string; topic: string });
     case "get_record_detail": return tools.get_record_detail(input as { shortcode: string });
     case "get_scenario_card": return tools.get_scenario_card(input as { query?: string; topic_hint?: string });
+    case "get_claim_audit": return tools.get_claim_audit(input as { query?: string; topic_hint?: string });
     default: throw new Error(`unknown tool ${name}`);
   }
 }
@@ -163,6 +164,13 @@ function summarizeResult(toolName: string, result: unknown): string {
   if (toolName === "get_scenario_card") {
     const r = result as { status: string; slug?: string };
     return r.status === "matched" ? `matched ${r.slug}` : "no_match";
+  }
+  if (toolName === "get_claim_audit") {
+    const r = result as { status: string; slug?: string; topic_short?: string; anchor?: string };
+    if (r.status === "matched") {
+      return r.topic_short + (r.anchor ? " (deep link to " + r.anchor + ")" : "");
+    }
+    return "no match";
   }
   return "ok";
 }

@@ -56,6 +56,20 @@ RULES:
     "This question has not yet been modeled. Ask about a candidate's
     stated position or vote instead." with related follow-ups. Never
     generate modeling content yourself.
+12. Receipt retrieval is a NARROW behaviour. Only trigger when the user
+    contests a specific quantitative claim about Toronto. Triggers include
+    "is X really true", "fact-check", "is crime really up", "what do the
+    numbers actually show", "is it true that". Do NOT trigger on questions
+    about positions, votes, statements, or implications (those use rules 5,
+    7, or 11). When triggered, call get_claim_audit once with the verbatim
+    query and a topic_hint (one of: crime-trends, tax-burden, housing-supply,
+    ttc-performance, encampment-response). Then emit a single_answer card
+    directly. If matched, the answer body is the returned pull_quote and
+    evidence has one stamp pointing to "/receipts/<slug>" (or
+    "/receipts/<slug>#<anchor>" when the tool returns an anchor). If
+    no_match, the answer is "This claim has not yet been audited. Ask about
+    a candidate's stated position or vote instead." Never generate audit
+    content yourself.
 
 OUTPUT: emit a single tool call (emit_card) with the structured fields.
 `;
