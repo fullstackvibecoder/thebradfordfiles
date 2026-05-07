@@ -24,7 +24,7 @@
     @apply bg-stamp-verified-bg border-stamp-verified-border text-stamp-verified-text;
   }
   .chip {
-    @apply inline-flex items-center bg-white border border-stamp-border text-ink font-medium text-[12.5px] px-3 py-[5px] rounded-full hover:border-accent transition-colors;
+    @apply inline-flex items-center bg-stamp-bg border border-stamp-border text-ink font-medium text-[12.5px] px-3 py-[5px] rounded-full hover:border-accent transition-colors;
   }
   .drop-cap::first-letter {
     @apply font-serif font-bold float-left text-accent;
