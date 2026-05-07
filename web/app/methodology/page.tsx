@@ -48,6 +48,21 @@ export default function Methodology() {
       <p>
         The chat agent retrieves curated cards. It does not generate modeling content at query time. When a question does not match any curated card, the agent says so and the question logs to an editorial backlog. New cards are reviewed before publish, not auto-generated. When the underlying literature does not support a confident singular projection, the card says so explicitly rather than fabricating one.
       </p>
+
+      <h2>Receipts</h2>
+      <p>
+        Some pages on this site audit specific verbatim claims about Toronto against Toronto Open Data. Receipts live at <a href="/receipts">/receipts</a>. Each one quotes the verbatim claim with attribution and a link to the primary source, lays out the data with caveats, and explicitly acknowledges what the data does not settle.
+      </p>
+      <h3>Editorial discipline (receipts)</h3>
+      <ul>
+        <li><strong>Verbatim only.</strong> No paraphrasing. Every claim quoted exactly as said, with a primary-source URL.</li>
+        <li><strong>Time-bounded.</strong> Claims dated 2024-01-01 or later, within the active 2026 campaign window.</li>
+        <li><strong>Attribution-balanced.</strong> The corpus includes claims from each candidate in the race.</li>
+        <li><strong>No editorial commentary in the claim block.</strong> The receipt presents the data and lets the data speak.</li>
+        <li><strong>Honest about limits.</strong> When data cannot answer the underlying question (subjective experience, perceived quality), the receipt says so explicitly.</li>
+      </ul>
+      <h3>Source-tier system (receipts)</h3>
+      <p>Receipts use the same four-tier source system as scenario cards (T1 primary government data, T2 independent analysis, T3 peer-reviewed academic, T4 in-house extrapolation). Each data anchor inside a receipt carries a tier badge.</p>
     </StaticPage>
   );
 }
