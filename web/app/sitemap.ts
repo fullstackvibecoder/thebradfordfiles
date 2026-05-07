@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listScenarioSlugs } from "@/lib/scenario-loader";
+import { listReceiptSlugs } from "@/lib/receipt-loader";
 
 const ORIGIN = "https://www.mayoralrecord.com";
 
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: ORIGIN + "/candidates/bradford", lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: ORIGIN + "/candidates/chow", lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: ORIGIN + "/scenarios", lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: ORIGIN + "/receipts", lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
   const scenarioEntries: MetadataRoute.Sitemap = listScenarioSlugs().map((slug) => ({
     url: ORIGIN + "/scenarios/" + slug,
@@ -24,5 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
-  return [...staticEntries, ...scenarioEntries];
+  const receiptEntries: MetadataRoute.Sitemap = listReceiptSlugs().map((slug) => ({
+    url: ORIGIN + "/receipts/" + slug,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+  return [...staticEntries, ...scenarioEntries, ...receiptEntries];
 }
