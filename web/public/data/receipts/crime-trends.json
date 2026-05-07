@@ -30,7 +30,7 @@
         "sub_section_anchor": "auto-theft-trend",
         "sub_claim": "Auto theft trend in Toronto, 2018 to 2025",
         "finding": "Auto theft surged from 2021 to a 2023 peak, then fell roughly 23 percent in 2024 and an additional decline in 2025. Year to date 2025 totals are roughly 43 percent below the 2023 peak.",
-        "metric": "2023: 12,501 reported auto thefts (peak). 2024: 9,570 (down ~23 percent). 2025 (through Dec. 21): 7,044 (tracking ~44 percent below 2023 peak).",
+        "metric": "7675 reported auto thefts in 2024",
         "source": {
           "tier": "T1",
           "label": "Toronto Police Service Public Safety Data Portal, Auto Theft dashboard",
@@ -38,13 +38,20 @@
           "retrieved": "2025-12-26"
         },
         "caveats": "2024 and 2025 totals remain well above 2014 to 2019 levels (which sat below 4,000 per year). The decline is real, the absolute level is still elevated.",
-        "as_of": "2025-12-26"
+        "as_of": "2022-05-03",
+        "pull_config": {
+          "source": "tps_auto_theft_annual",
+          "params": {
+            "year": 2024
+          },
+          "format": "{value} reported auto thefts in {year}"
+        }
       },
       {
         "sub_section_anchor": "homicide-trend",
         "sub_claim": "Homicide trend in Toronto, 2018 to 2025",
         "finding": "2024 homicides hit an elevated 84 to 86 level. 2025 reversed that sharply, finishing at the lowest reported homicide count in roughly four decades.",
-        "metric": "2018: 96 (per TPS Annual Statistical Report). 2023: 73. 2024: 84 to 86. 2025 (through Dec. 30): 42 (lowest since 1986, per TPS-cited reporting).",
+        "metric": "85 reported homicides in 2024",
         "source": {
           "tier": "T1",
           "label": "Toronto Police Service Homicide data; corroborating Global News, \"Toronto homicides on pace for record low,\" 2025-12",
@@ -52,13 +59,20 @@
           "retrieved": "2025-12-30"
         },
         "caveats": "Year-over-year homicide counts are volatile in any single city. Multi-year averages are more stable. 2024's spike shows the noise.",
-        "as_of": "2025-12-30"
+        "as_of": "2022-10-11",
+        "pull_config": {
+          "source": "tps_homicide_annual",
+          "params": {
+            "year": 2024
+          },
+          "format": "{value} reported homicides in {year}"
+        }
       },
       {
         "sub_section_anchor": "shootings-trend",
         "sub_claim": "Shooting incidents in Toronto, 2023 to 2025",
         "finding": "Shootings rose sharply from 2023 to 2024, then fell sharply in 2025. The 2025 total is below the 2023 baseline.",
-        "metric": "2023: 345 shooting incidents. 2024: 461 incidents (43 deaths, 120 injuries). 2025 (through Dec. 21): 257 incidents (19 deaths, 98 injuries), a year-over-year drop of ~43 percent.",
+        "metric": "462 reported shooting incidents in 2024",
         "source": {
           "tier": "T1",
           "label": "Toronto Police Service Public Safety Data Portal, Shootings dashboard; corroborating CP24, \"Toronto saw a rash of brazen crime in 2024,\" 2025-01-02",
@@ -66,7 +80,14 @@
           "retrieved": "2025-12-21"
         },
         "caveats": "Shooting victims (deaths plus injuries) is a separate metric from incident count and tells a slightly different story.",
-        "as_of": "2025-12-21"
+        "as_of": "2021-03-23",
+        "pull_config": {
+          "source": "tps_shooting_annual",
+          "params": {
+            "year": 2024
+          },
+          "format": "{value} reported shooting incidents in {year}"
+        }
       },
       {
         "sub_section_anchor": "crime-severity-index",
