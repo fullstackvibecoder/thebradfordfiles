@@ -1,0 +1,129 @@
+{
+  "slug": "ttc-performance",
+  "topic": "TTC ridership, safety, and service performance",
+  "topic_short": "TTC performance",
+  "pull_quote": "\"In a world where this council has decided to increase service levels, not increase fares, and we're shipping out 10 per cent of our revenue to fare evasion, I would say it's time we get serious on that.\" Councillor Brad Bradford, quoted by CBC News, March 19, 2024.",
+  "claims": [
+    {
+      "headline": "We need to get better at fare enforcement... In a world where this council has decided to increase service levels, not increase fares, and we're shipping out 10 per cent of our revenue to fare evasion, I would say it's time we get serious on that.",
+      "attribution": "Brad Bradford, Toronto City Councillor (Ward 19, Beaches East York), member of TTC Audit and Risk Management Committee, 2024-03-19",
+      "source": {
+        "attribution": "CBC News, coverage of TTC Audit and Risk Management Committee meeting reviewing the 2023 Fare Evasion Study",
+        "url": "https://www.cbc.ca/news/canada/toronto/ttc-fare-evasion-study-lost-revenue-cost-1.7151637",
+        "retrieved": "2026-05-04"
+      }
+    },
+    {
+      "headline": "We need to properly maintain the TTC. But people still need to be able to get around Toronto. A 54% increase in full weekend subway shutdowns seems excessive, and will just add to the daily frustration so many of us face when we take transit.",
+      "attribution": "Brad Bradford on X, 2025-01-20",
+      "source": {
+        "attribution": "Brad Bradford on X (@BradMBradford), responding to TTC's 2025 weekend subway closure plan",
+        "url": "https://x.com/BradMBradford/status/1881470468441706673",
+        "retrieved": "2026-05-04"
+      }
+    },
+    {
+      "headline": "People across Toronto need and want more frequent and reliable transit service, and I am thrilled to say we are delivering just that.",
+      "attribution": "Olivia Chow, Mayor of Toronto, TTC service expansion announcement, 2024-08-27",
+      "source": {
+        "attribution": "TTC News Release, \"TTC further increasing service, strengthening connections, improving reliability\"",
+        "url": "https://www.ttc.ca/news/2024/August/TTC-further-increasing-service",
+        "retrieved": "2026-05-04"
+      }
+    }
+  ],
+  "receipt": {
+    "intro": "Bradford and Chow agree the TTC matters. They disagree on whether the system is failing or recovering. Bradford frames the TTC as bleeding revenue to fare evasion and burdened by excessive weekend shutdowns. Chow frames the system as a public good that requires investment, fare freezes, and expanded staff. The data below comes from TTC primary reports, the 2023 Fare Evasion Study, the City of Toronto Community Safety dashboard, and a Toronto Metropolitan University Centre for Urban Research analysis comparing Canadian transit systems.",
+    "anchors": [
+      {
+        "sub_section_anchor": "ridership-2024",
+        "sub_claim": "2024 TTC ridership grew, but stayed below 2019 levels.",
+        "finding": "The TTC reported 420 million customer trips in 2024, an increase of 23.5 million rides (+5.9%) over 2023. Mode breakdown: 204 million bus, 181 million subway, 35 million streetcar. By comparison, the TTC carried roughly 525 million rides in 2019. National transit data placed combined Canadian urban transit ridership in 2024 at 16% below the 2019 peak.",
+        "metric": "2024 TTC ridership: 420 million (+5.9% YoY). 2019 baseline: ~525 million. Mode split 2024: 204M bus, 181M subway, 35M streetcar.",
+        "source": {
+          "tier": "T1",
+          "label": "TTC, \"34 billion rides and counting. the TTC reaches new service milestone,\" 2025-04-10",
+          "url": "https://www.ttc.ca/news/2025/April/34-billion-rides-and-counting",
+          "retrieved": "2025-04-10"
+        },
+        "caveats": "Ridership recovery still trails the 2019 peak by roughly 20 percent.",
+        "as_of": "2025-04-10"
+      },
+      {
+        "sub_section_anchor": "ridership-peer-cities",
+        "sub_claim": "Toronto sat between Montreal and Vancouver on 2024 ridership growth, behind Calgary.",
+        "finding": "2024 year-over-year ridership growth (independent analysis using Statistics Canada and agency data): TTC +8%, Montreal STM +8.7%, Vancouver TransLink +3.2%, Calgary Transit +14% (CTrain at 110% of pre-pandemic). Quebec and Ontario together remained at roughly 81% of 2019 levels in 2024.",
+        "metric": "2024 ridership growth: TTC +8%, Montreal +8.7%, Vancouver +3.2%, Calgary +14%. Ontario plus Quebec at ~81% of 2019.",
+        "source": {
+          "tier": "T2",
+          "label": "Toronto Metropolitan University, Centre for Urban Research and Land Development, \"GO Outpaces TTC in 2024 and Early 2025,\" 2025-06-17",
+          "url": "https://www.torontomu.ca/centre-urban-research-land-development/blog/blogentry99-canada-transit-trips-recovering-at-varying-rates-go-outpaces-ttc/",
+          "retrieved": "2025-06-17"
+        },
+        "caveats": "Different agencies use slightly different ridership counting methodologies, so growth rates are directionally comparable but not perfectly normalized.",
+        "as_of": "2025-06-17"
+      },
+      {
+        "sub_section_anchor": "fare-evasion-2023",
+        "sub_claim": "Fare evasion roughly doubled from 2018 to 2023, hitting 11.9%.",
+        "finding": "The 2023 Fare Evasion Study (April to October 2023 field audits) found an overall weighted evasion rate of 11.9%, up from approximately 5.4% in 2018. Mode rates: streetcar 29.6%, bus 12.9%, subway stations 6.3%. Estimated lost revenue: $123.8 million in 2023, plus an additional $17.1 million from underpaid cash fares.",
+        "metric": "Overall weighted evasion: 11.9% (2023) vs ~5.4% (2018). Mode: streetcar 29.6%, bus 12.9%, subway 6.3%. Lost revenue: $123.8M plus $17.1M underpaid cash.",
+        "source": {
+          "tier": "T1",
+          "label": "Toronto Transit Commission, 2023 Fare Evasion Study Overview, presented to TTC Audit and Risk Management Committee, 2024-03-19",
+          "url": "https://cdn.ttc.ca/-/media/Project/TTC/DevProto/Documents/Home/Public-Meetings/Audit-and-Risk-Management/2024/Mar-19/1_2023_Fare_Evasion_Study_Overview.pdf",
+          "retrieved": "2024-03-19"
+        },
+        "caveats": "The 11.9% rate includes both deliberate evasion and unintentional non-payment (broken gates, malfunctioning Presto readers). The 2023 study estimated a portion is recoverable through gate hardening rather than enforcement.",
+        "as_of": "2024-03-19"
+      },
+      {
+        "sub_section_anchor": "transit-safety-incidents",
+        "sub_claim": "Reported offences against TTC customers trended down through 2024 and into 2025.",
+        "finding": "The TTC normalizes safety incidents per million customer boardings. The rate stood at 1.82 per million boardings in May 2023. By April 2025 the rate was 1.77 per million boardings, and 1.71 per million boardings in May 2025. The Community Safety and Wellbeing dashboard run jointly by the City of Toronto and TTC tracks an aggregate declining trend over the two years to mid-2025, alongside expanded crisis-response staffing.",
+        "metric": "Offences against TTC customers per million boardings: May 2023 1.82; April 2025 1.77; May 2025 1.71.",
+        "source": {
+          "tier": "T1",
+          "label": "TTC Monthly KPI Reports and the City of Toronto Community Safety and Wellbeing on Transit dashboard",
+          "url": "https://www.toronto.ca/city-government/data-research-maps/transit-community-safety-data/",
+          "retrieved": "2025-06-30"
+        },
+        "caveats": "Measured incident rate is not the same as customer perception of safety. Perception surveys are tracked separately and can lag improvements in measured rates.",
+        "as_of": "2025-06-30"
+      },
+      {
+        "sub_section_anchor": "on-time-performance",
+        "sub_claim": "On-time performance fell short of the 90% target through 2024.",
+        "finding": "TTC publishes service-quality metrics against an internal 90% on-time threshold. Through 2024, bus on-time performance ran in the low to mid-80% range, and streetcar on-time performance stayed below 70% for much of the year. The on-time definition counts a vehicle as on time if it leaves an end terminal within a window 59 seconds early to 5 minutes late, which TTCriders and other advocates note does not capture mid-route bunching or gaps.",
+        "metric": "Internal target 90% on-time. 2024 bus OTP: low to mid-80% range. 2024 streetcar OTP: below 70% for much of the year. Definition: leaves end terminal between -59s and +5m.",
+        "source": {
+          "tier": "T2",
+          "label": "TTCriders, \"Lucky or late: A report on TTC metrics vs. rider experience,\" with underlying T1 data from TTC Monthly KPI Reports",
+          "url": "https://www.ttcriders.ca/bunchingreport",
+          "retrieved": "2025-06-30"
+        },
+        "caveats": "TTC on-time metrics use end-terminal departure windows, not mid-route timing. Rider experience of bunching and gaps is not directly captured in the published charter metrics.",
+        "as_of": "2025-06-30"
+      },
+      {
+        "sub_section_anchor": "weekend-closures-2025",
+        "sub_claim": "Weekend full-line subway closures rose 54% in 2025 versus 2024.",
+        "finding": "The TTC's 2025 maintenance plan called for 38 full-weekend closures delivered across 28 weekends, by closing both Line 1 and Line 2 segments on the same weekends. TTC staff confirmed in January 2025 that 2025 would see \"even more planned subway closures\" than 2024 to advance state-of-good-repair work, a level Bradford characterized as a 54% increase in full weekend shutdowns.",
+        "metric": "38 planned full-weekend closures across 28 weekends in 2025 (Line 1 plus Line 2 same-weekend closures). 54% YoY increase versus 2024.",
+        "source": {
+          "tier": "T1",
+          "label": "TTC, Subway and Streetcar State of Good Repair 2025 plan; corroborating CP24, \"TTC says even more planned subway closures expected in 2025,\" 2025-01-20",
+          "url": "https://www.toronto.ca/legdocs/mmis/2025/ttc/bgrd/backgroundfile-252236.pdf",
+          "retrieved": "2025-01-20"
+        },
+        "caveats": "Closures are concentrated in shoulder-season weekends and paired with shuttle bus replacement service. The maintenance is funded through the state-of-good-repair capital program and was advanced to address deferred work from prior years.",
+        "as_of": "2025-01-20"
+      }
+    ]
+  },
+  "what_data_cannot_settle": "Whether the TTC is \"unsafe\" is partly a measured rate (offences per million boardings, declining) and partly a perception question. The Community Safety dashboard tracks customer perception surveys separately, and perception can lag improvements in measured incident rates. Causal attribution for the 2024 ridership rebound is contested. Service increases (TTC added bus service hours in May and September 2024), the Province of Ontario \"One Fare\" launch (February 2024 eliminating double fares between TTC, GO, and 905 systems), continued return-to-office migration, and population growth all operated simultaneously. The 11.9% fare evasion rate measured in 2023 includes both deliberate evasion and unintentional non-payment. TTC on-time performance metrics use end-terminal departure windows, not mid-route timing. Rider experience of bunching and gaps is not directly captured in the published charter metrics.",
+  "meta": {
+    "last_reviewed": "2026-05-07",
+    "next_review": "2026-06-07"
+  }
+}
