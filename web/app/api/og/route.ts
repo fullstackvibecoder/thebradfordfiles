@@ -3,23 +3,33 @@ import { getScenario } from "@/lib/scenario-loader";
 export const runtime = "nodejs";
 
 const COLORS = {
-  navy: "#0d2f5c", red: "#da291c", white: "#ffffff",
-  green: "#1a5b1a", yellow: "#b58a32", redDot: "#b50909", gray: "#999",
+  bg: "#15110d",
+  ink: "#e8e3d5",
+  muted: "#8a8275",
+  accent: "#c4923a",
+  rule: "#2a2520",
+  green: "#3a8a3a",
+  yellow: "#d4a548",
+  redDot: "#d44848",
+  gray: "#8a8275",
 };
 
 const DOC = {
-  bg: "#fbfbf9", ink: "#1c1c1c", muted: "#5a5a55", accent: "#a07223",
+  bg: "#15110d",
+  ink: "#e8e3d5",
+  muted: "#8a8275",
+  accent: "#c4923a",
 };
 
 function frame(children: any) {
-  return { type: "div", props: { style: { display: "flex", flexDirection: "column", width: "1200px", height: "630px", background: COLORS.navy, color: COLORS.white, padding: "60px 80px", fontFamily: "system-ui, sans-serif" }, children } };
+  return { type: "div", props: { style: { display: "flex", flexDirection: "column", width: "1200px", height: "630px", background: COLORS.bg, color: COLORS.ink, padding: "60px 80px", fontFamily: "system-ui, sans-serif" }, children } };
 }
 
 function landingCard() {
   return frame([
-    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.red, marginBottom: 16 }, children: "Public Record . The 416" } },
-    { type: "div", props: { style: { fontSize: 96, fontWeight: 700, lineHeight: 1.0, marginBottom: 24 }, children: "The Mayoral Record" } },
-    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.3, opacity: 0.85, maxWidth: 1000 }, children: "An independent, sourced record of Toronto's 2026 mayoral race." } },
+    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.accent, marginBottom: 16 }, children: "Public Record . The 416" } },
+    { type: "div", props: { style: { fontSize: 96, fontWeight: 700, lineHeight: 1.0, marginBottom: 24, color: COLORS.ink }, children: "The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.3, color: COLORS.ink, opacity: 0.85, maxWidth: 1000 }, children: "An independent, sourced record of Toronto's 2026 mayoral race." } },
   ]);
 }
 
@@ -27,28 +37,28 @@ function candidateCard(name: string, recordCount: number, dotColor: string, file
   const dotMap: Record<string, string> = { green: COLORS.green, yellow: COLORS.yellow, red: COLORS.redDot };
   const dotHex = dotMap[dotColor] ?? COLORS.gray;
   return frame([
-    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.red, marginBottom: 16 }, children: "The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.accent, marginBottom: 16 }, children: "The Mayoral Record" } },
     { type: "div", props: { style: { display: "flex", alignItems: "center", gap: 24, marginBottom: 24 }, children: [
-      { type: "div", props: { style: { fontSize: 88, fontWeight: 700, lineHeight: 1.0 }, children: filesLabel } },
+      { type: "div", props: { style: { fontSize: 88, fontWeight: 700, lineHeight: 1.0, color: COLORS.ink }, children: filesLabel } },
       { type: "div", props: { style: { width: 36, height: 36, borderRadius: 18, background: dotHex } } },
     ] } },
-    { type: "div", props: { style: { fontSize: 30, opacity: 0.9 }, children: `${name} . ${recordCount.toLocaleString()} sourced records` } },
+    { type: "div", props: { style: { fontSize: 30, color: COLORS.ink, opacity: 0.9 }, children: `${name} . ${recordCount.toLocaleString()} sourced records` } },
   ]);
 }
 
 function issuesCard() {
   return frame([
-    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.red, marginBottom: 16 }, children: "The Mayoral Record" } },
-    { type: "div", props: { style: { fontSize: 88, fontWeight: 700, lineHeight: 1.0, marginBottom: 24 }, children: "Issues & Agenda Gap" } },
-    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.3, opacity: 0.85, maxWidth: 1000 }, children: "Reader priority vs. candidate emphasis." } },
+    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.accent, marginBottom: 16 }, children: "The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 88, fontWeight: 700, lineHeight: 1.0, marginBottom: 24, color: COLORS.ink }, children: "Issues & Agenda Gap" } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.3, color: COLORS.ink, opacity: 0.85, maxWidth: 1000 }, children: "Reader priority vs. candidate emphasis." } },
   ]);
 }
 
 function answerCard(q: string) {
   return frame([
-    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.red, marginBottom: 16 }, children: "Answer . The Mayoral Record" } },
-    { type: "div", props: { style: { fontSize: 48, fontWeight: 700, lineHeight: 1.15, marginBottom: 24 }, children: q.slice(0, 180) } },
-    { type: "div", props: { style: { fontSize: 22, lineHeight: 1.3, opacity: 0.85 }, children: "An open record. Ask a question. Source the answer." } },
+    { type: "div", props: { style: { fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", color: COLORS.accent, marginBottom: 16 }, children: "Answer . The Mayoral Record" } },
+    { type: "div", props: { style: { fontSize: 48, fontWeight: 700, lineHeight: 1.15, marginBottom: 24, color: COLORS.ink }, children: q.slice(0, 180) } },
+    { type: "div", props: { style: { fontSize: 22, lineHeight: 1.3, color: COLORS.ink, opacity: 0.85 }, children: "An open record. Ask a question. Source the answer." } },
   ]);
 }
 
@@ -59,7 +69,7 @@ function docFrame(children: any) {
 function scenarioCard(topicShort: string, pullQuote: string, slug: string) {
   return docFrame([
     { type: "div", props: { style: { fontFamily: "ui-monospace, monospace", fontSize: 16, textTransform: "uppercase", letterSpacing: "0.12em", color: DOC.muted, marginBottom: 24 }, children: "Scenario . The Mayoral Record" } },
-    { type: "div", props: { style: { fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 32, letterSpacing: "-0.02em" }, children: topicShort } },
+    { type: "div", props: { style: { fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 32, letterSpacing: "-0.02em", color: DOC.ink }, children: topicShort } },
     { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 1000 }, children: pullQuote } },
     { type: "div", props: { style: { marginTop: "auto", fontFamily: "ui-monospace, monospace", fontSize: 14, color: DOC.muted, textTransform: "uppercase", letterSpacing: "0.1em" }, children: `mayoralrecord.com/scenarios/${slug}` } },
   ]);
@@ -68,7 +78,7 @@ function scenarioCard(topicShort: string, pullQuote: string, slug: string) {
 function scenariosIndexCard() {
   return docFrame([
     { type: "div", props: { style: { fontFamily: "ui-monospace, monospace", fontSize: 16, textTransform: "uppercase", letterSpacing: "0.12em", color: DOC.muted, marginBottom: 24 }, children: "Scenarios . The Mayoral Record" } },
-    { type: "div", props: { style: { fontSize: 80, fontWeight: 700, lineHeight: 1.05, marginBottom: 32, letterSpacing: "-0.02em" }, children: "Policy scenarios" } },
+    { type: "div", props: { style: { fontSize: 80, fontWeight: 700, lineHeight: 1.05, marginBottom: 32, letterSpacing: "-0.02em", color: DOC.ink }, children: "Policy scenarios" } },
     { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 980 }, children: "Curated, evidence-backed analysis of contested positions in the Toronto 2026 race." } },
   ]);
 }
