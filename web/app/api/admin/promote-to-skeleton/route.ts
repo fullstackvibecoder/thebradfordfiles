@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,12 +23,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "topic_required" }, { status: 400 });
   }
 
-  const dir = join(process.cwd(), "public", "data", "scenarios");
-  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-  const path = join(dir, body.slug + ".json");
-  if (existsSync(path)) {
-    return NextResponse.json({ error: "slug_exists", path }, { status: 409 });
-  }
+  const today = new Date().toISOString().slice(0, 10);
+  const nextReview = new Date(Date.now() + 14 * 86400_000).toISOString().slice(0, 10);
 
   const skeleton = {
     slug: body.slug,
@@ -42,10 +36,14 @@ export async function POST(req: Request) {
     status_quo: { summary: "Replace with current Toronto state.", existing_policy_stack: [], citations: [] },
     comparables: [],
     projections: { kind: "thin", rationale: "Literature does not support a confident singular projection on this question. The comparable-jurisdiction outcomes above are the closest defensible numerical anchors." },
-    meta: { last_reviewed: new Date().toISOString().slice(0, 10), next_review: new Date(Date.now() + 14 * 86400_000).toISOString().slice(0, 10) },
+    meta: { last_reviewed: today, next_review: nextReview },
     _skeleton: { source_query: body.query ?? null, generated: new Date().toISOString() },
   };
 
-  writeFileSync(path, JSON.stringify(skeleton, null, 2));
-  return NextResponse.json({ ok: true, path: "/public/data/scenarios/" + body.slug + ".json" });
+  return NextResponse.json({
+    ok: true,
+    target_path: "web/public/data/scenarios/" + body.slug + ".json",
+    instructions: "Vercel serverless functions cannot write to the filesystem. Save the `skeleton` field below to the target_path manually, then commit and deploy.",
+    skeleton,
+  });
 }
