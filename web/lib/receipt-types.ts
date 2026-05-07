@@ -16,6 +16,13 @@ export const ClaimBlockSchema = z.object({
 });
 export type ClaimBlock = z.infer<typeof ClaimBlockSchema>;
 
+export const PullConfigSchema = z.object({
+  source: z.string().min(1),
+  params: z.record(z.string(), z.union([z.string(), z.number()])).optional(),
+  format: z.string().min(1),
+});
+export type PullConfig = z.infer<typeof PullConfigSchema>;
+
 export const DataAnchorSchema = z.object({
   sub_section_anchor: z.string().regex(/^[a-z0-9-]+$/),
   sub_claim: z.string().min(1),
@@ -24,6 +31,7 @@ export const DataAnchorSchema = z.object({
   source: CitationSchema,
   caveats: z.string().optional(),
   as_of: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  pull_config: PullConfigSchema.optional(),
 });
 export type DataAnchor = z.infer<typeof DataAnchorSchema>;
 
