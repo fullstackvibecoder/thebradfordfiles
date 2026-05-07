@@ -37,13 +37,13 @@ export function SurfacedCards() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
         {cards.map((c, i) => (
-          <div key={i} className="bg-white border border-rule rounded-sm p-4">
+          <div key={i} className="bg-[#1c1813] border border-rule rounded-sm p-4">
             <div className="label mb-2">{cardLabel(c)}</div>
             <div className="font-sans font-semibold text-[14.5px] leading-[1.3] text-ink mb-2 tracking-tight">{cardTitle(c)}</div>
             {c.type === "synthesis" ? (
               <p className="font-serif text-[12.5px] leading-[1.6] text-ink drop-cap">{c.body}</p>
             ) : (
-              <p className="font-serif text-[12.5px] leading-[1.55] text-[#3a3a35]">{c.body}</p>
+              <p className="font-serif text-[12.5px] leading-[1.55] text-[#c8c2b0]">{c.body}</p>
             )}
           </div>
         ))}

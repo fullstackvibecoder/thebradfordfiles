@@ -17,18 +17,18 @@ export default function ScenariosIndexPage() {
 
   return (
     <main className="max-w-[920px] mx-auto px-4 py-10">
-      <header className="mb-8 pb-6 border-b border-[#1c1c1c1a]">
+      <header className="mb-8 pb-6 border-b border-[#ffffff15]">
         <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight mb-3">Policy scenarios</h1>
-        <p className="text-base leading-relaxed text-[#1c1c1c] max-w-[640px]">
+        <p className="text-base leading-relaxed text-[#e8e3d5] max-w-[640px]">
           Curated analysis of contested positions in the Toronto 2026 race. Each card surfaces who each candidate&apos;s mechanism reaches, what Toronto already does, and what comparable cities have shown. Every claim cites its source.
         </p>
-        <p className="font-mono text-xs uppercase tracking-wider text-[#5a5a55] mt-4">
+        <p className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mt-4">
           <a href="/methodology" className="underline">Methodology and source-tier system</a>
         </p>
       </header>
 
       {cards.length === 0 ? (
-        <p className="text-sm text-[#5a5a55] italic">No scenario cards published yet.</p>
+        <p className="text-sm text-[#8a8275] italic">No scenario cards published yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {cards.map((c) => (

@@ -21,7 +21,7 @@ export function CommandBar({ onSubmit, placeholder = "Ask about a candidate, a t
 
   return (
     <form onSubmit={handleSubmit} className="max-w-[640px] mx-auto px-8">
-      <div className="bg-white border border-stamp-border rounded p-3 flex items-center shadow-[0_1px_0_rgba(0,0,0,0.02)] focus-within:border-accent transition-colors">
+      <div className="bg-[#1c1813] border border-stamp-border rounded p-3 flex items-center shadow-[0_1px_0_rgba(0,0,0,0.02)] focus-within:border-accent transition-colors">
         <span className="text-accent mr-3 text-base">⌕</span>
         <input
           type="text"
@@ -29,7 +29,7 @@ export function CommandBar({ onSubmit, placeholder = "Ask about a candidate, a t
           onChange={e => setValue(e.target.value)}
           placeholder={placeholder}
           maxLength={500}
-          className="flex-1 outline-none bg-transparent text-[14px] placeholder:text-[#9a9a92]"
+          className="flex-1 outline-none bg-transparent text-[14px] text-ink placeholder:text-[#8a8275]"
         />
         <button
           type="submit"

@@ -64,29 +64,29 @@ export default function ScenarioRequestsPage() {
           placeholder="Admin shared secret"
           value={secret}
           onChange={(e) => setSecret(e.target.value)}
-          className="flex-1 border border-[#1c1c1c33] px-3 py-2 font-mono text-sm"
+          className="flex-1 border border-[#ffffff2a] px-3 py-2 font-mono text-sm"
         />
-        <button onClick={load} disabled={loading} className="px-4 py-2 bg-[#1c1c1c] text-[#fbfbf9] font-mono text-sm uppercase tracking-wider">
+        <button onClick={load} disabled={loading} className="px-4 py-2 bg-[#c4923a] text-[#15110d] font-mono text-sm uppercase tracking-wider">
           {loading ? "Loading..." : "Load"}
         </button>
       </div>
-      {error ? <p className="text-red-700 text-sm mb-4">Error: {error}</p> : null}
+      {error ? <p className="text-[#e88080] text-sm mb-4">Error: {error}</p> : null}
       {items === null ? (
-        <p className="text-sm text-[#5a5a55]">Enter the shared secret and click Load.</p>
+        <p className="text-sm text-[#8a8275]">Enter the shared secret and click Load.</p>
       ) : items.length === 0 ? (
-        <p className="text-sm text-[#5a5a55]">No unmatched queries logged yet.</p>
+        <p className="text-sm text-[#8a8275]">No unmatched queries logged yet.</p>
       ) : (
         <ul className="space-y-4">
           {items.map((item, i) => (
-            <li key={i} className="border border-[#1c1c1c33] p-4">
+            <li key={i} className="border border-[#ffffff2a] p-4">
               <p className="font-serif text-base mb-2">{item.query}</p>
-              <p className="font-mono text-xs uppercase tracking-wider text-[#5a5a55] mb-2">
+              <p className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mb-2">
                 {item.count}x . latest {item.latest}
               </p>
-              {item.reasonings[0] ? <p className="text-xs text-[#5a5a55] italic mb-3">Agent reasoning: {item.reasonings[0]}</p> : null}
+              {item.reasonings[0] ? <p className="text-xs text-[#8a8275] italic mb-3">Agent reasoning: {item.reasonings[0]}</p> : null}
               <button
                 onClick={() => promote(item)}
-                className="font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-[#a07223] text-[#a07223]"
+                className="font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-[#c4923a] text-[#c4923a]"
               >
                 Promote to skeleton
               </button>
