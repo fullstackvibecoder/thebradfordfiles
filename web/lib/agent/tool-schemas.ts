@@ -68,6 +68,21 @@ export const TOOL_SCHEMAS: Tool[] = [
     },
   },
   {
+    name: "get_claim_audit",
+    description: "Retrieve a curated receipt that audits a specific factual claim about Toronto against Toronto Open Data. Use when the user asks 'is X really true', 'fact-check', 'is crime really up', 'what do the numbers actually show', or any question that asks the truth of a quantitative claim about Toronto. Do NOT use for 'what is the candidate's position', 'how did they vote', 'what would happen if'. This tool returns curated reviewed receipts or a no-match response. Never generate audit content yourself.",
+    input_schema: {
+      type: "object",
+      required: ["query"],
+      properties: {
+        query: { type: "string", description: "The user's verbatim question" },
+        topic_hint: {
+          type: "string",
+          description: "Best-guess topic slug if recognisable: crime-trends, tax-burden, housing-supply, ttc-performance, encampment-response.",
+        },
+      },
+    },
+  },
+  {
     name: "emit_card",
     description: "Emit the final structured card payload as the answer. This is the terminal tool call.",
     input_schema: {
