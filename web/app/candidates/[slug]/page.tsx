@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { listCandidates, getDossier, getSynthesis } from "@/lib/agent/data-loader";
 import { DropCap } from "@/components/DropCap";
+import { CandidateStatStrip } from "@/components/CandidateStatStrip";
 
 const TOPIC_LABELS: Record<string, string> = {
   housing: "Housing",
@@ -40,7 +41,9 @@ export default async function CandidatePage({ params }: { params: Promise<{ slug
   return (
     <main className="max-w-[840px] mx-auto px-8 py-10">
       <h1 className="font-serif font-bold text-[28px] leading-[1.2] text-ink mb-1.5">{cand.display_name}</h1>
-      {cand.current_role && <p className="font-sans text-[13px] text-muted mb-6">{cand.current_role}</p>}
+      {cand.current_role && <p className="font-sans text-[13px] text-muted mb-2">{cand.current_role}</p>}
+
+      <CandidateStatStrip slug={slug} />
 
       <div className="space-y-8">
         {TOPICS.map(topic => {
