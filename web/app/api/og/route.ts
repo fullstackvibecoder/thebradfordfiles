@@ -1,5 +1,6 @@
 import { ImageResponse } from "@vercel/og";
 import { getScenario } from "@/lib/scenario-loader";
+import { getReceipt } from "@/lib/receipt-loader";
 export const runtime = "nodejs";
 
 const COLORS = {
@@ -83,6 +84,32 @@ function scenariosIndexCard() {
   ]);
 }
 
+const RED = "#c44848";
+
+function receiptHeader(label: string) {
+  return { type: "div", props: { style: { display: "flex", alignItems: "center", marginBottom: 24 }, children: [
+    { type: "div", props: { style: { display: "flex", fontFamily: "ui-monospace, monospace", fontSize: 14, textTransform: "uppercase", letterSpacing: "0.12em", color: RED, border: `1px solid ${RED}`, padding: "4px 10px", borderRadius: 2, marginRight: 16 }, children: "AUDITED" } },
+    { type: "div", props: { style: { display: "flex", fontFamily: "ui-monospace, monospace", fontSize: 14, textTransform: "uppercase", letterSpacing: "0.12em", color: DOC.muted }, children: label } },
+  ] } };
+}
+
+function receiptCard(topicShort: string, pullQuote: string, slug: string) {
+  return docFrame([
+    receiptHeader("Receipt . The Mayoral Record"),
+    { type: "div", props: { style: { fontSize: 64, fontWeight: 700, lineHeight: 1.1, marginBottom: 32, letterSpacing: "-0.02em", color: DOC.ink }, children: topicShort } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 1000 }, children: pullQuote } },
+    { type: "div", props: { style: { display: "flex", marginTop: "auto", fontFamily: "ui-monospace, monospace", fontSize: 14, color: DOC.muted, textTransform: "uppercase", letterSpacing: "0.1em" }, children: `mayoralrecord.com/receipts/${slug}` } },
+  ]);
+}
+
+function receiptsIndexCard() {
+  return docFrame([
+    receiptHeader("Receipts . The Mayoral Record"),
+    { type: "div", props: { style: { fontSize: 80, fontWeight: 700, lineHeight: 1.05, marginBottom: 32, letterSpacing: "-0.02em", color: DOC.ink }, children: "Receipts" } },
+    { type: "div", props: { style: { fontSize: 28, lineHeight: 1.4, color: DOC.ink, maxWidth: 980 }, children: "Verbatim attributed claims, audited against Toronto Open Data." } },
+  ]);
+}
+
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const type = url.searchParams.get("type") ?? "landing";
@@ -98,6 +125,19 @@ export async function GET(req: Request) {
   }
   if (type === "scenarios-index") {
     element = scenariosIndexCard();
+    return new ImageResponse(element, { width: 1200, height: 630 });
+  }
+  if (type === "receipt") {
+    const slug = url.searchParams.get("slug") ?? "";
+    const card = getReceipt(slug);
+    if (!card) {
+      return new Response("not found", { status: 404 });
+    }
+    element = receiptCard(card.topic_short, card.pull_quote, card.slug);
+    return new ImageResponse(element, { width: 1200, height: 630 });
+  }
+  if (type === "receipts-index") {
+    element = receiptsIndexCard();
     return new ImageResponse(element, { width: 1200, height: 630 });
   }
   if (type === "candidate") {
