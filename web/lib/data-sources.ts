@@ -22,9 +22,12 @@ export interface NamedSource {
   fetch: (params: Record<string, string | number>) => Promise<FetchResult>;
 }
 
-function asOfFromMeta(meta: { last_modified: string | null; created: string }): string {
-  const raw = meta.last_modified ?? meta.created;
-  return raw.slice(0, 10);
+// `as_of` represents the date the metric was last retrieved (fetch date),
+// not the CKAN resource's last_modified (which tracks file upload, not
+// data coverage and is often misleadingly stale). Today's date is the
+// honest answer to "when did we check."
+function asOfToday(): string {
+  return new Date().toISOString().slice(0, 10);
 }
 
 // Helper: count rows for a given year on a TPS-style resource. Each row is
@@ -42,8 +45,10 @@ async function annualCountByOccYear(
   if (search.records.length === 0) {
     throw new Error("No records returned for year " + year + " on resource " + resource_id);
   }
-  const meta = await resourceShow(TORONTO_CKAN, resource_id);
-  return { value: search.total, as_of: asOfFromMeta(meta) };
+  // We touch resourceShow purely as a connectivity check; the returned
+  // metadata is not used for as_of (see asOfToday rationale above).
+  await resourceShow(TORONTO_CKAN, resource_id);
+  return { value: search.total, as_of: asOfToday() };
 }
 
 export const NAMED_SOURCES: Record<string, NamedSource> = {
@@ -122,8 +127,8 @@ export const NAMED_SOURCES: Record<string, NamedSource> = {
         if (typeof issued !== "string") return false;
         return issued.startsWith(yearPrefix);
       });
-      const meta = await resourceShow(TORONTO_CKAN, resource_id);
-      return { value: filtered.length, as_of: asOfFromMeta(meta) };
+      await resourceShow(TORONTO_CKAN, resource_id);
+      return { value: filtered.length, as_of: asOfToday() };
     },
   },
 };
