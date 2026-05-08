@@ -1,0 +1,51 @@
+name: Weekly data refresh
+
+on:
+  schedule:
+    - cron: "0 6 * * 0"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        working-directory: web
+        run: npm ci
+
+      - name: Run refresh-data
+        working-directory: web
+        run: npm run refresh-data
+        env:
+          NODE_OPTIONS: --enable-source-maps
+
+      - name: Commit changes
+        run: |
+          git config user.name "data-refresh[bot]"
+          git config user.email "actions@github.com"
+          git add web/public/data/receipts/ web/public/data/scenarios/
+          if git diff --staged --quiet; then
+            echo "No data changes."
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            UPDATED=$(node -e "console.log(JSON.parse(require('fs').readFileSync('web/.refresh-summary.json','utf-8')).updated_count)")
+            git commit -m "data: weekly refresh ${DATE} (${UPDATED} anchors updated)"
+            git push
+          fi
+
+      - name: Open failure issue
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node scripts/post-refresh-issue.mjs
