@@ -79,7 +79,6 @@ export async function refreshAnchor(
       source: cfg.source,
       error: err instanceof Error ? err.message : String(err),
       attempted_at: new Date().toISOString(),
-      resource_url: "https://" + source.domain + "/api/3/action/datastore_search?resource_id=" + source.resource_id,
     });
     return false;
   }

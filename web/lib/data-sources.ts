@@ -1,14 +1,10 @@
 import { datastoreSearch, resourceShow } from "../scripts/lib/ckan";
 
-// All five launch sources resolve to the City of Toronto CKAN portal
-// (host: ckan0.cf.opendata.inter.prod-toronto.ca). The Toronto Police
-// Service public portal at data.torontopolice.on.ca is an ArcGIS Hub
-// site, not a CKAN endpoint, so the canonical TPS open datasets are
-// consumed via the City of Toronto CKAN mirror. Per-entry comments
-// link back to the original publisher's catalogue page.
 const TORONTO_CKAN = "ckan0.cf.opendata.inter.prod-toronto.ca";
 
 export type CkanHost = typeof TORONTO_CKAN;
+
+export type SourceKind = "ckan" | "statcan" | "url";
 
 export interface FetchResult {
   value: string | number;
@@ -16,8 +12,7 @@ export interface FetchResult {
 }
 
 export interface NamedSource {
-  domain: CkanHost;
-  resource_id: string;
+  kind: SourceKind;
   description: string;
   fetch: (params: Record<string, string | number>) => Promise<FetchResult>;
 }
@@ -45,8 +40,7 @@ async function annualCountByOccYear(
   if (search.records.length === 0) {
     throw new Error("No records returned for year " + year + " on resource " + resource_id);
   }
-  // We touch resourceShow purely as a connectivity check; the returned
-  // metadata is not used for as_of (see asOfToday rationale above).
+  // We touch resourceShow purely as a connectivity check.
   await resourceShow(TORONTO_CKAN, resource_id);
   return { value: search.total, as_of: asOfToday() };
 }
@@ -58,32 +52,27 @@ export const NAMED_SOURCES: Record<string, NamedSource> = {
   // Original publisher: Toronto Police Service. Verified 2026-05-04.
   // Field: OCC_YEAR (numeric). Row id: EVENT_UNIQUE_ID.
   tps_auto_theft_annual: {
-    domain: TORONTO_CKAN,
-    resource_id: "138efc01-91ca-4bfb-9e92-721e1477dc6a",
+    kind: "ckan",
     description: "Toronto Police Service Theft from Motor Vehicle, annual occurrence count by OCC_YEAR",
     fetch: (params) => annualCountByOccYear("138efc01-91ca-4bfb-9e92-721e1477dc6a", params),
   },
 
-  // Police Annual Statistical Report - Homicides (TPS occurrence-level
-  // dataset, GeoJSON datastore resource on City of Toronto CKAN).
+  // Police Annual Statistical Report - Homicides
   // Source page: https://open.toronto.ca/dataset/police-annual-statistical-report-homicides/
   // Original publisher: Toronto Police Service. Verified 2026-05-04.
   // Field: OCC_YEAR. Row id: EVENT_UNIQUE_ID.
   tps_homicide_annual: {
-    domain: TORONTO_CKAN,
-    resource_id: "559d4af8-ba23-44ed-916c-10efb6ed95ef",
+    kind: "ckan",
     description: "Toronto Police Service Homicides, annual occurrence count by OCC_YEAR",
     fetch: (params) => annualCountByOccYear("559d4af8-ba23-44ed-916c-10efb6ed95ef", params),
   },
 
-  // Shootings & Firearm Discharges (TPS occurrence-level dataset, GeoJSON
-  // datastore resource on City of Toronto CKAN).
+  // Shootings & Firearm Discharges
   // Source page: https://open.toronto.ca/dataset/shootings-firearm-discharges/
   // Original publisher: Toronto Police Service. Verified 2026-05-04.
   // Field: OCC_YEAR. Row id: EVENT_UNIQUE_ID.
   tps_shooting_annual: {
-    domain: TORONTO_CKAN,
-    resource_id: "6ab1ffae-a6ef-4d39-b943-4f6670fe58fa",
+    kind: "ckan",
     description: "Toronto Police Service Shootings and Firearm Discharges, annual occurrence count by OCC_YEAR",
     fetch: (params) => annualCountByOccYear("6ab1ffae-a6ef-4d39-b943-4f6670fe58fa", params),
   },
@@ -99,8 +88,7 @@ export const NAMED_SOURCES: Record<string, NamedSource> = {
   // Original publisher: Toronto Police Service. Verified 2026-05-04.
   // Field: OCC_YEAR. Row id: EVENT_UNIQUE_ID.
   tps_bicycle_theft_annual: {
-    domain: TORONTO_CKAN,
-    resource_id: "34e4206d-549e-4957-a0da-093d703a1c62",
+    kind: "ckan",
     description: "Toronto Police Service Bicycle Thefts, annual occurrence count by OCC_YEAR",
     fetch: (params) => annualCountByOccYear("34e4206d-549e-4957-a0da-093d703a1c62", params),
   },
@@ -111,8 +99,7 @@ export const NAMED_SOURCES: Record<string, NamedSource> = {
   // limit=1 on 2026-05-04 (ISSUED_DATE, not PERMIT_ISSUE_DATE).
   // Source page: https://open.toronto.ca/dataset/building-permits-active-permits/
   toronto_building_permits_annual: {
-    domain: TORONTO_CKAN,
-    resource_id: "6d0229af-bc54-46de-9c2b-26759b01dd05",
+    kind: "ckan",
     description: "City of Toronto Active Building Permits, annual count by ISSUED_DATE year prefix",
     fetch: async (params) => {
       const year = Number(params.year);
