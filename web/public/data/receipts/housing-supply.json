@@ -39,7 +39,7 @@
         "sub_section_anchor": "starts-2025-cma",
         "sub_claim": "Toronto CMA housing starts collapsed in 2025, falling well below 2024 levels.",
         "finding": "Bradford's directional claim is supported by full-year CMHC data. Toronto CMA starts in centres of 10,000 or more population fell from 37,718 units in 2024 to 26,087 units in 2025, a 31 percent year-over-year decline. The slump was driven by a roughly 60 percent drop in condominium apartment starts as investor demand pulled back. Bradford's specific \"81 percent\" figure refers to a single month (September 2024 versus September 2023) cited on Feb 12, 2025, not the full annual figure, so it overstates the trailing twelve-month picture even as the directional finding holds.",
-        "metric": "2024 starts 37,718 units; 2025 starts 26,087 units; YoY change -31 percent (CMHC, all Toronto CMA centres 10,000+).",
+        "metric": "Toronto CMA total starts 2024: 37718 units",
         "source": {
           "tier": "T1",
           "label": "CMHC, \"Housing starts up 5.6% in 2025 from 2024,\" news release, January 2026",
@@ -47,7 +47,14 @@
           "retrieved": "2026-01-31"
         },
         "caveats": "CMA boundaries include municipalities outside the City of Toronto. Monthly figures are volatile. December 2025 starts were up 151 percent versus December 2024, signalling some late-year momentum.",
-        "as_of": "2026-01-31"
+        "as_of": "2026-05-10",
+        "pull_config": {
+          "source": "statcan_housing_starts_toronto_cma",
+          "params": {
+            "year": 2024
+          },
+          "format": "Toronto CMA total starts {year}: {value} units"
+        }
       },
       {
         "sub_section_anchor": "per-capita-1996",
