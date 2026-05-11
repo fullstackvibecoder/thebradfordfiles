@@ -2,6 +2,7 @@ import type { ScenarioCard as ScenarioCardData, Citation } from "@/lib/scenario-
 import { ScenarioTierBadge } from "./ScenarioTierBadge";
 import { ScenarioComparableTabs } from "./ScenarioComparableTabs";
 import { ConsistencyTimeline } from "./ConsistencyTimeline";
+import { Sparkline } from "@/components/Sparkline";
 
 const SLUG_FROM_HANDLE: Record<string, string> = {
   bradfordgrams: "bradford",
@@ -62,7 +63,10 @@ export function ScenarioCard({ card }: { card: ScenarioCardData }) {
             <div className="flex items-center gap-2 mb-1.5">
               <h3 className="font-serif text-base font-bold">{p.candidate_name}</h3>
               {SLUG_FROM_HANDLE[p.candidate_handle] ? (
-                <ConsistencyTimeline slug={SLUG_FROM_HANDLE[p.candidate_handle]} />
+                <>
+                  <ConsistencyTimeline slug={SLUG_FROM_HANDLE[p.candidate_handle]} />
+                  <Sparkline slug={SLUG_FROM_HANDLE[p.candidate_handle]} />
+                </>
               ) : null}
             </div>
             <p className="text-sm mb-2 nums-oldstyle">{p.summary}</p>

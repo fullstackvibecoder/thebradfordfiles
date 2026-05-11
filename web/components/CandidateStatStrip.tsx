@@ -1,5 +1,7 @@
 // Server component. Renders a stat strip across the top of a candidate page.
+import type { ReactNode } from "react";
 import { listCandidates, getSynthesis, getRecordsForHandle } from "@/lib/agent/data-loader";
+import { Sparkline } from "@/components/Sparkline";
 
 const TOPICS = [
   "housing",
@@ -56,13 +58,17 @@ function consistencyLabel(slug: string, dot: string | null | undefined): string 
 interface Stat {
   label: string;
   value: string;
+  extra?: ReactNode;
 }
 
 function Cell({ stat }: { stat: Stat }) {
   return (
     <div className="flex flex-col">
       <span className="font-mono text-[11px] text-muted caps-small">{stat.label}</span>
-      <span className="font-serif font-bold text-[22px] leading-tight text-ink nums-tabular">{stat.value}</span>
+      <span className="font-serif font-bold text-[22px] leading-tight text-ink nums-tabular inline-flex items-center">
+        <span>{stat.value}</span>
+        {stat.extra}
+      </span>
     </div>
   );
 }
@@ -98,7 +104,7 @@ export function CandidateStatStrip({ slug }: { slug: string }) {
   ).length;
 
   const stats: Stat[] = [
-    { label: "Records", value: formatNumber(cand?.record_count) },
+    { label: "Records", value: formatNumber(cand?.record_count), extra: <Sparkline slug={slug} /> },
     { label: "Topics", value: topicCount > 0 ? topicCount.toLocaleString() : "n/a" },
     { label: "Verified votes", value: verifiedVotes >= 0 ? verifiedVotes.toLocaleString() : "n/a" },
     { label: "Window", value: "18 mo." },
