@@ -32,4 +32,25 @@
     line-height: 0.85;
     margin: 0.06em 0.1em -0.05em 0;
   }
+  .nums-tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .nums-oldstyle {
+    font-variant-numeric: oldstyle-nums proportional-nums;
+  }
+  .caps-small {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.05em;
+  }
+  .asterism::before {
+    content: "⁂";
+    display: block;
+    text-align: center;
+    color: #e8e3d5;
+    opacity: 0.4;
+    font-size: 18px;
+    line-height: 1;
+    margin: 2em 0;
+    letter-spacing: 0.4em;
+  }
 }
