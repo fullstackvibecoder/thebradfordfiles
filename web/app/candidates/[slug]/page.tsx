@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { listCandidates, getDossier, getSynthesis } from "@/lib/agent/data-loader";
 import { DropCap } from "@/components/DropCap";
 import { CandidateStatStrip } from "@/components/CandidateStatStrip";
+import { ConsistencyTimeline } from "@/components/ConsistencyTimeline";
 
 const TOPIC_LABELS: Record<string, string> = {
   housing: "Housing",
@@ -42,6 +43,11 @@ export default async function CandidatePage({ params }: { params: Promise<{ slug
     <main className="max-w-[840px] mx-auto px-8 py-10">
       <h1 className="font-serif font-bold text-[28px] leading-[1.2] text-ink mb-1.5">{cand.display_name}</h1>
       {cand.current_role && <p className="font-sans text-[13px] text-muted mb-2">{cand.current_role}</p>}
+
+      <div className="mb-4 flex items-center gap-3">
+        <span className="font-mono text-xs text-muted caps-small">Consistency</span>
+        <ConsistencyTimeline slug={slug} />
+      </div>
 
       <CandidateStatStrip slug={slug} />
 
