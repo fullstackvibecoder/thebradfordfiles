@@ -25,10 +25,12 @@ export function ReceiptCard({ card }: { card: ReceiptCardData }) {
       ))}
 
       {card.what_data_cannot_settle ? (
-        <section className="border-l-4 border-accent bg-[#1c1813] px-6 py-4 mt-8 mb-6">
-          <p className="font-mono text-xs uppercase tracking-wider text-accent mb-2">What the data cannot settle</p>
-          <p className="font-serif text-sm italic text-[#d4ccb8] leading-relaxed">{card.what_data_cannot_settle}</p>
-        </section>
+        <div className="asterism">
+          <section className="border-l-4 border-accent bg-[#1c1813] px-6 py-4 mt-8 mb-6">
+            <p className="font-mono text-xs uppercase tracking-wider text-accent mb-2">What the data cannot settle</p>
+            <p className="font-serif text-sm italic text-[#d4ccb8] leading-relaxed">{card.what_data_cannot_settle}</p>
+          </section>
+        </div>
       ) : null}
 
       {card.comparables && card.comparables.length > 0 ? (

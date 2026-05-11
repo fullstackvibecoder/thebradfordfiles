@@ -18,7 +18,7 @@ export function ScenarioTierBadge({ tier }: { tier: Tier }) {
   const styles = TIER_STYLES[tier];
   return (
     <span
-      className={`inline-block font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border rounded-sm mr-1 align-baseline ${styles.border} ${styles.text} ${styles.bg}`}
+      className={`inline-block font-mono text-[10px] px-1.5 py-0.5 border rounded-sm mr-1 align-baseline caps-small ${styles.border} ${styles.text} ${styles.bg}`}
       title={TIER_TITLES[tier]}
     >
       {tier}

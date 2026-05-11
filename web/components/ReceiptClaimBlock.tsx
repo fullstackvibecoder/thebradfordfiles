@@ -3,14 +3,14 @@ import type { ClaimBlock } from "@/lib/receipt-types";
 export function ReceiptClaimBlock({ claim }: { claim: ClaimBlock }) {
   return (
     <section className="bg-[#1a0d0d] border-l-4 border-[#c44848] px-6 py-5 mb-6 relative">
-      <span className="absolute top-3 right-4 font-mono text-[10px] uppercase tracking-wider text-[#c44848] border border-[#c44848] px-2 py-0.5 rounded-sm">
+      <span className="absolute top-3 right-4 font-mono text-[10px] text-[#c44848] border border-[#c44848] px-2 py-0.5 rounded-sm caps-small">
         AUDITED
       </span>
       <p className="font-mono text-base leading-relaxed text-ink mb-4 pr-24">
         &ldquo;{claim.headline}&rdquo;
       </p>
-      <p className="font-mono text-xs uppercase tracking-wider text-muted">
-        {claim.attribution}
+      <p className="font-mono text-xs text-muted caps-small">
+        <span className="nums-tabular">{claim.attribution}</span>
         <span className="mx-2">.</span>
         <a href={claim.source.url} target="_blank" rel="noopener" className="underline">
           source

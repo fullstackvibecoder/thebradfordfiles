@@ -61,8 +61,8 @@ interface Stat {
 function Cell({ stat }: { stat: Stat }) {
   return (
     <div className="flex flex-col">
-      <span className="font-mono text-[11px] uppercase tracking-wider text-muted">{stat.label}</span>
-      <span className="font-serif font-bold text-[22px] leading-tight text-ink">{stat.value}</span>
+      <span className="font-mono text-[11px] text-muted caps-small">{stat.label}</span>
+      <span className="font-serif font-bold text-[22px] leading-tight text-ink nums-tabular">{stat.value}</span>
     </div>
   );
 }

@@ -65,13 +65,12 @@ export function Dateline() {
   const now = new Date();
   const { hour, weekday, day, month, year, ymd } = getTorontoParts(now);
   const no = issueNumber(ymd);
-  const dateText = `${weekday} ${day} ${month} ${year}`;
   const edition = editionLabel(hour);
 
   return (
-    <div className="px-8 pt-4 font-mono text-[11px] uppercase tracking-wider text-muted">
-      <span className="text-accent">Vol I . No {no}</span>
-      <span> . {dateText} . {edition}</span>
+    <div className="px-8 pt-4 font-mono text-[11px] text-muted caps-small">
+      <span className="text-accent">Vol I . No <span className="nums-tabular">{no}</span></span>
+      <span> . {weekday} <span className="nums-tabular">{day}</span> {month} <span className="nums-tabular">{year}</span> . {edition}</span>
     </div>
   );
 }

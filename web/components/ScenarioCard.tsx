@@ -27,7 +27,7 @@ export function ScenarioCard({ card }: { card: ScenarioCardData }) {
 
       <section className="bg-[#1c1813] border-l-4 border-[#c4923a] px-6 py-5 mb-7">
         <h2 className="font-serif text-xl font-bold mb-3">Who would each mechanism reach?</h2>
-        <p className="mb-4 text-sm">{card.who_benefits.intro}</p>
+        <p className="mb-4 text-sm drop-cap nums-oldstyle">{card.who_benefits.intro}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {card.who_benefits.mechanisms.map((m) => {
             const pos = card.positions.find((p) => p.candidate_handle === m.candidate_handle);
@@ -54,7 +54,7 @@ export function ScenarioCard({ card }: { card: ScenarioCardData }) {
         {card.positions.map((p) => (
           <div key={p.candidate_handle}>
             <h3 className="font-serif text-base font-bold mb-1.5">{p.candidate_name}</h3>
-            <p className="text-sm mb-2">{p.summary}</p>
+            <p className="text-sm mb-2 nums-oldstyle">{p.summary}</p>
             <CitationRow citations={p.citations} />
           </div>
         ))}
@@ -63,7 +63,7 @@ export function ScenarioCard({ card }: { card: ScenarioCardData }) {
       <h2 className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mt-7 mb-2.5 font-semibold">
         Status quo. What Toronto already does.
       </h2>
-      <p className="text-sm mb-2">{card.status_quo.summary}</p>
+      <p className="text-sm mb-2 nums-oldstyle">{card.status_quo.summary}</p>
       <ul className="list-disc pl-5 text-sm mb-2 space-y-1">
         {card.status_quo.existing_policy_stack.map((e, i) => (
           <li key={i}>
@@ -81,25 +81,27 @@ export function ScenarioCard({ card }: { card: ScenarioCardData }) {
       <h2 className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mt-7 mb-2.5 font-semibold">Comparable jurisdictions</h2>
       <ScenarioComparableTabs comparables={card.comparables} />
 
-      <h2 className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mt-7 mb-2.5 font-semibold">Projections</h2>
-      {card.projections.kind === "plural" ? (
-        <>
-          <p className="text-sm mb-2">{card.projections.intro}</p>
-          <ul className="list-none pl-0 text-sm mb-2 space-y-2">
-            {card.projections.items.map((p, i) => (
-              <li key={i} className="border-l-2 border-[#ffffff2a] pl-3">
-                <strong>{p.scenario_label}.</strong> {p.range_or_value}
-                {p.notes ? <> ({p.notes})</> : null}
-                <span className="block text-xs text-[#8a8275] mt-1">
-                  <ScenarioTierBadge tier={p.citation.tier} />{p.citation.label}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </>
-      ) : (
-        <p className="text-sm italic text-[#8a8275]">{card.projections.rationale}</p>
-      )}
+      <div className="asterism">
+        <h2 className="font-mono text-xs uppercase tracking-wider text-[#8a8275] mt-7 mb-2.5 font-semibold">Projections</h2>
+        {card.projections.kind === "plural" ? (
+          <>
+            <p className="text-sm mb-2">{card.projections.intro}</p>
+            <ul className="list-none pl-0 text-sm mb-2 space-y-2">
+              {card.projections.items.map((p, i) => (
+                <li key={i} className="border-l-2 border-[#ffffff2a] pl-3">
+                  <strong>{p.scenario_label}.</strong> {p.range_or_value}
+                  {p.notes ? <> ({p.notes})</> : null}
+                  <span className="block text-xs text-[#8a8275] mt-1">
+                    <ScenarioTierBadge tier={p.citation.tier} />{p.citation.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </>
+        ) : (
+          <p className="text-sm italic text-[#8a8275]">{card.projections.rationale}</p>
+        )}
+      </div>
 
       {card.time_horizon ? (
         <>
