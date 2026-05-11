@@ -1,0 +1,90 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "parks_environment",
+  "summary": "Olivia Chow's Instagram content on parks and environment centers on protecting Ontario Place as public waterfront, opposing Premier Doug Ford's plan to develop a private luxury mega-spa and to remove 800 mature trees on the West Island, and pledging to defend Toronto-owned land at the site. Chow also opposes relocating the Ontario Science Centre. On broader environmental policy, Chow supports reusable container programs, sustainable packaging, reducing single-use plastics at the source, climate-ready communities, green jobs, thriving green space, and clean rivers, framing climate action as an area where Toronto can lead globally. On municipal parks operations, Chow pledges to open wading pools earlier in the season so they are available during hot weather. Records also reference past involvement in the McGregor Park revitalization in 2014.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2023-04-04",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports preserving Ontario Place as a public park with open waterfront access",
+      "supporting_records": [
+        "CtugRq-PSgm",
+        "CtubMuAgRKT"
+      ]
+    },
+    {
+      "stance": "Opposes the private luxury mega-spa development on Ontario Place public lands",
+      "supporting_records": [
+        "CsjsPdVvkbV"
+      ]
+    },
+    {
+      "stance": "Opposes destruction of the West Island and 800 mature trees at Ontario Place",
+      "supporting_records": [
+        "CqoVjATAfiR"
+      ]
+    },
+    {
+      "stance": "Opposes relocating the Ontario Science Centre",
+      "supporting_records": [
+        "Cr9aUuAtQRF"
+      ]
+    },
+    {
+      "stance": "Supports reusable container programs, sustainable packaging, and reducing single-use plastics at the source",
+      "supporting_records": [
+        "CrWoY2fPqu_"
+      ]
+    },
+    {
+      "stance": "Supports broader climate action including green space, clean rivers, climate-ready communities, and green jobs",
+      "supporting_records": [
+        "CrWoY2fPqu_"
+      ]
+    },
+    {
+      "stance": "Supports opening municipal wading pools earlier in the season",
+      "supporting_records": [
+        "Cto4xjSguwg"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Pledged as mayor to stand up for Ontario Place and defend public access to the lake",
+      "supporting_records": [
+        "CtubMuAgRKT",
+        "CsjsPdVvkbV"
+      ]
+    },
+    {
+      "action": "Pledged as mayor to ensure wading pools open earlier in the season",
+      "supporting_records": [
+        "Cto4xjSguwg"
+      ]
+    },
+    {
+      "action": "Participated in a litter cleanup and committed to share further environmental policy",
+      "supporting_records": [
+        "CrWoY2fPqu_"
+      ]
+    },
+    {
+      "action": "Participated in McGregor Park revitalization construction day in 2014",
+      "supporting_records": [
+        "rfmY9OOtJG"
+      ]
+    }
+  ],
+  "input_record_count": 15,
+  "input_records_hash": "sha256:8ea7625c1f15a2d8810c131171e0ed11027172b1437467daa7c164ea3da3fe9c",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:1907ed59cab459c3c9bcb687ae8c598eacc77c25eda58b234d3f035e913978c6",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T17:24:55+00:00",
+  "synthesis_skipped_reason": null
+}

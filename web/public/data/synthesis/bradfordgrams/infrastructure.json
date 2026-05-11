@@ -1,0 +1,123 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "infrastructure",
+  "summary": "Bradford's infrastructure positions center on reducing congestion, accelerating construction, and reliably delivering core services like snow clearing, road repair, and pothole filling. Bradford has repeatedly called for 24/7 construction (notably on the Gardiner Expressway), off-site/modular fabrication, a Congestion Relief Commissioner (\"Traffic Czar\"), and tighter coordination of road and transit closures. Bradford opposes tearing down the Gardiner and supports the provincial upload of the Gardiner and DVP. On winter operations, Bradford frames snow removal as a non-optional core service, criticizes timing/scheduling failures, and supports prioritizing main roads, sidewalks, and transit access. Bradford supports complete streets, maintained protected bike lanes on Richmond/Adelaide, road-safety design, EV charging, community facilities (libraries, arenas, pools, community centres), and flood-protection infrastructure. Bradford opposes a $150M Railpath extension and a Foxbar Road median, framing them as poor prioritization.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-08",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports 24/7 construction and off-site/modular fabrication to accelerate major roadwork, especially the Gardiner rebuild.",
+      "supporting_records": [
+        "C7J--LXgxkL",
+        "C7PdhVOv8RX",
+        "C7MlGLqAQ6b",
+        "C9kR5IeggK3",
+        "C95kvpUygaW",
+        "DQZAvNEFSMe",
+        "Csr5vK4gdwK",
+        "CtPVG--yRmh"
+      ]
+    },
+    {
+      "stance": "Supports creating a Congestion Relief Commissioner / 'Traffic Czar' to coordinate construction across governments.",
+      "supporting_records": [
+        "CyjIhGdAqUA",
+        "DAGZ9Kzx2yn",
+        "DIzoevoM2C7"
+      ]
+    },
+    {
+      "stance": "Opposes tearing down the Gardiner Expressway; supports rebuilding it and the provincial upload of the Gardiner and DVP.",
+      "supporting_records": [
+        "DUjUAnhkdaK",
+        "CtiEcAlgh-v",
+        "C0KyqzrNzdl",
+        "C90bVJNSuKq"
+      ]
+    },
+    {
+      "stance": "Frames snow clearing of streets, sidewalks, and transit access as a non-optional core service that must be reliably delivered.",
+      "supporting_records": [
+        "DQ-LC_PDqof",
+        "DTlzW2diYT0",
+        "DUGzjNNiLyD",
+        "DGTy1LHyeGN",
+        "DGRMzlzyj03",
+        "DUKE4-qkoJ7"
+      ]
+    },
+    {
+      "stance": "Supports complete streets, road-safety design, and maintaining protected bike lanes (e.g., on Richmond/Adelaide) while keeping vehicle capacity.",
+      "supporting_records": [
+        "Cr3d6JBgHco",
+        "C7hOwyDgwSv",
+        "DPjtFCpjso2",
+        "Bg2biqMHZLV",
+        "BtbEx0dFjLA",
+        "CK2YhpEBvtv"
+      ]
+    },
+    {
+      "stance": "Opposes uncoordinated construction that ties up parallel routes simultaneously and causes downtown gridlock.",
+      "supporting_records": [
+        "C_0RHDzR-YO",
+        "C9kR5IeggK3",
+        "C7EtyHHgHga",
+        "DKdOqV4toX2",
+        "DLFiuzrA65z"
+      ]
+    },
+    {
+      "stance": "Supports investment in community infrastructure including libraries, arenas, pools, community centres, and flood-protection works.",
+      "supporting_records": [
+        "DT_Gjxjgu7h",
+        "DUtZoxjjJ3O",
+        "DKaZbiAu4SL",
+        "C_lvRjOSsep",
+        "DObLpOUDV_D",
+        "CcrCUGYzAj2f",
+        "C6eVG7fAk77"
+      ]
+    },
+    {
+      "stance": "Opposes specific high-cost or poorly prioritized projects: the $150M West Toronto Railpath extension, the Foxbar Road median, and Ontario Science Centre relocation.",
+      "supporting_records": [
+        "C-p4xGrghbz",
+        "C-se8h5AGrD",
+        "DAbKFl5xaK6",
+        "CsworTYP3TG",
+        "Cr4IEiEgs_T"
+      ]
+    },
+    {
+      "stance": "Supports federal-provincial-municipal alignment to deliver infrastructure and growth-related capacity.",
+      "supporting_records": [
+        "DX1rX3cN-Nj",
+        "C8ClIyOs1Wa",
+        "Cz__8mSvRSW",
+        "C3TUeitPz5y"
+      ]
+    },
+    {
+      "stance": "Supports EV charging infrastructure on streets and via front yard parking pad reform.",
+      "supporting_records": [
+        "CHyL5MWh5RJ",
+        "CG-uWaXB5zF",
+        "Ce4Q5z-OJ_K",
+        "Cc5e0EYLLla"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 324,
+  "input_records_hash": "sha256:ca8fb922489963a9d6e2ea6a1b3cf6e4cc238e8ef8a2cb7e36ae1b88d84c5da2",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T19:56:48+00:00",
+  "synthesis_skipped_reason": null
+}

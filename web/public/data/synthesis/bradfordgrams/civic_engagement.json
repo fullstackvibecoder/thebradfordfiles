@@ -1,0 +1,88 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "civic_engagement",
+  "summary": "Bradford's civic engagement positions emphasize community consultation, door-knocking, and direct constituent dialogue as core to municipal work. Bradford repeatedly states that resident feedback and \"local experts\" should shape policy from planning through implementation (CeMsGKcLX69 misattribution aside, see CdOorJ6uYiV, Cf9TcTSrfK-, CCl4ptXhZxc, CUvS2zjrRq1). Bradford has hosted budget consultations, telephone town halls with 2,000+ participants, virtual community meetings, and a podcast (CKzBAABh2tl, DUdUQSkkQHd, DOo9KhZABUD). Bradford supports flag-raisings, laneway renamings, and recognition events for Toronto's diverse communities (Jewish, Tamil, Armenian, Ukrainian, Bangladeshi, Indigenous, 2SLGBTQI+) (DSWHgnWDKpn, DJy5tn5tigh, CrbQibiAuzm, ChpvK4srpj5, CWySJSmLlR8). Bradford opposes processes seen as limiting deputation or muzzling discussion (DMK2uOQgteh, DMh0vq3Ah6o) and criticized charging admission to the FIFA Fan Festival as inaccessible (DXNNYyaDSsq). Bradford frames good governance as listening, building trust, and connecting broad agendas to daily concerns (DMK2uOQgteh, DQM_ctjgnod).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2018-03",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports robust community consultation and resident input as central to policy decisions and project design.",
+      "supporting_records": [
+        "CdOorJ6uYiV",
+        "Cf9TcTSrfK-",
+        "CCl4ptXhZxc",
+        "CUvS2zjrRq1",
+        "CMNrXXwBVIj",
+        "CI_KpVLBu4U",
+        "DMbDXVkypkL",
+        "B73xxLAFpMQ"
+      ]
+    },
+    {
+      "stance": "States City Hall must do a better job listening to residents to build trust.",
+      "supporting_records": [
+        "DMK2uOQgteh",
+        "CdErxWbLfEL"
+      ]
+    },
+    {
+      "stance": "Opposes processes that limit or silence public deputations and frames them as dismissive.",
+      "supporting_records": [
+        "DMK2uOQgteh",
+        "DMh0vq3Ah6o"
+      ]
+    },
+    {
+      "stance": "Supports celebrating Toronto's diversity and standing in solidarity with cultural and faith communities.",
+      "supporting_records": [
+        "DVroVunldzD",
+        "DDM-2PDRiM7",
+        "C7SKP90vXcs",
+        "CWySJSmLlR8",
+        "CHYNtXOBFEl"
+      ]
+    },
+    {
+      "stance": "Supports public commemorations including flag-raisings, laneway renamings, and monuments honouring community figures and historical events.",
+      "supporting_records": [
+        "DSWHgnWDKpn",
+        "CrbQibiAuzm",
+        "CGurGZ3hxpR",
+        "C8aZOEXycEo",
+        "CWySJSmLlR8"
+      ]
+    },
+    {
+      "stance": "Opposes admission fees for civic celebrations like the FIFA Fan Festival, framing public events as belonging to all Torontonians.",
+      "supporting_records": [
+        "DXNNYyaDSsq"
+      ]
+    },
+    {
+      "stance": "States democracy is strongest when people participate, engage, and compete on ideas.",
+      "supporting_records": [
+        "CeSLjqnLuXR",
+        "Bi1_dMhBk4k"
+      ]
+    },
+    {
+      "stance": "Supports under-represented and under-consulted communities being engaged in decisions.",
+      "supporting_records": [
+        "CI_KpVLBu4U",
+        "CNqTlC-BMhP"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 182,
+  "input_records_hash": "sha256:4f07ae3e1883e4641a8f4479e46aa6e135b5182d79a837a95a84d2e5fa560015",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T19:57:32+00:00",
+  "synthesis_skipped_reason": null
+}

@@ -1,0 +1,91 @@
+{
+  "generated_at": "2026-05-04T20:30:55+00:00",
+  "candidates": [
+    {
+      "slug": "bradford",
+      "surname": "Bradford",
+      "display_name": "Brad Bradford",
+      "files_label": "The Bradford Files",
+      "current_role": "City Councillor, Beaches–East York (since 2018)",
+      "candidacy_status": "declared",
+      "declared_date": "2026-05-01",
+      "result_2023": {
+        "placement": 8,
+        "vote_share_pct": 1.5,
+        "votes": 9000,
+        "approximate": true
+      },
+      "platform_pillars": [
+        "crime",
+        "congestion",
+        "cost of living"
+      ],
+      "post_count": 3832,
+      "record_count": 5435,
+      "extracted_count": 1796,
+      "emphasis": {
+        "transit": 12.7,
+        "governance_ethics": 11.5,
+        "infrastructure": 9.5,
+        "safety_crime": 16.6,
+        "taxes_fiscal": 6.0,
+        "campaign_logistics": 3.2,
+        "housing": 18.5,
+        "personal_context": 1.1,
+        "other": 1.8,
+        "social_services": 7.4,
+        "civic_engagement": 8.6,
+        "parks_environment": 8.6,
+        "small_business_economy": 12.1
+      },
+      "date_range": {
+        "earliest": "2015-01-28",
+        "latest": "2026-05-02"
+      },
+      "consistency_dot": "yellow"
+    },
+    {
+      "slug": "chow",
+      "surname": "Chow",
+      "display_name": "Olivia Chow",
+      "files_label": "The Chow Files",
+      "current_role": "Mayor of Toronto (since June 2023)",
+      "candidacy_status": "expected",
+      "declared_date": null,
+      "result_2023": {
+        "placement": 1,
+        "vote_share_pct": 37.0,
+        "votes": 270000,
+        "approximate": true
+      },
+      "platform_pillars": [
+        "housing affordability",
+        "transit investment",
+        "social services"
+      ],
+      "post_count": 719,
+      "record_count": 470,
+      "extracted_count": 248,
+      "emphasis": {
+        "housing": 10.9,
+        "social_services": 17.7,
+        "civic_engagement": 8.9,
+        "other": 1.6,
+        "campaign_logistics": 4.4,
+        "infrastructure": 1.6,
+        "small_business_economy": 4.8,
+        "transit": 10.5,
+        "parks_environment": 3.2,
+        "governance_ethics": 2.4,
+        "taxes_fiscal": 1.6,
+        "endorsements": 0.4,
+        "safety_crime": 0.8
+      },
+      "date_range": {
+        "earliest": "2014-01-20",
+        "latest": "2025-08-25"
+      },
+      "consistency_dot": "green"
+    }
+  ]
+}

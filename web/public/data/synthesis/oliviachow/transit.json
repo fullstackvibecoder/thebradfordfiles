@@ -1,0 +1,143 @@
+{
+  "candidate_handle": "oliviachow",
+  "candidate_slug": "chow",
+  "topic": "transit",
+  "summary": "Across two mayoral campaigns (2014 and 2023), Olivia Chow's Instagram record on transit centers on improving bus service, expanding light rail and accessible stations, and making investments now rather than waiting. In 2014, Chow promoted a Better Bus Service plan, supported the Scarborough LRT, Finch West LRT, Sheppard East LRT, a subway relief line, GO electrification, and fare integration, while opposing the Ford-Tory subway approach (t2bRE6OtJ0, tnpNLvutDi, uo9OStutNY, uZbnNbutFW, ogAfBlutOi, tI4_ksutP4, tgMcsautPN). In 2023, Chow pledged to reverse TTC service cuts, keep fares affordable, and build a dedicated Kennedy-to-Scarborough Town Centre busway funded by converting the eastern Gardiner to a boulevard, projecting 20 minutes in daily commute savings (CswVZjUAkFp, CryXD1ULOhA, CryleZgp5KY, Cr4WrKxgk3H).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2014-03-20",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports immediate, sustained investment in public transit and faster service improvements",
+      "supporting_records": [
+        "r70QtIOtBI",
+        "tGazGDutPq",
+        "67bmXJOtGB",
+        "lxCaIRutHH",
+        "CtiJjtEA_dw"
+      ]
+    },
+    {
+      "stance": "Supports improving and expanding bus service as a near-term priority",
+      "supporting_records": [
+        "t3MBnVOtEX",
+        "r2TYXbutKW",
+        "uZbnNbutFW",
+        "lxWqfeutCv"
+      ]
+    },
+    {
+      "stance": "Supports light rail solutions including Scarborough LRT, Finch West LRT, and Sheppard East LRT, citing accessibility and stop coverage",
+      "supporting_records": [
+        "t2bRE6OtJ0",
+        "tnpNLvutDi",
+        "uo9OStutNY",
+        "tLSU1yOtPX",
+        "tI4_ksutP4"
+      ]
+    },
+    {
+      "stance": "Opposes the Ford-Tory subway/transit plan, citing impacts on neighbourhoods like Mt. Dennis and lack of service to areas such as Centennial College",
+      "supporting_records": [
+        "tgMcsautPN",
+        "tI4_ksutP4",
+        "t0vDBdOtOZ"
+      ]
+    },
+    {
+      "stance": "Supports making TTC stations fully accessible",
+      "supporting_records": [
+        "tQqAqWOtEK",
+        "t2bRE6OtJ0"
+      ]
+    },
+    {
+      "stance": "Supports GO Transit electrification and regional fare integration",
+      "supporting_records": [
+        "ogAfBlutOi"
+      ]
+    },
+    {
+      "stance": "Supports starting work on a subway relief line",
+      "supporting_records": [
+        "uZbnNbutFW"
+      ]
+    },
+    {
+      "stance": "Supports reversing TTC service cuts and keeping fares affordable",
+      "supporting_records": [
+        "CswVZjUAkFp",
+        "Cr4WrKxgk3H"
+      ]
+    },
+    {
+      "stance": "Supports a dedicated Scarborough busway from Kennedy Station to Scarborough Town Centre using the existing RT corridor and bus-only lanes",
+      "supporting_records": [
+        "CryXD1ULOhA",
+        "CryleZgp5KY"
+      ]
+    },
+    {
+      "stance": "Supports funding the Scarborough busway through savings from converting the eastern Gardiner Expressway into a ground-level boulevard rather than waiting on the province",
+      "supporting_records": [
+        "CryXD1ULOhA"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Made a transit announcement covered in 24 newspaper (March 2014)",
+      "supporting_records": [
+        "lzsRWZOtC5"
+      ]
+    },
+    {
+      "action": "Announced details of a transit platform and Better Bus Service plan in March 2014",
+      "supporting_records": [
+        "lxWqfeutCv",
+        "lxCaIRutHH"
+      ]
+    },
+    {
+      "action": "Announced a plan to improve traffic flow in April 2014",
+      "supporting_records": [
+        "m5eU5SutK1"
+      ]
+    },
+    {
+      "action": "Unveiled a campaign transit map in August 2014",
+      "supporting_records": [
+        "r70QtIOtBI"
+      ]
+    },
+    {
+      "action": "Returned to Jane-Wilson to again press for improved bus service",
+      "supporting_records": [
+        "r2TYXbutKW"
+      ]
+    },
+    {
+      "action": "Announced 2023 plan for a dedicated Scarborough busway from Kennedy Station to Scarborough Town Centre",
+      "supporting_records": [
+        "CryXD1ULOhA",
+        "CryleZgp5KY"
+      ]
+    },
+    {
+      "action": "Pledged as mayor to invest in transit so it is affordable, safe, and reliable",
+      "supporting_records": [
+        "Cr4WrKxgk3H",
+        "CtzK0BGg36K"
+      ]
+    }
+  ],
+  "input_record_count": 37,
+  "input_records_hash": "sha256:70c70173de8f34f3426cb5dc0a97c113c529cca51b04d5d3bef14c3118c2fc55",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T20:05:16+00:00",
+  "synthesis_skipped_reason": null
+}

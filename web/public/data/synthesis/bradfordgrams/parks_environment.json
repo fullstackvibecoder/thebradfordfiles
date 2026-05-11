@@ -1,0 +1,122 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "parks_environment",
+  "summary": "Bradford's parks and environment positions emphasize expanding recreation infrastructure, protecting green space, and meeting Toronto's climate goals through practical measures. Bradford opposes closing recreation facilities such as Weston Arena and supports building new amenities including pickleball courts, cricket pitches, splash pads, and a disc golf course (DVZirJagS2O, DLiv7hNMxlq, C8htIfigJoV, C-bDR2gyR5H, DTVfhqCiMQL). Bradford backs Toronto's net-zero by 2040 target, EV charging expansion, district energy, and the TransformTO strategy (CgPjxB6ORFp, Cf1aVDrrVWi, CR6kRktrfna). Bradford advocates for ravine protection (Small's Creek), tree planting, and shoreline protection (CKjqtNfB45D, DOeSxmkDvUQ, B1_4fqdFYPC). Bradford opposes the toboggan ban, the parks budget increase to hire 122 staff, and tent encampments in parks (C2isoN1NNF5, DFgE1BJSnGq, DQxGSD7jrXm). Bradford emphasizes \"back-to-basics\" service delivery: clean parks, open pools, functioning washrooms, and bylaw enforcement at beaches (DN-w-7QDpMj, DLQhveAufkH, DRholf-lx3s).",
+  "consistency": {
+    "label": "evolving",
+    "stable_since": "2018-09",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports expanding recreation facilities (pickleball courts, cricket pitches, disc golf, splash pads) and opposes closing existing ones like Weston Arena",
+      "supporting_records": [
+        "DVZirJagS2O",
+        "DU39HXHjwvm",
+        "DTVfhqCiMQL",
+        "DLiv7hNMxlq",
+        "CtoydMUA_RS",
+        "C-bDR2gyR5H",
+        "DTbLjggAKoA"
+      ]
+    },
+    {
+      "stance": "Supports Toronto's climate goals including net zero emissions by 2040 and TransformTO strategy",
+      "supporting_records": [
+        "CgPjxB6ORFp",
+        "CR6kRktrfna",
+        "Cf1aVDrrVWi",
+        "CITlvYYhbxK"
+      ]
+    },
+    {
+      "stance": "Supports expanding EV charging infrastructure as critical to meeting climate goals",
+      "supporting_records": [
+        "CHyL5MWh5RJ",
+        "CljSwL7rkmG",
+        "CgPjxB6ORFp",
+        "CdtW5vlutJb",
+        "CG-uWaXB5zF",
+        "CbXT3CfAJqZ"
+      ]
+    },
+    {
+      "stance": "Supports protecting Toronto ravines and tree canopy, including Small's Creek protections from Metrolinx infrastructure work",
+      "supporting_records": [
+        "CKjqtNfB45D",
+        "CS7J8p-gSXJ",
+        "CMKoKv_h5pK",
+        "CWjUNC4rr_o",
+        "DO4MuCbjpcS",
+        "CrgrVd8vauJ",
+        "BnOPg1Lh2G-"
+      ]
+    },
+    {
+      "stance": "Supports clean parks, open pools, functioning washrooms, and bylaw enforcement at beaches as core city service delivery",
+      "supporting_records": [
+        "DRholf-lx3s",
+        "DN-w-7QDpMj",
+        "DLQhveAufkH",
+        "DRnLqAVjeQS",
+        "DNBsemmSR-F",
+        "DA4MS6ySTPg"
+      ]
+    },
+    {
+      "stance": "Opposes the City's toboggan ban and supports common-sense safety measures to allow tobogganing",
+      "supporting_records": [
+        "C2isoN1NNF5",
+        "C2Ifyn5P7TK",
+        "C22sCiKA7cy",
+        "C2nH39PgsTL",
+        "C2Ba9hItqxv"
+      ]
+    },
+    {
+      "stance": "Opposes encampments in parks and supports clearing them while connecting people to supports",
+      "supporting_records": [
+        "DQxGSD7jrXm",
+        "DU6pUk8ifeU",
+        "DFgE1BJSnGq",
+        "DQwumxDjYhU"
+      ]
+    },
+    {
+      "stance": "Opposes the Mayor's $35M Parks budget increase and 122 new hires, supporting accountability for existing staff first",
+      "supporting_records": [
+        "DFgE1BJSnGq",
+        "DXKu-UHDqz2"
+      ]
+    },
+    {
+      "stance": "Supports allowing alcohol in parks and reducing enforcement against responsible drinkers",
+      "supporting_records": [
+        "CvcqDMjgcd7",
+        "CswXtehAr6R"
+      ]
+    },
+    {
+      "stance": "Supports protecting Hanlan's Point as a 2LGBTQ+ gathering space",
+      "supporting_records": [
+        "CpMOtO2N_ML"
+      ]
+    },
+    {
+      "stance": "Supports banning single-use plastics and pollinator-friendly gardening",
+      "supporting_records": [
+        "BlEzN6wB4Vj",
+        "Cs1Mk_MA4Ue"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 257,
+  "input_records_hash": "sha256:2240651bda1cb88ce375e679abbcdc7457764435f1284e63b9e37a23fddc79c9",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T19:55:59+00:00",
+  "synthesis_skipped_reason": null
+}

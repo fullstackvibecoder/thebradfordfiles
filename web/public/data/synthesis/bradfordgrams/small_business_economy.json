@@ -1,0 +1,128 @@
+{
+  "candidate_handle": "bradfordgrams",
+  "candidate_slug": "bradford",
+  "topic": "small_business_economy",
+  "summary": "Bradford's small business and economy positions consistently center on tax relief, red-tape reduction, and main-street vibrancy. Bradford backs property tax cuts for small businesses, championing a 25% reduction in the small business sub-tax class (DUIl3M_Dx5X, DF5xWk4SBYU, C3YP-ueAeW7) and earlier securing a 15% reduction (CWGjlUrAK0K, CVQPG8erZNo). Bradford pushes faster permit processing and patio reform, including a motion changing the patio objection threshold to 25% of notified neighbours (DMgZzjFSD9Y, DMPy-G5Aj9a). Bradford promoted CafeTO and Amplified Music on Patios as pandemic recovery tools (CWHEJK1LojO, CR7QDkgrYyk) and chaired the Toronto Music Advisory Committee on a citywide Music Strategy (CcEF3Ozu5M3). On tariffs, Bradford urges using city reserves and tax cuts to protect manufacturing jobs (DF7o2skxQ5R, DGyGAp0yfRv) and supports innovation, tech investment, and global competitiveness (DKrn4XDTdU, DOy1A8lgDpo).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2020-03",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports a 25% property tax reduction in the small business sub-tax class, building on an earlier 15% reduction",
+      "supporting_records": [
+        "DUIl3M_Dx5X",
+        "DF5xWk4SBYU",
+        "C3YP-ueAeW7",
+        "C3GD7yhgljQ",
+        "DHW7KI5yH9x",
+        "CVQPG8erZNo",
+        "CWGjlUrAK0K"
+      ]
+    },
+    {
+      "stance": "Supports cutting red tape and speeding permit approvals for small businesses, with a default of 'getting to yes faster'",
+      "supporting_records": [
+        "DLtFM75SRg8",
+        "DMN_tzNSrXD",
+        "DFp0VD6xHDU",
+        "DIcIi5byoAH",
+        "DDj3LNtxmQ5",
+        "DMgZzjFSD9Y"
+      ]
+    },
+    {
+      "stance": "Supports reforming the sidewalk patio objection threshold from two complaints to 25% of notified neighbours",
+      "supporting_records": [
+        "DMPy-G5Aj9a",
+        "DMN_tzNSrXD",
+        "DMNrRmusu1O",
+        "DMgFSkBy2JN"
+      ]
+    },
+    {
+      "stance": "Supports CafeTO and making it permanent as a lifeline for restaurants and main streets",
+      "supporting_records": [
+        "CWHEJK1LojO",
+        "CK7XArQBxMO",
+        "CdJQBNvr4O0",
+        "CtcraoKJRV-",
+        "CtM-wFnvCai"
+      ]
+    },
+    {
+      "stance": "Supports using property tax cuts and city reserves to protect Toronto manufacturers and small businesses from US tariff impacts",
+      "supporting_records": [
+        "DF7o2skxQ5R",
+        "DF5xWk4SBYU",
+        "DF8fbeLy4kM",
+        "DGyGAp0yfRv",
+        "DHW7KI5yH9x",
+        "DF-sN1GuZBy"
+      ]
+    },
+    {
+      "stance": "Supports making Toronto the most attractive global city for business, capital, and innovation through policy and reduced regulation",
+      "supporting_records": [
+        "DG3E9NAuvI3",
+        "DGyGAp0yfRv",
+        "DKrn4XDTdU",
+        "DP2KMVrDXwv",
+        "DOeEQRJjXYl",
+        "DHTvxMfOQc7"
+      ]
+    },
+    {
+      "stance": "Supports Toronto's music sector through programs like Amplified Music on Patios, Live Music Venue Property Tax Reduction, and a citywide Music Strategy",
+      "supporting_records": [
+        "CR7QDkgrYyk",
+        "CcEF3Ozu5M3",
+        "CfMijRtr-pv",
+        "CZ7vKguuqDI",
+        "CVsKDJeA2_c"
+      ]
+    },
+    {
+      "stance": "Supports moratoriums on commercial evictions and rent relief for small businesses during pandemic",
+      "supporting_records": [
+        "CAGWIY1lThp",
+        "B_pzUK_lvzP",
+        "B_lDLqSFQDP",
+        "B-cfrpuleCN",
+        "CBLtqufh7QQ"
+      ]
+    },
+    {
+      "stance": "Supports allowing small-scale neighbourhood retail and the 15-minute neighbourhood concept",
+      "supporting_records": [
+        "CgQMAZBLTvL",
+        "CfwjNjArQ-5",
+        "CgQLrwUL4BN"
+      ]
+    },
+    {
+      "stance": "Opposes outdated bylaws and bureaucratic barriers that hinder small business operation",
+      "supporting_records": [
+        "DDj3LNtxmQ5",
+        "DMNrRmusu1O",
+        "DMgFSkBy2JN"
+      ]
+    },
+    {
+      "stance": "Opposes Mayor Chow's cap on rideshare drivers as unfair",
+      "supporting_records": [
+        "C3p_JTpA7p_",
+        "CyWIsi2gS-6"
+      ]
+    }
+  ],
+  "key_actions": [],
+  "input_record_count": 453,
+  "input_records_hash": "sha256:a75d7ced2dd076524f1c0037e55adcc69017e6938f310e07ff53853afa9bc05c",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-05-04T20:04:47+00:00",
+  "synthesis_skipped_reason": null
+}

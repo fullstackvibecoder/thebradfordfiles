@@ -6,4 +6,8 @@ next-env.d.ts
 public/data/
 !public/data/scenarios/
 !public/data/receipts/
+!public/data/candidates/
+!public/data/synthesis/
+!public/data/landing.json
+!public/data/data.json
 .refresh-summary.json
