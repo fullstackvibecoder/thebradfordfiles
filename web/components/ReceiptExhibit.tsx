@@ -1,4 +1,5 @@
 import type { DataAnchor } from "@/lib/receipt-types";
+import { ageOfClass } from "@/lib/date-helpers";
 import { ScenarioTierBadge } from "./ScenarioTierBadge";
 
 export function ReceiptExhibit({ anchor, index }: { anchor: DataAnchor; index: number }) {
@@ -29,7 +30,7 @@ export function ReceiptExhibit({ anchor, index }: { anchor: DataAnchor; index: n
           {anchor.caveats}
         </p>
       ) : null}
-      <p className="font-mono text-[10px] text-muted caps-small">
+      <p className={`font-mono text-[10px] caps-small ${ageOfClass(anchor.as_of) || "text-muted"}`}>
         As of <span className="nums-tabular">{anchor.as_of}</span>
       </p>
     </section>
