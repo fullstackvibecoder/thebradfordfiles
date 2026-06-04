@@ -64,3 +64,13 @@ def test_known_incumbency_values_constant():
     assert candidates.INCUMBENCY_VALUES == {
         "incumbent", "challenger_officeholder", "challenger_outsider"
     }
+
+
+def test_missing_current_role_keeps_grammatical_lead():
+    m = _m()
+    del m["current_role"]
+    p = candidates.prompt_persona(m)
+    # No role, but the comma before "a candidate" must remain
+    assert ", a candidate for Mayor" in p
+    # And no doubled spaces from a bare-space fallback
+    assert "  " not in p

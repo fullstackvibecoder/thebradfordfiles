@@ -77,7 +77,7 @@ def prompt_persona(manifest: dict) -> str:
     subj, _obj, poss = _pronoun_forms(manifest.get("pronouns"))
     incumbency = manifest.get("incumbency", "challenger_outsider")
 
-    role_clause = f", {role}," if role else " "
+    role_clause = f", {role}," if role else ","
     lead = (
         f"This project documents the public political record of {name}{handle_str}"
         f"{role_clause} a candidate for Mayor of Toronto in 2026."
