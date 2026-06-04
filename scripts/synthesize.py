@@ -22,8 +22,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.lib import synthesis as _s  # type: ignore  # noqa: E402
+from dotenv import load_dotenv  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
+# Load .env so direct `python scripts/synthesize_all.py` runs get ANTHROPIC_API_KEY
+# (matches triage.py/extract.py; build_all.sh also sources .env for belt-and-suspenders).
+load_dotenv(ROOT / ".env")
 
 
 def _build_user_message(handle: str, topic: str, records: list[dict]) -> str:
