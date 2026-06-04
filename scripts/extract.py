@@ -551,6 +551,8 @@ def main() -> int:
     if manifest is None:
         log(f"FATAL: no candidate.json for @{args.account}; create data/{args.account}/candidate.json first")
         return 1
+    if manifest.get("incumbency") not in _candidates.INCUMBENCY_VALUES:
+        log(f"warn: manifest incumbency '{manifest.get('incumbency')}' unrecognized; using outsider framing")
     system_prompt = build_system_prompt(manifest)
     log(f"account: @{args.account}  ·  data dir: {paths['dir'].relative_to(ROOT)}/")
 
