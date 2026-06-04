@@ -822,7 +822,7 @@ function detectedScarbHoods(record) {
 }
 
 // ---------- VOTE WIDGET ----------
-const TURNSTILE_SITE_KEY = "0x4AAAAAADIpIfpk8chZt_UO";
+const TURNSTILE_SITE_KEY = "__TURNSTILE_SITE_KEY__";
 let _turnstileLoaded = false;
 
 function ensureTurnstile() {
@@ -1020,7 +1020,7 @@ function renderAggregate(target, counts) {
 }
 
 async function getTurnstileToken(widget) {
-  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "0x4AAAAAADIpIfpk8chZt_UO") return "dev";
+  if (!TURNSTILE_SITE_KEY || TURNSTILE_SITE_KEY === "__TURNSTILE_SITE_KEY__") return "dev";
   return new Promise(resolve => {
     function attempt() {
       if (window.turnstile) {
@@ -1565,6 +1565,6 @@ window.addEventListener("hashchange", () => {
   if (h) setTab(h);
 });
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"4f282783f3244ab19e90a9d05037cf43"}'></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"__CLOUDFLARE_BEACON_TOKEN__"}'></script>
 </body>
 </html>

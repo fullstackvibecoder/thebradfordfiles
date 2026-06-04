@@ -13,6 +13,9 @@ audio/
 # Generated transcripts (regenerated from cached audio)
 transcripts/
 
+# Intermediate extraction output (superseded by per-candidate records.jsonl)
+data/*/extracted.jsonl
+
 # Pipeline logs
 *.log
 download_archive.txt
