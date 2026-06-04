@@ -39,3 +39,8 @@ def test_merged_records_carry_source_platform(tmp_repo, run_build, monkeypatch):
     assert len(yt_recs) == 1
     # every record has a source_platform (IG-origin ones default to "instagram")
     assert all(r.get("source_platform") for r in dossier["records"])
+
+    # Bradford's records come from raw JSONL with NO source_platform -> must default to "instagram"
+    bradford = json.loads((tmp_repo / "site" / "candidates" / "bradford.json").read_text())
+    assert bradford["records"], "expected at least one Bradford record in the fixture"
+    assert all(r.get("source_platform") == "instagram" for r in bradford["records"])
