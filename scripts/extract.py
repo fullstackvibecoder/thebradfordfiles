@@ -520,6 +520,35 @@ def already_extracted_shortcodes(extracted_file: Path) -> set[str]:
 
 
 # ---------------------------------------------------------------------------
+# transcript resolution
+# ---------------------------------------------------------------------------
+
+def resolve_transcript_for_post(post: dict, cl_holder: dict, no_transcribe: bool) -> str | None:
+    """Return the transcript for a substantive video. For non-Instagram sources
+    (e.g. YouTube) use ONLY the pre-cached transcript written by the platform
+    scraper — never call instagrapi. For Instagram, download audio + Whisper as
+    before. `cl_holder` is a 1-key dict {'cl': <client-or-None>} so the IG client
+    is lazily created and reused across calls."""
+    sc = post["shortcode"]
+    date_iso = post.get("date", "")
+    if no_transcribe:
+        return None
+    platform = post.get("source_platform", "instagram")
+    if platform != "instagram":
+        tp = transcript_path(sc, date_iso)
+        if tp.exists():
+            return tp.read_text().strip() or None
+        log(f"warn: no cached transcript for {platform} post {sc}; caption-only")
+        return None
+    if cl_holder["cl"] is None:
+        cl_holder["cl"] = get_client()
+    audio = download_audio(cl_holder["cl"], sc, date_iso)
+    if audio:
+        return transcribe(audio, sc, date_iso)
+    return None
+
+
+# ---------------------------------------------------------------------------
 # main
 # ---------------------------------------------------------------------------
 
@@ -547,7 +576,7 @@ def main() -> int:
         return 1
 
     paths = account_paths(args.account)
-    manifest = _candidates.load_candidate(args.account)
+    manifest = _candidates.resolve_prompt_manifest(args.account)
     if manifest is None:
         log(f"FATAL: no candidate.json for @{args.account}; create data/{args.account}/candidate.json first")
         return 1
@@ -586,7 +615,7 @@ def main() -> int:
         return 0
 
     client = Anthropic()
-    cl = None  # lazy — only init instagrapi if we need a video download
+    _cl_holder = {"cl": None}  # lazy — only init instagrapi if we need a video download
 
     counts = {"posts": 0, "records": 0, "videos_transcribed": 0, "errors": 0}
     started = time.time()
@@ -611,19 +640,10 @@ def main() -> int:
             f"{'video' if is_video else 'still'}{' (transcribe)' if needs_transcript and not args.no_transcribe else ''}")
 
         transcript = None
-        # Belt-and-suspenders: transcribe ALL substantive videos, regardless of
-        # whether triage flagged needs_transcript=true. Whisper is local + free
-        # in compute terms; closes the "what did the speaker add beyond the
-        # caption" gap. Contextual videos still skip whisper since they only
-        # get a light Haiku character-note extraction.
         if bucket == "substantive" and is_video and not args.no_transcribe:
-            if cl is None:
-                cl = get_client()
-            audio = download_audio(cl, sc, date_iso)
-            if audio:
-                transcript = transcribe(audio, sc, date_iso)
-                if transcript:
-                    counts["videos_transcribed"] += 1
+            transcript = resolve_transcript_for_post(post, _cl_holder, args.no_transcribe)
+            if transcript:
+                counts["videos_transcribed"] += 1
 
         records_this_post = 0
         try:
