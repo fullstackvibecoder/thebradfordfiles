@@ -121,11 +121,15 @@ def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
         d = DATA_DIR / h
         if not d.exists():
             continue
-        records.extend(_load_jsonl(d / "records.jsonl"))
+        h_platform = (_candidates.load_candidate(h) or {}).get("source_platform", "instagram")
+        for r in _load_jsonl(d / "records.jsonl"):
+            r.setdefault("source_platform", h_platform)
+            records.append(r)
         for p in _load_jsonl(d / "posts.jsonl"):
             sc = p.get("shortcode")
             if sc:
-                posts_index[sc] = {**p, "source_account": h}
+                posts_index[sc] = {**p, "source_account": h,
+                                   "source_platform": p.get("source_platform", h_platform)}
         for t in _load_jsonl(d / "triage.jsonl"):
             triages.append(t)
             if t.get("triage", {}).get("bucket") == "skip":
@@ -143,6 +147,7 @@ def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
     for r in records:
         r.setdefault("candidate_slug", manifest["slug"])
         r.setdefault("source_account", handle)
+        r.setdefault("source_platform", "instagram")
         if r.get("kind") == "action":
             sc = r.get("shortcode")
             if sc and sc in matches_by_sc:
