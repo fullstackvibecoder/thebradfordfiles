@@ -13,14 +13,14 @@
   ],
   "council_terms": ["2022-2026"],
   "council_name_for_vote_lookup": {"first": "Olivia", "last": "Chow"},
-  "candidacy_status": "expected",
-  "declared_date": null,
+  "candidacy_status": "declared",
+  "declared_date": "2026-05-25",
   "result_2023": {"placement": 1, "vote_share_pct": 37.0, "votes": 270000, "approximate": true},
   "platform_pillars": ["housing affordability", "transit investment", "social services"],
   "ig_handle": "oliviachow",
   "alias_handles": [],
   "sources": [
     "2023 City of Toronto mayoral byelection results",
-    "CBC News (May 1, 2026)"
+    "Olivia Chow re-election launch (May 25, 2026)"
   ]
 }
