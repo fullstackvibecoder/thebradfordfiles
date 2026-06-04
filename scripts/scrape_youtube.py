@@ -28,8 +28,8 @@ DATA_DIR = ROOT / "data"
 TRANSCRIPTS_DIR = ROOT / "transcripts"
 TRANSCRIPTS_DIR.mkdir(exist_ok=True)
 
-_HASHTAG_RE = re.compile(r"#([\w][\w._]*)")
-_MENTION_RE = re.compile(r"(?:^|[^\w])@([A-Za-z0-9._]{1,60})")
+_HASHTAG_RE = re.compile(r"#([\wÀ-￿][\wÀ-￿._]*)")
+_MENTION_RE = re.compile(r"(?:^|[^\w])@([A-Za-z0-9._]{1,30})")
 
 
 def log(msg: str) -> None:
@@ -47,7 +47,7 @@ def youtube_post_to_record(video: dict) -> dict:
     to the normalized posts.jsonl schema shared with the Instagram path."""
     title = video.get("title", "") or ""
     desc = video.get("description", "") or ""
-    caption = (title + ("\n\n" + desc if desc else ""))[:6000]
+    caption = "\n\n".join(p for p in (title, desc) if p)[:6000]
     return {
         "shortcode": video["id"],
         "url": f"https://www.youtube.com/watch?v={video['id']}",

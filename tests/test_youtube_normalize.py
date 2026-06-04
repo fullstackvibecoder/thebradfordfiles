@@ -37,3 +37,10 @@ def test_handles_missing_optional_fields():
     assert rec["caption"] == "T"
     assert rec["likes"] == 0 and rec["comments"] == 0
     assert rec["video_duration"] is None
+
+
+def test_empty_title_no_leading_newlines():
+    rec = yt.youtube_post_to_record({"id": "z", "title": "", "description": "Just a desc",
+                                     "published_at": "2026-01-01T00:00:00Z"})
+    assert rec["caption"] == "Just a desc"
+    assert not rec["caption"].startswith("\n")
