@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T20:30:55+00:00",
+  "generated_at": "2026-06-04T16:11:18+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -50,8 +50,8 @@
       "display_name": "Olivia Chow",
       "files_label": "The Chow Files",
       "current_role": "Mayor of Toronto (since June 2023)",
-      "candidacy_status": "expected",
-      "declared_date": null,
+      "candidacy_status": "declared",
+      "declared_date": "2026-05-25",
       "result_2023": {
         "placement": 1,
         "vote_share_pct": 37.0,
@@ -63,29 +63,63 @@
         "transit investment",
         "social services"
       ],
-      "post_count": 719,
-      "record_count": 470,
-      "extracted_count": 248,
+      "post_count": 703,
+      "record_count": 452,
+      "extracted_count": 230,
       "emphasis": {
-        "housing": 10.9,
-        "social_services": 17.7,
-        "civic_engagement": 8.9,
-        "other": 1.6,
-        "campaign_logistics": 4.4,
-        "infrastructure": 1.6,
-        "small_business_economy": 4.8,
-        "transit": 10.5,
-        "parks_environment": 3.2,
-        "governance_ethics": 2.4,
-        "taxes_fiscal": 1.6,
+        "housing": 11.7,
+        "civic_engagement": 9.1,
+        "other": 2.6,
+        "campaign_logistics": 6.1,
+        "infrastructure": 1.7,
+        "social_services": 17.4,
+        "small_business_economy": 5.2,
+        "transit": 12.6,
+        "parks_environment": 3.0,
+        "governance_ethics": 3.0,
+        "taxes_fiscal": 1.7,
         "endorsements": 0.4,
-        "safety_crime": 0.8
+        "safety_crime": 0.9
       },
       "date_range": {
         "earliest": "2014-01-20",
         "latest": "2025-08-25"
       },
-      "consistency_dot": "green"
+      "consistency_dot": "yellow"
+    },
+    {
+      "slug": "mcvie",
+      "surname": "McVie",
+      "display_name": "Sarah McVie",
+      "files_label": "The McVie Files",
+      "current_role": "Actress and community advocate",
+      "candidacy_status": "declared",
+      "declared_date": "2026-05-01",
+      "result_2023": null,
+      "platform_pillars": [
+        "flood resilience",
+        "infrastructure",
+        "civic engagement"
+      ],
+      "post_count": 487,
+      "record_count": 31,
+      "extracted_count": 7,
+      "emphasis": {
+        "small_business_economy": 28.6,
+        "personal_context": 28.6,
+        "governance_ethics": 28.6,
+        "campaign_logistics": 28.6,
+        "civic_engagement": 28.6,
+        "infrastructure": 14.3,
+        "parks_environment": 14.3,
+        "other": 14.3,
+        "social_services": 14.3
+      },
+      "date_range": {
+        "earliest": "2016-01-02",
+        "latest": "2026-05-15"
+      },
+      "consistency_dot": "gray"
     }
   ]
 }

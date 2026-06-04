@@ -2,15 +2,15 @@
   "candidate_handle": "oliviachow",
   "candidate_slug": "chow",
   "topic": "civic_engagement",
-  "summary": "Across nearly a decade of posts, Olivia Chow frames civic engagement as participatory, community-rooted, and accessible. Chow repeatedly encourages voting, including early voting, and urges people to vote for their beliefs rather than out of fear (uGINR0utA2, t-5vGnutPZ, pJp-RlutGb, CtUbO-FgORx). Chow emphasizes consultation and listening, pledging as Mayor to learn from Torontonians' experiences and consulting Flemingdon families directly about the Science Centre (CrqpZEkgbe7, CrPADE5p7N1). Chow recognizes systemic barriers to youth engagement and argues candidates must meet younger voters on social media (Cst4qC_JZ4B). Chow celebrates volunteerism, working people, and community organizations such as Sikh seva groups (rfmY9OOtJG, Csrr8tmPhyK, Cr9ZV3pvq-u), and participates in rallies, canvasses, and cultural recognition events (7igUmiOtPX, 8qjgVJutDR, Cr9aUuAtQRF, CucpS8YAYdc).",
+  "summary": "Across 2014 to 2023, Olivia Chow's posts frame civic engagement as a collective, participatory practice. Chow has repeatedly encouraged voting, urging Ontarians and Torontonians to cast ballots and to \"vote for what you believe in\" rather than out of fear (uGINR0utA2, t-5vGnutPZ, pJp-RlutGb), and modeled the behavior by voting early herself (CtUbO-FgORx, uqSun1OtKe). Chow has emphasized community-based consultation, citing direct outreach to Flemingdon families on the Science Centre (CrPADE5p7N1, Cr9aUuAtQRF) and canvassing on women's issues (8qjgVJutDR). Chow has expressed solidarity with labour, 2SLGBTQI+, Sikh, and Indigenous communities (Csrr8tmPhyK, Ct422Chv9qe, Cr9ZV3pvq-u, 0wB8t1OtIm), and has framed democratic strength as collective: \"not just about one mayor... all of us together\" (Cs7bZwhgbZj, CuAqVppPbav).",
   "consistency": {
     "label": "consistent",
-    "stable_since": "2014-06",
+    "stable_since": "2014-06-12",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Encourages voting and early voting as accessible civic participation",
+      "stance": "Encourages voter participation in elections at all levels",
       "supporting_records": [
         "uGINR0utA2",
         "t-5vGnutPZ",
@@ -18,96 +18,109 @@
       ]
     },
     {
-      "stance": "Supports direct consultation with affected communities on local decisions",
+      "stance": "Frames democracy as a collective effort beyond any single official",
       "supporting_records": [
-        "CrPADE5p7N1",
-        "CrqpZEkgbe7"
-      ]
-    },
-    {
-      "stance": "Frames lower youth engagement with traditional formats as systemic barriers, not apathy, and urges meeting young voters on social media",
-      "supporting_records": [
-        "Cst4qC_JZ4B"
-      ]
-    },
-    {
-      "stance": "Celebrates volunteerism, working people, and community organizations as central to civic life",
-      "supporting_records": [
-        "rfmY9OOtJG",
-        "Csrr8tmPhyK",
-        "Cr9ZV3pvq-u"
-      ]
-    },
-    {
-      "stance": "Affirms democracy is strengthened by exchange of ideas during campaigns",
-      "supporting_records": [
+        "Cs7bZwhgbZj",
         "CuAqVppPbav"
       ]
     },
     {
-      "stance": "Supports cultural and community spaces in neighbourhoods outside the downtown core",
+      "stance": "Supports direct community consultation in civic decision-making",
       "supporting_records": [
+        "CrPADE5p7N1",
         "Cr9aUuAtQRF"
       ]
     },
     {
-      "stance": "Expresses solidarity with 2SLGBTQI+ communities and frames Pride as political",
+      "stance": "Expresses solidarity with marginalized and equity-seeking communities (2SLGBTQI+, Sikh, working people, Indigenous women)",
       "supporting_records": [
         "Ct422Chv9qe",
-        "Ct2rNF5NJRl"
+        "Cr9ZV3pvq-u",
+        "Csrr8tmPhyK",
+        "0wB8t1OtIm"
+      ]
+    },
+    {
+      "stance": "Views Pride and community-building as inherently political",
+      "supporting_records": [
+        "Ct2rNF5NJRl",
+        "Ct422Chv9qe"
+      ]
+    },
+    {
+      "stance": "Supports neighbourhood-level cultural and learning spaces outside the downtown core",
+      "supporting_records": [
+        "Cr9aUuAtQRF"
       ]
     }
   ],
   "key_actions": [
     {
-      "action": "Cast ballot in early voting for the Toronto mayoral by-election",
+      "action": "Cast ballot in early voting for 2023 Toronto mayoral by-election",
       "supporting_records": [
         "CtUbO-FgORx"
       ]
     },
     {
-      "action": "Consulted Flemingdon families and stood with OPSEU/SEFPO workers and residents on the Ontario Science Centre",
+      "action": "Voted in the 2014 Toronto municipal election with her granddaughters",
       "supporting_records": [
-        "CrPADE5p7N1",
+        "uqSun1OtKe"
+      ]
+    },
+    {
+      "action": "Consulted Flemingdon Park families about the future of the Ontario Science Centre",
+      "supporting_records": [
+        "CrPADE5p7N1"
+      ]
+    },
+    {
+      "action": "Stood with OPSEU/SEFPO workers and Thorncliffe/Flemingdon residents opposing relocation of the Ontario Science Centre",
+      "supporting_records": [
         "Cr9aUuAtQRF"
       ]
     },
     {
-      "action": "Joined a rally with Spadina–Fort York residents to oppose Bill C-51",
+      "action": "Joined a Spadina–Fort York rally against Bill C-51",
       "supporting_records": [
         "7igUmiOtPX"
       ]
     },
     {
-      "action": "Participated in a large canvass focused on women's issues in Spadina–Fort York",
+      "action": "Canvassed in Spadina–Fort York on women's issues",
       "supporting_records": [
         "8qjgVJutDR"
       ]
     },
     {
-      "action": "Presented the inaugural Jack Layton Progress Prize to Fay Blaney of the Women's Memorial March Committee",
+      "action": "Served as observer for Tunisia's first free presidential election",
+      "supporting_records": [
+        "wKFwDwOtDX"
+      ]
+    },
+    {
+      "action": "Presented the first Jack Layton Progress Prize to Fay Blaney of the Women's Memorial March Committee",
       "supporting_records": [
         "0wB8t1OtIm"
       ]
     },
     {
-      "action": "Presented the 2023 Mayor's Purchase Awards at the Toronto Outdoor Art Fair",
+      "action": "Spoke with media alongside MPPs Tabuns and DiNovo about John Tory's agenda",
       "supporting_records": [
-        "CucpS8YAYdc"
+        "uba6LuutPi"
       ]
     },
     {
-      "action": "Co-produced and co-hosted Global TV's Morning Show",
+      "action": "Met with Bloomberg to discuss gridlock, affordable housing, and Toronto's global profile",
       "supporting_records": [
-        "uQcoMzOtN7"
+        "t3QSr1utLV"
       ]
     }
   ],
-  "input_record_count": 26,
-  "input_records_hash": "sha256:92eb44aef9c83efb45107eca78a293a48e57abf4642bd8520f0b8f2dd304f3c4",
+  "input_record_count": 24,
+  "input_records_hash": "sha256:2d74b0bc89732d04e18804912b4efdc687d4cfee50de297171d2dec8e7eeabff",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T20:01:35+00:00",
+  "synthesis_generated_at": "2026-06-04T16:09:34+00:00",
   "synthesis_skipped_reason": null
 }

@@ -2,7 +2,7 @@
   "candidate_handle": "oliviachow",
   "candidate_slug": "chow",
   "topic": "social_services",
-  "summary": "Olivia Chow's Instagram record on social services emphasizes strengthening public services, expanding supports for vulnerable populations, and addressing poverty. Chow has pledged to expand Toronto Public Library hours so all 100 branches open seven days a week, increase core funding for non-profits, create 24/7 respite spaces and wrap-around supports for unhoused people, and protect unionized city service jobs. Earlier campaigns (2014 to 2015) focused on creating childcare spaces, expanding school nutrition and after-school programs, tackling youth unemployment, and supporting seniors. Chow consistently voices support for 2SLGBTQI+ communities, opposes Islamophobia and antisemitism, and backs culturally sensitive health services and gender-based violence supports. The Toronto Community Crisis Service is highlighted for city-wide expansion. Chow frames funding through asking the wealthiest to \"pay their fair share.\"",
+  "summary": "Across 2014 to 2023 Instagram records, Olivia Chow consistently positions strong public services and a robust social safety net as central priorities for Toronto. Chow supports expanded childcare (including the NDP's $15/day plan and a pledge to create 3,000 spaces), school nutrition programs, after-school care, youth employment supports, and senior services. On homelessness, Chow calls the situation an emergency and pledges 24/7 respite spaces and a community-led wrap-around services fund, financed partly by higher taxes on the wealthiest. Chow pledges to open all 100 public library branches seven days a week and to increase core funding for non-profits. Chow expresses support for 2SLGBTQI+ communities, Indigenous reconciliation including action on gender-based violence, workers and union jobs, people with disabilities, and addressing child poverty and food insecurity.",
   "consistency": {
     "label": "consistent",
     "stable_since": "2014-09",
@@ -10,17 +10,37 @@
   },
   "key_positions": [
     {
-      "stance": "Supports strong, reliable public services as a core city priority",
+      "stance": "Supports expanded, affordable childcare and school nutrition/after-school programs",
       "supporting_records": [
-        "Cto_GfyArl8",
-        "CtiJjtEA_dw",
-        "Cr036r2ABQo",
-        "CrtSNhOgByS",
-        "CrTWBZ9g4Uc"
+        "8qjgVJutDR",
+        "7fwa5AutIs",
+        "ugKSbCutDk",
+        "ua_T1UOtDT",
+        "tlEZvnutGS",
+        "tTEEA0OtEL",
+        "scsok8OtFw",
+        "Cs7bZwhgbZj"
       ]
     },
     {
-      "stance": "Supports expanding Toronto Public Library hours so all 100 branches open seven days a week",
+      "stance": "Treats homelessness as an emergency requiring 24/7 respite, wrap-around supports, and additional shelter capacity, with community-led decision making",
+      "supporting_records": [
+        "CsHejOWP0rO",
+        "CsHQt2JpsZ0"
+      ]
+    },
+    {
+      "stance": "Supports robust, reliable public services as core to Toronto life",
+      "supporting_records": [
+        "CtzK0BGg36K",
+        "Cto_GfyArl8",
+        "CtiJjtEA_dw",
+        "Cr036r2ABQo",
+        "CrtSNhOgByS"
+      ]
+    },
+    {
+      "stance": "Supports expanded public library hours and library workers",
       "supporting_records": [
         "Cs11w9iAxGJ",
         "Cszj-OQtdG9",
@@ -28,114 +48,132 @@
       ]
     },
     {
-      "stance": "Supports expanding the Toronto Community Crisis Service city-wide so appropriate supports exist when people are in crisis",
-      "supporting_records": [
-        "CuX95hrA4Qv"
-      ]
-    },
-    {
-      "stance": "Treats homelessness as an emergency, opposes pushing unhoused people between parks/transit/libraries, and supports 24/7 respite spaces and wrap-around supports",
-      "supporting_records": [
-        "CsHejOWP0rO",
-        "CsHQt2JpsZ0"
-      ]
-    },
-    {
-      "stance": "Supports increased and improved core funding for non-profits",
+      "stance": "Supports increased core funding for non-profits delivering social services",
       "supporting_records": [
         "Cs7XZJHAug5",
         "CsHQt2JpsZ0"
       ]
     },
     {
-      "stance": "Supports affordable childcare expansion, including additional childcare spaces and earlier endorsement of $15/day childcare",
-      "supporting_records": [
-        "tlEZvnutGS",
-        "tlafPkutIw",
-        "uQcoMzOtN7",
-        "8qjgVJutDR",
-        "7fwa5AutIs",
-        "ugKSbCutDk"
-      ]
-    },
-    {
-      "stance": "Supports expanding school nutrition programs and after-school care to address child poverty",
-      "supporting_records": [
-        "tTEEA0OtEL",
-        "t3LmBfOtDo",
-        "scsok8OtFw",
-        "sfCqOVOtEM",
-        "ua_T1UOtDT",
-        "ugKSbCutDk"
-      ]
-    },
-    {
-      "stance": "Supports tackling youth unemployment and creating job opportunities for young people",
-      "supporting_records": [
-        "ssdY-qutFs",
-        "uWPY0KutDY",
-        "n8YQQzutIs",
-        "ugKSbCutDk"
-      ]
-    },
-    {
-      "stance": "Supports the 2SLGBTQI+ community and opposes rising homophobia and transphobia",
+      "stance": "Supports 2SLGBTQI+ communities, including specific public solidarity with Trans people",
       "supporting_records": [
         "Ct2rNF5NJRl",
         "Cs9ZwzVPU-L",
-        "kFrb2HutDz"
+        "kFrb2HutDz",
+        "pt_PwxOtFH"
       ]
     },
     {
-      "stance": "Opposes Islamophobia and antisemitism; supports anti-hate public education",
+      "stance": "Supports addressing child poverty and food insecurity through expanded school food programs",
       "supporting_records": [
-        "Cuh98p0PPkX",
-        "CtSF49tP4K6"
+        "t3LmBfOtDo",
+        "tTEEA0OtEL",
+        "CsSOxZbAavJ",
+        "sfCqOVOtEM"
       ]
     },
     {
-      "stance": "Supports addressing gender-based and intimate partner violence, including reconciliation-linked supports",
-      "supporting_records": [
-        "Cujn8P6utFZ",
-        "Cr33PZjPo8E",
-        "8qjgVJutDR"
-      ]
-    },
-    {
-      "stance": "Supports culturally sensitive health services for diverse communities",
-      "supporting_records": [
-        "CswRXNBAo-m",
-        "8OiVuzOtI4"
-      ]
-    },
-    {
-      "stance": "Supports protecting unionized city service jobs and worker rights",
-      "supporting_records": [
-        "CrtSNhOgByS",
-        "Crjw7hQNrMP",
-        "CrQzv0YgkZV",
-        "Crl5pUPPWbN"
-      ]
-    },
-    {
-      "stance": "Supports caring for seniors via accessible transit, community housing, and affordable property taxes",
+      "stance": "Supports services for seniors, including community housing and accessible transit",
       "supporting_records": [
         "uJqN2uOtLA"
       ]
     },
     {
-      "stance": "Supports hiring more people with disabilities at the city",
+      "stance": "Supports workers, union jobs, and safer working conditions",
+      "supporting_records": [
+        "CrtSNhOgByS",
+        "Crl5pUPPWbN",
+        "Crjw7hQNrMP",
+        "CrQzv0YgkZV"
+      ]
+    },
+    {
+      "stance": "Supports Indigenous reconciliation and action on gender-based violence, including MMIW inquiry",
+      "supporting_records": [
+        "Cr33PZjPo8E",
+        "8qjgVJutDR",
+        "7n1YjUOtJZ"
+      ]
+    },
+    {
+      "stance": "Supports hiring more people with disabilities in the city workforce",
       "supporting_records": [
         "tQqAqWOtEK"
       ]
+    },
+    {
+      "stance": "Supports youth employment programs and supports for young people in crisis",
+      "supporting_records": [
+        "uWPY0KutDY",
+        "ssdY-qutFs",
+        "n8YQQzutIs"
+      ]
     }
   ],
-  "key_actions": [],
-  "input_record_count": 70,
-  "input_records_hash": "sha256:fd9ae9b39a3af2f8e1adb0098030b033f6941a064f2d4b56408e1d8e92282c24",
+  "key_actions": [
+    {
+      "action": "Announced plan to expand Toronto Public Library hours so all 100 branches are open seven days a week",
+      "supporting_records": [
+        "Cszj-OQtdG9"
+      ]
+    },
+    {
+      "action": "Pledged to create 24/7 respite spaces and a community-led fund for wrap-around homelessness supports",
+      "supporting_records": [
+        "CsHejOWP0rO"
+      ]
+    },
+    {
+      "action": "Pledged to increase core funding for non-profits, funded by asking the wealthiest to pay more",
+      "supporting_records": [
+        "Cs7XZJHAug5",
+        "CsHQt2JpsZ0"
+      ]
+    },
+    {
+      "action": "Pledged to create 3,000 childcare spaces and expand the school food program by 36,000 children",
+      "supporting_records": [
+        "tlEZvnutGS",
+        "tTEEA0OtEL"
+      ]
+    },
+    {
+      "action": "Held a press conference responding to the Vital Signs report on child poverty in Toronto",
+      "supporting_records": [
+        "t3LmBfOtDo"
+      ]
+    },
+    {
+      "action": "Announced a school food program expansion with Frances Lankin",
+      "supporting_records": [
+        "sfCqOVOtEM"
+      ]
+    },
+    {
+      "action": "Joined picket lines in solidarity with CUPE Local 233 workers at Toronto Metropolitan University",
+      "supporting_records": [
+        "Crjw7hQNrMP",
+        "CrQzv0YgkZV"
+      ]
+    },
+    {
+      "action": "Raised awareness for 360kids, a group supporting young people in crisis",
+      "supporting_records": [
+        "ssdY-qutFs"
+      ]
+    },
+    {
+      "action": "References past work on a childcare deal that made childcare more affordable and eventually $10 a day",
+      "supporting_records": [
+        "Cs7bZwhgbZj"
+      ]
+    }
+  ],
+  "input_record_count": 63,
+  "input_records_hash": "sha256:3810f5745060207d0e7eb3cdb3b2382ea4e5d7b8461dc7e324bc946fd00f4945",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T20:02:45+00:00",
+  "synthesis_generated_at": "2026-06-04T16:10:42+00:00",
   "synthesis_skipped_reason": null
 }

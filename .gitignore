@@ -54,3 +54,6 @@ web/.next/
 web/.vercel/
 web/next-env.d.ts
 web/tsconfig.tsbuildinfo
+
+# Ephemeral build_site.py SITE_DIR output (canonical web data lives in web/public/data/)
+/site/
