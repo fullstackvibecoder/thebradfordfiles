@@ -349,7 +349,7 @@ def append_jsonl(path: Path, row: dict) -> None:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser()
     p.add_argument("--limit", type=int, default=None,
                    help="max number of posts to process this run (oldest-skipped first)")
@@ -360,18 +360,19 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--account", type=str, default=DEFAULT_ACCOUNT,
                    help=f"Instagram handle to triage (default: {DEFAULT_ACCOUNT}). "
                         f"Data is written to data/<account>/")
-    return p.parse_args()
+    p.add_argument("--no-fetch", action="store_true",
+                   help="triage the existing posts.jsonl without fetching from Instagram "
+                        "(used for non-IG sources scraped by another tool, e.g. YouTube)")
+    return p.parse_args(argv)
 
 
-def main() -> int:
-    args = parse_args()
-
+def _main(args) -> int:
     if not os.environ.get("ANTHROPIC_API_KEY"):
         log("FATAL: ANTHROPIC_API_KEY not set in environment / .env")
         return 1
 
     account = args.account
-    manifest = _candidates.load_candidate(account)
+    manifest = _candidates.resolve_prompt_manifest(account)
     if manifest is None:
         log(f"FATAL: no candidate.json for @{account}; create data/{account}/candidate.json first")
         return 1
@@ -379,9 +380,40 @@ def main() -> int:
         log(f"warn: manifest incumbency '{manifest.get('incumbency')}' unrecognized; using outsider framing")
     system_prompt = build_system_prompt(manifest)
     triage_file, posts_file, _acc_dir = account_paths(account)
-    log(f"account: @{account}  ·  data dir: {_acc_dir.relative_to(ROOT)}/")
+    log(f"account: @{account}  ·  data dir: {_acc_dir.relative_to(DATA_DIR.parent)}/")
 
     client = Anthropic()
+
+    if args.no_fetch:
+        seen_triage = existing_shortcodes(triage_file)
+        counts = {"substantive": 0, "contextual": 0, "skip": 0, "errors": 0}
+        rows = [json.loads(l) for l in posts_file.read_text().splitlines() if l.strip()] \
+            if posts_file.exists() else []
+        log(f"--no-fetch: {len(rows)} posts on file, {len(seen_triage)} already triaged")
+        for rec in rows:
+            if rec["shortcode"] in seen_triage:
+                continue
+            try:
+                triage = normalize_triage(triage_one(rec, client, system_prompt))
+            except Exception as e:
+                log(f"triage error on {rec['shortcode']}: {e!r}; skipping")
+                counts["errors"] += 1
+                continue
+            append_jsonl(triage_file, {
+                "shortcode": rec["shortcode"], "date": rec["date"], "url": rec["url"],
+                "type": rec["type"], "is_video": rec["is_video"],
+                "caption_excerpt": (rec.get("caption") or "")[:200],
+                "triage": triage,
+                "triaged_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "model": HAIKU_MODEL,
+            })
+            seen_triage.add(rec["shortcode"])
+            counts[triage.get("bucket", "skip")] = counts.get(triage.get("bucket", "skip"), 0) + 1
+            log(f"{rec['date'][:10]} {rec['shortcode']:<14} → {triage.get('bucket','skip')}")
+        log(f"done (no-fetch). sub={counts['substantive']} ctx={counts['contextual']} "
+            f"skip={counts['skip']} err={counts['errors']}")
+        return 0
+
     cl = get_client()
 
     log(f"loading profile @{account}")
@@ -510,6 +542,14 @@ def main() -> int:
     log(f"  errors:      {counts['errors']}")
     log(f"output: {triage_file.relative_to(ROOT)}")
     return 0
+
+
+def main_argv(argv: list[str] | None = None) -> int:
+    return _main(parse_args(argv))
+
+
+def main() -> int:
+    return _main(parse_args())
 
 
 if __name__ == "__main__":
