@@ -59,6 +59,9 @@ TRANSCRIPTS_DIR.mkdir(exist_ok=True)
 
 DEFAULT_ACCOUNT = "bradfordgrams"
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib import candidates as _candidates  # noqa: E402
+
 
 def account_paths(account: str) -> dict:
     """Return all account-namespaced paths."""
@@ -153,7 +156,7 @@ EXTRACTION_TOOL = {
             },
             "endorsements": {
                 "type": "array",
-                "description": "Named public endorsements — either Brad endorsing someone else, or someone endorsing Brad.",
+                "description": "Named public endorsements — either the candidate endorsing someone else, or someone endorsing the candidate.",
                 "items": {
                     "type": "object",
                     "properties": {
@@ -189,7 +192,7 @@ EXTRACTION_TOOL = {
                     "type": "object",
                     "properties": {
                         "quote_text": {"type": "string"},
-                        "speaker": {"type": "string", "description": "Usually 'Brad Bradford' but could be a guest in the post."},
+                        "speaker": {"type": "string", "description": "Usually the candidate themselves, but could be a guest in the post."},
                         "topic": {"type": "string", "enum": TOPICS},
                     },
                     "required": ["quote_text", "speaker", "topic"],
@@ -201,12 +204,10 @@ EXTRACTION_TOOL = {
 }
 
 
-SYSTEM_PROMPT = """You are an extraction assistant for The Bradford Files, an \
-independent civic-transparency project documenting the public political record \
-of Brad Bradford (@bradfordgrams), a Toronto City Councillor running for Mayor \
-of Toronto in 2026. The project is neutral — neither advocacy nor opposition. \
-Records you extract will be displayed publicly with sourcing back to the \
-original post.
+EXTRACT_RUBRIC = """You are an extraction assistant for an independent \
+civic-transparency project. The project is neutral — neither advocacy nor \
+opposition. Records you extract will be displayed publicly with sourcing back \
+to the original post.
 
 Your job is to read one Instagram post's caption (and optional video \
 transcript) and extract zero or more structured records of these kinds: \
@@ -247,6 +248,11 @@ endorsements, personal_context, other.
 7. APPEARANCES need a clearly named event. Generic 'community visit' without \
 a named location/event is not enough — skip those, or capture them as a \
 position/pledge if substantive content was discussed."""
+
+
+def build_system_prompt(manifest: dict) -> str:
+    """Persona framing (per-candidate) + the shared neutral extraction rubric."""
+    return _candidates.prompt_persona(manifest) + "\n\n" + EXTRACT_RUBRIC
 
 
 # ---------------------------------------------------------------------------
@@ -413,7 +419,7 @@ def transcribe(audio: Path, shortcode: str, date: str) -> str | None:
 # extraction
 # ---------------------------------------------------------------------------
 
-def extract_substantive(post: dict, transcript: str | None, client: Anthropic) -> dict:
+def extract_substantive(post: dict, transcript: str | None, client: Anthropic, system_prompt: str) -> dict:
     """Send caption + optional transcript to Opus, get structured records."""
     blocks = [
         f"Date: {post['date'][:10]}",
@@ -433,7 +439,7 @@ def extract_substantive(post: dict, transcript: str | None, client: Anthropic) -
     response = client.messages.create(
         model=OPUS_MODEL,
         max_tokens=4096,
-        system=SYSTEM_PROMPT,
+        system=system_prompt,
         tools=[EXTRACTION_TOOL],
         tool_choice={"type": "tool", "name": "extract_records"},
         messages=[{"role": "user", "content": user}],
@@ -459,14 +465,19 @@ CONTEXTUAL_TOOL = {
 }
 
 
-def extract_contextual(post: dict, client: Anthropic) -> dict:
-    """One Haiku call for a one-line background note. No transcript needed."""
-    user = (
+def contextual_user_prompt(post: dict, manifest: dict) -> str:
+    name = manifest.get("display_name", "the candidate")
+    return (
         f"Date: {post['date'][:10]}\n"
         f"Caption:\n{post.get('caption') or '(no caption)'}\n\n"
-        f"Capture a single short context note about Brad Bradford's "
+        f"Capture a single short context note about {name}'s "
         f"character/values, in neutral language."
     )
+
+
+def extract_contextual(post: dict, client: Anthropic, manifest: dict) -> dict:
+    """One Haiku call for a one-line background note. No transcript needed."""
+    user = contextual_user_prompt(post, manifest)
     response = client.messages.create(
         model=HAIKU_MODEL,
         max_tokens=512,
@@ -536,6 +547,11 @@ def main() -> int:
         return 1
 
     paths = account_paths(args.account)
+    manifest = _candidates.load_candidate(args.account)
+    if manifest is None:
+        log(f"FATAL: no candidate.json for @{args.account}; create data/{args.account}/candidate.json first")
+        return 1
+    system_prompt = build_system_prompt(manifest)
     log(f"account: @{args.account}  ·  data dir: {paths['dir'].relative_to(ROOT)}/")
 
     if not paths["triage"].exists():
@@ -610,7 +626,7 @@ def main() -> int:
         records_this_post = 0
         try:
             if bucket == "substantive":
-                result = extract_substantive(post, transcript, client)
+                result = extract_substantive(post, transcript, client, system_prompt)
                 # Walk each kind, append individual records
                 for kind, items in result.items():
                     if not isinstance(items, list):
@@ -630,7 +646,7 @@ def main() -> int:
                         append_jsonl(paths["records"], record)
                         records_this_post += 1
             elif bucket == "contextual":
-                result = extract_contextual(post, client)
+                result = extract_contextual(post, client, manifest)
                 if result.get("summary"):
                     record = {
                         "kind": "background_note",
