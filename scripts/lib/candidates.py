@@ -102,3 +102,19 @@ def prompt_persona(manifest: dict) -> str:
             f"civic or organizing actions (e.g. community advocacy), not council votes."
         )
     return lead + office
+
+
+def resolve_prompt_manifest(handle: str) -> dict | None:
+    """Return the manifest whose framing should drive triage/extraction prompts
+    for `handle`. If `handle` is an alias source (has `alias_of`), return the
+    PRIMARY candidate's manifest so the alias inherits the primary's pronouns/
+    incumbency/framing. Otherwise return the handle's own manifest. Falls back
+    to the alias's own manifest if the named primary is missing (graceful on
+    misconfig); returns None only if `handle` itself has no manifest."""
+    own = load_candidate(handle)
+    if own is None:
+        return None
+    primary_handle = own.get("alias_of")
+    if primary_handle:
+        return load_candidate(primary_handle) or own
+    return own
