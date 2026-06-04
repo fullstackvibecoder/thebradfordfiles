@@ -57,7 +57,12 @@ def run_build(tmp_repo, monkeypatch):
     monkeypatch.setattr(build_site, "ROOT", tmp_repo)
     monkeypatch.setattr(build_site, "DATA_DIR", tmp_repo / "data")
     monkeypatch.setattr(build_site, "SITE_DIR", tmp_repo / "site")
+    monkeypatch.setattr(build_site, "WEB_DATA_DIR", tmp_repo / "web" / "public" / "data")
     monkeypatch.setattr(build_site, "MATCHES_FILE", tmp_repo / "data" / "votes" / "matches.jsonl")
+    # build_site does `from lib import candidates`, which is a DIFFERENT module
+    # object than `scripts.lib.candidates`. Patch the one build_site actually
+    # holds so candidate discovery reads the tmp repo, not real data/.
+    monkeypatch.setattr(build_site._candidates, "DATA_DIR", tmp_repo / "data")
     monkeypatch.setattr(candidates, "DATA_DIR", tmp_repo / "data")
     build_site.main([])
     return tmp_repo
