@@ -230,11 +230,7 @@ def main(argv: list[str] | None = None) -> int:
             if v["id"] in seen:
                 continue
             rec = youtube_post_to_record(v)
-            transcript = fetch_transcript(v["id"], rec["date"])
-            if transcript is not None:
-                out_txt = TRANSCRIPTS_DIR / f"{rec['date'][:10]}_{v['id']}.txt"
-                if not out_txt.exists():
-                    out_txt.write_text(transcript)
+            fetch_transcript(v["id"], rec["date"])  # caches transcript internally
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             written += 1
             log(f"  + {rec['date'][:10]} {v['id']} · {rec['caption_length']} chars")

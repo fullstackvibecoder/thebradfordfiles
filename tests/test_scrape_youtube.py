@@ -34,8 +34,11 @@ def test_main_writes_normalized_posts_and_transcripts(tmp_path, monkeypatch):
          "like_count": 9, "comment_count": 2},
     ]
     monkeypatch.setattr(yt, "list_channel_videos", lambda cid, key, limit=None: list(videos))
-    monkeypatch.setattr(yt, "fetch_transcript",
-                        lambda vid, date: f"transcript for {vid}")
+    def fake_fetch(vid, date):
+        out = transcripts / f"{date[:10]}_{vid}.txt"
+        out.write_text(f"transcript for {vid}")
+        return f"transcript for {vid}"
+    monkeypatch.setattr(yt, "fetch_transcript", fake_fetch)
 
     rc = yt.main(["--account", "oliviachow-yt"])
     assert rc == 0
