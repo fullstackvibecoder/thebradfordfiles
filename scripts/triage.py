@@ -317,7 +317,7 @@ def triage_one(post_record: dict, client: Anthropic, system_prompt: str) -> dict
         f"Date: {post_record['date']}\n"
         f"Type: {post_record['type']}\n"
         f"Is video: {post_record['is_video']}\n"
-        f"Likes: {post_record['likes']}, Comments: {post_record['comments']}\n"
+        f"Likes: {post_record.get('likes', 0)}, Comments: {post_record.get('comments', 0)}\n"
         f"Mentions: {', '.join(post_record['mentions'][:10]) or '(none)'}\n"
         f"Hashtags: {', '.join('#' + h for h in post_record['hashtags'][:10]) or '(none)'}\n"
         f"Location: {post_record['location'] or '(none)'}\n\n"
