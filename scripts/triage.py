@@ -50,6 +50,9 @@ DATA_DIR.mkdir(exist_ok=True)
 DEFAULT_ACCOUNT = "bradfordgrams"
 HAIKU_MODEL = "claude-haiku-4-5"
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lib import candidates as _candidates  # noqa: E402
+
 
 def account_paths(account: str) -> tuple[Path, Path, Path]:
     """Return (triage_file, posts_file, account_dir) — namespaced per account."""
@@ -131,25 +134,24 @@ TRIAGE_TOOL = {
     },
 }
 
-SYSTEM_PROMPT = """You are a classifier for an independent civic-transparency \
-project documenting the public political record of Brad Bradford \
-(@bradfordgrams), a Toronto City Councillor running for Mayor of Toronto in \
-2026. The project is neutral — neither advocacy nor opposition. Every \
+TRIAGE_RUBRIC = """You are a classifier for an independent civic-transparency \
+project. The project is neutral — neither advocacy nor opposition. Every \
 classification will be auditable and logged.
 
 Your job is to decide which of three buckets a single post belongs in:
 
   • substantive — the post contains a stated POLITICAL POSITION, PLEDGE \
-(future-tense commitment), past COUNCIL ACTION (motion, vote, project), \
-ENDORSEMENT (given or received), substantive CRITIQUE of policy or governance, \
-or PUBLIC APPEARANCE with civic content (town hall, community event, ribbon \
-cutting). Anything a voter would reasonably want to know to evaluate him as a \
-candidate.
+(future-tense commitment), past ACTION (a council motion or vote, a project, an \
+official or organizing action), ENDORSEMENT (given or received), substantive \
+CRITIQUE of policy or governance, or PUBLIC APPEARANCE with civic content (town \
+hall, community event, ribbon cutting). Anything a voter would reasonably want \
+to know to evaluate them as a candidate.
 
   • contextual — the post is personal but the framing informs civic identity. \
-Examples: 'as a dad I worry about park safety', 'as a city planner I know …', \
-references to his neighborhood, references to his role at Council in passing. \
-This bucket gets a light note for character context, not full extraction.
+Examples: 'as a parent I worry about park safety', 'as a city planner I know …', \
+references to their neighborhood, references to their public or professional \
+role in passing. This bucket gets a light note for character context, not full \
+extraction.
 
   • skip — purely personal: birthdays, vacation, family selfies, sports \
 celebrations, generic life moments, jokes, food. No civic content, no civic \
@@ -170,6 +172,11 @@ bucket.
 
 Reason field: one sentence, neutral, no editorial words like 'troubling' or \
 'admirable'. Just describe what's in the post and why it fits the bucket."""
+
+
+def build_system_prompt(manifest: dict) -> str:
+    """Persona framing (per-candidate) + the shared neutral rubric."""
+    return _candidates.prompt_persona(manifest) + "\n\n" + TRIAGE_RUBRIC
 
 
 def log(msg: str) -> None:
@@ -304,7 +311,7 @@ def normalize_triage(triage: dict) -> dict:
     return triage
 
 
-def triage_one(post_record: dict, client: Anthropic) -> dict:
+def triage_one(post_record: dict, client: Anthropic, system_prompt: str) -> dict:
     """Send one post to Haiku for classification. Returns the tool input dict."""
     user = (
         f"Date: {post_record['date']}\n"
@@ -320,7 +327,7 @@ def triage_one(post_record: dict, client: Anthropic) -> dict:
     response = client.messages.create(
         model=HAIKU_MODEL,
         max_tokens=512,
-        system=SYSTEM_PROMPT,
+        system=system_prompt,
         tools=[TRIAGE_TOOL],
         tool_choice={"type": "tool", "name": "triage_post"},
         messages=[{"role": "user", "content": user}],
@@ -364,6 +371,13 @@ def main() -> int:
         return 1
 
     account = args.account
+    manifest = _candidates.load_candidate(account)
+    if manifest is None:
+        log(f"FATAL: no candidate.json for @{account}; create data/{account}/candidate.json first")
+        return 1
+    if manifest.get("incumbency") not in _candidates.INCUMBENCY_VALUES:
+        log(f"warn: manifest incumbency '{manifest.get('incumbency')}' unrecognized; using outsider framing")
+    system_prompt = build_system_prompt(manifest)
     triage_file, posts_file, _acc_dir = account_paths(account)
     log(f"account: @{account}  ·  data dir: {_acc_dir.relative_to(ROOT)}/")
 
@@ -444,7 +458,7 @@ def main() -> int:
             continue
 
         try:
-            triage = normalize_triage(triage_one(rec, client))
+            triage = normalize_triage(triage_one(rec, client, system_prompt))
         except Exception as e:
             log(f"triage error on {rec['shortcode']}: {e!r}; skipping")
             counts["errors"] += 1
