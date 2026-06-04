@@ -53,3 +53,4 @@ web/node_modules/
 web/.next/
 web/.vercel/
 web/next-env.d.ts
+web/tsconfig.tsbuildinfo
