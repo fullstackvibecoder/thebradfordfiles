@@ -75,6 +75,24 @@ def test_main_fatals_without_api_key(tmp_path, monkeypatch):
     assert yt.main(["--account", "oliviachow-yt"]) == 1
 
 
+def test_main_fatals_on_missing_manifest(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir(parents=True)
+    monkeypatch.setattr(yt, "DATA_DIR", data_dir)
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake")
+    assert yt.main(["--account", "ghost-yt"]) == 1
+
+
+def test_main_fatals_on_missing_channel_id(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    d = data_dir / "nochannel-yt"
+    d.mkdir(parents=True)
+    (d / "candidate.json").write_text('{"handle": "nochannel-yt", "alias_of": "x", "source_platform": "youtube"}')
+    monkeypatch.setattr(yt, "DATA_DIR", data_dir)
+    monkeypatch.setenv("YOUTUBE_API_KEY", "fake")
+    assert yt.main(["--account", "nochannel-yt"]) == 1
+
+
 def test_parse_iso8601_duration():
     assert yt._parse_iso8601_duration("PT10M12S") == 612.0
     assert yt._parse_iso8601_duration("PT1H2M3S") == 3723.0

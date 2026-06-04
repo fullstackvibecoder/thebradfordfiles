@@ -21,8 +21,6 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import candidates as _candidates  # noqa: E402
 
 DATA_DIR = ROOT / "data"
 TRANSCRIPTS_DIR = ROOT / "transcripts"
@@ -94,7 +92,8 @@ def _get(url: str, params: dict, retries: int = 3) -> dict:
             return r.json()
         except Exception as e:  # noqa: BLE001
             last = e
-            time.sleep(1.0 * (attempt + 1))
+            if attempt < retries - 1:
+                time.sleep(1.0 * (attempt + 1))
     raise RuntimeError(f"YouTube API GET failed after {retries}: {last!r}")
 
 
