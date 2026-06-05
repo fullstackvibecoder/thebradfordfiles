@@ -45,10 +45,11 @@ def _load_jsonl(path: Path) -> list[dict]:
     return rows
 
 
-def _load_matches() -> dict[str, dict]:
+def _load_matches() -> dict[str, list[dict]]:
+    """All match rows grouped by record shortcode (a position can match many votes)."""
+    out: dict[str, list[dict]] = {}
     if not MATCHES_FILE.exists():
-        return {}
-    out: dict[str, dict] = {}
+        return out
     for line in MATCHES_FILE.read_text().splitlines():
         line = line.strip()
         if not line:
@@ -58,11 +59,8 @@ def _load_matches() -> dict[str, dict]:
         except json.JSONDecodeError:
             continue
         sc = m.get("record_shortcode")
-        if not sc:
-            continue
-        existing = out.get(sc)
-        if not existing or m.get("confidence", 0) > existing.get("confidence", 0):
-            out[sc] = m
+        if sc:
+            out.setdefault(sc, []).append(m)
     return out
 
 
@@ -107,7 +105,7 @@ def _consistency_dot_color(synthesis_by_topic: dict[str, dict]) -> str:
     return "green"
 
 
-def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
+def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, list[dict]]) -> dict:
     handle = manifest["handle"]
     handles_to_load = [handle] + manifest.get("alias_handles", [])
 
@@ -148,10 +146,14 @@ def _candidate_dossier(manifest: dict, matches_by_sc: dict[str, dict]) -> dict:
         r.setdefault("candidate_slug", manifest["slug"])
         r.setdefault("source_account", handle)
         r.setdefault("source_platform", "instagram")
-        if r.get("kind") == "action":
-            sc = r.get("shortcode")
-            if sc and sc in matches_by_sc:
-                r["council_verification"] = matches_by_sc[sc]
+        sc = r.get("shortcode")
+        rows = matches_by_sc.get(sc, []) if sc else []
+        if rows:
+            if r.get("kind") == "action":
+                # back-compat: single best-confidence verification
+                r["council_verification"] = max(rows, key=lambda m: m.get("confidence", 0))
+            elif r.get("kind") in ("position", "pledge"):
+                r["related_votes"] = sorted(rows, key=lambda m: m.get("vote_date") or "")
 
     records.sort(key=lambda r: r.get("post_date", ""), reverse=True)
     skip_log.sort(key=lambda r: r.get("date", ""), reverse=True)
