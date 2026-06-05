@@ -66,6 +66,25 @@ def _parse_post_date(s: str) -> datetime | None:
         return None
 
 
+def _term_bounds(council_terms: list[str], post_date: str) -> tuple[datetime, datetime] | None:
+    """Return (start, end) datetimes of the council term enclosing post_date,
+    parsed from a list of 'YYYY-YYYY' term strings. None if the date parses to
+    nothing or falls in no listed term."""
+    pd = _parse_post_date(post_date)
+    if not pd:
+        return None
+    for term in council_terms or []:
+        try:
+            start_y, end_y = str(term).split("-")
+            start = datetime(int(start_y), 1, 1)
+            end = datetime(int(end_y), 12, 31, 23, 59, 59)
+        except (ValueError, AttributeError):
+            continue
+        if start <= pd <= end:
+            return (start, end)
+    return None
+
+
 def _keywords(text: str) -> set[str]:
     if not text:
         return set()

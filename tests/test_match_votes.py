@@ -71,3 +71,21 @@ def test_no_match_when_unrelated(tmp_path, monkeypatch):
     monkeypatch.setattr(match_votes, "VOTES_BY_COUNCILLOR", votes)
     monkeypatch.setattr(match_votes, "DATA_DIR", tmp_path)
     assert match_votes.match_for("bradfordgrams") == []
+
+
+def test_term_bounds_encloses_date():
+    from datetime import datetime
+    from scripts import match_votes
+    b = match_votes._term_bounds(["2018-2022", "2022-2026"], "2024-05-01")
+    assert b is not None
+    start, end = b
+    assert start == datetime(2022, 1, 1)
+    assert end.year == 2026 and end.month == 12 and end.day == 31
+
+
+def test_term_bounds_returns_none_outside_terms():
+    from scripts import match_votes
+    assert match_votes._term_bounds(["2022-2026"], "2019-01-01") is None
+    assert match_votes._term_bounds([], "2024-01-01") is None
+    assert match_votes._term_bounds(["2022-2026"], "") is None
+    assert match_votes._term_bounds(["garbage"], "2024-01-01") is None
