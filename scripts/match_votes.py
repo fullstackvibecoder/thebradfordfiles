@@ -25,6 +25,8 @@ MATCHES_OUT = DATA_DIR / "votes" / "matches.jsonl"
 AGENDA_ITEM_RE = re.compile(r"\b\d{4}\.[A-Z]{2,3}\d+\.\d+\b")
 DATE_WINDOW_DAYS = 60
 CONFIDENCE_THRESHOLD = 0.7
+POSITION_MIN_OVERLAP = 2       # min overlapping keywords for a position<->vote pairing
+POSITION_MIN_CONFIDENCE = 0.15  # overlap / record-keyword-count floor
 
 
 def _slug(text: str) -> str:
@@ -132,13 +134,41 @@ def _tier2_match(record: dict, votes: list[dict]) -> dict | None:
     return best
 
 
+def _position_matches(record: dict, votes: list[dict],
+                      bounds: tuple[datetime, datetime]) -> list[dict]:
+    """Match a position/pledge against EVERY topically-related vote within the
+    council term `bounds`. Multi-match, no date-proximity term. Returns one row
+    per qualifying vote (evidence pairing — no verdict computed)."""
+    start, end = bounds
+    rec_kw = _keywords(record.get("summary", "") + " "
+                       + (record.get("topic", "") or "").replace("_", " "))
+    if not rec_kw:
+        return []
+    out: list[dict] = []
+    for v in votes:
+        v_dt = _parse_council_date(v.get("Date/Time", ""))
+        if not v_dt or not (start <= v_dt <= end):
+            continue
+        v_kw = _keywords(v.get("Agenda Item Title", "") + " " + v.get("Vote Description", ""))
+        overlap = len(rec_kw & v_kw)
+        if overlap < POSITION_MIN_OVERLAP:
+            continue
+        conf = round(overlap / max(len(rec_kw), 1), 3)
+        if conf < POSITION_MIN_CONFIDENCE:
+            continue
+        out.append(_match_dict(record, v, conf, "position_topic"))
+    return out
+
+
 def _match_dict(record: dict, vote: dict, conf: float, mtype: str) -> dict:
     return {
         "record_shortcode": record.get("shortcode"),
+        "record_kind": record.get("kind"),
         "council_vote_id": vote.get("_id"),
         "confidence": conf,
         "match_type": mtype,
         "agenda_item": vote.get("Agenda Item #"),
+        "agenda_item_title": vote.get("Agenda Item Title"),
         "vote_disposition": vote.get("Vote"),
         "result": vote.get("Result"),
         "vote_date": vote.get("Date/Time"),
@@ -159,13 +189,18 @@ def match_for(handle: str) -> list[dict]:
     votes = _load_jsonl(votes_path)
     if not votes:
         return []
+    terms = manifest.get("council_terms", [])
     matches: list[dict] = []
     for r in _load_jsonl(cand_dir / "records.jsonl"):
-        if r.get("kind") != "action":
-            continue
-        m = _tier1_match(r, votes) or _tier2_match(r, votes)
-        if m:
-            matches.append(m)
+        kind = r.get("kind")
+        if kind == "action":
+            m = _tier1_match(r, votes) or _tier2_match(r, votes)
+            if m:
+                matches.append(m)
+        elif kind in ("position", "pledge"):
+            bounds = _term_bounds(terms, r.get("post_date", ""))
+            if bounds:
+                matches.extend(_position_matches(r, votes, bounds))
     return matches
 
 

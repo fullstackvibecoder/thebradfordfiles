@@ -89,3 +89,77 @@ def test_term_bounds_returns_none_outside_terms():
     assert match_votes._term_bounds([], "2024-01-01") is None
     assert match_votes._term_bounds(["2022-2026"], "") is None
     assert match_votes._term_bounds(["garbage"], "2024-01-01") is None
+
+
+def _seed_position(tmp_path, votes_list, record_overrides=None):
+    """Seed multiple votes + one position record for Bradford (term 2022-2026)."""
+    votes = tmp_path / "votes"
+    votes.mkdir()
+    lines = []
+    for i, v in enumerate(votes_list, start=1):
+        base = {"_id": i, "First Name": "Brad", "Last Name": "Bradford",
+                "Date/Time": "2024-06-01 10:00 AM", "Agenda Item #": f"2024.X{i}.1",
+                "Agenda Item Title": "", "Vote": "Yes", "Result": "Carried, 20-5",
+                "Vote Description": ""}
+        base.update(v)
+        lines.append(json.dumps(base))
+    (votes / "bradford-brad.jsonl").write_text("\n".join(lines) + "\n")
+    cand = tmp_path / "bradfordgrams"
+    cand.mkdir()
+    (cand / "candidate.json").write_text(json.dumps({
+        "handle": "bradfordgrams", "slug": "bradford",
+        "council_terms": ["2022-2026"],
+        "council_name_for_vote_lookup": {"first": "Brad", "last": "Bradford"}}))
+    rec = {"kind": "position", "shortcode": "POS1", "post_url": "u",
+           "post_date": "2024-05-01", "topic": "transit",
+           "summary": "Supports expanding bike lanes across downtown."}
+    if record_overrides:
+        rec.update(record_overrides)
+    (cand / "records.jsonl").write_text(json.dumps(rec) + "\n")
+    return votes
+
+
+def test_position_multi_matches_topical_votes_in_term(tmp_path, monkeypatch):
+    votes = _seed_position(tmp_path, [
+        {"Agenda Item Title": "Bike lane network expansion Bloor",
+         "Vote Description": "Expand bike lanes downtown", "Date/Time": "2024-06-01 10:00 AM"},
+        {"Agenda Item Title": "Bike lane installation Danforth",
+         "Vote Description": "Install bike lanes Danforth", "Vote": "No",
+         "Date/Time": "2025-02-01 10:00 AM"},
+        {"Agenda Item Title": "Garbage collection schedule",
+         "Vote Description": "Change waste pickup days", "Date/Time": "2024-07-01 10:00 AM"},
+    ])
+    from scripts import match_votes
+    monkeypatch.setattr(match_votes, "VOTES_BY_COUNCILLOR", votes)
+    monkeypatch.setattr(match_votes, "DATA_DIR", tmp_path)
+    matches = match_votes.match_for("bradfordgrams")
+    assert len(matches) == 2
+    assert all(m["record_kind"] == "position" for m in matches)
+    assert all(m["match_type"] == "position_topic" for m in matches)
+    titles = {m["agenda_item_title"] for m in matches}
+    assert titles == {"Bike lane network expansion Bloor", "Bike lane installation Danforth"}
+    assert {m["vote_disposition"] for m in matches} == {"Yes", "No"}
+
+
+def test_position_excludes_votes_outside_term(tmp_path, monkeypatch):
+    votes = _seed_position(tmp_path, [
+        {"Agenda Item Title": "Bike lane expansion", "Vote Description": "Expand bike lanes",
+         "Date/Time": "2019-06-01 10:00 AM"},
+    ])
+    from scripts import match_votes
+    monkeypatch.setattr(match_votes, "VOTES_BY_COUNCILLOR", votes)
+    monkeypatch.setattr(match_votes, "DATA_DIR", tmp_path)
+    assert match_votes.match_for("bradfordgrams") == []
+
+
+def test_no_match_row_carries_a_consistency_verdict(tmp_path, monkeypatch):
+    votes = _seed_position(tmp_path, [
+        {"Agenda Item Title": "Bike lane expansion", "Vote Description": "Expand bike lanes downtown"},
+    ])
+    from scripts import match_votes
+    monkeypatch.setattr(match_votes, "VOTES_BY_COUNCILLOR", votes)
+    monkeypatch.setattr(match_votes, "DATA_DIR", tmp_path)
+    matches = match_votes.match_for("bradfordgrams")
+    forbidden = {"consistent", "inconsistent", "mixed", "score", "alignment", "verdict"}
+    for m in matches:
+        assert forbidden.isdisjoint(m.keys())
