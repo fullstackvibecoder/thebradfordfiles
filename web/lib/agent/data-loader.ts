@@ -60,6 +60,7 @@ export interface RecordEntry {
   post_url?: string;
   source_account?: string;
   council_verification?: { agenda_item?: string; vote_disposition?: string; result?: string; confidence?: number };
+  related_votes?: import("@/lib/said-vs-done").RelatedVote[];
 }
 
 export function getRecordsForHandle(slug: string): RecordEntry[] {
