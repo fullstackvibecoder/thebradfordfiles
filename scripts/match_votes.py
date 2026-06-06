@@ -93,6 +93,28 @@ def _keywords(text: str) -> set[str]:
     return {w for w in re.findall(r"[a-z]{4,}", text.lower())}
 
 
+# Generic civic/procedural boilerplate that carries no topical signal. Filtered
+# from position<->vote keyword overlap so a pairing needs real subject-matter
+# words (e.g. "density", "rail") rather than "toronto"/"road"/"amendment".
+_CIVIC_STOPWORDS = {
+    "toronto", "city", "council", "committee", "ward", "item", "items",
+    "road", "roads", "street", "streets", "avenue", "drive", "lane",
+    "amendment", "amendments", "motion", "motions", "report", "reports",
+    "plan", "plans", "area", "areas", "request", "requests", "adopt",
+    "majority", "required", "community", "public", "meeting", "general",
+    "various", "matter", "matters", "recommendation", "recommendations",
+    "toronto's", "municipal", "board", "review", "update", "staff",
+    "service", "services", "program", "programs", "york", "east", "west",
+    "north", "south", "deputy", "mayor", "councillor", "seconded",
+}
+
+
+def _topical_keywords(text: str) -> set[str]:
+    """Keywords minus generic civic/procedural boilerplate, so position<->vote
+    overlap reflects subject matter, not shared civic vocabulary."""
+    return _keywords(text) - _CIVIC_STOPWORDS
+
+
 def _tier1_match(record: dict, votes: list[dict]) -> dict | None:
     haystack = (record.get("source_quote", "") + " " + record.get("summary", ""))
     items = AGENDA_ITEM_RE.findall(haystack)
@@ -140,24 +162,30 @@ def _position_matches(record: dict, votes: list[dict],
     council term `bounds`. Multi-match, no date-proximity term. Returns one row
     per qualifying vote (evidence pairing — no verdict computed)."""
     start, end = bounds
-    rec_kw = _keywords(record.get("summary", "") + " "
-                       + (record.get("topic", "") or "").replace("_", " "))
+    rec_kw = _topical_keywords(record.get("summary", "") + " "
+                               + (record.get("topic", "") or "").replace("_", " "))
     if not rec_kw:
         return []
-    out: list[dict] = []
+    # Collapse the multiple procedural sub-votes a single agenda item carries
+    # into one representative row (the highest-overlap one), so a position pairs
+    # with each related ITEM once rather than every motion on it.
+    best_by_item: dict[str, tuple[float, dict]] = {}
     for v in votes:
         v_dt = _parse_council_date(v.get("Date/Time", ""))
         if not v_dt or not (start <= v_dt <= end):
             continue
-        v_kw = _keywords(v.get("Agenda Item Title", "") + " " + v.get("Vote Description", ""))
+        v_kw = _topical_keywords(v.get("Agenda Item Title", "") + " " + v.get("Vote Description", ""))
         overlap = len(rec_kw & v_kw)
         if overlap < POSITION_MIN_OVERLAP:
             continue
         conf = round(overlap / max(len(rec_kw), 1), 3)
         if conf < POSITION_MIN_CONFIDENCE:
             continue
-        out.append(_match_dict(record, v, conf, "position_topic"))
-    return out
+        item = v.get("Agenda Item #") or f"_id:{v.get('_id')}"
+        prev = best_by_item.get(item)
+        if prev is None or conf > prev[0]:
+            best_by_item[item] = (conf, _match_dict(record, v, conf, "position_topic"))
+    return [m for _conf, m in best_by_item.values()]
 
 
 def _match_dict(record: dict, vote: dict, conf: float, mtype: str) -> dict:

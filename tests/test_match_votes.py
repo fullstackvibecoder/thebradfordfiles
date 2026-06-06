@@ -163,3 +163,27 @@ def test_no_match_row_carries_a_consistency_verdict(tmp_path, monkeypatch):
     forbidden = {"consistent", "inconsistent", "mixed", "score", "alignment", "verdict"}
     for m in matches:
         assert forbidden.isdisjoint(m.keys())
+
+
+def test_topical_keywords_strips_civic_boilerplate():
+    from scripts import match_votes
+    kw = match_votes._topical_keywords("Toronto City Council housing density amendment report")
+    assert "housing" in kw and "density" in kw
+    assert {"toronto", "city", "council", "amendment", "report"}.isdisjoint(kw)
+
+
+def test_position_dedupes_subvotes_of_same_agenda_item(tmp_path, monkeypatch):
+    votes = _seed_position(tmp_path, [
+        {"Agenda Item #": "2024.PH1.1", "Agenda Item Title": "Bike lanes expansion downtown",
+         "Vote Description": "Expand bike lanes downtown", "Vote": "Yes",
+         "Date/Time": "2024-06-01 10:00 AM"},
+        {"Agenda Item #": "2024.PH1.1", "Agenda Item Title": "Bike lanes expansion downtown",
+         "Vote Description": "Refer bike lanes downtown to staff", "Vote": "No",
+         "Date/Time": "2024-06-01 11:00 AM"},
+    ])
+    from scripts import match_votes
+    monkeypatch.setattr(match_votes, "VOTES_BY_COUNCILLOR", votes)
+    monkeypatch.setattr(match_votes, "DATA_DIR", tmp_path)
+    matches = match_votes.match_for("bradfordgrams")
+    assert len(matches) == 1  # two sub-votes of one agenda item collapse to one row
+    assert matches[0]["agenda_item"] == "2024.PH1.1"
