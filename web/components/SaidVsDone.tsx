@@ -12,7 +12,7 @@ export function SaidVsDone({ topic }: { topic: SaidVsDoneTopic }) {
     <div className="mt-4">
       <div className="label mb-2">Said vs. Done</div>
       <div className="space-y-4">
-        {shown.map((it) => <SaidVsDoneItemCard key={it.shortcode} item={it} />)}
+        {shown.map((it, i) => <SaidVsDoneItemCard key={`${it.shortcode}-${i}`} item={it} />)}
       </div>
       {remaining.length > 0 && <MorePositions items={remaining} />}
     </div>
