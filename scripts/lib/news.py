@@ -85,3 +85,54 @@ def parse_feed(xml: str) -> list[dict]:
         }
         for it in p.items
     ]
+
+
+class _ArticleParser(HTMLParser):
+    """Collects visible <p> text, skipping chrome containers (script/style/nav/
+    header/footer/aside/figure). Text inside nested inline tags within a <p>
+    (e.g. <a>) is kept; the tags themselves are dropped."""
+
+    _SKIP = {"script", "style", "nav", "header", "footer", "aside", "figure"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.paras: list[str] = []
+        self._in_p = False
+        self._skip_depth = 0
+        self._buf: list[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in self._SKIP:
+            self._skip_depth += 1
+        elif t == "p" and self._skip_depth == 0:
+            self._in_p = True
+            self._buf = []
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if t in self._SKIP and self._skip_depth > 0:
+            self._skip_depth -= 1
+        elif t == "p" and self._in_p:
+            txt = "".join(self._buf).strip()
+            if txt:
+                self.paras.append(txt)
+            self._in_p = False
+            self._buf = []
+
+    def handle_data(self, data):
+        if self._in_p and self._skip_depth == 0:
+            self._buf.append(data)
+
+
+def extract_article_text(html: str) -> str:
+    """Return the article's paragraph text (\n\n-joined), chrome stripped.
+    Empty string on empty/garbage input."""
+    if not html:
+        return ""
+    p = _ArticleParser()
+    try:
+        p.feed(html)
+    except Exception:
+        return ""
+    return "\n\n".join(p.paras)
