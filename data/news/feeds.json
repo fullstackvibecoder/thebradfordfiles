@@ -1,0 +1,4 @@
+[
+  { "outlet": "CBC Toronto", "rss_url": "https://www.cbc.ca/webfeed/rss/rss-canada-toronto", "paywalled": false },
+  { "outlet": "CityNews Toronto", "rss_url": "https://toronto.citynews.ca/feed/", "paywalled": false }
+]
