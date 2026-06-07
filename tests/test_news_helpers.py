@@ -30,3 +30,10 @@ def test_match_candidates_tolerates_malformed_input():
     assert news.match_candidates("Olivia Chow", None) == []
     # a candidate dict missing 'handle' is skipped, not a crash
     assert news.match_candidates("Olivia Chow", [{"display_name": "Olivia Chow"}]) == []
+
+
+def test_parse_pub_date_rfc822_to_iso():
+    from scripts.lib import news
+    assert news.parse_pub_date("Mon, 02 Jun 2026 10:00:00 GMT") == "2026-06-02T10:00:00+00:00"
+    assert news.parse_pub_date("") == ""
+    assert news.parse_pub_date("not a date") == ""

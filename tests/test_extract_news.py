@@ -60,3 +60,11 @@ def test_extract_one_article_builds_quote_records(tmp_path, monkeypatch):
     assert r["quote_text"] == "We will build 25,000 homes."
     assert r["post_url"] == "https://cbc.ca/x"
     assert r["source_account"] == "oliviachow"
+
+
+def test_verbatim_guard_tolerates_curly_apostrophes():
+    # article uses a curly apostrophe; model returned a straight one (or vice versa)
+    article = "Bradford said, “We won’t wait on transit.”"
+    raw = [{"quote_text": "We won't wait on transit.", "attribution": "Bradford said", "topic": "transit"}]
+    kept = en.verbatim_filter(raw, article)
+    assert len(kept) == 1

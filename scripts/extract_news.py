@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib import candidates as _candidates  # noqa: E402
+from lib import news as _news  # noqa: E402
 
 DATA_DIR = ROOT / "data"
 OPUS_MODEL = "claude-opus-4-7"
@@ -70,13 +71,22 @@ def build_system_prompt(name: str) -> str:
     )
 
 
+_QUOTE_MAP = {ord("’"): "'", ord("‘"): "'", ord("“"): '"', ord("”"): '"'}
+
+
+def _normalize(s: str) -> str:
+    """Collapse whitespace and fold curly quotes/apostrophes to straight, so the
+    verbatim substring check is robust to typographic styling differences."""
+    return " ".join(s.translate(_QUOTE_MAP).split())
+
+
 def verbatim_filter(quotes: list[dict], article_text: str) -> list[dict]:
     """Keep only quotes whose quote_text appears as a substring of the article
-    (guarantees verbatim, not paraphrase). Quotation marks/whitespace tolerant."""
-    hay = " ".join(article_text.split())
+    (guarantees verbatim, not paraphrase). Whitespace- and quote-style-tolerant."""
+    hay = _normalize(article_text)
     out = []
     for q in quotes:
-        needle = " ".join((q.get("quote_text") or "").split()).strip('"""')
+        needle = _normalize(q.get("quote_text") or "").strip('"\'')
         if needle and needle in hay:
             out.append(q)
     return out
@@ -153,7 +163,7 @@ def main(argv: list[str] | None = None) -> int:
                     "kind": "quote",
                     "shortcode": uh,
                     "post_url": art["url"],
-                    "post_date": art.get("pub_date", ""),
+                    "post_date": _news.parse_pub_date(art.get("pub_date", "")),
                     "topic": q.get("topic", "other"),
                     "quote_text": q["quote_text"],
                     "source_quote": q.get("attribution", ""),

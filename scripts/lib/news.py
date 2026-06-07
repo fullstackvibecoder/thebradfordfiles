@@ -3,6 +3,23 @@ html.parser-based RSS + article parsing (expat-free, pip-free)."""
 from __future__ import annotations
 
 import hashlib
+from datetime import timezone
+from email.utils import parsedate_to_datetime
+
+
+def parse_pub_date(s: str) -> str:
+    """Convert an RFC-822 RSS pubDate ('Mon, 02 Jun 2026 10:00:00 GMT') to a
+    UTC ISO-8601 string ('2026-06-02T10:00:00+00:00'). Returns '' if empty or
+    unparseable (safer for downstream date slicing/sorting than a raw string)."""
+    if not s or not s.strip():
+        return ""
+    try:
+        dt = parsedate_to_datetime(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.astimezone(timezone.utc).isoformat(timespec="seconds")
+    except Exception:
+        return ""
 
 
 def url_hash(url: str) -> str:
