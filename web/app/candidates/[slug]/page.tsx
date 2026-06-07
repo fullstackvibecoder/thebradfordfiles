@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
-import { listCandidates, getDossier, getSynthesis } from "@/lib/agent/data-loader";
+import { listCandidates, getSynthesis, getRecordsForHandle } from "@/lib/agent/data-loader";
+import { buildSaidVsDone } from "@/lib/said-vs-done";
+import { SaidVsDone } from "@/components/SaidVsDone";
 import { DropCap } from "@/components/DropCap";
 import { CandidateStatStrip } from "@/components/CandidateStatStrip";
 import { ConsistencyTimeline } from "@/components/ConsistencyTimeline";
@@ -36,8 +38,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ slug
   const cand = cands.find(c => c.slug === slug);
   if (!cand) notFound();
 
-  // dossier loaded for future use (record-level browsing); not surfaced here yet
-  void getDossier(slug);
+  const records = getRecordsForHandle(slug);
 
   return (
     <main className="max-w-[840px] mx-auto px-8 py-10">
@@ -64,6 +65,7 @@ export default async function CandidatePage({ params }: { params: Promise<{ slug
                   {cell.consistency.label}{cell.consistency.stable_since ? ` since ${cell.consistency.stable_since}` : ""}
                 </div>
               )}
+              <SaidVsDone topic={buildSaidVsDone(records, topic)} />
             </section>
           );
         })}
