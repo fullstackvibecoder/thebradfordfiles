@@ -23,3 +23,10 @@ def test_match_candidates_by_display_name():
     assert sorted(news.match_candidates("Olivia Chow vs Brad Bradford", cands)) == ["bradfordgrams", "oliviachow"]
     assert news.match_candidates("A story about transit funding", cands) == []
     assert news.match_candidates("", cands) == []
+
+
+def test_match_candidates_tolerates_malformed_input():
+    from scripts.lib import news
+    assert news.match_candidates("Olivia Chow", None) == []
+    # a candidate dict missing 'handle' is skipped, not a crash
+    assert news.match_candidates("Olivia Chow", [{"display_name": "Olivia Chow"}]) == []

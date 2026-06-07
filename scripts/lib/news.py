@@ -16,8 +16,9 @@ def match_candidates(text: str, candidates: list[dict]) -> list[str]:
     surnames; routing to multiple candidates is allowed."""
     low = (text or "").lower()
     out: list[str] = []
-    for c in candidates:
+    for c in (candidates or []):
         name = (c.get("display_name") or "").strip().lower()
-        if name and name in low:
-            out.append(c["handle"])
+        handle = c.get("handle")
+        if name and handle and name in low:
+            out.append(handle)
     return out
