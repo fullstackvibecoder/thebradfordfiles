@@ -1,0 +1,4 @@
+# Minimal runtime deps for the news cron (scrape_news + build_site are stdlib;
+# only extract_news needs these). Excludes whisper/torch/instagrapi/yt-dlp.
+anthropic>=0.97
+python-dotenv>=1.0

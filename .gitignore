@@ -57,3 +57,7 @@ web/tsconfig.tsbuildinfo
 
 # Ephemeral build_site.py SITE_DIR output (canonical web data lives in web/public/data/)
 /site/
+
+# News article bodies — third-party copyrighted content, transient intermediate
+# (resumability runs off data/*/news/articles.jsonl + records.jsonl, not these)
+data/*/news/*.txt
