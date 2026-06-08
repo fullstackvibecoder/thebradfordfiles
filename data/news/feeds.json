@@ -1,4 +1,5 @@
 [
-  { "outlet": "CBC Toronto", "rss_url": "https://www.cbc.ca/webfeed/rss/rss-canada-toronto", "paywalled": false },
-  { "outlet": "CityNews Toronto", "rss_url": "https://toronto.citynews.ca/feed/", "paywalled": false }
+  { "outlet": "CityNews Toronto", "rss_url": "https://toronto.citynews.ca/feed/", "paywalled": false },
+  { "outlet": "CBC Toronto", "rss_url": "https://www.cbc.ca/cmlink/rss-canada-toronto", "paywalled": true, "note": "blocks programmatic fetch (timeout) as of 2026-06-08; paywalled=true so scrape_news skips it. Retry later / via a different fetch path." },
+  { "outlet": "Toronto Star GTA", "rss_url": "https://www.thestar.com/search/?f=rss&t=article&c=news/gta*&l=50&s=start_time&sd=desc", "paywalled": true, "note": "feed reachable, parses fine, but article bodies are paywalled; excluded from extraction." }
 ]
