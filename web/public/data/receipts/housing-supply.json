@@ -47,7 +47,7 @@
           "retrieved": "2026-01-31"
         },
         "caveats": "CMA boundaries include municipalities outside the City of Toronto. Monthly figures are volatile. December 2025 starts were up 151 percent versus December 2024, signalling some late-year momentum.",
-        "as_of": "2026-06-14",
+        "as_of": "2026-06-21",
         "pull_config": {
           "source": "statcan_housing_starts_toronto_cma",
           "params": {
