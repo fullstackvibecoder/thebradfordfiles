@@ -53,6 +53,27 @@ def fetch_with_retry(thunk, *, retries: int = 3, sleep=time.sleep) -> str:
     raise last  # unreachable, but keeps type-checkers happy
 
 
+def detect_degraded(prior: list[dict], current: list[dict]) -> list[str]:
+    """Outlets that were healthy last run (ok + items_seen>0) but are now errored
+    or returning 0 items. Feeds with no prior record are never flagged."""
+    was_healthy = {
+        r["outlet"] for r in prior
+        if r.get("status") == "ok" and r.get("items_seen", 0) > 0
+    }
+    out = []
+    for r in current:
+        if r["outlet"] in was_healthy and (
+            r.get("status") == "error" or r.get("items_seen", 0) == 0
+        ):
+            out.append(r["outlet"])
+    return out
+
+
+def all_failed(current: list[dict]) -> bool:
+    """True iff there is at least one feed and every one errored (total outage)."""
+    return bool(current) and all(r.get("status") == "error" for r in current)
+
+
 def http_get(url: str, user_agent: str | None = None) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": user_agent or USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as r:  # noqa: S310
@@ -73,6 +94,15 @@ def _existing_hashes(index_path: Path) -> set[str]:
     return out
 
 
+def _load_health(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+    try:
+        return json.loads(path.read_text()).get("feeds", [])
+    except Exception:  # noqa: BLE001
+        return []
+
+
 def main(argv: list[str] | None = None) -> int:
     argparse.ArgumentParser().parse_args(argv)
     feeds_path = DATA_DIR / "news" / "feeds.json"
@@ -83,21 +113,35 @@ def main(argv: list[str] | None = None) -> int:
     cands = _candidates.load_all_candidates()
     n_written = 0
 
+    health_path = DATA_DIR / "news" / "health.json"
+    prior = _load_health(health_path)
+    results: list[dict] = []
+
     for feed in feeds:
         if feed.get("skip") or feed.get("paywalled"):
             continue
         outlet, rss_url = feed.get("outlet", "?"), feed.get("rss_url", "")
         ua = effective_user_agent(feed)
+        rec = {"outlet": outlet, "status": "ok", "http_code": 200,
+               "items_seen": 0, "items_matched": 0, "articles_written": 0,
+               "error": None}
         try:
             xml = fetch_with_retry(lambda: http_get(rss_url, ua))
         except Exception as e:  # noqa: BLE001
+            rec["status"] = "error"
+            rec["http_code"] = getattr(e, "code", None)
+            rec["error"] = repr(e)
             log(f"skip feed {outlet}: fetch error {e!r}")
+            results.append(rec)
             continue
-        for item in news.parse_feed(xml):
+        items = news.parse_feed(xml)
+        rec["items_seen"] = len(items)
+        for item in items:
             handles = news.match_candidates(
                 f"{item['title']} {item['description']}", cands)
             if not handles:
                 continue
+            rec["items_matched"] += 1
             url = item["link"]
             uh = news.url_hash(url)
             for handle in handles:
@@ -122,9 +166,27 @@ def main(argv: list[str] | None = None) -> int:
                         "title": item["title"], "pub_date": item["pub_date"],
                         "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                     }, ensure_ascii=False) + "\n")
+                rec["articles_written"] += 1
                 n_written += 1
                 log(f"+ {handle} · {outlet} · {item['title'][:60]}")
+        results.append(rec)
+
+    health_path.parent.mkdir(parents=True, exist_ok=True)
+    health_path.write_text(json.dumps({
+        "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "feeds": results,
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    for r in results:
+        log(f"  feed {r['outlet']}: {r['status']} · seen={r['items_seen']} "
+            f"matched={r['items_matched']} written={r['articles_written']}")
+    degraded = detect_degraded(prior, results)
+    if degraded:
+        log(f"WARN degraded: {', '.join(degraded)}")
     log(f"done. {n_written} new articles")
+    if all_failed(results):
+        log("FATAL: all feeds failed")
+        return 1
     return 0
 
 
