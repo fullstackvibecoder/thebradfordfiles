@@ -9,14 +9,18 @@ import { validateCard, normalizeEmDash, type AnyCard } from "@/lib/card-types";
 
 function enrichComparisonCard(card: AnyCard): AnyCard {
   if (card.type !== "comparison") return card;
-  const candidatesIndex = new Map(listCandidates().map(c => [c.slug, c]));
+  const refs = listCandidates();
+  const bySlug = new Map(refs.map(c => [c.slug, c]));
+  const byName = new Map(refs.map(c => [c.display_name.toLowerCase(), c]));
   return {
     ...card,
     candidates: card.candidates.map(c => {
-      const ref = candidatesIndex.get(c.slug);
+      // The model sometimes omits slug; fall back to matching on display_name.
+      const ref = (c.slug && bySlug.get(c.slug)) || byName.get((c.display_name ?? "").toLowerCase());
       if (!ref) return c;
       return {
         ...c,
+        slug: c.slug || ref.slug,
         record_count: c.record_count ?? ref.record_count ?? 0,
         consistency_label: c.consistency_label ?? ref.consistency_dot ?? "Records noted",
         consistency_dot: c.consistency_dot ?? (ref.consistency_dot as "green" | "yellow" | "red" | "gray" | undefined) ?? "gray",
@@ -85,7 +89,10 @@ export async function POST(req: Request) {
       for (let loop = 0; loop < MAX_TOOL_LOOPS; loop++) {
         const response = await client.messages.create({
           model: AGENT_MODEL,
-          max_tokens: 2048,
+          // Comparison/record_trail cards are large; 2048 truncated the emit_card
+          // JSON mid-object (missing follow_ups) and forced the fallback. Only
+          // billed for tokens actually generated.
+          max_tokens: 8192,
           system: AGENT_SYSTEM_PROMPT,
           tools: TOOL_SCHEMAS,
           messages,

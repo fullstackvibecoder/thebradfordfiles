@@ -40,32 +40,48 @@ export interface RecordTrailCard {
 
 export type AnyCard = SingleAnswerCard | ComparisonCard | RecordTrailCard;
 
+// The emit_card tool schema only marks type/query_restated/follow_ups as
+// required and leaves candidate/evidence shapes loose, so the model routinely
+// emits valid-but-partial cards: a single_answer with no `evidence` array, or
+// comparison candidates keyed `name` instead of `display_name`. Rejecting those
+// dropped the answer to the fallback ("Could not produce a sourced answer") even
+// though the content was good. Reject only on what a card genuinely needs to
+// render; coerce the optional presentational fields to safe defaults. The card
+// renderers already tolerate missing optional fields (`?? []`, `?? "..."`).
 export function validateCard(payload: unknown): AnyCard | null {
   if (typeof payload !== "object" || payload === null) return null;
-  const p = payload as Record<string, unknown>;
+  const p = { ...(payload as Record<string, unknown>) };
   if (typeof p.type !== "string") return null;
   if (typeof p.query_restated !== "string") return null;
   if (!Array.isArray(p.follow_ups) || p.follow_ups.some(x => typeof x !== "string")) return null;
 
   if (p.type === "single_answer") {
     if (typeof p.answer !== "string") return null;
-    if (!Array.isArray(p.evidence)) return null;
+    p.evidence = Array.isArray(p.evidence) ? p.evidence : [];
     return p as unknown as SingleAnswerCard;
   }
   if (p.type === "comparison") {
     if (!Array.isArray(p.candidates) || p.candidates.length < 2) return null;
-    if (typeof p.topic !== "string") return null;
-    if (!Array.isArray(p.divergences)) return null;
+    const candidates: Record<string, unknown>[] = [];
     for (const cand of p.candidates) {
       if (typeof cand !== "object" || cand === null) return null;
-      const c = cand as Record<string, unknown>;
-      if (typeof c.slug !== "string" || typeof c.display_name !== "string") return null;
+      const c = { ...(cand as Record<string, unknown>) };
+      // Accept the model's common "name" key as display_name.
+      if (typeof c.display_name !== "string" && typeof c.name === "string") c.display_name = c.name;
+      // display_name is essential (it labels the column); slug is optional and
+      // gets resolved by name in enrichComparisonCard when the model omits it.
+      if (typeof c.display_name !== "string") return null;
+      if (typeof c.slug !== "string") c.slug = "";
+      candidates.push(c);
     }
+    p.candidates = candidates;
+    p.topic = typeof p.topic === "string" ? p.topic : "";
+    p.divergences = Array.isArray(p.divergences) ? p.divergences : [];
     return p as unknown as ComparisonCard;
   }
   if (p.type === "record_trail") {
-    if (typeof p.theme !== "string") return null;
-    if (!Array.isArray(p.entries)) return null;
+    p.theme = typeof p.theme === "string" ? p.theme : "";
+    p.entries = Array.isArray(p.entries) ? p.entries : [];
     return p as unknown as RecordTrailCard;
   }
   return null;
