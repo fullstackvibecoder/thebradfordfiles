@@ -1,0 +1,70 @@
+name: Daily news refresh
+
+on:
+  schedule:
+    - cron: "0 11 * * *"   # ~06:00 ET daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-news.txt
+
+      - name: Run news refresh
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: bash scripts/news_refresh.sh
+
+      - name: Commit changes
+        run: |
+          git config user.name "news-refresh[bot]"
+          git config user.email "actions@github.com"
+          git add data/                       # respects .gitignore (excludes *.txt); stages news index + records
+          git add -f web/public/data/         # -f: web/public/data is gitignored; stage rebuilt dossiers
+          if git diff --staged --quiet; then
+            echo "No news changes."
+            echo "PUSHED=false" >> "$GITHUB_ENV"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+            git commit -m "news: daily refresh ${DATE}"
+            git push
+            echo "PUSHED=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Deploy to Vercel
+        if: env.PUSHED == 'true'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
+            echo "VERCEL_* secrets not set. Skipping deploy."
+            exit 0
+          fi
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+
+      - name: Open failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "News refresh failed $(date -u +%Y-%m-%d)" \
+            --body "The daily news-refresh workflow failed. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            --label "news-refresh-failure" || true
