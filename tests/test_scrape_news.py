@@ -27,7 +27,7 @@ def _setup(tmp_path, monkeypatch):
         {"handle": "oliviachow", "display_name": "Olivia Chow", "surname": "Chow"}))
     monkeypatch.setattr(sn, "DATA_DIR", data)
     monkeypatch.setattr(sn._candidates, "DATA_DIR", data)
-    def fake_get(url):
+    def fake_get(url, user_agent=None):
         if url == "https://feed":
             return FEED
         if url == "https://cbc.ca/chow1":

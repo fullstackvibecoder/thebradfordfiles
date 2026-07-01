@@ -7,6 +7,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import time
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -24,8 +26,35 @@ def log(msg: str) -> None:
     print(f"[news] {msg}", flush=True)
 
 
-def http_get(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+def effective_user_agent(feed: dict) -> str:
+    """Per-feed UA override (e.g. browser UA for CBC) or the default bot UA."""
+    return feed.get("user_agent") or USER_AGENT
+
+
+def _is_retryable(exc: Exception) -> bool:
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code == 429 or 500 <= exc.code < 600
+    return isinstance(exc, (urllib.error.URLError, TimeoutError))
+
+
+def fetch_with_retry(thunk, *, retries: int = 3, sleep=time.sleep) -> str:
+    """Call thunk(), retrying transient failures (URLError/timeout/5xx/429) with
+    linear backoff. Re-raises the last error after `retries` attempts. 4xx other
+    than 429 is not retried."""
+    last = None
+    for attempt in range(1, retries + 1):
+        try:
+            return thunk()
+        except Exception as e:  # noqa: BLE001
+            if not _is_retryable(e) or attempt == retries:
+                raise
+            last = e
+            sleep(attempt)
+    raise last  # unreachable, but keeps type-checkers happy
+
+
+def http_get(url: str, user_agent: str | None = None) -> str:
+    req = urllib.request.Request(url, headers={"User-Agent": user_agent or USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as r:  # noqa: S310
         return r.read().decode("utf-8", errors="replace")
 
@@ -55,11 +84,12 @@ def main(argv: list[str] | None = None) -> int:
     n_written = 0
 
     for feed in feeds:
-        if feed.get("paywalled"):
+        if feed.get("skip") or feed.get("paywalled"):
             continue
         outlet, rss_url = feed.get("outlet", "?"), feed.get("rss_url", "")
+        ua = effective_user_agent(feed)
         try:
-            xml = http_get(rss_url)
+            xml = fetch_with_retry(lambda: http_get(rss_url, ua))
         except Exception as e:  # noqa: BLE001
             log(f"skip feed {outlet}: fetch error {e!r}")
             continue
@@ -77,7 +107,7 @@ def main(argv: list[str] | None = None) -> int:
                 if uh in _existing_hashes(index):
                     continue
                 try:
-                    html = http_get(url)
+                    html = fetch_with_retry(lambda: http_get(url, ua))
                 except Exception as e:  # noqa: BLE001
                     log(f"skip article {url}: fetch error {e!r}")
                     continue
