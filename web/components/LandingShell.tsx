@@ -46,7 +46,7 @@ export function LandingShell({
         </div>
         <TorontoSkyline className="absolute inset-x-0 bottom-0 h-10 text-white/15" />
       </div>
-      {featuredSlot}
+      {!state.query && featuredSlot}
       {!state.query && <Chips onPick={onChipPick} />}
       {!state.query && surfacedSlot}
       {state.query && <ReceiptStream state={state} onFollowUp={onFollowUp} />}
