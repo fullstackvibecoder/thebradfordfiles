@@ -17,9 +17,9 @@ export default function ReceiptsIndexPage() {
 
   return (
     <main className="max-w-[920px] mx-auto px-4 py-10">
-      <header className="mb-8 pb-6 border-b border-[#ffffff15]">
+      <header className="mb-8 pb-6 border-b border-rule">
         <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight mb-3 text-ink">Receipts</h1>
-        <p className="text-base leading-relaxed text-[#d4ccb8] max-w-[640px]">
+        <p className="text-base leading-relaxed text-ink-2 max-w-[640px]">
           Verbatim attributed claims from the 2026 race, audited against Toronto Open Data. Each receipt quotes the claim, links to the primary source, and lays out the data with caveats.
         </p>
         <p className="font-mono text-xs uppercase tracking-wider text-muted mt-4">

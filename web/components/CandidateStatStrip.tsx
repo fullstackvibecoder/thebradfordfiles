@@ -112,7 +112,7 @@ export function CandidateStatStrip({ slug }: { slug: string }) {
   ];
 
   return (
-    <div className="border-t border-b border-[#2a2520] py-5 my-6">
+    <div className="border-t border-b border-rule py-5 my-6">
       <div className="flex flex-wrap gap-x-6 gap-y-3">
         {stats.map((s) => (
           <Cell key={s.label} stat={s} />

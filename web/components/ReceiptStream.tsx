@@ -85,7 +85,7 @@ export function ReceiptStream({ state, onFollowUp }: { state: State; onFollowUp:
       </div>
       <VerificationTrail events={state.events} complete={state.complete} />
       {state.error && (
-        <div className="max-w-[780px] mx-auto bg-[#1c1813] border border-rule rounded-sm p-6 text-center">
+        <div className="max-w-[780px] mx-auto bg-surface border border-rule rounded-sm p-6 text-center">
           <p className="font-sans text-[14px] text-muted">Could not produce a sourced answer for this question.</p>
           <button onClick={() => onFollowUp("")} className="chip mt-3">Try a different question</button>
         </div>

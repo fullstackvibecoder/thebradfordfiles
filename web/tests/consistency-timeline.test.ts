@@ -27,16 +27,16 @@ function writeCell(handle: string, topic: string, label: string | null) {
 }
 
 test("tickColor returns the correct color for known labels", () => {
-  expect(tickColor("consistent")).toBe("bg-[#3a8a3a]");
-  expect(tickColor("evolving")).toBe("bg-[#d4a548]");
-  expect(tickColor("shifted")).toBe("bg-[#d44848]");
+  expect(tickColor("consistent")).toBe("bg-success");
+  expect(tickColor("evolving")).toBe("bg-signal");
+  expect(tickColor("shifted")).toBe("bg-accent");
 });
 
 test("tickColor returns placeholder color for null, undefined, or unknown labels", () => {
-  expect(tickColor(null)).toBe("bg-[#4a4234]");
-  expect(tickColor(undefined)).toBe("bg-[#4a4234]");
-  expect(tickColor("unknown_label")).toBe("bg-[#4a4234]");
-  expect(tickColor("")).toBe("bg-[#4a4234]");
+  expect(tickColor(null)).toBe("bg-stamp-border");
+  expect(tickColor(undefined)).toBe("bg-stamp-border");
+  expect(tickColor("unknown_label")).toBe("bg-stamp-border");
+  expect(tickColor("")).toBe("bg-stamp-border");
 });
 
 test("getSynthesis reads consistency labels written to disk", () => {

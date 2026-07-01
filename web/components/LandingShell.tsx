@@ -39,7 +39,7 @@ export function LandingShell({
             <RocketMark className="w-6 h-6" />
             <div className="font-sans font-semibold text-[30px] leading-[1.1] tracking-tight">The Mayoral Record</div>
           </div>
-          <p className="font-serif italic text-[14px] leading-[1.5] text-[#8a8275] max-w-[560px] mx-auto">Toronto's 2026 mayoral race, sourced and queryable.</p>
+          <p className="font-serif italic text-[14px] leading-[1.5] text-muted max-w-[560px] mx-auto">Toronto's 2026 mayoral race, sourced and queryable.</p>
         </div>
         <div className="mt-9 relative z-10">
           <CommandBar onSubmit={onCommandSubmit} />
