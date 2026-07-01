@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T13:23:37+00:00",
+  "generated_at": "2026-07-01T14:08:51+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -21,8 +21,8 @@
         "cost of living"
       ],
       "post_count": 3832,
-      "record_count": 5435,
-      "extracted_count": 0,
+      "record_count": 5439,
+      "extracted_count": 1796,
       "emphasis": {
         "transit": 12.7,
         "governance_ethics": 11.5,
@@ -65,7 +65,7 @@
       ],
       "post_count": 703,
       "record_count": 452,
-      "extracted_count": 0,
+      "extracted_count": 230,
       "emphasis": {
         "housing": 11.7,
         "civic_engagement": 9.1,
@@ -103,7 +103,7 @@
       ],
       "post_count": 487,
       "record_count": 31,
-      "extracted_count": 0,
+      "extracted_count": 7,
       "emphasis": {
         "small_business_economy": 28.6,
         "personal_context": 28.6,
