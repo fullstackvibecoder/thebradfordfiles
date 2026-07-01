@@ -11,11 +11,11 @@ function VoteRow({ v }: { v: RelatedVote }) {
   return (
     <div className="mb-2.5">
       {v.vote_disposition && (
-        <span className="font-mono text-[10px] border border-[#5a5240] text-[#c8c2b0] px-1.5 py-0.5 rounded-sm">
+        <span className="font-mono text-[10px] border border-stamp-border text-stamp-text px-1.5 py-0.5 rounded-sm">
           VOTED {v.vote_disposition.toUpperCase()}
         </span>
       )}
-      <span className="font-serif text-[13px] text-[#d4ccb8]"> {v.agenda_item_title ?? "(untitled motion)"}</span>
+      <span className="font-serif text-[13px] text-ink-2"> {v.agenda_item_title ?? "(untitled motion)"}</span>
       <div className="font-mono text-[10.5px] text-muted">
         {url ? <a href={url} target="_blank" rel="noopener" className="hover:text-accent">{sub} ↗</a> : sub}
       </div>
@@ -28,7 +28,7 @@ export function SaidVsDoneItemCard({ item }: { item: SaidVsDoneItem }) {
   const votes = open ? item.votes : item.votes.slice(0, MAX_VOTES);
   const remaining = item.votes.length - MAX_VOTES;
   return (
-    <div className="bg-[#1c1813] border border-rule rounded-sm p-5">
+    <div className="bg-surface border border-rule rounded-sm p-5">
       <div className="font-mono text-[10px] tracking-label uppercase text-muted mb-1.5">
         Said · {item.kind} · {(item.post_date ?? "").slice(0, 10)}
         {item.post_url && <> · <a href={item.post_url} target="_blank" rel="noopener" className="text-accent">source ↗</a></>}

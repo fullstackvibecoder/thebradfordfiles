@@ -11,8 +11,8 @@ export function ReceiptExhibit({ anchor, index }: { anchor: DataAnchor; index: n
         </span>
         <span className="font-serif text-lg font-bold text-ink">{anchor.sub_claim}</span>
       </h3>
-      <p className="font-serif text-base leading-relaxed text-[#d4ccb8] mb-3">{anchor.finding}</p>
-      <div className="bg-[#1c1813] border border-[#2a2520] px-5 py-4 mb-3">
+      <p className="font-serif text-base leading-relaxed text-ink-2 mb-3">{anchor.finding}</p>
+      <div className="bg-surface border border-rule px-5 py-4 mb-3">
         <p className="font-serif text-xl font-bold text-ink leading-snug nums-tabular">
           {anchor.metric}
         </p>

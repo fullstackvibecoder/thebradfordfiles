@@ -1,10 +1,10 @@
 import type { Tier } from "@/lib/scenario-types";
 
 const TIER_STYLES: Record<Tier, { border: string; text: string; bg: string }> = {
-  T1: { border: "border-[#c4923a]", text: "text-[#c4923a]", bg: "bg-[#15110d]" },
-  T2: { border: "border-[#ffffff55]", text: "text-[#e8e3d5]", bg: "bg-[#15110d]" },
-  T3: { border: "border-[#ffffff55]", text: "text-[#e8e3d5]", bg: "bg-[#15110d]" },
-  T4: { border: "border-[#8a8275]", text: "text-[#8a8275]", bg: "bg-[#1c1813]" },
+  T1: { border: "border-accent", text: "text-accent", bg: "bg-bg" },
+  T2: { border: "border-rule", text: "text-ink", bg: "bg-bg" },
+  T3: { border: "border-rule", text: "text-ink", bg: "bg-bg" },
+  T4: { border: "border-muted", text: "text-muted", bg: "bg-surface" },
 };
 
 const TIER_TITLES: Record<Tier, string> = {

@@ -66,7 +66,7 @@ export function Sparkline({ slug }: { slug: string }) {
       className="inline-block align-middle ml-2"
     >
       <title>{recentSummary}</title>
-      <path d={path} fill="none" stroke="#c4923a" strokeWidth={1} />
+      <path d={path} fill="none" stroke="var(--accent)" strokeWidth={1} />
     </svg>
   );
 }

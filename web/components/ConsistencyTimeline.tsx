@@ -4,12 +4,12 @@ const TOPIC_GROUPS = ["housing", "transit", "safety_crime", "taxes_fiscal", "soc
 type TopicGroup = typeof TOPIC_GROUPS[number];
 
 const LABEL_COLOR: Record<string, string> = {
-  consistent: "bg-[#3a8a3a]",
-  evolving: "bg-[#d4a548]",
-  shifted: "bg-[#d44848]",
+  consistent: "bg-success",
+  evolving: "bg-signal",
+  shifted: "bg-accent",
 };
 
-const PLACEHOLDER_COLOR = "bg-[#4a4234]";
+const PLACEHOLDER_COLOR = "bg-stamp-border";
 
 const TOPIC_DISPLAY: Record<TopicGroup, string> = {
   housing: "Housing",

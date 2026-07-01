@@ -5,7 +5,7 @@ import { FollowUpChips } from "@/components/FollowUpChips";
 
 export function SingleAnswerCard({ card, onFollowUp }: { card: SingleAnswerCardType; onFollowUp: (q: string) => void }) {
   return (
-    <div className="max-w-[780px] mx-auto bg-[#1c1813] border border-rule rounded-sm p-7">
+    <div className="max-w-[780px] mx-auto bg-surface border border-rule rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.10)] p-7">
       <div className="label mb-3">Answer</div>
       <div className="font-sans font-semibold text-[22px] leading-[1.35] text-ink tracking-tight mb-5">{card.answer}</div>
       {card.evidence.length > 0 && (
@@ -14,7 +14,7 @@ export function SingleAnswerCard({ card, onFollowUp }: { card: SingleAnswerCardT
         </div>
       )}
       {card.context && (
-        <div className="border-t border-[#2a2520] pt-4">
+        <div className="border-t border-rule pt-4">
           <div className="label mb-2.5">Context</div>
           <DropCap>{card.context.body}</DropCap>
         </div>

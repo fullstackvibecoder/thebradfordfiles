@@ -24,10 +24,10 @@ export function VerificationTrail({ events, complete }: { events: ToolCallEvent[
   if (complete && !expanded && events.length > 0) {
     const totalRefs = events.filter(e => e.status === "complete").length;
     return (
-      <div className="max-w-[780px] mx-auto bg-[#1c1813] border border-rule rounded-sm px-4 py-2.5 flex items-center gap-2 my-5">
-        <span className="text-success font-mono text-[13px]">✓</span>
-        <span className="font-sans text-[12.5px] text-[#c8c2b0]">Verified. {totalRefs} {totalRefs === 1 ? "source" : "sources"} cross-referenced.</span>
-        <button onClick={() => setExpanded(true)} className="ml-auto font-mono text-[10.5px] tracking-[0.06em] text-accent uppercase cursor-pointer">SHOW TRAIL ↓</button>
+      <div className="max-w-[780px] mx-auto bg-surface border border-rule rounded-lg px-4 py-2.5 flex items-center gap-2 my-5">
+        <span className="text-success font-mono text-[13px] shrink-0">✓</span>
+        <span className="font-sans text-[12.5px] text-ink-2 min-w-0">Verified. {totalRefs} {totalRefs === 1 ? "source" : "sources"} cross-referenced.</span>
+        <button onClick={() => setExpanded(true)} className="ml-auto shrink-0 font-mono text-[10.5px] tracking-label text-accent uppercase cursor-pointer">SHOW TRAIL ↓</button>
       </div>
     );
   }
@@ -38,27 +38,39 @@ export function VerificationTrail({ events, complete }: { events: ToolCallEvent[
       <div className="flex flex-col gap-1.5 max-h-[300px] overflow-y-auto font-sans text-[12.5px] text-muted">
         {events.map((e, i) => {
           const verb = HUMAN_LABEL[e.tool] ?? e.tool;
-          const args = Object.entries(e.args).filter(([_, v]) => v != null && v !== "").map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(", ");
+          const args = Object.entries(e.args).filter(([, v]) => v != null && v !== "").map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(", ");
           if (e.status === "running") {
-            return <div key={i} className="flex items-center gap-2"><span className="text-accent font-mono">↳</span><span>{verb} {args && <span className="text-[#8a8275] font-mono text-[10.5px]">{args}</span>}</span></div>;
+            return (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-accent font-mono shrink-0">↳</span>
+                <span className="min-w-0 flex-1 truncate">{verb} {args && <span className="text-muted font-mono text-[10.5px]">{args}</span>}</span>
+              </div>
+            );
           }
           if (e.status === "error") {
-            return <div key={i} className="flex items-center gap-2"><span className="text-[#d44848] font-mono">!</span><span>{verb} {e.message ?? "error"}</span></div>;
+            return (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-accent font-mono shrink-0">!</span>
+                <span className="min-w-0 flex-1">{verb} {e.message ?? "error"}</span>
+              </div>
+            );
           }
           return (
-            <div key={i} className="flex items-center gap-2">
-              <span className="text-accent font-mono">↳</span>
-              <span>{verb}</span>
-              {e.result_summary && <span className="ml-auto font-mono text-[10.5px] text-[#8a8275]">{e.result_summary}</span>}
+            <div key={i} className="flex items-start gap-2">
+              <span className="text-accent font-mono shrink-0">↳</span>
+              <span className="min-w-0 flex-1 truncate">{verb}</span>
+              {e.result_summary && (
+                <span className="shrink-0 max-w-[42%] break-words text-right font-mono text-[10.5px] bg-signal text-signal-ink rounded-full px-2 py-[2px]">{e.result_summary}</span>
+              )}
             </div>
           );
         })}
         {complete && (
-          <div className="flex items-center gap-2"><span className="text-success font-mono">✓</span><span className="text-success">Verified. Drafting answer.</span></div>
+          <div className="flex items-start gap-2"><span className="text-success font-mono shrink-0">✓</span><span className="text-success min-w-0">Verified. Drafting answer.</span></div>
         )}
       </div>
       {complete && expanded && events.length > 0 && (
-        <button onClick={() => setExpanded(false)} className="mt-2 font-mono text-[10.5px] tracking-[0.06em] text-accent uppercase cursor-pointer">HIDE TRAIL ↑</button>
+        <button onClick={() => setExpanded(false)} className="mt-2 font-mono text-[10.5px] tracking-label text-accent uppercase cursor-pointer">HIDE TRAIL ↑</button>
       )}
     </div>
   );

@@ -2,14 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg: #f4f2ee; --surface: #ffffff; --surface-2: #faf9f7;
+  --ink: #17150f; --ink-2: #4a4640; --muted: #7d7566; --rule: #e4e1d8;
+  --accent: #da251d; --accent-ink: #ffffff;
+  --signal: #f2c200; --signal-ink: #111111; --success: #2b8a3e;
+  --masthead: #111111; --masthead-ink: #ffffff;
+  --stamp-bg: #faf9f7; --stamp-border: #e4e1d8; --stamp-text: #4a4640;
+  --stamp-verified-bg: #ffffff; --stamp-verified-border: #da251d; --stamp-verified-text: #da251d;
+  --sel-bg: #f2c200; --sel-ink: #111111;
+  --audit-tint: #fbeceb;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg: #121110; --surface: #1a1815; --surface-2: #201d19;
+    --ink: #ece7db; --ink-2: #b8b2a4; --muted: #8a8275; --rule: #2a2620;
+    --accent: #e5463d; --accent-ink: #14110d;
+    --signal: #f2c200; --signal-ink: #111111; --success: #57b45e;
+    --masthead: #0c0b0a; --masthead-ink: #f5f2ea;
+    --stamp-bg: #1c1813; --stamp-border: #4a4234; --stamp-text: #b8b09e;
+    --stamp-verified-bg: #1c1813; --stamp-verified-border: #e5463d; --stamp-verified-text: #e5463d;
+    --sel-bg: #2a2620; --sel-ink: #f2c200;
+    --audit-tint: #1a0d0d;
+  }
+}
+:root.dark {
+  --bg: #121110; --surface: #1a1815; --surface-2: #201d19;
+  --ink: #ece7db; --ink-2: #b8b2a4; --muted: #8a8275; --rule: #2a2620;
+  --accent: #e5463d; --accent-ink: #14110d;
+  --signal: #f2c200; --signal-ink: #111111; --success: #57b45e;
+  --masthead: #0c0b0a; --masthead-ink: #f5f2ea;
+  --stamp-bg: #1c1813; --stamp-border: #4a4234; --stamp-text: #b8b09e;
+  --stamp-verified-bg: #1c1813; --stamp-verified-border: #e5463d; --stamp-verified-text: #e5463d;
+  --sel-bg: #2a2620; --sel-ink: #f2c200;
+  --audit-tint: #1a0d0d;
+}
+:root.light { color-scheme: light; }
+:root.dark { color-scheme: dark; }
+
 @layer base {
   body {
     @apply bg-bg text-ink font-sans;
     font-feature-settings: "ss01", "cv11";
   }
   ::selection {
-    background-color: #2a2520;
-    color: #c4923a;
+    background-color: var(--sel-bg);
+    color: var(--sel-ink);
   }
 }
 
@@ -46,7 +84,7 @@
     content: "⁂";
     display: block;
     text-align: center;
-    color: #e8e3d5;
+    color: var(--ink);
     opacity: 0.4;
     font-size: 18px;
     line-height: 1;

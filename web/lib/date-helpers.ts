@@ -11,7 +11,7 @@ export function ageOf(asOf: string, now: Date = new Date()): Age {
 
 export function ageOfClass(asOf: string, now: Date = new Date()): string {
   const a = ageOf(asOf, now);
-  if (a === "fresh") return "text-[#7aa67a]";
-  if (a === "stale") return "italic text-[#5a5a55]";
+  if (a === "fresh") return "text-success";
+  if (a === "stale") return "italic text-muted";
   return "";
 }
