@@ -31,33 +31,19 @@ jobs:
         run: |
           git config user.name "news-refresh[bot]"
           git config user.email "actions@github.com"
-          git add data/                       # respects .gitignore (excludes *.txt); stages news index + records
-          git add -f web/public/data/         # -f: web/public/data is gitignored; stage rebuilt dossiers
+          # Real-news signal lives in data/ (news index + records.jsonl); .txt bodies are gitignored.
+          # web/public/data is rebuilt every run (build-metadata churn) so it must NOT gate the commit,
+          # else the cron commits an empty "daily refresh" every day.
+          git add data/
           if git diff --staged --quiet; then
-            echo "No news changes."
-            echo "PUSHED=false" >> "$GITHUB_ENV"
+            echo "No news changes; discarding build churn."
+            git checkout -- web/public/data/ 2>/dev/null || true
           else
+            git add -f web/public/data/   # -f: web/public/data is gitignored; stage rebuilt dossiers
             DATE=$(date -u +%Y-%m-%d)
             git commit -m "news: daily refresh ${DATE}"
-            git push
-            echo "PUSHED=true" >> "$GITHUB_ENV"
+            git push   # push triggers Vercel auto-deploy via Git integration
           fi
-
-      - name: Deploy to Vercel
-        if: env.PUSHED == 'true'
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-        run: |
-          if [ -z "$VERCEL_TOKEN" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
-            echo "VERCEL_* secrets not set. Skipping deploy."
-            exit 0
-          fi
-          npm install --global vercel@latest
-          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
-          vercel build --prod --token=$VERCEL_TOKEN
-          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
 
       - name: Open failure issue
         if: failure()
