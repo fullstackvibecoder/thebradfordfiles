@@ -1,5 +1,12 @@
 [
   { "outlet": "CityNews Toronto", "rss_url": "https://toronto.citynews.ca/feed/", "paywalled": false },
-  { "outlet": "CBC Toronto", "rss_url": "https://www.cbc.ca/cmlink/rss-canada-toronto", "paywalled": true, "note": "blocks programmatic fetch (timeout) as of 2026-06-08; paywalled=true so scrape_news skips it. Retry later / via a different fetch path." },
-  { "outlet": "Toronto Star GTA", "rss_url": "https://www.thestar.com/search/?f=rss&t=article&c=news/gta*&l=50&s=start_time&sd=desc", "paywalled": true, "note": "feed reachable, parses fine, but article bodies are paywalled; excluded from extraction." }
+  { "outlet": "Global News Toronto", "rss_url": "https://globalnews.ca/toronto/feed/", "paywalled": false },
+  { "outlet": "NOW Toronto", "rss_url": "https://nowtoronto.com/feed/", "paywalled": false },
+  { "outlet": "TorontoToday", "rss_url": "https://www.torontotoday.ca/rss", "paywalled": false, "note": "use /rss; /feed returns 403" },
+  { "outlet": "blogTO", "rss_url": "https://www.blogto.com/rss/articles.xml", "paywalled": false, "note": "low civic signal; supplementary" },
+  { "outlet": "CBC Toronto", "rss_url": "https://www.cbc.ca/webfeed/rss/rss-canada-toronto", "paywalled": false, "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36", "note": "CDN blocks the bot UA; browser UA gets 200" },
+  { "outlet": "Toronto Star GTA", "rss_url": "https://www.thestar.com/search/?f=rss&t=article&c=news/gta*&l=50&s=start_time&sd=desc", "paywalled": true, "note": "feed parses but article bodies paywalled; excluded from extraction" },
+  { "outlet": "CP24", "rss_url": null, "paywalled": false, "skip": true, "note": "no public RSS (Bell dropped RSS); needs HTML scraping — deferred" },
+  { "outlet": "CTV News Toronto", "rss_url": null, "paywalled": false, "skip": true, "note": "CTV FAQ: no RSS feeds; needs HTML scraping — deferred" },
+  { "outlet": "Toronto.com", "rss_url": null, "paywalled": false, "skip": true, "note": "Metroland shut down RSS; needs HTML scraping — deferred" }
 ]
