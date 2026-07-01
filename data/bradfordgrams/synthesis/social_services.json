@@ -2,17 +2,16 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "social_services",
-  "summary": "Bradford's Instagram presence on social services spans pandemic response, homelessness, mental health, food security, reconciliation, and community inclusion. Bradford supports expanding shelters, supportive housing, mental health and addiction supports, and an outreach-first approach to encampments where shelter is offered before removal (DTu89cQjtBR, DMK2uOQgteh, DRCZSYbjSpb). Bradford frames addiction and mental health as provincial health-care responsibilities and argues the federal government should fund refugee shelter costs (DSZ7R5JgJZS, DQwumxDjYhU, CtW8t0Pp_Ix). Bradford backs investments in arts funding, the Tamil Community Centre, seniors programs, and Toronto Rent Bank as a permanent program (DCX1fRQNc0a, DHzTfsny-ut, CePKa3EuuIj). Bradford consistently expresses solidarity with 2SLGBTQ+, Jewish, Muslim, Indigenous, Tamil, Ukrainian, and Black communities and opposes hate-based discrimination (DJwW46pyNSo, CZU1A-COwLS, CqdUY-9Ag4L). During COVID-19, Bradford promoted targeted vaccine clinics in hot-spot neighbourhoods and mental-health fundraising for Michael Garron Hospital (CNctisNh0X6, CMXWtifhSrK).",
+  "summary": "Bradford's Instagram record on social services spans homelessness, mental health, public health, recreation, seniors, community/diversity, and reconciliation. Bradford supports encampment clearance paired with offering shelter and treatment, and states the province should fund addiction and mental health as health care issues (DTu89cQjtBR, DRCZSYbjSpb, DSZ7R5JgJZS). Bradford supports expanded mental health outreach, shelters, supportive housing, and youth programs (DMK2uOQgteh, Cs6kSzKgQxQ, DaL1nWGKEEM). During COVID-19, Bradford promoted vaccination access in hot-spot neighbourhoods and City employee vaccine requirements (CNctisNh0X6, CSwreCcrT6v). Bradford supports arts funding, food security programs, refugee welcoming with federal funding, seniors' Meals on Wheels and community paramedicine, and Indigenous reconciliation (DCX1fRQNc0a, CtW8t0Pp_Ix, CVd490bgrii, CcBq_fmLPzw). Bradford opposes the current 7am recreation registration system and pledges a lottery-based replacement (DZIQEviO7nH). Bradford consistently expresses solidarity with 2SLGBTQ+, Jewish, Muslim, Tamil, Black, and trans communities.",
   "consistency": {
-    "label": "evolving",
-    "stable_since": "2021-01-01",
+    "label": "consistent",
+    "stable_since": "2020",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports expanding shelters, supportive housing, and mental health/addiction supports while opposing long-term encampments; staff should offer shelter before any removal.",
+      "stance": "Supports clearing encampments while offering shelter and treatment options, framing it as a compassionate approach",
       "supporting_records": [
-        "DMK2uOQgteh",
         "DTu89cQjtBR",
         "DRCZSYbjSpb",
         "DRDb8H5AUN5",
@@ -20,102 +19,121 @@
       ]
     },
     {
-      "stance": "Frames addiction and mental health primarily as provincial health-care responsibilities and refugee shelter costs as a federal responsibility, arguing property taxes were not designed for these.",
+      "stance": "States addiction and mental health are provincial health care jurisdictions and the province must step in to help municipalities",
       "supporting_records": [
-        "DSZ7R5JgJZS",
-        "DQwumxDjYhU",
-        "CtW8t0Pp_Ix"
+        "DSZ7R5JgJZS"
       ]
     },
     {
-      "stance": "Supports investment in mental health programs and intergovernmental cooperation to build a supportive network of services.",
+      "stance": "Supports more shelters, supportive housing, mental health supports, and supports for people struggling with addiction",
       "supporting_records": [
+        "DMK2uOQgteh",
         "B8O1pcJlVZp",
         "CM0W8qRBoe9",
-        "Cf-S8pxrMLn",
-        "CMXWtifhSrK"
+        "Cf-S8pxrMLn"
       ]
     },
     {
-      "stance": "Supports targeted vaccine distribution to hot-spot neighbourhoods and priority groups (frontline workers, teachers, seniors), and the City's vaccine mandate for employees.",
+      "stance": "Supports federal funding for refugee support programs, noting refugees and asylum seekers make up roughly 40% of Toronto's shelter population",
+      "supporting_records": [
+        "CtW8t0Pp_Ix",
+        "DQwumxDjYhU"
+      ]
+    },
+    {
+      "stance": "Supports targeted COVID-19 vaccination in hot-spot neighbourhoods and City employee vaccine requirements",
       "supporting_records": [
         "CN2PeO_Be1f",
         "CNvRUVohDnq",
-        "CNYCjLthZUp",
         "CSwreCcrT6v",
-        "CR9wsvSLzSO"
+        "CNYCjLthZUp"
       ]
     },
     {
-      "stance": "Supports food security programming, food banks, and Out of the Cold meal services, while highlighting rising need.",
+      "stance": "Supports Toronto arts sector funding through the Culture Plan, TAC, and LASOs",
+      "supporting_records": [
+        "DCX1fRQNc0a"
+      ]
+    },
+    {
+      "stance": "Supports food security programs including food banks, Out of the Cold, and Meals on Wheels",
       "supporting_records": [
         "DFELJymSBgT",
         "CbfuRSWAZQX",
-        "CVDnLKQLvQM",
+        "CVd490bgrii",
         "CpxcwUmgRXx",
-        "CtZbcTXAL9u"
+        "CJXEEP3hmO8"
       ]
     },
     {
-      "stance": "Expresses solidarity with 2SLGBTQ+ communities and opposes homophobia, biphobia, and transphobia.",
+      "stance": "Opposes Toronto's current 7am recreation program registration process and supports a longer registration window with a fair lottery",
       "supporting_records": [
+        "DZLdPAgKCiu",
+        "DZIQEviO7nH",
+        "DWXXm8Yiazl"
+      ]
+    },
+    {
+      "stance": "Supports affordable and accessible daycare as critical to children and the economy",
+      "supporting_records": [
+        "CdTgj8pr76Q",
+        "CdTgaiELKLt"
+      ]
+    },
+    {
+      "stance": "Supports Truth and Reconciliation with Indigenous peoples, including the City's Reconciliation Action Plan",
+      "supporting_records": [
+        "CjIieceuiOM",
+        "CcBq_fmLPzw",
+        "CUcfHBFLvxz",
+        "DJRulc7t7Ie",
+        "BZAFOuKgVrF"
+      ]
+    },
+    {
+      "stance": "Supports 2SLGBTQ+ communities and opposes homophobia, biphobia, and transphobia",
+      "supporting_records": [
+        "CsWpcXUy7SH",
         "DJwW46pyNSo",
         "DH31KwRSrOg",
         "CqdUY-9Ag4L",
-        "CsWpcXUy7SH",
-        "CNF-TITBh2l",
-        "ClMvckVrtf3"
+        "ClMvckVrtf3",
+        "CNF-TITBh2l"
       ]
     },
     {
-      "stance": "Stands in solidarity with Jewish, Muslim, Tamil, Ukrainian, and Black communities, and supports Holocaust education and anti-Islamophobia campaigns.",
+      "stance": "Supports Jewish, Muslim, Tamil, and Ukrainian communities and opposes antisemitism, Islamophobia, and hate",
       "supporting_records": [
         "DGtWb8rS4d3",
         "CZU1A-COwLS",
-        "DJy5tn5tigh",
-        "CsumfL6tBn8",
-        "CuhuKjngzaO",
-        "CzKdJzpN2-0"
+        "CyG9cGFge97",
+        "CxQyUYgA5No",
+        "CzKdJzpN2-0",
+        "CuhuKjngzaO"
       ]
     },
     {
-      "stance": "Supports truth and reconciliation work with First Nations, Inuit and Métis people, including the City's Reconciliation Action Plan and recognition of MMIWG2S.",
-      "supporting_records": [
-        "CcBq_fmLPzw",
-        "CjIieceuiOM",
-        "CUcfHBFLvxz",
-        "DJRulc7t7Ie",
-        "C6mcUOuyj1w"
-      ]
-    },
-    {
-      "stance": "Supports community-focused developments combining affordable rental housing, long-term care and seniors supports, and senior-focused programs like Meals on Wheels and Community Paramedicine.",
-      "supporting_records": [
-        "DWjaxtoCmxp",
-        "DG3775hy4XS",
-        "CVd490bgrii",
-        "CVVldUcLs0O"
-      ]
-    },
-    {
-      "stance": "Opposes provincial changes to the definition of disability that would reduce supports for Torontonians with disabilities.",
+      "stance": "Opposes changing the provincial definition of disability, calling it inhumane to further pressure people already struggling",
       "supporting_records": [
         "B6OqTISF622"
       ]
     },
     {
-      "stance": "Questions whether municipal property taxes should fund programs (school breakfasts, blanket library hour increases) that may be better delivered or scoped by other orders of government, while stating he is not seeking to cut them.",
+      "stance": "Supports seniors' services including Meals on Wheels, community paramedicine, snow removal supports, and Aging in Place",
       "supporting_records": [
-        "DF2l2geR3Ry"
+        "CVd490bgrii",
+        "CVVldUcLs0O",
+        "DUdUQSkkQHd",
+        "DG3775hy4XS"
       ]
     }
   ],
   "key_actions": [],
-  "input_record_count": 196,
-  "input_records_hash": "sha256:a547a0ce338d1eda81be139b4b4fa068df20c2af364b6d552745e684d013937d",
+  "input_record_count": 207,
+  "input_records_hash": "sha256:473db63d1616f22147a0d2e22d2b8a33b54766e4a59294c895681574df7b1ea5",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T19:59:47+00:00",
+  "synthesis_generated_at": "2026-07-01T14:58:22+00:00",
   "synthesis_skipped_reason": null
 }

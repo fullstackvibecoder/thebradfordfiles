@@ -2,27 +2,58 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "taxes_fiscal",
-  "summary": "Bradford's positions on taxes and fiscal policy center on opposition to property tax increases under Mayor Chow, characterizing increases of roughly 25% over three years as unaffordable and not matched by service improvements (DExr-I1yGsL, DE2RXwfRFVN, DTjStlDiiBi). Bradford opposes the Vacant Home Tax and luxury land transfer tax (DW2FRA0ANLp, DSabj0Mjkvw, C56wHybPF4Q) and characterizes draws from reserve funds for operating spending as financially irresponsible (DUUBF2LEktS, DTQlvAvD_TV). Bradford supports targeted tax cuts, including a 25% industrial property tax reduction funded by the tax stabilization reserve in response to U.S. tariffs (DF7o2skxQ5R, DF8fbeLy4kM, DIcIi5byoAH), open tendering projected to save $200M annually (CsUNNf3AEZE), and a property tax subclass reducing rates for live music venues (CLfQJ_UhWry). Bradford also advocates for a new fiscal deal with senior governments (Cylzy9NALa_, CG3Fps3hZRc).",
+  "summary": "Bradford's Instagram content on taxes and fiscal policy centers on opposition to property tax increases under Mayor Chow, characterized as cumulatively 25% over three years (7% in 2023, 9.5% in 2024, 6.9% in 2025) without commensurate service improvements. Bradford opposes drawing $512M from reserve funds, characterizing it as unsustainable and likely to force a roughly 10.5% tax increase the following year. Bradford supports property tax cuts for industrial properties and small businesses (proposing a 25% cut funded by the tax stabilization reserve during trade-war conditions), opposes the Vacant Home Tax, the luxury home land transfer tax, and additional housing-related taxes. Bradford also supports open tendering to save an estimated $200M annually, a live music venue tax subclass, and pursuing a new fiscal deal with senior governments. The recurring frame is \"paying more, getting less\" and demand for value-for-money.",
   "consistency": {
     "label": "consistent",
-    "stable_since": "2023-04",
+    "stable_since": "2023-05",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Opposes property tax increases above the rate of inflation, citing cumulative ~25% increase over three years not matched by service improvements.",
+      "stance": "Opposes property tax increases above the rate of inflation, characterizing Mayor Chow's cumulative increases as roughly 25% over three years without matching service improvements.",
       "supporting_records": [
-        "DExr-I1yGsL",
-        "DE2RXwfRFVN",
-        "DTjStlDiiBi",
         "DFdqfBhSsqJ",
-        "DE0M_7oSJqL",
+        "DE2RXwfRFVN",
+        "DExr-I1yGsL",
         "C2QHu7FA40M",
-        "C3WbP3NN2_C"
+        "C3WbP3NN2_C",
+        "DTc0JOhlNtb",
+        "DUl96QKkebM"
       ]
     },
     {
-      "stance": "Opposes the Vacant Home Tax, calling it confused, ineffective at reducing vacant units, and a tax grab.",
+      "stance": "Opposes drawing large sums from the tax stabilization reserve to balance the operating budget, arguing it pushes larger tax bills to future years.",
+      "supporting_records": [
+        "DUUBF2LEktS",
+        "DUl96QKkebM",
+        "DT3EAOSkTOp",
+        "DTQlvAvD_TV",
+        "DTc0JOhlNtb",
+        "DURNM3vggmF"
+      ]
+    },
+    {
+      "stance": "Supports using the tax stabilization reserve during declared emergencies such as a US trade war to fund targeted business tax relief.",
+      "supporting_records": [
+        "DF8fbeLy4kM",
+        "DF7o2skxQ5R",
+        "DF5xWk4SBYU",
+        "DF6VebxtJGc"
+      ]
+    },
+    {
+      "stance": "Supports cutting property taxes for industrial properties and small businesses (proposing 25% cuts).",
+      "supporting_records": [
+        "DIcIi5byoAH",
+        "DHTvxMfOQc7",
+        "DGyGAp0yfRv",
+        "DF6VebxtJGc",
+        "C3GD7yhgljQ",
+        "DZ8k78ipAwq"
+      ]
+    },
+    {
+      "stance": "Opposes the Vacant Home Tax, characterizing it as a failed program and a tax grab, and supports suspending or shelving it.",
       "supporting_records": [
         "DW2FRA0ANLp",
         "C56wHybPF4Q",
@@ -31,37 +62,15 @@
       ]
     },
     {
-      "stance": "Opposes drawing from reserve funds (about $512M) to fund operating spending, characterizing it as financially irresponsible and likely to force a ~10.5% tax hike next year.",
+      "stance": "Opposes the Mayor's luxury home tax (increased land transfer tax on homes over $3M) and additional taxes on housing.",
       "supporting_records": [
-        "DUl96QKkebM",
-        "DUUBF2LEktS",
-        "DURNM3vggmF",
-        "DT3EAOSkTOp",
-        "DTQlvAvD_TV",
-        "DTc0JOhlNtb"
+        "DSabj0Mjkvw",
+        "DA_PG3-Rmwz",
+        "C4_iZ-KvxdZ"
       ]
     },
     {
-      "stance": "Supports cutting industrial and small business property taxes, including a 25% cut funded by the tax stabilization reserve to address U.S. tariffs.",
-      "supporting_records": [
-        "DF7o2skxQ5R",
-        "DF8fbeLy4kM",
-        "DF6VebxtJGc",
-        "DF5xWk4SBYU",
-        "DIcIi5byoAH",
-        "DGyGAp0yfRv",
-        "C3GD7yhgljQ"
-      ]
-    },
-    {
-      "stance": "Supports reducing taxes, red tape, and regulation to encourage investment and competitiveness.",
-      "supporting_records": [
-        "DHTvxMfOQc7",
-        "DGyGAp0yfRv"
-      ]
-    },
-    {
-      "stance": "Supports open tendering for city construction contracts, projected to save at least $200M annually.",
+      "stance": "Supports open tendering for city construction contracts as a way to save an estimated $200M annually.",
       "supporting_records": [
         "CsUNNf3AEZE",
         "CsTmzDEtnY9",
@@ -69,23 +78,7 @@
       ]
     },
     {
-      "stance": "Opposes the luxury home land transfer tax increase on homes over $3M.",
-      "supporting_records": [
-        "DSabj0Mjkvw"
-      ]
-    },
-    {
-      "stance": "Supports value for money, finding efficiencies, and prioritizing core services.",
-      "supporting_records": [
-        "DQ-LC_PDqof",
-        "DE2RXwfRFVN",
-        "C-se8h5AGrD",
-        "C-p4xGrghbz",
-        "DFdqfBhSsqJ"
-      ]
-    },
-    {
-      "stance": "Supports a new fiscal deal with provincial and federal governments for cities.",
+      "stance": "Supports pursuing a new/more sustainable fiscal deal with federal and provincial governments for Toronto.",
       "supporting_records": [
         "Cylzy9NALa_",
         "CxLVkkfg2GY",
@@ -95,19 +88,28 @@
       ]
     },
     {
-      "stance": "Supports targeted property tax relief for live music venues via a tax subclass.",
+      "stance": "Supports a property tax subclass for live music venues offering up to 50% reduction.",
       "supporting_records": [
         "CLfQJ_UhWry",
         "CfMiFDwgMdq"
       ]
+    },
+    {
+      "stance": "Supports value-for-money spending, finding efficiencies, and opposes what he characterizes as pet projects and cost overruns (e.g., $150M bike lane, $965K square renaming).",
+      "supporting_records": [
+        "C-se8h5AGrD",
+        "C-p4xGrghbz",
+        "C8uw4UYvvbZ",
+        "DFdqfBhSsqJ"
+      ]
     }
   ],
   "key_actions": [],
-  "input_record_count": 214,
-  "input_records_hash": "sha256:742014a96f0e9dd02fa8c46e97fa5a06f15e52305b9ecb313077b0fd637d8463",
+  "input_record_count": 223,
+  "input_records_hash": "sha256:415b5925288b7f5fee54e8f005317eecd0d5f039c5684fc667e4f1ce94ecabb5",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T19:55:11+00:00",
+  "synthesis_generated_at": "2026-07-01T14:53:53+00:00",
   "synthesis_skipped_reason": null
 }

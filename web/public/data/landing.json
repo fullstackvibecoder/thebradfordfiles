@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T14:08:51+00:00",
+  "generated_at": "2026-07-01T14:58:36+00:00",
   "candidates": [
     {
       "slug": "bradford",
@@ -20,27 +20,28 @@
         "congestion",
         "cost of living"
       ],
-      "post_count": 3832,
-      "record_count": 5439,
-      "extracted_count": 1796,
+      "post_count": 3907,
+      "record_count": 5650,
+      "extracted_count": 1834,
       "emphasis": {
+        "governance_ethics": 12.2,
+        "parks_environment": 8.6,
+        "safety_crime": 17.0,
+        "small_business_economy": 12.2,
+        "taxes_fiscal": 6.2,
+        "social_services": 7.5,
+        "civic_engagement": 8.7,
+        "campaign_logistics": 3.7,
         "transit": 12.7,
-        "governance_ethics": 11.5,
-        "infrastructure": 9.5,
-        "safety_crime": 16.6,
-        "taxes_fiscal": 6.0,
-        "campaign_logistics": 3.2,
         "housing": 18.5,
         "personal_context": 1.1,
-        "other": 1.8,
-        "social_services": 7.4,
-        "civic_engagement": 8.6,
-        "parks_environment": 8.6,
-        "small_business_economy": 12.1
+        "infrastructure": 9.4,
+        "endorsements": 0.1,
+        "other": 1.7
       },
       "date_range": {
         "earliest": "2015-01-28",
-        "latest": "2026-05-02"
+        "latest": "2026-06-30"
       },
       "consistency_dot": "yellow"
     },
