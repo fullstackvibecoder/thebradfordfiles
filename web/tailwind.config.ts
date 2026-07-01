@@ -25,6 +25,7 @@ const config: Config = {
         "stamp-verified-bg": "var(--stamp-verified-bg)",
         "stamp-verified-border": "var(--stamp-verified-border)",
         "stamp-verified-text": "var(--stamp-verified-text)",
+        "audit-tint": "var(--audit-tint)",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

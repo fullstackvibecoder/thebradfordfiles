@@ -2,7 +2,7 @@ import type { ClaimBlock } from "@/lib/receipt-types";
 
 export function ReceiptClaimBlock({ claim }: { claim: ClaimBlock }) {
   return (
-    <section className="bg-surface border-l-4 border-accent px-6 py-5 mb-6 relative">
+    <section className="bg-audit-tint border-l-4 border-accent px-6 py-5 mb-6 relative">
       <span className="absolute top-3 right-4 font-mono text-[10px] text-accent border border-accent px-2 py-0.5 rounded-sm caps-small">
         AUDITED
       </span>
