@@ -17,3 +17,8 @@ test("answer-view components use tokens, not legacy dark hex", () => {
     for (const hex of LEGACY) expect(src, `${f} contains ${hex}`).not.toContain(hex);
   }
 });
+
+test("date-helpers uses tokens, not arbitrary hex color classes", () => {
+  const src = readFileSync(new URL("../lib/date-helpers.ts", import.meta.url), "utf-8");
+  expect(src).not.toMatch(/text-\[#|bg-\[#|border-\[#/);
+});

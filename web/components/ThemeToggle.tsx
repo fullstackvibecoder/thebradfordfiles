@@ -32,7 +32,7 @@ export function ThemeToggle() {
       type="button"
       onClick={() => { const n = NEXT[mode]; setMode(n); apply(n); }}
       aria-label={`Theme: ${mode}. Click to change.`}
-      className="font-mono text-[10.5px] tracking-label uppercase text-masthead-ink/80 border border-white/20 rounded-full px-3 py-1 hover:border-white/50 transition-colors"
+      className="font-mono text-[10.5px] tracking-label uppercase text-ink/70 border border-rule hover:border-accent hover:text-accent rounded-full px-3 py-1 transition-colors"
     >
       {LABEL[mode]}
     </button>

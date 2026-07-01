@@ -27,7 +27,7 @@ test("ageOf returns stale for unparseable input", () => {
 
 test("ageOfClass returns the right Tailwind class for each bucket", () => {
   const now = new Date("2026-05-11T00:00:00Z");
-  expect(ageOfClass("2026-05-10", now)).toBe("text-[#7aa67a]");
+  expect(ageOfClass("2026-05-10", now)).toBe("text-success");
   expect(ageOfClass("2026-04-15", now)).toBe("");
-  expect(ageOfClass("2024-01-01", now)).toBe("italic text-[#5a5a55]");
+  expect(ageOfClass("2024-01-01", now)).toBe("italic text-muted");
 });
