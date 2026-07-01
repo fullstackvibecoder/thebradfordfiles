@@ -48,7 +48,7 @@ export function deriveDivergences(
   for (const [topic, group] of byTopic) {
     if (group.length < 2) continue;
     const ranked = [...group].sort((a, b) => (b.input_record_count ?? 0) - (a.input_record_count ?? 0));
-    const sides: DivergenceEntry["a"][] = [];
+    const sides: { side: DivergenceEntry["a"]; count: number; agendaItem?: string }[] = [];
     for (const cell of ranked) {
       const records = recordsBySlug.get(cell.candidate_slug) ?? [];
       let ev: EvidenceRef | null = null;
@@ -59,17 +59,24 @@ export function deriveDivergences(
       if (!ev) continue;
       const rec = records.find(r => r.shortcode === ev!.shortcode);
       sides.push({
-        slug: cell.candidate_slug,
-        display_name: nameBySlug.get(cell.candidate_slug) ?? cell.candidate_slug,
-        ...ev,
-        vote: toVote(rec?.council_verification?.vote_disposition),
+        side: {
+          slug: cell.candidate_slug,
+          display_name: nameBySlug.get(cell.candidate_slug) ?? cell.candidate_slug,
+          ...ev,
+          vote: toVote(rec?.council_verification?.vote_disposition),
+        },
+        count: cell.input_record_count ?? 0,
+        agendaItem: rec?.council_verification?.agenda_item,
       });
       if (sides.length === 2) break;
     }
     if (sides.length < 2) continue;
-    const [a, b] = sides;
-    const opposing = !!a.vote && !!b.vote && a.vote !== b.vote && a.vote !== "ABSENT" && b.vote !== "ABSENT";
-    const score = 100 + (opposing ? 500 : 0) + ((ranked[0].input_record_count ?? 0) + (ranked[1].input_record_count ?? 0));
+    const [sideA, sideB] = sides;
+    const a = sideA.side;
+    const b = sideB.side;
+    const sameAgendaItem = !!sideA.agendaItem && !!sideB.agendaItem && sideA.agendaItem === sideB.agendaItem;
+    const opposing = sameAgendaItem && !!a.vote && !!b.vote && a.vote !== b.vote && a.vote !== "ABSENT" && b.vote !== "ABSENT";
+    const score = 100 + (opposing ? 500 : 0) + (sideA.count + sideB.count);
     out.push({ kind: "divergence", topic, topic_label: TOPIC_LABELS[topic] ?? topic, a, b, score });
   }
   return out;
@@ -86,7 +93,7 @@ export function deriveContradictions(
     const label = cell.consistency?.label;
     if (label !== "evolving" && label !== "shifted") continue;
     const records = recordsBySlug.get(cell.candidate_slug) ?? [];
-    const changes = (cell.consistency?.changes ?? []) as unknown[];
+    const changes = Array.isArray(cell.consistency?.changes) ? cell.consistency.changes : [];
     for (const ch of changes) {
       if (!isChange(ch)) continue;
       const earlier = firstResolvable(records, ch.from?.records);

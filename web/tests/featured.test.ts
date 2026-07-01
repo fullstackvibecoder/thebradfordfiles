@@ -48,6 +48,48 @@ test("deriveDivergences pairs two candidates on a shared topic using verbatim qu
   expect(out[0].score).toBeGreaterThan(500);
 });
 
+test("deriveDivergences scores using the two ACTUALLY-SELECTED sides, not ranked[0]/ranked[1]", () => {
+  // Three candidates share a topic. The highest-input_record_count cell (bradford, 100)
+  // has only an unresolvable supporting_record, so it gets skipped. The two resolvable
+  // cells (chow, 30 and mcvie, 20) become the actual sides. The score must use their
+  // counts (30 + 20), not the skipped top cell's count (100).
+  const threeCands: CandidateLanding[] = [
+    ...cands,
+    { slug: "mcvie", display_name: "M. McVie", surname: "McVie" },
+  ];
+  const cells: SynthesisCell[] = [
+    { candidate_handle: "b", candidate_slug: "bradford", topic: "transit", summary: null, consistency: null, input_record_count: 100, key_positions: [{ stance: "x", supporting_records: ["MISSING"] }] },
+    { candidate_handle: "c", candidate_slug: "chow", topic: "transit", summary: null, consistency: null, input_record_count: 30, key_positions: [{ stance: "y", supporting_records: ["C1"] }] },
+    { candidate_handle: "m", candidate_slug: "mcvie", topic: "transit", summary: null, consistency: null, input_record_count: 20, key_positions: [{ stance: "z", supporting_records: ["M1"] }] },
+  ];
+  const recs = new Map([
+    ["bradford", []],
+    ["chow", [{ shortcode: "C1", kind: "position", topic: "transit", source_quote: "Freeze fares.", post_date: "2024-02-01" }]],
+    ["mcvie", [{ shortcode: "M1", kind: "position", topic: "transit", source_quote: "Widen the roads.", post_date: "2024-03-01" }]],
+  ]);
+  const out = deriveDivergences(cells, recs, threeCands);
+  expect(out).toHaveLength(1);
+  expect(out[0].a.slug).toBe("chow");
+  expect(out[0].b.slug).toBe("mcvie");
+  // base (100) + chow's 30 + mcvie's 20, no vote boost (no votes present)
+  expect(out[0].score).toBe(150);
+});
+
+test("deriveDivergences opposing-vote boost requires the SAME agenda item", () => {
+  const cells: SynthesisCell[] = [
+    { candidate_handle: "b", candidate_slug: "bradford", topic: "housing", summary: null, consistency: null, input_record_count: 10, key_positions: [{ stance: "x", supporting_records: ["H1"] }] },
+    { candidate_handle: "c", candidate_slug: "chow", topic: "housing", summary: null, consistency: null, input_record_count: 5, key_positions: [{ stance: "y", supporting_records: ["H2"] }] },
+  ];
+  const recs = new Map([
+    ["bradford", [{ shortcode: "H1", kind: "action", topic: "housing", source_quote: "For it.", post_date: "2024-01-01", council_verification: { agenda_item: "A.1", vote_disposition: "YES" } }]],
+    ["chow", [{ shortcode: "H2", kind: "action", topic: "housing", source_quote: "Against it.", post_date: "2024-02-01", council_verification: { agenda_item: "B.2", vote_disposition: "NO" } }]],
+  ]);
+  const out = deriveDivergences(cells, recs, cands);
+  expect(out).toHaveLength(1);
+  // opposing votes, but on DIFFERENT agenda items -> no +500 boost
+  expect(out[0].score).toBe(115);
+});
+
 test("deriveDivergences drops a topic where a side has no resolvable evidence", () => {
   const cells: SynthesisCell[] = [
     { candidate_handle: "b", candidate_slug: "bradford", topic: "housing", summary: null, consistency: null, key_positions: [{ stance: "x", supporting_records: ["MISSING"] }] },
