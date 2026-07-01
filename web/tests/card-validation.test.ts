@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { validateCard, containsEmDash } from "@/lib/card-types";
+import { validateCard, containsEmDash, normalizeEmDash } from "@/lib/card-types";
 
 test("validateCard accepts a well-formed single_answer card", () => {
   const result = validateCard({
@@ -60,4 +60,29 @@ test("containsEmDash returns false for clean text", () => {
     follow_ups: [],
   };
   expect(containsEmDash(card)).toBe(false);
+});
+
+test("normalizeEmDash strips em dashes from a card while preserving the answer", () => {
+  const card = {
+    type: "single_answer" as const,
+    query_restated: "x",
+    answer: "Residents' expectations have not lowered — City Hall's have.",
+    evidence: [{ label: "IG . Gloves Up Toronto — Police Week" }],
+    follow_ups: ["Compare candidates on a topic."],
+  };
+  const cleaned = normalizeEmDash(card);
+  expect(containsEmDash(cleaned)).toBe(false);
+  expect(cleaned.answer).toBe("Residents' expectations have not lowered, City Hall's have.");
+  expect(cleaned.evidence[0].label).toBe("IG . Gloves Up Toronto, Police Week");
+});
+
+test("normalizeEmDash leaves a clean card unchanged", () => {
+  const card = {
+    type: "single_answer" as const,
+    query_restated: "How did Bradford vote?",
+    answer: "Bradford voted YES.",
+    evidence: [{ label: "COUNCIL . 2024.GG12.7" }],
+    follow_ups: ["What about Chow?"],
+  };
+  expect(normalizeEmDash(card)).toEqual(card);
 });

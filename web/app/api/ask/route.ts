@@ -5,7 +5,7 @@ import { TOOL_SCHEMAS, AGENT_MODEL } from "@/lib/agent/tool-schemas";
 import { verifyTurnstile } from "@/lib/agent/turnstile";
 import * as tools from "@/lib/agent/tools";
 import { listCandidates } from "@/lib/agent/data-loader";
-import { validateCard, containsEmDash, type AnyCard } from "@/lib/card-types";
+import { validateCard, normalizeEmDash, type AnyCard } from "@/lib/card-types";
 
 function enrichComparisonCard(card: AnyCard): AnyCard {
   if (card.type !== "comparison") return card;
@@ -98,8 +98,8 @@ export async function POST(req: Request) {
         for (const use of toolUses) {
           if (use.name === "emit_card") {
             const card = validateCard(use.input);
-            if (card && !containsEmDash(card)) {
-              finalCard = enrichComparisonCard(card);
+            if (card) {
+              finalCard = enrichComparisonCard(normalizeEmDash(card));
             } else {
               finalCard = { ...FALLBACK_CARD, query_restated: query };
             }

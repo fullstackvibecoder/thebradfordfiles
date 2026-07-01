@@ -77,3 +77,15 @@ export function containsEmDash(card: AnyCard): boolean {
   const stringify = JSON.stringify(card);
   return stringify.includes(EM_DASH);
 }
+
+// The no-em-dash rule is a house style for the model's own prose, but a card
+// embeds verbatim source evidence (synthesis summaries, quotes, vote titles)
+// that legitimately contains em dashes. Rejecting the whole card on any em dash
+// silently discarded almost every sourced answer. Normalize instead: replace an
+// em dash (and any spaces hugging it) with a comma + space. The em dash only
+// ever appears inside JSON string values, never as structural syntax, so
+// operating on the serialized form and re-parsing is safe.
+export function normalizeEmDash<T extends AnyCard>(card: T): T {
+  const cleaned = JSON.stringify(card).replace(/ *— */g, ", ");
+  return JSON.parse(cleaned) as T;
+}
