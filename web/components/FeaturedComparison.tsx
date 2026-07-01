@@ -59,7 +59,7 @@ export function FeaturedComparison({ entries }: { entries: FeaturedEntry[] }) {
   if (entries.length === 0) return null;
   const entry = entries[Math.min(i, entries.length - 1)];
   return (
-    <section className="max-w-[780px] mx-auto my-8" onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}>
+    <section className="max-w-[780px] mx-auto my-8" onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }} onFocusCapture={() => { paused.current = true; }} onBlurCapture={() => { paused.current = false; }}>
       <div className="bg-surface border border-rule rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.10)]">
         <div className="bg-masthead text-masthead-ink px-4 py-2.5 font-mono text-[9px] font-bold tracking-label uppercase">Featured · On the record</div>
         <div className="p-4">
@@ -68,7 +68,7 @@ export function FeaturedComparison({ entries }: { entries: FeaturedEntry[] }) {
         {entries.length > 1 && (
           <div className="flex gap-1.5 justify-center pb-4">
             {entries.map((_, n) => (
-              <button key={n} onClick={() => setI(n)} aria-label={`Show featured item ${n + 1}`}
+              <button key={n} onClick={() => setI(n)} aria-label={`Show featured item ${n + 1}`} aria-current={n === i ? "true" : undefined}
                 className={`h-[7px] rounded-full transition-all ${n === i ? "w-5 bg-accent" : "w-[7px] bg-rule"}`} />
             ))}
           </div>
