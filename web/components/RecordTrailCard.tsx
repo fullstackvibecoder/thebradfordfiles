@@ -4,7 +4,7 @@ import { FollowUpChips } from "@/components/FollowUpChips";
 
 export function RecordTrailCard({ card, onFollowUp }: { card: RecordTrailCardType; onFollowUp: (q: string) => void }) {
   return (
-    <div className="max-w-[780px] mx-auto bg-[#1c1813] border border-rule rounded-sm p-7">
+    <div className="max-w-[780px] mx-auto bg-surface border border-rule rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.10)] p-7">
       <div className="label mb-3">Record trail</div>
       <div className="font-sans font-semibold text-[18px] leading-[1.3] text-ink tracking-tight mb-5">{card.theme}</div>
       <div className="relative pl-6 space-y-5 before:absolute before:left-1.5 before:top-1 before:bottom-1 before:w-px before:bg-stamp-border">
@@ -12,7 +12,7 @@ export function RecordTrailCard({ card, onFollowUp }: { card: RecordTrailCardTyp
           <div key={i} className="relative">
             <div className="absolute -left-[18px] top-1 w-2 h-2 rounded-full bg-accent" />
             <div className="font-mono text-[10.5px] uppercase tracking-label text-muted mb-1">{(e.date ?? "").slice(0, 10)} . {e.label}</div>
-            <p className="font-serif text-[13px] leading-[1.65] text-[#d4ccb8]">{e.body}</p>
+            <p className="font-serif text-[13px] leading-[1.65] text-ink-2">{e.body}</p>
             {(e.evidence?.length ?? 0) > 0 && (
               <div className="flex gap-1.5 flex-wrap mt-2">
                 {(e.evidence ?? []).map((s, j) => <StampPill key={j} stamp={s} />)}
