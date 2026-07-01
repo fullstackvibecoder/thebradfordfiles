@@ -34,12 +34,17 @@ jobs:
           # Real-news signal lives in data/ (news index + records.jsonl); .txt bodies are gitignored.
           # web/public/data is rebuilt every run (build-metadata churn) so it must NOT gate the commit,
           # else the cron commits an empty "daily refresh" every day.
+          # data/news/health.json's checked_at timestamp ALSO changes every run, so it must be
+          # excluded from the gate too — otherwise every quiet day would commit + deploy. It still
+          # rides along in the commit on days with real news.
           git add data/
-          if git diff --staged --quiet; then
-            echo "No news changes; discarding build churn."
+          if git diff --staged --quiet -- . ':(exclude)data/news/health.json'; then
+            echo "No news changes; discarding build + health churn."
             git checkout -- web/public/data/ 2>/dev/null || true
+            git restore --staged data/news/health.json 2>/dev/null || true
           else
             git add -f web/public/data/   # -f: web/public/data is gitignored; stage rebuilt dossiers
+            git add data/news/health.json # ride along with the real-news commit
             DATE=$(date -u +%Y-%m-%d)
             git commit -m "news: daily refresh ${DATE}"
             git push   # push triggers Vercel auto-deploy via Git integration
