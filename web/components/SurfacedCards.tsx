@@ -13,6 +13,14 @@ const TOPIC_LABELS: Record<string, string> = {
   social_services: "Social services",
 };
 
+// Literal class strings so Tailwind's JIT scanner picks them up.
+const GRID_COLS: Record<number, string> = {
+  0: "grid-cols-1",
+  1: "grid-cols-1",
+  2: "grid-cols-1 sm:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+};
+
 function cardLabel(c: SurfacedCard): string {
   if (c.type === "stance_evolved") return "Stance evolved";
   if (c.type === "verified_vote") return "Verified vote";
@@ -28,24 +36,26 @@ function cardTitle(c: SurfacedCard): string {
 export function SurfacedCards() {
   const cards = pickSurfacedCards();
   if (cards.length === 0) return null;
+  const cols = GRID_COLS[Math.min(cards.length, 3)] ?? GRID_COLS[3];
   return (
-    <div className="max-w-[840px] mx-auto px-8">
+    <div className="w-full">
       <div className="flex items-center gap-3 mb-4">
-        <div className="h-px bg-stamp-border flex-1" />
+        <div className="h-px bg-rule flex-1" />
         <span className="label">Surfaced from the record</span>
-        <div className="h-px bg-stamp-border flex-1" />
+        <div className="h-px bg-rule flex-1" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+      <div className={`grid ${cols} gap-3.5`}>
         {cards.map((c, i) => (
-          <div key={i} className="bg-surface border border-rule rounded-sm p-4">
+          <a
+            key={i}
+            href={`/candidates/${c.candidate_slug}`}
+            className="flex flex-col h-[220px] bg-surface border border-rule rounded-lg p-4 hover:border-accent transition-colors"
+          >
             <div className="label mb-2">{cardLabel(c)}</div>
-            <div className="font-sans font-semibold text-[14.5px] leading-[1.3] text-ink mb-2 tracking-tight">{cardTitle(c)}</div>
-            {c.type === "synthesis" ? (
-              <p className="font-serif text-[12.5px] leading-[1.6] text-ink drop-cap">{c.body}</p>
-            ) : (
-              <p className="font-serif text-[12.5px] leading-[1.55] text-ink-2">{c.body}</p>
-            )}
-          </div>
+            <div className="font-sans font-semibold text-[15px] leading-snug text-ink mb-2 tracking-tight">{cardTitle(c)}</div>
+            <p className="font-serif text-[12.5px] leading-relaxed text-ink-2 flex-1 overflow-hidden line-clamp-4">{c.body}</p>
+            <span className="font-mono text-[10px] font-bold text-accent mt-3">Read the record ›</span>
+          </a>
         ))}
       </div>
     </div>
