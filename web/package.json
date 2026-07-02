@@ -19,6 +19,10 @@
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
     "zod": "^4.4.3"
   },
+  "overrides": {
+    "form-data": ">=4.0.6",
+    "esbuild": ">=0.28.1"
+  },
   "devDependencies": {
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
