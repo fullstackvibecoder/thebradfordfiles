@@ -61,3 +61,13 @@ test("getCandidateSummaries prefers record_count, falls back to record array len
   expect(c[0]).toEqual({ slug: "bradford", display_name: "Brad Bradford", record_count: 5650 });
   expect(c[1]).toEqual({ slug: "chow", display_name: "Olivia Chow", record_count: 2 });
 });
+
+test("getCandidateSummaries returns candidates sorted by record_count descending", () => {
+  writeLanding([
+    { slug: "mcvie", display_name: "Sarah McVie", surname: "McVie", record_count: 31 },
+    { slug: "bradford", display_name: "Brad Bradford", surname: "Bradford", record_count: 5650 },
+    { slug: "chow", display_name: "Olivia Chow", surname: "Chow", record_count: 452 },
+  ]);
+  const c = getCandidateSummaries();
+  expect(c.map(x => x.slug)).toEqual(["bradford", "chow", "mcvie"]);
+});

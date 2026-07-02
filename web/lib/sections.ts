@@ -55,9 +55,11 @@ export function getSectionCounts(): SectionCount[] {
 }
 
 export function getCandidateSummaries(): CandidateSummary[] {
-  return listCandidates().map(c => ({
-    slug: c.slug,
-    display_name: c.display_name,
-    record_count: c.record_count ?? getRecordsForHandle(c.slug).length,
-  }));
+  return listCandidates()
+    .map(c => ({
+      slug: c.slug,
+      display_name: c.display_name,
+      record_count: c.record_count ?? getRecordsForHandle(c.slug).length,
+    }))
+    .sort((a, b) => b.record_count - a.record_count);
 }
