@@ -1,0 +1,59 @@
+{
+  "checked_at": "2026-07-16T11:29:53+00:00",
+  "feeds": [
+    {
+      "outlet": "CityNews Toronto",
+      "status": "ok",
+      "http_code": 200,
+      "items_seen": 15,
+      "items_matched": 0,
+      "articles_written": 0,
+      "error": null
+    },
+    {
+      "outlet": "Global News Toronto",
+      "status": "ok",
+      "http_code": 200,
+      "items_seen": 10,
+      "items_matched": 0,
+      "articles_written": 0,
+      "error": null
+    },
+    {
+      "outlet": "NOW Toronto",
+      "status": "ok",
+      "http_code": 200,
+      "items_seen": 10,
+      "items_matched": 1,
+      "articles_written": 1,
+      "error": null
+    },
+    {
+      "outlet": "TorontoToday",
+      "status": "ok",
+      "http_code": 200,
+      "items_seen": 20,
+      "items_matched": 0,
+      "articles_written": 0,
+      "error": null
+    },
+    {
+      "outlet": "blogTO",
+      "status": "error",
+      "http_code": 403,
+      "items_seen": 0,
+      "items_matched": 0,
+      "articles_written": 0,
+      "error": "<HTTPError 403: 'Forbidden'>"
+    },
+    {
+      "outlet": "CBC Toronto",
+      "status": "ok",
+      "http_code": 200,
+      "items_seen": 20,
+      "items_matched": 0,
+      "articles_written": 0,
+      "error": null
+    }
+  ]
+}
