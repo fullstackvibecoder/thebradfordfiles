@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-22T11:32:54+00:00",
+  "checked_at": "2026-07-23T11:34:48+00:00",
   "feeds": [
     {
       "outlet": "CityNews Toronto",
@@ -24,8 +24,8 @@
       "status": "ok",
       "http_code": 200,
       "items_seen": 10,
-      "items_matched": 0,
-      "articles_written": 0,
+      "items_matched": 2,
+      "articles_written": 1,
       "error": null
     },
     {
@@ -52,7 +52,7 @@
       "http_code": 200,
       "items_seen": 20,
       "items_matched": 1,
-      "articles_written": 1,
+      "articles_written": 0,
       "error": null
     }
   ]
