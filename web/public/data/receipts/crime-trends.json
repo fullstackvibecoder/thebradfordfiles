@@ -38,7 +38,7 @@
           "retrieved": "2025-12-26"
         },
         "caveats": "2024 and 2025 totals remain well above 2014 to 2019 levels (which sat below 4,000 per year). The decline is real, the absolute level is still elevated.",
-        "as_of": "2026-08-09",
+        "as_of": "2026-08-16",
         "pull_config": {
           "source": "tps_auto_theft_annual",
           "params": {
@@ -59,7 +59,7 @@
           "retrieved": "2025-12-30"
         },
         "caveats": "Year-over-year homicide counts are volatile in any single city. Multi-year averages are more stable. 2024's spike shows the noise.",
-        "as_of": "2026-08-09",
+        "as_of": "2026-08-16",
         "pull_config": {
           "source": "tps_homicide_annual",
           "params": {
@@ -80,7 +80,7 @@
           "retrieved": "2025-12-21"
         },
         "caveats": "Shooting victims (deaths plus injuries) is a separate metric from incident count and tells a slightly different story.",
-        "as_of": "2026-08-09",
+        "as_of": "2026-08-16",
         "pull_config": {
           "source": "tps_shooting_annual",
           "params": {
@@ -101,7 +101,7 @@
           "retrieved": "2025-07-22"
         },
         "caveats": "The CSI weights offences by severity but does not capture fear of crime, victim experience, or under-reported categories.",
-        "as_of": "2026-08-02",
+        "as_of": "2026-08-16",
         "pull_config": {
           "source": "statcan_csi_toronto_cma",
           "params": {
@@ -136,7 +136,7 @@
           "retrieved": "2025-07-22"
         },
         "caveats": "National declines do not negate the lived-experience concerns of victims or specific Toronto neighbourhoods with elevated counts.",
-        "as_of": "2026-08-02",
+        "as_of": "2026-08-16",
         "pull_config": {
           "source": "statcan_csi_canada",
           "params": {
