@@ -1,6 +1,41 @@
 {
-  "generated_at": "2026-08-20T11:14:15+00:00",
+  "generated_at": "2026-08-20T15:40:49+00:00",
   "candidates": [
+    {
+      "slug": "alexander",
+      "surname": "Alexander",
+      "display_name": "Chris Alexander",
+      "files_label": "The Alexander Files",
+      "current_role": "Mayoral candidate; former diplomat",
+      "candidacy_status": "declared",
+      "declared_date": "2026-07-29",
+      "result_2023": null,
+      "platform_pillars": [
+        "economic growth",
+        "transit",
+        "housing accessibility",
+        "neighbourhoods",
+        "public safety"
+      ],
+      "post_count": 177,
+      "record_count": 66,
+      "extracted_count": 43,
+      "emphasis": {
+        "social_services": 14.0,
+        "housing": 2.3,
+        "governance_ethics": 9.3,
+        "transit": 7.0,
+        "safety_crime": 2.3,
+        "civic_engagement": 9.3,
+        "other": 2.3,
+        "campaign_logistics": 4.7
+      },
+      "date_range": {
+        "earliest": "2016-12-26",
+        "latest": "2026-08-17"
+      },
+      "consistency_dot": "gray"
+    },
     {
       "slug": "bradford",
       "surname": "Bradford",
@@ -20,28 +55,28 @@
         "congestion",
         "cost of living"
       ],
-      "post_count": 3907,
-      "record_count": 5674,
-      "extracted_count": 0,
+      "post_count": 4020,
+      "record_count": 5944,
+      "extracted_count": 1902,
       "emphasis": {
-        "governance_ethics": 12.2,
-        "parks_environment": 8.6,
-        "safety_crime": 17.0,
-        "small_business_economy": 12.2,
-        "taxes_fiscal": 6.2,
-        "social_services": 7.5,
-        "civic_engagement": 8.7,
-        "campaign_logistics": 3.7,
-        "transit": 12.7,
-        "housing": 18.5,
-        "personal_context": 1.1,
+        "safety_crime": 17.7,
+        "social_services": 7.4,
+        "transit": 12.9,
+        "housing": 18.0,
+        "campaign_logistics": 3.8,
+        "governance_ethics": 12.7,
+        "taxes_fiscal": 6.1,
+        "parks_environment": 8.7,
+        "small_business_economy": 12.3,
+        "other": 1.7,
         "infrastructure": 9.4,
+        "civic_engagement": 8.5,
         "endorsements": 0.1,
-        "other": 1.7
+        "personal_context": 1.1
       },
       "date_range": {
         "earliest": "2015-01-28",
-        "latest": "2026-06-30"
+        "latest": "2026-08-19"
       },
       "consistency_dot": "yellow"
     },
@@ -65,8 +100,8 @@
         "social services"
       ],
       "post_count": 703,
-      "record_count": 467,
-      "extracted_count": 0,
+      "record_count": 452,
+      "extracted_count": 230,
       "emphasis": {
         "housing": 11.7,
         "civic_engagement": 9.1,
@@ -102,25 +137,27 @@
         "infrastructure",
         "civic engagement"
       ],
-      "post_count": 487,
-      "record_count": 31,
-      "extracted_count": 0,
+      "post_count": 496,
+      "record_count": 58,
+      "extracted_count": 14,
       "emphasis": {
-        "small_business_economy": 28.6,
-        "personal_context": 28.6,
-        "governance_ethics": 28.6,
-        "campaign_logistics": 28.6,
-        "civic_engagement": 28.6,
+        "campaign_logistics": 21.4,
+        "civic_engagement": 42.9,
+        "governance_ethics": 42.9,
+        "social_services": 21.4,
+        "safety_crime": 7.1,
+        "personal_context": 21.4,
+        "housing": 7.1,
         "infrastructure": 14.3,
-        "parks_environment": 14.3,
-        "other": 14.3,
-        "social_services": 14.3
+        "small_business_economy": 14.3,
+        "parks_environment": 7.1,
+        "other": 7.1
       },
       "date_range": {
         "earliest": "2016-01-02",
-        "latest": "2026-05-15"
+        "latest": "2026-08-14"
       },
-      "consistency_dot": "gray"
+      "consistency_dot": "yellow"
     }
   ]
 }

@@ -2,15 +2,73 @@
   "candidate_handle": "sarahmcvie",
   "candidate_slug": "mcvie",
   "topic": "governance_ethics",
-  "summary": null,
-  "consistency": null,
-  "key_positions": [],
-  "key_actions": [],
-  "input_record_count": 3,
-  "input_records_hash": "sha256:3834698743ff927c2e8b5c16ec26b5fd65ab23fe408c11ec0b6ef2612f6c35b4",
+  "summary": "Sarah McVie frames Toronto's governance as suffering from unresponsive democratic institutions that \"perform for only a few\" rather than serving all residents. McVie calls for a \"new social contract\" and states the mayor has a duty to serve all residents, not just the powerful. She points to failed institutions producing flawed infrastructure planning and irresponsible development where expert reports and organized citizens are ignored. Her proposed remedies include improving public reporting tools, innovating core services, and decentralizing decision-making to return power and resources to communities. She also expresses willingness to challenge waste and complacency at City Hall and to name roadblocks that councillors may fear to identify. Her pledges center on building a more responsive government in partnership with Torontonians.",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2026-05-02",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Democratic institutions in Toronto are unresponsive and perform for a narrow few rather than serving all residents.",
+      "supporting_records": [
+        "DX9lttgx58f",
+        "DX0NkGtxKuJ",
+        "Da6WyC3xVG-"
+      ]
+    },
+    {
+      "stance": "Toronto needs a new social contract that serves everyone.",
+      "supporting_records": [
+        "DX0NkGtxKuJ",
+        "DX9lttgx58f"
+      ]
+    },
+    {
+      "stance": "Governance should be reformed through improved public reporting tools, innovation in core services, and decentralized decision-making that returns power and resources to communities.",
+      "supporting_records": [
+        "DZXc9u9xRn6"
+      ]
+    },
+    {
+      "stance": "City Hall waste and complacency should be challenged, and roadblocks to action should be named clearly.",
+      "supporting_records": [
+        "Da6WMZBxwop",
+        "DZXdXjXRDmN"
+      ]
+    },
+    {
+      "stance": "Failed institutions have allowed flawed infrastructure planning and irresponsible development to proceed despite expert warnings and citizen opposition.",
+      "supporting_records": [
+        "DZXc9u9xRn6"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Pledges to work toward rewriting the social contract for a shared, thoughtful, beautiful, and just Toronto.",
+      "supporting_records": [
+        "DX9lttgx58f"
+      ]
+    },
+    {
+      "action": "Pledges, if elected, to build a more responsive government with Torontonians.",
+      "supporting_records": [
+        "DZXc9u9xRn6"
+      ]
+    },
+    {
+      "action": "Pledges, if elected, to improve public reporting tools, innovate core services, and decentralize decision-making to communities.",
+      "supporting_records": [
+        "DZXc9u9xRn6"
+      ]
+    }
+  ],
+  "input_record_count": 10,
+  "input_records_hash": "sha256:b48e068fa49d3fc65591cbba4b1df4450aef14070c877d6af12e7120f9568155",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-06-04T16:10:42+00:00",
-  "synthesis_skipped_reason": "insufficient_data"
+  "synthesis_generated_at": "2026-08-20T15:40:39+00:00",
+  "synthesis_skipped_reason": null
 }

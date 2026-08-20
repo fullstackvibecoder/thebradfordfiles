@@ -2,122 +2,121 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "housing",
-  "summary": "Brad Bradford's Instagram record positions housing as his signature issue, framed as a supply-and-affordability crisis requiring faster construction, less red tape, and lower government-imposed costs. Bradford supports expanded \"missing middle\" housing, sixplexes, mid-rise on Avenues, laneway and garden suites, modular and rapid-build construction, office-to-residential conversion, and purpose-built rental. He opposes exclusionary zoning, the angular plane rule, high development charges (citing 1200% growth since 2010), the Vacant Home Tax's reverse-onus design, and Mayor Chow's luxury home tax and public builder approach as insufficient. Bradford has moved motions to cut development charges 25%, streamline modular approvals, expand major-street unit caps to 60, and double the first-time homebuyer rebate. He also champions supportive housing with wraparound services, citing three shelter/supportive housing sites delivered in his ward.",
+  "summary": "Bradford's Instagram content presents housing as a central, sustained focus. Bradford frames Toronto as facing a housing affordability and starts crisis, citing figures such as 68 to 90 percent drops in housing starts, development charges rising over 1,000 percent since 2010, and roughly 30 percent of unit costs coming from taxes and fees (DR5QW7XEnaA, DRzoVv0DUq0, DJEbmKVtRhs). Bradford supports cutting development charges (including a 25 percent reduction motion), streamlining approvals, ending exclusionary zoning, legalizing multiplexes and sixplexes, permitting garden and laneway suites, single-egress stairs, modular and rapid-build construction, mid-rise on Avenues, and office-to-residential conversions (CsFNxk8N7cZ, DLV5wxxMq3u, CIjHtg6hSYJ, DHJ9qe-yi5e, C7U90-KvQUv). Bradford also supports supportive housing with wraparound services, Inclusionary Zoning, purpose-built rental incentives, doubling the first-time homebuyer rebate, and a vacant home tax, while opposing added housing taxes and the current Vacant Home Tax reverse-onus design (DQwumxDjYhU, CWEjlp8gxH4, DSabj0Mjkvw, DA_PG3-Rmwz).",
   "consistency": {
-    "label": "consistent",
-    "stable_since": "2017-11",
+    "label": "evolving",
+    "stable_since": "2019",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports building more housing supply broadly, including missing middle, mid-rise, sixplexes, laneway/garden suites, and purpose-built rental",
+      "stance": "Supports cutting development charges and municipal fees to spur housing construction, including a proposed 25 percent reduction on condos and 100 percent on affordable and purpose-built rental.",
       "supporting_records": [
-        "DLV5wxxMq3u",
-        "DMc4SEuux8R",
-        "DNqH55bN8ws",
-        "CsFNxk8N7cZ",
-        "CKPOZt3h1yE",
-        "DAI4e_SRIql"
-      ]
-    },
-    {
-      "stance": "Opposes high development charges and government-imposed housing costs, calling for cuts to fees to spur construction",
-      "supporting_records": [
-        "DRzoVv0DUq0",
-        "DHuRDSGs0Bh",
+        "DRholf-lx3s",
         "DIQ9MbhxPaw",
+        "DHuRDSGs0Bh",
         "DJEbmKVtRhs",
-        "DC1rwlZuDII",
-        "CyEbET7AQE3"
+        "DR5QW7XEnaA"
       ]
     },
     {
-      "stance": "Supports cutting red tape, streamlining approvals, and updating zoning bylaws to enable more housing",
+      "stance": "Supports ending exclusionary zoning and legalizing missing middle housing (multiplexes, sixplexes, garden suites, laneway suites) across Toronto neighbourhoods.",
       "supporting_records": [
-        "DRM18tcjY_n",
+        "CsFNxk8N7cZ",
+        "DLV5wxxMq3u",
         "DIzKgbEBNa3",
-        "DDX7Ejwymg5",
-        "DOgx2dijrwt",
-        "DGWK5PzyO7i",
-        "CxJM9SuPuEg"
+        "CIjHtg6hSYJ",
+        "CKPOZt3h1yE",
+        "C1KMMZgAWtV"
       ]
     },
     {
-      "stance": "Supports supportive housing with wraparound mental health, addiction, and job supports as a long-term solution to homelessness",
+      "stance": "Supports streamlining approvals, cutting red tape, and using modular and rapid-build construction to accelerate housing delivery.",
+      "supporting_records": [
+        "DHJ9qe-yi5e",
+        "DHWh10by6CQ",
+        "DJUSN88N7oA",
+        "C5RB1qMtiQ6",
+        "DIhEMewO0bp"
+      ]
+    },
+    {
+      "stance": "Supports supportive housing with wraparound mental health, addiction, and job training services as the long-term response to homelessness.",
       "supporting_records": [
         "DQwumxDjYhU",
         "DMh0vq3Ah6o",
         "DMK2uOQgteh",
-        "CABUqoHxsDe",
-        "C_siA0Px9L9",
-        "CMQGps1h-ku"
+        "CLo39Kth8Xn",
+        "CMFjTlZBpiy"
       ]
     },
     {
-      "stance": "Opposes the Vacant Home Tax's reverse-onus structure requiring homeowners to annually prove residency",
+      "stance": "Supports allowing mid-rise apartments and higher unit caps on Avenues and major streets, including raising the major-streets cap from 30 to 60 units.",
       "supporting_records": [
+        "C7U90-KvQUv",
+        "DChBiqkRyUE",
+        "DBwJ8M7RKBD",
+        "C6zFNe5p_BQ",
+        "C7HUHgSgypH"
+      ]
+    },
+    {
+      "stance": "Opposes adding new taxes on housing including the luxury home tax and characterizes the current Vacant Home Tax's reverse-onus design as flawed.",
+      "supporting_records": [
+        "DSYdN4TDaeE",
+        "DSabj0Mjkvw",
         "DA_PG3-Rmwz",
         "DAUHQEaSHox"
       ]
     },
     {
-      "stance": "Opposes Mayor Chow's luxury home tax and public builder approach, arguing they add costs without delivering housing",
+      "stance": "Supports Inclusionary Zoning requiring up to 22 percent affordability in areas across Toronto.",
       "supporting_records": [
-        "DSYdN4TDaeE",
-        "DQwumxDjYhU",
-        "DCm6A_6SGCQ",
+        "CWEjlp8gxH4",
+        "CVlviIsAkmJ"
+      ]
+    },
+    {
+      "stance": "Supports purpose-built rental housing, including federal GST removal and low-cost financing, and opposes affordable-housing requirements described as making projects financially unviable.",
+      "supporting_records": [
+        "DXw_o1TifLm",
+        "CxNwft_gXvN",
         "DCmILuvR04J",
-        "Czd4LtCAoAN"
+        "DCm6A_6SGCQ"
       ]
     },
     {
-      "stance": "Supports modular and rapid-build construction technologies to accelerate housing delivery",
-      "supporting_records": [
-        "DJUSN88N7oA",
-        "DIhEMewO0bp",
-        "DHWh10by6CQ",
-        "DHJ9qe-yi5e",
-        "C5RB1qMtiQ6",
-        "Cc6BWLYOohB"
-      ]
-    },
-    {
-      "stance": "Supports ending exclusionary zoning and adding gentle density in existing neighbourhoods",
-      "supporting_records": [
-        "DIzKgbEBNa3",
-        "DBOzDsjRhNa",
-        "DBxYYbTtn4B",
-        "CAYpRUARXLE",
-        "CxJM9SuPuEg"
-      ]
-    },
-    {
-      "stance": "Supports doubling first-time homebuyer rebate and increasing land transfer tax rebate thresholds",
+      "stance": "Supports doubling the first-time homebuyer rebate and raising the threshold from $400,000 to $750,000.",
       "supporting_records": [
         "DSabj0Mjkvw",
-        "DSYdN4TDaeE",
         "Cw2crzygFOv",
-        "Cw722WFAAvD",
-        "C0jwMLJg7y8"
+        "Cw722WFAAvD"
       ]
     },
     {
-      "stance": "Supports converting underutilized office space into housing",
+      "stance": "Supports converting underutilized office space into housing.",
       "supporting_records": [
-        "DBtwbHDvOC5",
-        "C0w9QjVvwHo",
-        "C8E4s0EgjUZ",
+        "Ctzc7IdvhFf",
         "CsbZtSYNc9m",
-        "Ctzc7IdvhFf"
+        "C0w9QjVvwHo",
+        "DBtwbHDvOC5"
+      ]
+    },
+    {
+      "stance": "Opposes Mayor Chow's public builder approach as bureaucratic and ineffective at delivering results.",
+      "supporting_records": [
+        "DQwumxDjYhU",
+        "Czd4LtCAoAN",
+        "DCmILuvR04J"
       ]
     }
   ],
   "key_actions": [],
-  "input_record_count": 879,
-  "input_records_hash": "sha256:b130580c3d6f1e8ae0c89de8681af20d9da657034a1cd82414f1d221fd4b347c",
+  "input_record_count": 885,
+  "input_records_hash": "sha256:f8e86c2beed26b9379898055dc767e29037a598acd259e8a5cda403ca3d017ad",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-07-01T14:51:33+00:00",
+  "synthesis_generated_at": "2026-08-20T15:32:55+00:00",
   "synthesis_skipped_reason": null
 }

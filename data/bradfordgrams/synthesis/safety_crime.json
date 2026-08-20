@@ -2,134 +2,114 @@
   "candidate_handle": "bradfordgrams",
   "candidate_slug": "bradford",
   "topic": "safety_crime",
-  "summary": "Bradford's Instagram record on safety and crime is extensive and centers on a recurring theme that Toronto \"feels less safe.\" Bradford ties this to specific files: TTC safety (motion to place officers in all subway stations, improve lighting/cleanliness, build platform edge doors), encampments near schools/daycares/playgrounds (a 200m/48-hour clearance proposal), bubble zones around places of worship, schools, and daycares (advocacy from 2024 through passage in May 2025), gun violence (\"no bail, go to jail\"), and youth violence prevention via community partnerships. Bradford also pushed motorized watercraft restrictions at Woodbine Beach, jet ski licensing, road safety/Vision Zero measures, school safety zones, automated speed enforcement, and Bail Compliance Units inside Toronto Police. Bradford repeatedly opposes Mayor Chow's encampment protocol and police budget cuts, and supports fully funding the police.",
+  "summary": "Bradford treats public safety as a top mayoral priority, framing it around three themes: crime, congestion, and cost of living (DYHvvjDNgrj, DWFOTgOCdsC). Bradford consistently supports expanded police resources, including hiring 1,000 new front-line officers, placing officers in every TTC subway station, and creating Bail Compliance Units (DbJBNmfxr8V, DVhJtcuD2D5, CrO78kSgWyV). Bradford advocates bubble/safe access zones around places of worship, schools, and daycares to address antisemitism and hate crimes, culminating in the 2025 by-law's passage (DJ-VovGNcWT, DLqIg7XSd8J). Bradford opposes encampments near playgrounds, schools, and daycares and pushed 48-hour removal motions (DRAJ0bKguJx, DQ1p-5ECq1K). Bradford supports mandatory treatment for severe drug addiction, jet ski no-go zones at Woodbine Beach, enforcement against illegally modified e-bikes/mini-motorcycles, and criticizes Mayor Chow for insufficient action on TTC safety, encampments, and antisemitism (DcM1pudtgck, DMipr7MyKc4, DYnsJ1INHm5).",
   "consistency": {
     "label": "evolving",
-    "stable_since": "2023-03",
+    "stable_since": "2023-04",
     "changes": []
   },
   "key_positions": [
     {
-      "stance": "Supports placing police officers in all TTC subway stations, plus improved lighting, cleanliness standards, and platform edge doors",
+      "stance": "Supports increasing police staffing, including hiring 1,000 new front-line officers and placing uniformed officers at every TTC subway station.",
       "supporting_records": [
-        "DWFOTgOCdsC",
+        "DbJBNmfxr8V",
+        "DbJZyXmqUlm",
         "DVhJtcuD2D5",
-        "DWPZGCUFT_z",
-        "DWhiBdhjRbG"
+        "DWFOTgOCdsC",
+        "DWhiBdhjRbG",
+        "C2yJR2BNf_s"
       ]
     },
     {
-      "stance": "Opposes encampments near schools, daycares, and playgrounds, proposing a 200-metre exclusion zone with 48-hour removal after report",
+      "stance": "Supports bubble/safe access zones (50m+ buffers) around places of worship, schools, and daycares to protect against hate and harassment, and worked with Councillor Pasternak for over a year to pass this by-law.",
+      "supporting_records": [
+        "DJ-VovGNcWT",
+        "DJ95bBcO7_v",
+        "DLqIg7XSd8J",
+        "DIj5gmSSZXJ",
+        "C7fI8TjP2zZ",
+        "C48GZnfgZTB"
+      ]
+    },
+    {
+      "stance": "Opposes encampments, particularly near playgrounds, schools, and daycares, and supports 48-hour removal within 200 metres of these sites.",
       "supporting_records": [
         "DRAJ0bKguJx",
+        "DRCZSYbjSpb",
         "DQwumxDjYhU",
         "DQ1p-5ECq1K",
-        "DRCZSYbjSpb",
         "DTu89cQjtBR"
       ]
     },
     {
-      "stance": "Supports bubble zone bylaws creating safe access areas around places of worship, schools, and daycares",
-      "supporting_records": [
-        "DJ95bBcO7_v",
-        "DJ-VovGNcWT",
-        "DLqIg7XSd8J",
-        "DIj5gmSSZXJ",
-        "C7fI8TjP2zZ",
-        "DDxCGOzRSW5"
-      ]
-    },
-    {
-      "stance": "States Toronto has experienced rising antisemitism and hate crimes and opposes hate-motivated attacks on Jewish, Muslim, and other communities",
+      "stance": "Opposes antisemitism and hate crimes, framing them as a public safety crisis requiring stronger enforcement and city-wide action.",
       "supporting_records": [
         "DVzJnfTAZwm",
         "DVloXWPDe6p",
-        "DOtI3KfDXDC",
+        "DQo7TiHjCd0",
+        "DFLookxywBt",
         "DC7JGIzSrH3",
-        "C8clx1BAy8Q",
-        "DFLookxywBt"
+        "DbRUsT8FfYF"
       ]
     },
     {
-      "stance": "Supports fully funding Toronto Police and opposed cuts to the Police Board-approved budget",
+      "stance": "Supports establishing no-go zones for jet skis at Woodbine Beach and stronger regulation, licensing, and enforcement for motorized watercraft.",
       "supporting_records": [
-        "C2yJR2BNf_s",
-        "C3WbP3NN2_C",
-        "DRholf-lx3s"
-      ]
-    },
-    {
-      "stance": "Supports a 'no bail, go to jail' policy for anyone who fires a gun in Toronto and creating Bail Compliance Units within TPS",
-      "supporting_records": [
-        "DNl6e-cOJq8",
-        "CtMhuqtAB3r",
-        "CrO78kSgWyV",
-        "CrODc5CgO5f",
-        "CrQwa9jgbX-"
-      ]
-    },
-    {
-      "stance": "Supports tackling youth violence by funding community-embedded organizations rather than expanding city bureaucracy",
-      "supporting_records": [
-        "DPUXaE7CbRl",
-        "DPCo-WljTLB"
-      ]
-    },
-    {
-      "stance": "Supports motorized watercraft exclusion zones at Woodbine and Cherry Beaches, jet ski licensing, and tougher enforcement",
-      "supporting_records": [
-        "DXufqImlfOt",
         "DMipr7MyKc4",
-        "DMQkYU1g0Gt",
         "DN27QKaWhTo",
-        "DL7lVShAJ5K"
+        "DMQkYU1g0Gt",
+        "DXufqImlfOt"
       ]
     },
     {
-      "stance": "Supports road-safety/Vision Zero interventions including speed humps, school safety zones, automated speed enforcement, and lower speed limits",
+      "stance": "Supports mandatory treatment for severe drug addiction, expanded recovery beds, and faster access to treatment.",
+      "supporting_records": [
+        "DcM1pudtgck",
+        "DcJe_umuSko"
+      ]
+    },
+    {
+      "stance": "Supports stronger regulation and enforcement against illegally modified e-bikes and mini-motorcycles, including bylaw updates, licensing, and police impoundment authority.",
+      "supporting_records": [
+        "DYnsJ1INHm5",
+        "DYj087nOZJ-",
+        "Db_Ll2NqTYd"
+      ]
+    },
+    {
+      "stance": "Supports Vision Zero road safety measures including speed cameras, speed limit reductions, school safety zones, and traffic calming installations.",
       "supporting_records": [
         "Cs4C_BsAm2d",
         "CWMHoO4L6ry",
         "CTnHE-zrvZE",
-        "CdbglhTJRBl",
-        "CcGpo64g2fC",
-        "BvPcJ3jgr8R"
+        "BvPcJ3jgr8R",
+        "CkDnXVhOTIa"
       ]
     },
     {
-      "stance": "Opposes vandalism of speed cameras and calls current city reinstallation approach ineffective",
+      "stance": "Opposes Mayor Chow's approach to public safety, arguing she accepts crime and disorder as the cost of big-city life.",
       "supporting_records": [
-        "DOb5c9Jkfrt",
-        "DOZUm5aDjn_",
-        "DPjtFCpjso2"
+        "DcO4--LqqxE",
+        "DbBhVyDqufF",
+        "DaBihm0qDkl",
+        "DFVzF8GylEn",
+        "DLTpRKNMXfH"
       ]
     },
     {
-      "stance": "Characterizes Mayor Chow as insufficiently prioritizing community safety, transit safety, and encampment clearing",
+      "stance": "Supports the mayor sitting on the Toronto Police Services Board as the public official responsible for public safety.",
       "supporting_records": [
-        "DWFOTgOCdsC",
-        "DQwumxDjYhU",
-        "DLTpRKNMXfH",
-        "DDLJ59gSk_L",
-        "HBcdV0AZ_I",
-        "DHBcdV0AZ_I"
-      ]
-    },
-    {
-      "stance": "Supports a non-police led pilot response to non-violent crisis calls and broader policing reform",
-      "supporting_records": [
-        "CK7Gvnfhfh2",
-        "CCCIzJShDKU",
-        "CDzb6FwB5oV"
+        "DbbyHnxDi14",
+        "DbTp0PlKJrl"
       ]
     }
   ],
   "key_actions": [],
-  "input_record_count": 605,
-  "input_records_hash": "sha256:b66a98e642018a6cd5fd1022eea11ea03486f935765d7aa277678215f9ff17f1",
+  "input_record_count": 719,
+  "input_records_hash": "sha256:5c252a1335982a93f4d9f47b747cfb00e2a5a7db1fecac64e14a8f872df923e4",
   "model": "claude-opus-4-7",
   "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
   "cache_namespace": "production-v1",
-  "synthesis_generated_at": "2026-05-04T19:54:30+00:00",
+  "synthesis_generated_at": "2026-08-20T15:34:26+00:00",
   "synthesis_skipped_reason": null
 }

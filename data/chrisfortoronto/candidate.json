@@ -1,0 +1,27 @@
+{
+  "handle": "chrisfortoronto",
+  "slug": "alexander",
+  "display_name": "Chris Alexander",
+  "surname": "Alexander",
+  "pronouns": "he/him",
+  "incumbency": "challenger_outsider",
+  "files_label": "The Alexander Files",
+  "current_role": "Mayoral candidate; former diplomat",
+  "former_roles": [
+    "Federal Minister of Citizenship and Immigration (2013-2015)",
+    "Conservative Member of Parliament for Ajax-Pickering (2011-2015)",
+    "Canadian Ambassador to Afghanistan (2003-2005)"
+  ],
+  "council_terms": [],
+  "council_name_for_vote_lookup": null,
+  "candidacy_status": "declared",
+  "declared_date": "2026-07-29",
+  "platform_pillars": ["economic growth", "transit", "housing accessibility", "neighbourhoods", "public safety"],
+  "ig_handle": "chrisfortoronto",
+  "alias_handles": ["chrisalexandercanada"],
+  "sources": [
+    "City of Toronto 2026 Municipal Election List of Candidates (registered 29-Jul-2026)",
+    "chrisalexander.ca campaign site (platform priorities, IG handle)",
+    "CBC News: Former Conservative MP Chris Alexander running for Toronto mayor (July 2026)"
+  ]
+}

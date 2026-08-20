@@ -1,0 +1,61 @@
+{
+  "candidate_handle": "chrisfortoronto",
+  "candidate_slug": "alexander",
+  "topic": "social_services",
+  "summary": "Chris's Instagram content on social services spans two clusters. In 2017, Chris expressed support for refugee and asylum seeker resettlement, including a welcoming stance toward immigration (BTbycdalN3c), backing The Pin Project for refugee and displaced families (BbmiEfUAp5H), calling for Canada to restore and scale a program to sponsor gay refugees from Chechnya and Iran (BT1Y-pClH5o, BT1YGCzFkV_), and voicing support for Indigenous empowerment (BUHnHzIld_l). In 2026, Chris addressed mental health and addiction crisis response, stating people in crisis belong in care rather than transit, hallways, or police custody, endorsing the Ontario Big City Mayors' call to declare a homelessness and drug addiction crisis, and supporting mandatory treatment (determined by a doctor) with available treatment beds when voluntary programs fail (DcI7A5sIPle).",
+  "consistency": {
+    "label": "evolving",
+    "stable_since": null,
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Supports refugee resettlement and welcoming asylum policies, including dedicated sponsorship programs for persecuted LGBTQ+ refugees from Chechnya and Iran.",
+      "supporting_records": [
+        "BTbycdalN3c",
+        "BbmiEfUAp5H",
+        "BT1Y-pClH5o",
+        "BT1YGCzFkV_"
+      ]
+    },
+    {
+      "stance": "Supports empowerment of First Nations.",
+      "supporting_records": [
+        "BUHnHzIld_l"
+      ]
+    },
+    {
+      "stance": "Supports directing people in mental health or addiction crisis into care rather than transit, public spaces, or police custody.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    },
+    {
+      "stance": "Supports mandatory treatment for repeat crisis cases when voluntary programs fail, as a physician's decision, paired with available treatment beds.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    },
+    {
+      "stance": "Supports the Ontario Big City Mayors' call for the province to declare a crisis on homelessness and drug addiction and fund additional treatment programs.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Attended the launch of The Pin Project, an initiative supporting refugee, forcibly displaced, and returnee families.",
+      "supporting_records": [
+        "BbmiEfUAp5H"
+      ]
+    }
+  ],
+  "input_record_count": 9,
+  "input_records_hash": "sha256:9eebd7fc5ef69d46a27643995122fe46ca5033d644e7379d9d0cb516a1bacbb7",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-08-20T15:32:08+00:00",
+  "synthesis_skipped_reason": null
+}

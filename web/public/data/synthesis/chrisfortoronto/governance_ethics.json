@@ -1,0 +1,58 @@
+{
+  "candidate_handle": "chrisfortoronto",
+  "candidate_slug": "alexander",
+  "topic": "governance_ethics",
+  "summary": "Chris's public statements on governance and ethics emphasize accountability, transparency, and earned leadership. Chris contrasts current officials' records (noting homelessness has doubled while they held \"seats, budgets, and votes\") with a proposed approach centered on intergovernmental negotiation and public reporting (DcI7A5sIPle). Chris pledges a \"Toronto deal\" with Queen's Park and Ottawa on supportive housing, paired with receipts published every three months (DcI7A5sIPle). Chris frames leadership as something earned through urgency and a plan, rejecting backroom strategist-driven politics (DCCM7PQlA9G). On process, Chris opposes governing by decree, arguing it compounds flawed decisions (Db6WdhzFDfo). An earlier 2017 post called for Canada to lead international condemnation of anti-LGBTQ brutality by the Chechen and Iranian regimes, reflecting a values-based posture on institutional voice (BT1Y-pClH5o).",
+  "consistency": {
+    "label": "consistent",
+    "stable_since": "2017-05-08",
+    "changes": []
+  },
+  "key_positions": [
+    {
+      "stance": "Toronto needs earned leadership, not backroom strategists; voter support must be earned through urgency, program, and plan.",
+      "supporting_records": [
+        "DcCM7PQlA9G"
+      ]
+    },
+    {
+      "stance": "Current officeholders bear accountability for outcomes on their watch, including a doubled homelessness count.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    },
+    {
+      "stance": "Opposes governance by decree, arguing it worsens prior flawed decisions.",
+      "supporting_records": [
+        "Db6WdhzFDfo"
+      ]
+    },
+    {
+      "stance": "Supports Canada taking a leading role in condemning human rights abuses against LGBTQ people abroad.",
+      "supporting_records": [
+        "BT1Y-pClH5o"
+      ]
+    }
+  ],
+  "key_actions": [
+    {
+      "action": "Pledges to negotiate a Toronto-specific intergovernmental deal with Queen's Park and Ottawa on supportive housing.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    },
+    {
+      "action": "Pledges to publish transparent receipts on supportive housing progress every three months.",
+      "supporting_records": [
+        "DcI7A5sIPle"
+      ]
+    }
+  ],
+  "input_record_count": 6,
+  "input_records_hash": "sha256:176fcdedd185227d73290eaada0a0d0088bafe3bfebf1b00e91f80d1794483ee",
+  "model": "claude-opus-4-7",
+  "system_prompt_hash": "sha256:913cb1929ced3c8c0b357e3e68f4450218cac659b8bda914fb2bd0c939511424",
+  "cache_namespace": "production-v1",
+  "synthesis_generated_at": "2026-08-20T15:31:56+00:00",
+  "synthesis_skipped_reason": null
+}
