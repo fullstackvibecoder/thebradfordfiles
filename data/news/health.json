@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-10-04T12:26:21+00:00",
+  "checked_at": "2026-10-06T11:00:49+00:00",
   "feeds": [
     {
       "outlet": "CityNews Toronto",
       "status": "ok",
       "http_code": 200,
       "items_seen": 15,
-      "items_matched": 0,
-      "articles_written": 0,
+      "items_matched": 1,
+      "articles_written": 1,
       "error": null
     },
     {
@@ -25,7 +25,7 @@
       "http_code": 200,
       "items_seen": 10,
       "items_matched": 1,
-      "articles_written": 0,
+      "articles_written": 2,
       "error": null
     },
     {
@@ -50,8 +50,8 @@
       "outlet": "CBC Toronto",
       "status": "ok",
       "http_code": 200,
-      "items_seen": 19,
-      "items_matched": 4,
+      "items_seen": 20,
+      "items_matched": 1,
       "articles_written": 3,
       "error": null
     }
