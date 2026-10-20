@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T11:01:07+00:00",
+  "generated_at": "2026-10-20T11:01:17+00:00",
   "candidates": [
     {
       "slug": "alexander",
@@ -56,7 +56,7 @@
         "cost of living"
       ],
       "post_count": 4020,
-      "record_count": 6041,
+      "record_count": 6042,
       "extracted_count": 0,
       "emphasis": {
         "safety_crime": 17.7,
@@ -100,7 +100,7 @@
         "social services"
       ],
       "post_count": 703,
-      "record_count": 531,
+      "record_count": 532,
       "extracted_count": 0,
       "emphasis": {
         "housing": 11.7,
